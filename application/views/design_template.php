@@ -1,9 +1,10 @@
 <script>
 	$(document).ready(function()
 	{
-        var oTable = $('#design_temp').dataTable({
+        //commented by ANCY MATHEW
+        /*var oTable = $('#design_temp').dataTable({
 
-        });
+        });*/
 		$("#modaladd").click(function ()
 		{
 			var empty="";
@@ -159,7 +160,11 @@
 			dateFormat: "dd-mm-yy"
 
 		});
+        //insert this lines of code by ANCY MATHEW
+        var oTable = $('#design_temp').dataTable({
 
+        });
+        //end
 	});
 
 

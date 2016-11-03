@@ -57,13 +57,16 @@
     var jno;
     var edi;
     $(document).ready(function () {
-        var oTable = $('#nonProJournal').dataTable({
+        //commented by ANCY MATHEW
+        //for bugging the error
+        //03-11-2016
+       /* var oTable = $('#nonProJournal').dataTable({
 //          "order": [[ 0, "asc" ]],
 //            "columnDefs": [ {
 //                "targets"  : 'no-sort',
 //                "orderable": false
 //            }]
-        });
+        });*/
         $(document).on("click", ".modaledit", function () {
              jno = $(this).attr('data-editid');
             //alert(jno);
@@ -1189,6 +1192,14 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
 			else
 				return n;
 		};
+        //added by ANCY MATHEW 03/11/2016
+        var oTable = $('#nonProJournal').dataTable({
+//          "order": [[ 0, "asc" ]],
+//            "columnDefs": [ {
+//                "targets"  : 'no-sort',
+//                "orderable": false
+//            }]
+        });
 	});
 
 </script>

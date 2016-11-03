@@ -62,9 +62,11 @@ function notify(text) {
 }
 	$(document).ready(function()
 	{
-        var oTable = $('#non_progressive').dataTable({
+        //commended by ANCY MATHEW
+       /* var oTable = $('#non_progressive').dataTable({
 
-        });
+        });*/
+
 		$('#addbutton').on('click', function(){mode = 'add';$('#journal_no').val('');});
 	
 		$('#addrecord, #addrecord2').on('submit', function(e){
@@ -115,6 +117,10 @@ function notify(text) {
 				location.href="<?php echo base_url(); ?><?php echo $cpagename; ?>/search";
 			});
 	    });
+        //added by ANCY MATHEW
+        var oTable = $('#non_progressive').dataTable({
+
+        });
 	});
 
 </script>

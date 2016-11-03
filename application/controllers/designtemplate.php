@@ -222,7 +222,17 @@ class Designtemplate extends CI_Controller
 			$id=$this->input->post('editid');
 			$name=$this->input->post('name1');
 			$startdate=date("Y-m-d", strtotime($this->input->post('startdate1')));
-			$enddate=date("Y-m-d", strtotime($this->input->post('enddate1')));
+            //added by ANCY MATHEW
+            //03-11-2016
+            //error debugging : update the project the end date automatically insert
+            if(!empty($_POST['enddate1']))
+            {
+                $enddate=date("Y-m-d", strtotime($this->input->post('enddate1')));
+            }
+            else{
+                $enddate= NULL;
+            }
+			//$enddate=date("Y-m-d", strtotime($this->input->post('enddate1')));
 			if($this->design->update_check_projtmp($id,$name)==0)
 			{
 				$data = array('project_name' => $name,'project_definition' => $this->input->post('desc1'),'user_id' => $this->input->post('user1'),'start_date' => $startdate,'end_date' => $enddate);
