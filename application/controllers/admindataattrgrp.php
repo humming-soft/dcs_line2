@@ -229,5 +229,10 @@ class Admindataattrgrp extends CI_Controller
 	{
 		$this->index();
 	}
+
+    //done by Jane - 11/10/2016
+    function pier(){
+
+    }
 }
 ?>
