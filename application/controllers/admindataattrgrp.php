@@ -229,5 +229,6 @@ class Admindataattrgrp extends CI_Controller
 	{
 		$this->index();
 	}
+
 }
 ?>

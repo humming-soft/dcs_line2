@@ -104,6 +104,10 @@ class Designjournal extends CI_Controller
             $data['users']=$this->securitys->show_users();
             $data['frequencys']=$this->design->show_frequency();
             $data['dataattbs']=$this->admin->show_dataatts();
+            //added by ancy mathew
+            $data['leftpiers']=$this->admin->show_dataattrgrps();
+            $data['rightpiers']=$this->admin->show_dataattrgrps();
+            //end
             $data['dataattbgroups']=$this->admin->show_dataattrgrps();
 
             $data['addperm']=$addperm;
@@ -177,10 +181,7 @@ class Designjournal extends CI_Controller
 
     function add()
     {
-//        echo '<pre>';
-//        print_r($_POST);
-//        echo '<pre>';
-//        exit;
+
         $label=$this->securitys->get_label_object_name(77);
         $label1=$this->securitys->get_label_object_name(78);
         $label2=$this->securitys->get_label_object_name(80);
@@ -290,6 +291,7 @@ class Designjournal extends CI_Controller
         }
         else
         {
+
             $name=$this->input->post('journalname');
             $property=$this->input->post('journalproperty');
             $projectno=$this->input->post('projectname');
@@ -344,6 +346,14 @@ class Designjournal extends CI_Controller
 
                 //Data Attribute
                 $dataattbcount=$this->input->post('dataattbcount');
+               /* $groupid=$this->input->post('attbgroup');
+                $groupname = $this->design->groupname($groupid);*/
+                $rightpier=$this->input->post('rightpiers');
+                $leftpier=$this->input->post('leftpiers');
+                if($rightpier >= 0 && $leftpier >= 0 ){
+                    $spandata=array('journal_id'=>$journalid,'left_pier_id'=>$leftpier,'right_pier_id'=>$rightpier);
+                    $this->design->add_span_detail($spandata);
+                }
                 for($j=1;$j<=$dataattbcount;$j++)
                 {
                     //$chk='dataattb'.$j;
@@ -401,7 +411,8 @@ class Designjournal extends CI_Controller
         }
         // AGAILE : END
     }
-
+    /*$dataentry2=$this->input->post('rightpiers');
+    $dataentry1=$this->input->post('leftpiers');*/
     /*Modified by jane*/
     function update()
     {

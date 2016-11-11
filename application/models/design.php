@@ -349,6 +349,13 @@ Class Design extends CI_Model
         return $this->db->insert('journal_detail', $data);
 
 	}
+    //Function to save the span detail Author:ANCY MATHEW
+    function add_span_detail($data)
+    {
+        // Inserting in Table Journal Detail
+        return $this->db->insert('span_detail', $data);
+
+    }
 /*    Usage : Function to update journal_data_entry_detail based on "data_attb_id".
     Author: Sebin*/
      function update_journal_data_entry_detail($attbid,$start, $end, $week){

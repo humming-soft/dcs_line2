@@ -801,5 +801,50 @@ Class Admin extends CI_Model
         
 		}
 
+    function piertype()
+    {
+        $query = $this->db->get('pier_type');
+        $query_result = $query->result();
+        return $query_result;
+    }
+    function pierposition()
+    {
+        $query = $this->db->get('pier_position');
+        $query_result = $query->result();
+        return $query_result;
+    }
+    function add_check_pier($data)
+    {
+        $data = str_replace("'", "''", $data);
+        $query = $this->db->query("SELECT id FROM pier where p_uid='$data'");
+        return $query->num_rows();
+    }
+    function add_piers($data)
+    {
+        // Inserting in Table data_attribute_group
+        $this->db->insert('pier', $data);
+        return true;
+    }
+    // Function To Fetch All Data Attribute Group Record
+    function show_pierdata()
+    {
+        $query = "SELECT * FROM  pier Order By id asc";
+        $q = $this->db->query($query);
+        return $q->result();
+    }
+    function delete_check_pierdata($id)
+    {
+
+        $query = $this->db->query("SELECT id FROM pier id=$id");
+        return $query->num_rows();
+    }
+
+    // Delete the selected record
+    function delete_pierdata($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('pier');
+    }
+
 }
 ?>

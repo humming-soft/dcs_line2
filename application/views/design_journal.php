@@ -43,7 +43,6 @@
 		$datauom   .= ',"'.$dataattb->uom_name.'"';
 	}
 	endforeach;
-
 	$labelnames='';
 	foreach ($labels as $label): 
 		$labelnames .= ','.$label->sec_label_desc;
@@ -298,7 +297,7 @@ function showDependencyModal(id, selected) {
 
 // Draw modal's attribute table. Have to have "1"+attributename for edit modal and attributename for add modal
 /*Modified by jane, to follow the input type of each attributes*/
-function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, uom, order, dependency, type) {
+function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, uom, order, dependency,left,right, type) {
     var isAdd = ((typeof type != "undefined") && (type == "add")) ? true : false;
     var idname = (!isAdd ? "1" : "") + 'dataattbid' + dataattbcount;
     var checkname = (!isAdd ? "1" : "") + 'dataattb' + dataattbcount;
@@ -307,7 +306,7 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
     var weekname = (!isAdd ? "1" : "") + 'week' + dataattbcount;
     var ordername = (!isAdd ? "1" : "") + 'order' + dataattbcount;
     var dependencyname = (!isAdd ? "1" : "") + 'dependency' + dataattbcount;
-    var content = '<tr><td><input type="hidden" name="' + idname + '" id="' + idname + '" value="' + id + '"/>';
+    var content = '<tr><td><input type="hidden" name="' + idname + '" id="' + idname + '" value="' + id + '"/><input type="hidden" name="leftpiers" id="leftpiers" value="' + left + '"/><input type="hidden" name="rightpiers" id="rightpiers" value="' + right + '"/>';
     content += '<input type="checkbox" id="' + checkname + '" name="' + checkname + '" checked="true"/></td>';
     content += '<td>' + label + '</td>';
     content += '<td>' + desc + '</td>';
@@ -427,38 +426,76 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
 			$('#MyModal2').modal('show');
 		});
 
-		$("#attbgroup").change(function()
-		{	
+
+        $("#attbgroup").change(function()
+		{
 			var selectvalue = $(this).val();
+            var textval=$(this).find(":selected").text().toLowerCase().trim();
 			$("#dataattb").find("tr:gt(1)").remove();
 			var datakeyid=<?php echo '[' . $datakeyid . ']'; ?>;
 			var datalabel=<?php echo '[' . $datalabel . ']'; ?>;
 			var datadesc=<?php echo '[' . $datadesc . ']'; ?>;
 			var datagrp=<?php echo '[' . $datagrp . ']'; ?>;
 			var datauom=<?php echo '[' . $datauom . ']'; ?>;
-			
+
 			var dataattbcount=1;
-			if(datakeyid.length!=0)
-			{
-				for(i=0;i<datakeyid.length;i++)
-				{
-					if(selectvalue==datagrp[i])
-					{
-						var content="<tr><td>";
-						content += '<input type="hidden" name="datagrpid'+dataattbcount+'" id="datagrpid'+dataattbcount+'" value="'+datakeyid[i]+'"/>';
-						content += '<input type="checkbox" id="datagrp'+dataattbcount+'" name="datagrp'+dataattbcount+'" /></td><td>';
-						content += '<input type="hidden" name="datagrplabel'+dataattbcount+'" id="datagrplabel'+dataattbcount+'" value="'+datalabel[i]+'"/>'+datalabel[i]+'</td><td> ';
-						content += '<input type="hidden" name="datagrpdesc'+dataattbcount+'" id="datagrpdesc'+dataattbcount+'" value="'+datadesc[i]+'"/><input type="hidden" name="datagrpuom'+dataattbcount+'" id="datagrpuom'+dataattbcount+'" value="'+datauom[i]+'"/>'+datadesc[i]+'</td></tr>';
-						$("#dataattb").append(content);
-						dataattbcount++;
-					}
-				}
-			}
+            if(textval=='span'){
+                $( ".hidemee" ).show();
+                if(datakeyid.length!=0)
+                {
+                    for(i=0;i<datakeyid.length;i++)
+                    {
+                        if(selectvalue==datagrp[i])
+                        {
+                            var content="<tr><td>";
+                            content += '<input type="hidden" name="datagrpid'+dataattbcount+'" id="datagrpid'+dataattbcount+'" value="'+datakeyid[i]+'"/>';
+                            content += '<input type="checkbox" class="select_all2" id="datagrp'+dataattbcount+'" name="datagrp'+dataattbcount+'" /></td><td>';
+                            content += '<input type="hidden" name="datagrplabel'+dataattbcount+'" id="datagrplabel'+dataattbcount+'" value="'+datalabel[i]+'"/>'+datalabel[i]+'</td><td> ';
+                            content += '<input type="hidden" name="datagrpdesc'+dataattbcount+'" id="datagrpdesc'+dataattbcount+'" value="'+datadesc[i]+'"/><input type="hidden" name="datagrpuom'+dataattbcount+'" id="datagrpuom'+dataattbcount+'" value="'+datauom[i]+'"/>'+datadesc[i]+'</td></tr>';
+                            $("#dataattb").append(content);
+                            dataattbcount++;
+                        }
+                    }
+
+                }
+            }else{
+                $( ".hidemee" ).hide();
+                if(datakeyid.length!=0)
+                {
+                    for(i=0;i<datakeyid.length;i++)
+                    {
+                        if(selectvalue==datagrp[i])
+                        {
+                            var content="<tr><td>";
+                            content += '<input type="hidden" name="datagrpid'+dataattbcount+'" id="datagrpid'+dataattbcount+'" value="'+datakeyid[i]+'"/>';
+                            content += '<input type="checkbox" class="select_all2" id="datagrp'+dataattbcount+'" name="datagrp'+dataattbcount+'" /></td><td>';
+                            content += '<input type="hidden" name="datagrplabel'+dataattbcount+'" id="datagrplabel'+dataattbcount+'" value="'+datalabel[i]+'"/>'+datalabel[i]+'</td><td> ';
+                            content += '<input type="hidden" name="datagrpdesc'+dataattbcount+'" id="datagrpdesc'+dataattbcount+'" value="'+datadesc[i]+'"/><input type="hidden" name="datagrpuom'+dataattbcount+'" id="datagrpuom'+dataattbcount+'" value="'+datauom[i]+'"/>'+datadesc[i]+'</td></tr>';
+                            $("#dataattb").append(content);
+                            dataattbcount++;
+                        }
+                    }
+                }
+            }
+
 			$("#dataattbgrpcount").val(dataattbcount-1);
 	    });
-
+        $(".select_all2").change(function(){
+            var textvalues=$("#attbgroup").find(":selected").text().toLowerCase().trim();
+            alert(textvalues);
+            if ($(this).is(':checked')) {
+                $(this).closest("div.fp").find(':checkbox').each(function () {
+                    $(this).attr('checked', 'checked');
+                });
+            } else {
+                $(this).closest("div.fp").find(':checkbox').each(function () {
+                    $(this).removeAttr('checked');
+                });
+            }
+        });
 		$('#dataattbadd').click(function()
 		{
+            var textvalue=$("#attbgroup").find(":selected").text().toLowerCase().trim();
 			var dataattbgrpcount=$('#dataattbgrpcount').val();
 			var dataattbcount=$('#dataattbcount').val();
 			var selected=0;
@@ -487,7 +524,17 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
 						{
 						
 						var id = $('#datagrpid'+i).val();
-						var label = $('#datagrplabel'+i).val();
+                            if(textvalue=='span'){
+                                var label = $('#datagrplabel'+i).val()+" "+$("#leftpiers").find(":selected").text();
+                                var left=$("#leftpiers").val();
+                                var right=$("#rightpiers").val();
+
+                            }
+						else{
+                                var label = $('#datagrplabel'+i).val();
+                                var left=-1;
+                                var right=-1;
+                            }
 						var desc = $('#datagrpdesc'+i).val();
 						var start = "";
 						var end = "";
@@ -495,7 +542,7 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
 						var uom = $('#datagrpuom'+i).val();
 						var order = dataattbcount;
 						var dependency = "";
-						var content = drawAttributeTable(dataattbcount,id,label,desc,start,end,weekly,uom,order,dependency,"add");
+						var content = drawAttributeTable(dataattbcount,id,label,desc,start,end,weekly,uom,order,dependency,left,right,"add");
 						$("#dataattbtab").append(content);
 							/*var content ='<tr><td><input type="hidden" name="dataattbid'+dataattbcount+'" id="dataattbid'+dataattbcount+'" value="'+$('#datagrpid'+i).val()+'"/>';
 							content += '<input type="checkbox" id="dataattb'+dataattbcount+'" name="dataattb'+dataattbcount+'" checked="true"/></td>';
@@ -1261,34 +1308,72 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
 										</select>
 									</td>
 								</tr>
-								<tr>
+								<tr >
 									<th><?php echo $labelname[13]; ?></th>
 									<th><?php echo $labelname[14]; ?></th>
 									<th><?php echo $labelname[15]; ?></th>
 								</tr>
-								<?php
+                                <?php
 									$dataattbcount=1;
 									foreach ($dataattbs as $dataattb):
 										$id=$dataattb->data_attb_id;
 										if($selectgroup==$dataattb->data_attribute_group_id)
 										{
 								?>
-											<tr>
+											<tr >
 												<td><input type="hidden" name="datagrpid<?php echo $dataattbcount; ?>" id="datagrpid<?php echo $dataattbcount; ?>" value="<?php echo $dataattb->data_attb_id; ?>"/>
 												<input type="checkbox" id="datagrp<?php echo $dataattbcount; ?>" name="datagrp<?php echo $dataattbcount; ?>" /></td>
 												<td><input type="hidden" name="datagrplabel<?php echo $dataattbcount; ?>" id="datagrplabel<?php echo $dataattbcount; ?>" value="<?php echo $dataattb->data_attb_label; ?>"/><?php echo $dataattb->data_attb_label; ?></td>
 												<td><input type="hidden" name="datagrpdesc<?php echo $dataattbcount; ?>" id="datagrpdesc<?php echo $dataattbcount; ?>" value="<?php echo $dataattb->data_attb_type_desc; ?>"/>
 												<input type="hidden" name="datagrpuom<?php echo $dataattbcount; ?>" id="datagrpuom<?php echo $dataattbcount; ?>" value="<?php echo $dataattb->uom_name; ?>"/><?php echo $dataattb->data_attb_type_desc; ?></td>
 											</tr>
+
 								<?php
 											$dataattbcount++;
 										}
 									endforeach;
 								?>
+
 								<input type="hidden" name="dataattbgrpcount" id="dataattbgrpcount" value="<?php echo $dataattbcount-1; ?>" />
 							</table>
+                            <div class="form-group hidemee" hidden="hidden">
+                                <table class="table table-striped table-hover">
+                                    <tr>
+                                        <th colspan="2" align="left">Left Pier </th>
+                                        <th colspan="2" >Right Pier </th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" align="left">
+                                            <select class="dropdown-toggle" id="leftpiers" name="leftpiers">
+                                                <option value="-1">SELECT LEFT PIER</option>
+                                                <?php
+                                                foreach ($leftpiers as $lpiers):
+                                                ?>
+                                                <option value="<?php echo $lpiers->data_attribute_group_id; ?>"><?php echo $lpiers->data_attribute_group_desc; ?></option>
+                                                <?php
+                                                endforeach;
+                                                ?>
+                                            </select>
+                                        </td>
+                                        <td colspan="2" >
+                                            <select class="dropdown-toggle" id="rightpiers" name="rightpiers">
+                                                <option value="-1">SELECT RIGHT PIER</option>
+                                                <?php
+                                                foreach ($rightpiers as $rpiers):
+                                                ?>
+                                                <option value="<?php echo $rpiers->data_attribute_group_id; ?>"><?php echo $rpiers->data_attribute_group_desc; ?></option>
+                                                <?php
+                                                endforeach;
+                                                ?>
+                                            </select>
+                                        </td>
+                                    </tr>
+                               </table>
+                            </div>
 						</div>
+
 					</div>
+
 					<div class="modal-footer" style="text-align:center;border:0;">
 						<button type="button" class="btn btn-default btn-sm" id="dataattbcancel" name="dataattbcancel">Cancel</button>
 						<input type="submit" class="btn btn-primary btn-sm" id="dataattbadd" name="dataattbadd" value="Add" />
