@@ -104,6 +104,8 @@ class Designjournal extends CI_Controller
             $data['users']=$this->securitys->show_users();
             $data['frequencys']=$this->design->show_frequency();
             $data['dataattbs']=$this->admin->show_dataatts();
+            $data['journalcategory']=$this->admin->show_journalcategory();
+            $data['piers']=$this->admin->show_piers();
             //added by ancy mathew
             $data['leftpiers']=$this->admin->show_leftpier();
             $data['rightpiers']=$this->admin->show_rightpier();
@@ -314,7 +316,10 @@ class Designjournal extends CI_Controller
 
                 //query the database
                 $journalid = $this->design->add_journal($data,$projectno,$name);
+                //journal category
 
+                $datacategory = array('journal_no' => $journalid,'journal_category_id' => $this->input->post('journalcat'));
+                $this->design->add_category_detail($datacategory);
                 //Validator
                 $validatorid=$this->input->post('validatorid');
                 $validatorids=explode(',',$validatorid);

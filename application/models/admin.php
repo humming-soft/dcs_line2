@@ -880,5 +880,17 @@ Class Admin extends CI_Model
         $this->db->query($sql);
     }
 
+    function show_journalcategory()
+    {
+        $query = "SELECT journal_category_id, journal_category_name FROM journal_category";
+        $q = $this->db->query($query);
+        return $q->result();
+    }
+    function show_piers()
+    {
+        $query = "SELECT id, p_uid FROM pier";
+        $q = $this->db->query($query);
+        return $q->result();
+    }
 }
 ?>

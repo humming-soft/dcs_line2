@@ -419,7 +419,28 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
 			dataentrycount=2;
 			$('#dataattbcount').val(1);		
 		});
-		
+        $('#journalcat').change(function()
+        {
+            var textval=$(this).find(":selected").text().toLowerCase().trim();
+            if(textval=='pier'){
+                $( ".pier" ).show();
+                $('#journalname').val('');
+                $('#journalname').attr('readonly', true);
+            }else if(textval=='span'){
+                $( ".pier" ).hide();
+                $('#journalname').val('');
+                $('#journalname').attr('readonly', true);
+            }
+            else{
+                $( ".pier" ).hide();
+                $('#journalname').attr('readonly', false);
+            }
+        });
+        $('#pierjornal').change(function()
+        {
+            var textval=$(this).find(":selected").text().trim();
+            $('#journalname').val(textval);
+        });
 		$(".addDataAttb").click(function()
 		{
 			$('#MyModal').modal('hide');
@@ -439,7 +460,7 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
 			var datauom=<?php echo '[' . $datauom . ']'; ?>;
 
 			var dataattbcount=1;
-            if(textval=='span'){
+            if(textval=='span' || textval=='special span' ){
                 $( ".hidemee" ).show();
                 if(datakeyid.length!=0)
                 {
@@ -496,9 +517,15 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
 		$('#dataattbadd').click(function()
 		{
             var textvalue=$("#attbgroup").find(":selected").text().toLowerCase().trim();
+            var textvalue2=$("#journalcat").find(":selected").text().toLowerCase().trim();
 			var dataattbgrpcount=$('#dataattbgrpcount').val();
 			var dataattbcount=$('#dataattbcount').val();
 			var selected=0;
+            if(textvalue2=='span' || textvalue2=='special span'){
+                var hashes = $("#leftpiers").find(":selected").text().split('-');
+                var id = hashes[1];
+                $('#journalname').val("SPAN"+"-"+id);
+            }
 			for(i=1;i<=dataattbgrpcount;i++)
 			{
 				if($("#datagrp"+i).is(':checked'))
@@ -524,8 +551,8 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
 						{
 						
 						var id = $('#datagrpid'+i).val();
-                            if(textvalue=='span'){
-                                var label = $('#datagrplabel'+i).val()+" "+$("#leftpiers").find(":selected").text();
+                            if(textvalue=='span' || textvalue=='special span'){
+                                var label = $('#datagrplabel'+i).val();
                                 var left=$("#leftpiers").val();
                                 var right=$("#rightpiers").val();
 
@@ -1417,15 +1444,43 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
 									</select>
 								</div>
 							</div>
-
+                            <div class="form-group">
+                                <label for="select" class="col-lg-2 control-label"></label>
+                                <div class="col-lg-10">
+                                    <label id="errorjournalcategory" class="text-danger"></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="select" class="col-lg-2 control-label">Journal Category<red>*</red></label>
+                                <div class="col-lg-10">
+                                    <select class="dropdown-toggle" id="journalcat" name="journalcat">
+                                        <option value="0">Select Catehory</option>
+                                        <?php
+                                        foreach ($journalcategory as $journalcat):
+                                        ?>
+                                        <option value="<?php echo $journalcat->journal_category_id; ?>"><?php echo $journalcat->journal_category_name; ?></option>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                    </select>
+                                    <select class="dropdown-toggle pier" id="pierjornal" name="pierjornal" hidden="hidden">
+                                        <?php
+                                        foreach ($piers as $allpiers):
+                                        ?>
+                                        <option value="<?php echo $allpiers->id; ?>"><?php echo $allpiers->p_uid; ?></option>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
 							<div class="form-group">
 								<label for="select" class="col-lg-2 control-label"></label>
 								<div class="col-lg-10">
 									<label id="errorjournalname" class="text-danger"></label>
 								</div>
 							</div>
-
-							<div class="form-group">
+							<div class="form-group ">
 								<label for="select" class="col-lg-2 control-label"><?php echo $labelname[1]; ?> <red>*</red></label>
 								<div class="col-lg-10">
 									<input type="text" class="form-control" id="journalname" name="journalname" placeholder="LR Beam Structure" maxlength="120">

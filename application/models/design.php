@@ -168,8 +168,8 @@ Class Design extends CI_Model
 	{
 		$data=strtolower($data);
 		$data=str_replace("'","''",$data);
-		$sql = "SELECT jm.*,pt.project_name, jm.album_name,su.user_full_name,dependency  FROM journal_master jm,project_template pt,sec_user su";
-		$sql .=" where jm.project_no=pt.project_no and jm.user_id=su.user_id ";
+		$sql = "SELECT jm.*,pt.project_name, jm.album_name,su.user_full_name,dependency  FROM journal_master jm,project_template pt,sec_user su,progrssive_journal_category pc ";
+		$sql .=" where jm.project_no=pt.project_no and jm.user_id=su.user_id and jm.journal_no=pc.journal_no";
 		if($data!="")
 		{
 			$sql .=" and (";
@@ -354,6 +354,13 @@ Class Design extends CI_Model
     {
         // Inserting in Table Journal Detail
         return $this->db->insert('span_detail', $data);
+
+    }
+    //Function to save the span detail Author:ANCY MATHEW
+    function add_category_detail($data)
+    {
+        // Inserting in Table Journal Detail
+        return $this->db->insert('progrssive_journal_category', $data);
 
     }
 /*    Usage : Function to update journal_data_entry_detail based on "data_attb_id".
