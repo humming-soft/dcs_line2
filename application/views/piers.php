@@ -40,6 +40,37 @@
             }
         });
 
+        $(document).on("click", ".modaledit", function ()
+        {
+            var pier_uid = $(this).data('pier_uid');
+            var pier_position = $(this).data('pier_position');
+            var pierid = $(this).data('pierid');
+            var empty ="";
+            $(".modal-body #pier1").val( pier_uid );
+            $(".modal-body #pier_position1").val( pier_position );
+            $(".modal-body #pierid").val( pierid );
+            $("#erroruom").html( empty );
+            $("#erroruomdesc").html( empty );
+        });
+
+        $('#updaterecord').submit(function()
+        {
+            $.post($('#updaterecord').attr('action'), $('#updaterecord').serialize(), function( data )
+            {
+                if(data.st == 0)
+                {
+                    hideloader();
+                    $('#errorpier1').html(data.msg);
+                    $('#errorpier_position1').html(data.msg1);
+                }
+                else if(data.st == 1)
+                {
+                    location.reload();
+                }
+
+            }, 'json');
+            return false;
+        });
 
         var oTable = $('#dag').dataTable({
            /* "order": [[ 0, "asc" ]],
@@ -133,9 +164,9 @@ $labelname=explode(",",$labelnames);
                                 <div class="col-sm-6">
                                     <select class="form-control" id="pierposition" name="pierposition">
                                         <?php
-                                        foreach ($pierposition as $pierposition):
+                                        foreach ($pierposition as $pierpos):
                                             ?>
-                                            <option value="<?php echo $pierposition->id; ?>"><?php echo $pierposition->pier_position; ?></option>
+                                            <option value="<?php echo $pierpos->id; ?>"><?php echo $pierpos->pier_position; ?></option>
                                         <?php
                                         endforeach;
                                         ?>
@@ -152,6 +183,70 @@ $labelname=explode(",",$labelnames);
                     </div>
             </div>
             </form>
+        </div>
+    </div>
+    <!-- close pop-up-->
+    <!-- pop-up for Edit -->
+    <div class="modal fade" id="myModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Edit <?php echo $labelobject; ?></h4>
+                </div>
+                <form method=post id=updaterecord action="<?php echo base_url(); ?><?php echo $cpagename; ?>/update_pier/">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="select" class="col-md-3 control-label"></label>
+                                <div class="col-md-8">
+                                    <label id="errorpier1" name="errorpier1" class="text-danger" ></label>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="pier1" class="col-sm-3 control-label"><?php echo $labelname[1]; ?><red>*</red></label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="pier1"  id="pier1" value="" maxlength="60">
+                                    <input type="hidden" class="form-control" name="pierid"  id="pierid">
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="select" class="col-md-3 control-label"></label>
+                                <div class="col-md-8">
+                                    <label id="errorpier_position1" name="errorpier_position1" class="text-danger"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="description" class="col-sm-3 control-label"><?php echo $labelname[3]; ?><red>*</red></label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="pier_position1" name="pier_position1">
+                                        <?php
+                                        foreach ($pierposition as $pierpos):
+                                            ?>
+                                            <option value="<?php echo $pierpos->id; ?>"><?php echo $pierpos->pier_position; ?></option>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+                        <input type=submit value="Save Changes" class="btn btn-primary btn-sm" onclick="showloader();">
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     <!-- close pop-up-->
@@ -181,7 +276,7 @@ $labelname=explode(",",$labelnames);
                         if($editperm==1)
                         {
                             ?>
-                            <a href="#" <span class="glyphicon glyphicon-edit">&nbsp;</span></a>
+                            <a href="#" data-toggle="modal" class="modaledit" data-target="#myModalEdit" data-pier_uid="<?php echo $pier->p_uid; ?>" data-pier_position="<?php echo $pier->pier_position_id; ?>" data-pierid="<?php echo $pier->id; ?>"><span class="glyphicon glyphicon-edit">&nbsp;</span></a>
                         <?php
                         }
                         else

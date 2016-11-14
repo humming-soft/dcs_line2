@@ -171,5 +171,36 @@ class Piers extends CI_Controller
         }
     }
 
+    //done by jane for updating pier
+    function update_pier()
+    {
+        //$label=$this->securitys->get_label_object_name(28);
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('pier1', 'Pier UID', 'trim|required|xss_clean|max_length[40]');
+
+        if($this->form_validation->run() == FALSE)
+        {
+            echo json_encode(array('st'=>0, 'msg' => form_error('pier1')));
+        }
+        else
+        {
+            $pier_id = $this->input->post('pierid');
+            $pieruid = $this->input->post('pier1');
+            $pier_position_id = $this->input->post('pier_position1');
+            if($this->admin->update_check_pier($pier_id,$pieruid)==0)
+            {
+                //query the database
+                $result = $this->admin->update_pier($pier_id, $pieruid, $pier_position_id);
+                $sess_array = array('message' => $this->securitys->get_label_object(28)." Updated Successfully","type" => 1);
+                $this->session->set_userdata('message', $sess_array);
+                echo json_encode(array('st'=>1, 'msg' => 'Success','msg1'=>''));
+            }
+            else
+            {
+                echo json_encode(array('st'=>0, 'msg' => "Pier already exists",'msg1'=>''));
+            }
+        }
+    }
+
 }
 ?>

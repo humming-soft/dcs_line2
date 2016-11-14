@@ -845,6 +845,7 @@ Class Admin extends CI_Model
         $this->db->where('id', $id);
         $this->db->delete('pier');
     }
+
     function show_leftpier()
     {
         $query = "SELECT id, p_uid FROM pier where pier_position_id=1";
@@ -857,5 +858,27 @@ Class Admin extends CI_Model
         $q = $this->db->query($query);
         return $q->result();
     }
+    //done by jane for checking pier_uid duplication
+    function update_check_pier($pier_id,$pieruid)
+    {
+        $query = $this->db->query("SELECT p_uid FROM pier where id='$pier_id'");
+        $re = $query->result();
+        if(!empty($re[0]->p_uid)) {
+            if ($re[0]->p_uid != $pieruid) {
+                $query = $this->db->query("SELECT id FROM pier where p_uid='$pieruid'");
+                $re = $query->result();
+                return $query->num_rows();
+            } else {
+                return 0;
+            }
+        }
+    }
+
+    //done by jane for updating pier
+    function update_pier($pier_id, $pieruid, $pier_position_id){
+        $sql ="UPDATE pier SET p_uid='".$pieruid."', pier_position_id='".$pier_position_id."' WHERE id= '".$pier_id."'";
+        $this->db->query($sql);
+    }
+
 }
 ?>
