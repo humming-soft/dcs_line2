@@ -105,8 +105,8 @@ class Designjournal extends CI_Controller
             $data['frequencys']=$this->design->show_frequency();
             $data['dataattbs']=$this->admin->show_dataatts();
             //added by ancy mathew
-            $data['leftpiers']=$this->admin->show_dataattrgrps();
-            $data['rightpiers']=$this->admin->show_dataattrgrps();
+            $data['leftpiers']=$this->admin->show_leftpier();
+            $data['rightpiers']=$this->admin->show_rightpier();
             //end
             $data['dataattbgroups']=$this->admin->show_dataattrgrps();
 

@@ -33,8 +33,7 @@
         {
             if(confirm("Do you want to delete?"))
             {
-                var pearid = $(this).data('id');
-                alert(pearid);
+                var pearid = $(this).attr("data-pearid");
                 $.post( "<?php echo base_url(); ?><?php echo $cpagename; ?>/delete_pier",{pearid:pearid}, function( data ) {
                     location.reload();
                 });
@@ -196,7 +195,7 @@ $labelname=explode(",",$labelnames);
                         if($delperm==1)
                         {
                             ?>
-                            <a href="#" data-toggle="modal" class="modaldelete" data-id="<?php echo html_escape($pier->id); ?>"><span class="glyphicon glyphicon-trash">&nbsp;</span></a>
+                            <a href="#" data-toggle="modal" class="modaldelete" data-pearid="<?php echo html_escape($pier->id); ?>"><span class="glyphicon glyphicon-trash">&nbsp;</span></a>
                         <?php
                         }
                         else

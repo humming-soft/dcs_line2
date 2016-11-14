@@ -835,7 +835,7 @@ Class Admin extends CI_Model
     function delete_check_pierdata($id)
     {
 
-        $query = $this->db->query("SELECT id FROM pier id=$id");
+        $query = $this->db->query("SELECT * FROM pier where id=$id");
         return $query->num_rows();
     }
 
@@ -845,6 +845,17 @@ Class Admin extends CI_Model
         $this->db->where('id', $id);
         $this->db->delete('pier');
     }
-
+    function show_leftpier()
+    {
+        $query = "SELECT id, p_uid FROM pier where pier_position_id=1";
+        $q = $this->db->query($query);
+        return $q->result();
+    }
+    function show_rightpier()
+    {
+        $query = "SELECT id, p_uid FROM pier where pier_position_id=2";
+        $q = $this->db->query($query);
+        return $q->result();
+    }
 }
 ?>

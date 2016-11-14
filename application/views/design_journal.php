@@ -480,7 +480,7 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
 
 			$("#dataattbgrpcount").val(dataattbcount-1);
 	    });
-        $(".select_all2").change(function(){
+        /*$(".select_all2").change(function(){
             var textvalues=$("#attbgroup").find(":selected").text().toLowerCase().trim();
             alert(textvalues);
             if ($(this).is(':checked')) {
@@ -492,7 +492,7 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
                     $(this).removeAttr('checked');
                 });
             }
-        });
+        });*/
 		$('#dataattbadd').click(function()
 		{
             var textvalue=$("#attbgroup").find(":selected").text().toLowerCase().trim();
@@ -1338,9 +1338,10 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
 							</table>
                             <div class="form-group hidemee" hidden="hidden">
                                 <table class="table table-striped table-hover">
+
                                     <tr>
-                                        <th colspan="2" align="left">Left Pier </th>
-                                        <th colspan="2" >Right Pier </th>
+                                        <th colspan="2" align="left">Left Pier</th>
+                                        <th colspan="2" >Right Pier</th>
                                     </tr>
                                     <tr>
                                         <td colspan="2" align="left">
@@ -1349,7 +1350,7 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
                                                 <?php
                                                 foreach ($leftpiers as $lpiers):
                                                 ?>
-                                                <option value="<?php echo $lpiers->data_attribute_group_id; ?>"><?php echo $lpiers->data_attribute_group_desc; ?></option>
+                                                <option value="<?php echo $lpiers->id ; ?>"><?php echo $lpiers->p_uid; ?></option>
                                                 <?php
                                                 endforeach;
                                                 ?>
@@ -1361,7 +1362,7 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
                                                 <?php
                                                 foreach ($rightpiers as $rpiers):
                                                 ?>
-                                                <option value="<?php echo $rpiers->data_attribute_group_id; ?>"><?php echo $rpiers->data_attribute_group_desc; ?></option>
+                                                <option value="<?php echo $lpiers->id ; ?>"><?php echo $lpiers->p_uid; ?></option>
                                                 <?php
                                                 endforeach;
                                                 ?>

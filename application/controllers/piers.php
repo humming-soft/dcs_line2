@@ -156,7 +156,7 @@ class Piers extends CI_Controller
     function delete_pier()
     {
         $pearid=$this->input->post('pearid');
-        if($this->admin->delete_check_pierdata($pearid)==0)
+        if($this->admin->delete_check_pierdata($pearid)>0)
         {
             //query the database
             $result = $this->admin->delete_pierdata($pearid);
@@ -166,7 +166,7 @@ class Piers extends CI_Controller
         }
         else
         {
-            $sess_array = array('message' => "Cannot delete ".$this->securitys->get_label_object(28).", Assigned to ".$this->securitys->get_label_object(28),"type" => 0);
+            $sess_array = array('message' => "Cannot delete ".$this->securitys->get_label_object(28),"type" => 0);
             $this->session->set_userdata('message', $sess_array);
         }
     }
