@@ -527,12 +527,12 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
                 $('#journalname').val("SPAN"+"-"+id);
             }
 			for(i=1;i<=dataattbgrpcount;i++)
-			{
-				if($("#datagrp"+i).is(':checked'))
-				{
-					selected=1;
-				}
-			}
+        {
+            if($("#datagrp"+i).is(':checked'))
+            {
+                selected=1;
+            }
+        }
 			if(selected==1)
 			{
 				for(i=1;i<=dataattbgrpcount;i++)

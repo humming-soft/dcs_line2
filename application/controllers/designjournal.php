@@ -87,8 +87,6 @@ class Designjournal extends CI_Controller
             // Initialize
             $this->pagination->initialize($config);
             $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-
-
             //Load all record data
             $data['records'] = $this->design->show_journal($search,$offset,$config['per_page']);
             $data['totalrows'] = $config['total_rows'];
