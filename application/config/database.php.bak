@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
+$db['default']['hostname'] = 'mmcdatabase';
 $db['default']['username'] = 'postgres';
 $db['default']['password'] = 'mrt@mpxd!@#123';
-$db['default']['database'] = 'pilot_db_new';
+$db['default']['database'] = 'pilot';
 $db['default']['dbdriver'] = 'postgre';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
