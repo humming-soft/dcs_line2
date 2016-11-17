@@ -501,19 +501,6 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
 
 			$("#dataattbgrpcount").val(dataattbcount-1);
 	    });
-        /*$(".select_all2").change(function(){
-            var textvalues=$("#attbgroup").find(":selected").text().toLowerCase().trim();
-            alert(textvalues);
-            if ($(this).is(':checked')) {
-                $(this).closest("div.fp").find(':checkbox').each(function () {
-                    $(this).attr('checked', 'checked');
-                });
-            } else {
-                $(this).closest("div.fp").find(':checkbox').each(function () {
-                    $(this).removeAttr('checked');
-                });
-            }
-        });*/
 		$('#dataattbadd').click(function()
 		{
             var textvalue=$("#attbgroup").find(":selected").text().toLowerCase().trim();
@@ -522,9 +509,14 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
 			var dataattbcount=$('#dataattbcount').val();
 			var selected=0;
             if(textvalue2=='span' || textvalue2=='special span'){
-                var hashes = $("#leftpiers").find(":selected").text().split('-');
-                var id = hashes[1];
-                $('#journalname').val("SPAN"+"-"+id);
+                var left = $("#leftpiers").val();
+                var right = $("#rightpiers").val();
+                if(left == -1 || right == -1){
+                    $('#errorp').text("please select left and right piers to continue !!");
+                    return false;
+                }
+                var hashes = $("#leftpiers").find(":selected").text().trim();
+                $('#journalname').val(hashes+"-"+"SPAN");
             }
 			for(i=1;i<=dataattbgrpcount;i++)
         {
@@ -1304,7 +1296,7 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
 		</div>
 	</div>
 	<!-- pop-up -->
-					
+
 	<div class="modal fade" id="MyModal2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
@@ -1313,6 +1305,7 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
 						<h4 class="modal-title" id="myModalLabel"><?php echo $labelname[12]; ?></h4>
 					</div>
 					<div class="modal-body">
+                        <span id="errorp" style="color: red; font-size: smaller"></span>
 						<div class="table">
 							<table class="table table-striped table-hover" id="dataattb">
 								<tr>
