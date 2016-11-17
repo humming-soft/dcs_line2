@@ -450,6 +450,7 @@ $(document).ready(function()
 
 	$("#attbgroup").change(function()
 	{
+        $('#errorp').text("");
 		var selectvalue = $(this).val();
 		var textval=$(this).find(":selected").text().toLowerCase().trim();
 		$("#dataattb").find("tr:gt(1)").remove();
