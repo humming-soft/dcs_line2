@@ -536,7 +536,7 @@
 			<div class="col-md-3" style="padding-top: 22px;"> Showing <?php /*echo $page; */?> to <?php /*echo $end; */?> of <?php /*echo $totalrows;*/ ?> rows  </div>
 		</div>
 		<?php }?>
-	</div>-->
+	<!--</div>-->
 </div>
 <script type="text/javascript">
 	function showloader() {

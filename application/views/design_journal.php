@@ -1377,7 +1377,7 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
                                                 <?php
                                                 foreach ($leftpiers as $lpiers):
                                                 ?>
-                                                <option value="<?php echo $lpiers->id ; ?>"><?php echo $lpiers->p_uid; ?></option>
+                                                <option value="<?php echo $lpiers['id'] ; ?>"><?php echo $lpiers['p_uid']; ?></option>
                                                 <?php
                                                 endforeach;
                                                 ?>
@@ -1389,7 +1389,7 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
                                                 <?php
                                                 foreach ($rightpiers as $rpiers):
                                                 ?>
-                                                <option value="<?php echo $rpiers->id ; ?>"><?php echo $rpiers->p_uid; ?></option>
+                                                <option value="<?php echo $rpiers['id'] ; ?>"><?php echo$rpiers['p_uid']; ?></option>
                                                 <?php
                                                 endforeach;
                                                 ?>

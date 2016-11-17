@@ -105,8 +105,9 @@ class Designjournal extends CI_Controller
             $data['journalcategory']=$this->admin->show_journalcategory();
             $data['piers']=$this->admin->show_piers();
             //added by ancy mathew
-            $data['leftpiers']=$this->admin->show_leftpier();
-            $data['rightpiers']=$this->admin->show_rightpier();
+            $piers=$this->admin->show_piers_completed();
+            $data['leftpiers']=$piers['left'];
+            $data['rightpiers']=$piers['right'];
             //end
             $data['dataattbgroups']=$this->admin->show_dataattrgrps();
 

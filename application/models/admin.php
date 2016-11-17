@@ -892,5 +892,52 @@ Class Admin extends CI_Model
         $q = $this->db->query($query);
         return $q->result();
     }
+    function show_piers_completed(){
+    $pier=array(
+        "right"=>array(),
+        "left"=>array()
+        );
+        $query = "select a.project_name,b.journal_name,b.journal_no,f.frequency_detail_name,e.user_full_name,c.publish_date,d.data_validate_no,d.validate_level_no,g.journal_no,c.data_entry_no from project_template a, journal_master b,journal_data_entry_master c,journal_data_validate_master d,sec_user e,frequency_detail f,progrssive_journal_category g where a.project_no=b.project_no and c.journal_no=g.journal_no and c.journal_no=b.journal_no and c.data_entry_no=d.data_entry_no and d.validate_status=4 and c.publish_user_id=e.user_id and f.frequency_detail_no=c.frequency_detail_no and g.journal_category_id=2";
+        $q = $this->db->query($query);
+        $rows1=$q->result();
+        foreach ($rows1 as $row1):
+            $dataentryno=$row1->data_entry_no;
+            $query2 = "SELECT data_entry_no, data_attb_id, actual_value, start_value, end_value FROM journal_data_entry_detail where data_entry_no='$dataentryno'";
+            $q2 = $this->db->query($query2);
+            $rows2=$q2->result();
+            $temp=array();
+            foreach ($rows2 as $row2):
+                if($row2->actual_value==$row2->end_value){
+                    $journalname=$row1->journal_name;
+                    if (!in_array($row2->data_entry_no, $temp)) {
+                        $query3 = "SELECT id, p_uid,pier_position_id FROM pier where p_uid ='$journalname'";
+                        $q3 = $this->db->query($query3);
+                        $rows3 = $q3->result();
+                        foreach ($rows3 as $row3):
+                            if ($row3->pier_position_id == 1) {
+                                array_push($pier["left"], array(
+                                    "id" => $row3->id,
+                                    "p_uid" => $row3->p_uid
+
+                                ));
+                            }
+                            if ($row3->pier_position_id == 2) {
+                                array_push($pier["right"], array(
+                                    "id" => $row3->id,
+                                    "p_uid" => $row3->p_uid
+
+                                ));
+                            }
+                        endforeach;
+                    }
+                    array_push($temp, $row2->data_entry_no);
+                }
+
+            endforeach;
+        endforeach;
+
+       return $pier;
+    }
+
 }
 ?>
