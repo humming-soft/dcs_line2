@@ -914,14 +914,22 @@ Class Admin extends CI_Model
                         $q3 = $this->db->query($query3);
                         $rows3 = $q3->result();
                         foreach ($rows3 as $row3):
-                            if ($row3->pier_position_id == 1) {
+                            $query4 = "SELECT id from  span_detail where  left_pier_id ='$row3->id'";
+                            $q4 = $this->db->query($query4);
+                            $cou=$q4->result();
+                            $countleft=$q4->num_rows();
+                            if ($countleft == 0) {
                                 array_push($pier["left"], array(
                                     "id" => $row3->id,
                                     "p_uid" => $row3->p_uid
 
                                 ));
                             }
-                            if ($row3->pier_position_id == 2) {
+                            $query5 = "SELECT id from  span_detail where  right_pier_id ='$row3->id'";
+                            $q5 = $this->db->query($query5);
+                            $cour=$q5->result();
+                            $countright=$q5->num_rows();
+                            if ($countright == 0) {
                                 array_push($pier["right"], array(
                                     "id" => $row3->id,
                                     "p_uid" => $row3->p_uid

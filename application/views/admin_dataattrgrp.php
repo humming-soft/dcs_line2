@@ -2,13 +2,7 @@
 	$(document).ready(function()
 	{
 //        $('#dag').DataTable();
-        var oTable = $('#dag').dataTable({
-            "order": [[ 0, "asc" ]],
-            "columnDefs": [ {
-                "targets"  : 'no-sort',
-                "orderable": false
-            }]
-        });
+
 
         $('div.dataTables_filter input').attr('placeholder', 'Enter the text here');
 		$(document).on("click", ".modaladd", function ()
@@ -123,6 +117,13 @@
 				alert('The Search field may only contain alpha-numeric characters, underscores, dashes and bracket.');
 			}
 	    });
+        var oTable = $('#dag').dataTable({
+            "order": [[ 0, "asc" ]],
+            "columnDefs": [ {
+                "targets"  : 'no-sort',
+                "orderable": false
+            }]
+        });
 	});
 </script>
 <?php
