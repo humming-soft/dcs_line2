@@ -879,19 +879,21 @@ Class Admin extends CI_Model
         $sql ="UPDATE pier SET p_uid='".$pieruid."', pier_position_id='".$pier_position_id."' WHERE id= '".$pier_id."'";
         $this->db->query($sql);
     }
-
+    //done by ANCY MATHEW for show the journal category
     function show_journalcategory()
     {
         $query = "SELECT journal_category_id, journal_category_name FROM journal_category";
         $q = $this->db->query($query);
         return $q->result();
     }
+    //done by ANCY MATHEW for show all the piers
     function show_piers()
     {
         $query = "SELECT id, p_uid FROM pier";
         $q = $this->db->query($query);
         return $q->result();
     }
+    //done by ANCY MATHEW for show the piers completed
     function show_piers_completed(){
     $pier=array(
         "right"=>array(),

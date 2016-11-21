@@ -461,7 +461,7 @@ $(document).ready(function()
 		var datauom=<?php echo '[' . $datauom . ']'; ?>;
 
 		var dataattbcount=1;
-		if(textval=='span' || textval=='special span' ){
+		if(textval=='normal span' || textval=='special span' ){
 			$( ".hidemee" ).show();
 			if(datakeyid.length!=0)
 			{
@@ -509,7 +509,7 @@ $(document).ready(function()
 			var dataattbgrpcount=$('#dataattbgrpcount').val();
 			var dataattbcount=$('#dataattbcount').val();
 			var selected=0;
-            if(textvalue2=='span' || textvalue2=='special span'){
+            if(textvalue2=='normal span' || textvalue2=='special span'){
                 var left = $("#leftpiers").val();
                 var right = $("#rightpiers").val();
                 if(left == -1 || right == -1){
@@ -544,7 +544,7 @@ $(document).ready(function()
         				{
 
         					var id = $('#datagrpid'+i).val();
-        					if(textvalue=='span' || textvalue=='special span'){
+        					if(textvalue=='normal span' || textvalue=='special span'){
         						var label = $('#datagrplabel'+i).val();
         						var left=$("#leftpiers").val();
         						var right=$("#rightpiers").val();
