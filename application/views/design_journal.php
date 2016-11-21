@@ -1297,7 +1297,7 @@ var checkStartValue = function(n) {
 		</div>
 	</div>
 	<!-- pop-up -->
-
+<!-- Data Attribute Modal -->
 	<div class="modal fade" id="MyModal2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
@@ -1725,7 +1725,7 @@ var checkStartValue = function(n) {
 						<div class="modal-content">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h4 class="modal-title" id="myModalLabel"><?php echo $labelname[12]; ?>hhh</h4>
+									<h4 class="modal-title" id="myModalLabel"><?php echo $labelname[12]; ?></h4>
 								</div>
 								<div class="modal-body">
 									<div class="table">
