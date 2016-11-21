@@ -509,7 +509,7 @@ $(document).ready(function()
 			var dataattbgrpcount=$('#dataattbgrpcount').val();
 			var dataattbcount=$('#dataattbcount').val();
 			var selected=0;
-            if(textvalue2=='normal span' || textvalue2=='special span'){
+            if(textvalue2=='span' || textvalue=='special span' || textvalue=='normal span' ){
                 var left = $("#leftpiers").val();
                 var right = $("#rightpiers").val();
                 if(left == -1 || right == -1){
