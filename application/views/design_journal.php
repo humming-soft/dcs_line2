@@ -513,7 +513,7 @@ $(document).ready(function()
                 var left = $("#leftpiers").val();
                 var right = $("#rightpiers").val();
                 if(left == -1 || right == -1){
-                    $('#errorp').text("please select left and right piers to continue !!");
+                    $('#errorp').text("Please Select Left and Right Piers to continue !!");
                     return false;
                 }
                 var hashes = $("#leftpiers").find(":selected").text().trim();
