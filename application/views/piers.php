@@ -73,12 +73,13 @@
         });
 
         var oTable = $('#dag').dataTable({
-           /* "order": [[ 0, "asc" ]],
+            "order": [[ 0, "asc" ]],
             "columnDefs": [ {
                 "targets"  : 'no-sort',
                 "orderable": false
-            }]*/
+            }]
         });
+    $('div.dataTables_filter input').attr('placeholder', 'Enter the text here');        
     });
 </script>
 <?php
