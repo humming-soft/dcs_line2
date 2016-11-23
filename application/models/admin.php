@@ -889,9 +889,27 @@ Class Admin extends CI_Model
     //done by ANCY MATHEW for show all the piers
     function show_piers()
     {
+        $allpier=array(
+            "pier"=>array()
+        );
         $query = "SELECT id, p_uid FROM pier";
         $q = $this->db->query($query);
-        return $q->result();
+        $rows1=$q->result();
+        foreach ($rows1 as $row1):
+                $journalname=$row1->p_uid;
+                $query3 = "SELECT progrssive_journal_category_id FROM progrssive_journal_category where journal_category_id=2 and journal_name='$journalname'";
+                $q3 = $this->db->query($query3);
+                $rows3 = $q3->result();
+                $countuid=$q3->num_rows();
+        if($countuid==0){
+            array_push($allpier["pier"], array(
+                "id" => $row1->id,
+                "p_uid" => $row1->p_uid
+
+            ));
+        }
+        endforeach;
+        return $allpier;
     }
     //done by ANCY MATHEW for show the piers completed
     function show_piers_completed(){

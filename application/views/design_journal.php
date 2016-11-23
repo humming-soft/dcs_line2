@@ -1462,7 +1462,7 @@ var checkStartValue = function(n) {
 												<?php
 												foreach ($piers as $allpiers):
 													?>
-												<option value="<?php echo $allpiers->id; ?>"><?php echo $allpiers->p_uid; ?></option>
+												<option value="<?php echo $allpiers['id']; ?>"><?php echo $allpiers['p_uid']; ?></option>
 												<?php
 												endforeach;
 												?>

@@ -103,7 +103,8 @@ class Designjournal extends CI_Controller
             $data['frequencys']=$this->design->show_frequency();
             $data['dataattbs']=$this->admin->show_dataatts();
             $data['journalcategory']=$this->admin->show_journalcategory();
-            $data['piers']=$this->admin->show_piers();
+            $allpiers=$this->admin->show_piers();
+            $data['piers']=$allpiers['pier'];
             //added by ancy mathew
             $piers=$this->admin->show_piers_completed();
             $data['leftpiers']=$piers['left'];
@@ -317,7 +318,7 @@ class Designjournal extends CI_Controller
                 $journalid = $this->design->add_journal($data,$projectno,$name);
                 //journal category
 
-                $datacategory = array('journal_no' => $journalid,'journal_category_id' => $this->input->post('journalcat'));
+                $datacategory = array('journal_no' => $journalid,'journal_category_id' => $this->input->post('journalcat'),'journal_name' => $name);
                 $this->design->add_category_detail($datacategory);
                 //Validator
                 $validatorid=$this->input->post('validatorid');
