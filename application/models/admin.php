@@ -886,7 +886,7 @@ Class Admin extends CI_Model
         $q = $this->db->query($query);
         return $q->result();
     }
-    //done by ANCY MATHEW for show all the piers
+    //done by ANCY MATHEW for show all the piers modified by 23-11-2016
     function show_piers()
     {
         $allpier=array(
