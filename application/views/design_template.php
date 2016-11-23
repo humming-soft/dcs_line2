@@ -162,8 +162,13 @@
 		});
         //insert this lines of code by ANCY MATHEW
         var oTable = $('#design_temp').dataTable({
-
+		"order": [[ 0, "asc" ]],
+		"columnDefs": [ {
+		  "targets"  : 'no-sort',
+		  "orderable": false
+		}]
         });
+        $('div.dataTables_filter input').attr('placeholder', 'Enter the text here');
         //end
 	});
 

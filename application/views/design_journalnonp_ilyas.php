@@ -121,6 +121,7 @@ function notify(text) {
         var oTable = $('#non_progressive').dataTable({
 
         });
+        $('div.dataTables_filter input').attr('placeholder', 'Enter the text here');
 	});
 
 </script>
