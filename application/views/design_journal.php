@@ -447,7 +447,6 @@ $(document).ready(function()
 		$('#MyModal2').modal('show');
 	});
 
-
 	$("#attbgroup").change(function()
 	{
 		$('#errorp').text("");
@@ -521,6 +520,26 @@ $(document).ready(function()
 
 		$("#dataattbgrpcount").val(dataattbcount-1);
 	});
+    $("#leftpiers").change(function()
+    {
+        var textval=$(this).find(":selected").val();
+        $("#rightpiers").find('option').each(function() { //filter option elements having value as selected option
+            $(this).prop('disabled', false);
+        });
+        $("#rightpiers").not(this).find('option').filter(function() { //filter option elements having value as selected option
+            return this.value === textval;
+        }).prop('disabled', true);
+    });
+    $("#rightpiers").change(function()
+    {
+        var textval=$(this).find(":selected").val();
+        $("#leftpiers").find('option').each(function() { //filter option elements having value as selected option
+            $(this).prop('disabled', false);
+        });
+        $("#leftpiers").not(this).find('option').filter(function() { //filter option elements having value as selected option
+            return this.value === textval;
+        }).prop('disabled', true);
+    });
 	$('#dataattbadd').click(function()
 	{
 		var textvalue=$("#attbgroup").find(":selected").text().toLowerCase().trim();

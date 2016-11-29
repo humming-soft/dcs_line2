@@ -992,7 +992,6 @@ Class Admin extends CI_Model
                         $q3 = $this->db->query($query3);
                         $rows3 = $q3->result();
                         foreach ($rows3 as $row3):
-                           $journalno=$row3->journal_no;
                             $query5 = "SELECT id, journal_no, span_journal_no FROM parapet_detail where  span_journal_no='$row3->journal_no'";
                             $q5 = $this->db->query($query5);
                             $cour=$q5->result();
@@ -1003,7 +1002,6 @@ Class Admin extends CI_Model
                                     "journal_name" => $row3->journal_name
                                 ));
                             }
-
                         endforeach;
                     }
                     array_push($temp, $row2->data_entry_no);
