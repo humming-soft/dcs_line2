@@ -579,6 +579,7 @@ $(document).ready(function()
 							var label = $('#datagrplabel'+i).val();
 							var left=$("#leftpiers").val();
 							var right=$("#rightpiers").val();
+                            var span=-1;
 
 						}else if(textvalue=='parapet'){
                             var label = $('#datagrplabel'+i).val();
