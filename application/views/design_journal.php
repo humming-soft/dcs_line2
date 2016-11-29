@@ -462,6 +462,7 @@ $(document).ready(function()
 		var dataattbcount=1;
 		if(textval=='normal span' || textval=='special span' ){
 			$( ".hidemee" ).show();
+            $( ".parapet" ).hide();
 			if(datakeyid.length!=0)
 			{
 				for(i=0;i<datakeyid.length;i++)
@@ -481,6 +482,7 @@ $(document).ready(function()
 			}
 		}else if(textval=='parapet'){
             $( ".parapet" ).show();
+            $( ".hidemee" ).hide();
             if(datakeyid.length!=0)
             {
                 for(i=0;i<datakeyid.length;i++)
@@ -1424,7 +1426,7 @@ var checkStartValue = function(n) {
 											<tr>
 												<td colspan="2" align="left">
 													<select class="dropdown-toggle" id="leftpiers" name="leftpiers">
-														<option value="-1">SELECT LEFT PIER</option>
+														<option value="-1">Select Left pier</option>
 														<?php
 														foreach ($leftpiers as $lpiers):
 															?>
@@ -1436,7 +1438,7 @@ var checkStartValue = function(n) {
 												</td>
 												<td colspan="2" >
 													<select class="dropdown-toggle" id="rightpiers" name="rightpiers">
-														<option value="-1">SELECT RIGHT PIER</option>
+														<option value="-1">Select Right Pier</option>
 														<?php
 														foreach ($rightpiers as $rpiers):
 															?>
@@ -1450,9 +1452,9 @@ var checkStartValue = function(n) {
 										</table>
 									</div>
                                 <div class="form-group parapet" hidden="hidden">
-                                    <label for="select" class="col-lg-6 control-label">SPAN DEPENDANT<red>*</red></label>
+                                    <label for="select" class="col-lg-5 control-label">Span Dependent<red>*</red></label>
                                     <select class="dropdown-toggle" id="spanid" name="spanid">
-                                        <option value="-1">SELECT SPAN</option>
+                                        <option value="-1">Select Span</option>
                                         <?php
                                         foreach ($span as $spancmpleted):
                                         ?>
