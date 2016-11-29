@@ -136,10 +136,11 @@ class Piers extends CI_Controller
         }
         else
         {
-            $pieruid=$this->input->post('pieruid');
+            $pieruid=strtoupper($this->input->post('pieruid'));
             if($this->admin->add_check_pier($pieruid)==0)
             {
-                $data = array('p_uid' => $this->input->post('pieruid'),'pier_type_id' => 1,'pier_position_id'=>$this->input->post('pierposition'));
+               // ,'pier_position_id'=>$this->input->post('pierposition')
+                $data = array('p_uid' =>$pieruid,'pier_type_id' => 1);
 
                 //query the database
                 $result = $this->admin->add_piers($data);
@@ -185,12 +186,12 @@ class Piers extends CI_Controller
         else
         {
             $pier_id = $this->input->post('pierid');
-            $pieruid = $this->input->post('pier1');
-            $pier_position_id = $this->input->post('pier_position1');
+            $pieruid =strtoupper($this->input->post('pier1'));
+            //$pier_position_id = $this->input->post('pier_position1');
             if($this->admin->update_check_pier($pier_id,$pieruid)==0)
             {
                 //query the database
-                $result = $this->admin->update_pier($pier_id, $pieruid, $pier_position_id);
+                $result = $this->admin->update_pier($pier_id, $pieruid);
                 $sess_array = array('message' => $this->securitys->get_label_object(28)." Updated Successfully","type" => 1);
                 $this->session->set_userdata('message', $sess_array);
                 echo json_encode(array('st'=>1, 'msg' => 'Success','msg1'=>''));

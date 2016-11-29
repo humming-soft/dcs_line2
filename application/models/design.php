@@ -352,8 +352,12 @@ Class Design extends CI_Model
     //Function to save the span detail Author:ANCY MATHEW
     function add_span_detail($data)
     {
-        // Inserting in Table Journal Detail
         return $this->db->insert('span_detail', $data);
+
+    }
+    function add_parapet_detail($data)
+    {
+        return $this->db->insert('parapet_detail', $data);
 
     }
     //Function to save the span detail Author:ANCY MATHEW

@@ -107,6 +107,8 @@ class Designjournal extends CI_Controller
             $data['piers']=$allpiers['pier'];
             //added by ancy mathew
             $piers=$this->admin->show_piers_completed();
+            $span_completed=$this->admin->show_span_completed();
+            $data['span']=$span_completed['span_cpmplete'];
             $data['leftpiers']=$piers['left'];
             $data['rightpiers']=$piers['right'];
             //end
@@ -358,6 +360,11 @@ class Designjournal extends CI_Controller
                 if($rightpier >= 0 && $leftpier >= 0 ){
                     $spandata=array('journal_id'=>$journalid,'left_pier_id'=>$leftpier,'right_pier_id'=>$rightpier);
                     $this->design->add_span_detail($spandata);
+                }
+                $spanvalue=$this->input->post('spancomplete');
+                if($spanvalue >= 0){
+                    $parapetdata=array('journal_no'=>$journalid,'span_journal_no'=>$spanvalue);
+                    $this->design->add_parapet_detail($parapetdata);
                 }
                 for($j=1;$j<=$dataattbcount;$j++)
                 {
