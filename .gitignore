@@ -17,6 +17,8 @@
 !/journalimagenonp/.htaccess
 !.htaccess
 
+/.idea/*
+
 !/gallery/i_move.php
 
 Thumbs.db
