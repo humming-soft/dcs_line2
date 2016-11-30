@@ -9,3 +9,14 @@
 */config/database.php
 /config/config.php
 /config/database.php
+
+/journalimage/*
+/journalimagenonp/*
+
+!/journalimage/.htaccess
+!/journalimagenonp/.htaccess
+!.htaccess
+
+!/gallery/i_move.php
+
+Thumbs.db
