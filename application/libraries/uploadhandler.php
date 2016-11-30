@@ -88,7 +88,7 @@ class UploadHandler
             'download_via_php' => false,
             // Read files in chunks to avoid memory limits when download_via_php
             // is enabled, set to 0 to disable chunked reading of files:
-            'readfile_chunk_size' => 10 * 1024 * 1024, // 10 MiB
+            'readfile_chunk_size' => 50 * 1024 * 1024, // 10 MiB
             // Defines which files can be displayed inline when downloaded:
             'inline_file_types' => '/\.(gif|jpe?g|png)$/i',
             // Defines which files (based on their names) are accepted for upload:
@@ -234,21 +234,22 @@ class UploadHandler
         return $this->options['upload_dir'].$this->get_user_path()
             .$version_path.$file_name;
     }
-	
-	// Added by ilyas
-	public function set_upload_path($path) {
-		if (($path != null) && ($path != '')) $this->options['upload_dir'] = $path;
-	}
-	
-	
-	public function get_path_and_name() {
-		foreach ($this->image_objects as $k=>$v):
-			return $k;
-		endforeach;
-		return "";
-	}
-	
-	// end added by ilyas
+
+    // Added by ilyas
+    public function set_upload_path($path) {
+        if (($path != null) && ($path != '')) $this->options['upload_dir'] = $path;
+    }
+
+    public function get_path_and_name() {
+//        echo "Image";
+//        echo json_encode(image_objects);
+//        exit;
+        foreach ($this->image_objects as $k=>$v):
+            return $k;
+        endforeach;
+        return "";
+    }
+    // end added by ilyas
 
     protected function get_query_separator($url) {
         return strpos($url, '?') === false ? '?' : '&';
@@ -850,6 +851,7 @@ class UploadHandler
         $image = (isset($this->image_objects[$file_path])) ? $this->image_objects[$file_path] : null ;
         return $image && $image->destroy();
     }
+
 
     protected function imagick_orient_image($image) {
         $orientation = $image->getImageOrientation();
