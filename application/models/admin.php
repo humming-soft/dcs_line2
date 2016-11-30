@@ -873,10 +873,16 @@ Class Admin extends CI_Model
             }
         }
     }
-
-    //done by jane for updating pier
-    function update_pier($pier_id, $pieruid, $pier_position_id){
-        $sql ="UPDATE pier SET p_uid='".$pieruid."', pier_position_id='".$pier_position_id."' WHERE id= '".$pier_id."'";
+    function add_check_piers($data)
+    {
+        $data=str_replace("'","''",$data);
+        $query=$this->db->query("SELECT * FROM pier where p_uid='$data'");
+        return $query->num_rows();
+    }
+    //done by jane for updating pier modified by ANCY MATHEW 28-11-2016
+    function update_pier($pier_id, $pieruid){
+      //  , pier_position_id='".$pier_position_id."'
+        $sql ="UPDATE pier SET p_uid='".$pieruid."' WHERE id= '".$pier_id."'";
         $this->db->query($sql);
     }
     //done by ANCY MATHEW for show the journal category
@@ -930,7 +936,7 @@ Class Admin extends CI_Model
                 if($row2->actual_value==$row2->end_value){
                     $journalname=$row1->journal_name;
                     if (!in_array($row2->data_entry_no, $temp)) {
-                        $query3 = "SELECT id, p_uid,pier_position_id FROM pier where p_uid ='$journalname'";
+                        $query3 = "SELECT id, p_uid FROM pier where p_uid ='$journalname'";
                         $q3 = $this->db->query($query3);
                         $rows3 = $q3->result();
                         foreach ($rows3 as $row3):
@@ -960,12 +966,49 @@ Class Admin extends CI_Model
                     }
                     array_push($temp, $row2->data_entry_no);
                 }
-
             endforeach;
         endforeach;
 
        return $pier;
     }
-
+    function show_span_completed(){
+        $span=array(
+            "span_cpmplete"=>array()
+        );
+        $query = "select a.project_name,b.journal_name,b.journal_no,f.frequency_detail_name,e.user_full_name,c.publish_date,d.data_validate_no,d.validate_level_no,g.journal_no,c.data_entry_no from project_template a, journal_master b,journal_data_entry_master c,journal_data_validate_master d,sec_user e,frequency_detail f,progrssive_journal_category g where a.project_no=b.project_no and c.journal_no=g.journal_no and c.journal_no=b.journal_no and c.data_entry_no=d.data_entry_no and d.validate_status=4 and c.publish_user_id=e.user_id and f.frequency_detail_no=c.frequency_detail_no and g.journal_category_id=1";
+        $q = $this->db->query($query);
+        $rows1=$q->result();
+        foreach ($rows1 as $row1):
+            $dataentryno=$row1->data_entry_no;
+            $query2 = "SELECT data_entry_no, data_attb_id, actual_value, start_value, end_value FROM journal_data_entry_detail where data_entry_no='$dataentryno'";
+            $q2 = $this->db->query($query2);
+            $rows2=$q2->result();
+            $temp=array();
+            foreach ($rows2 as $row2):
+                if($row2->actual_value==$row2->end_value){
+                    $journalname=$row1->journal_name;
+                    if (!in_array($row2->data_entry_no, $temp)) {
+                        $query3 = "SELECT journal_no,journal_name FROM progrssive_journal_category where journal_category_id=1 and journal_name='$journalname'";
+                        $q3 = $this->db->query($query3);
+                        $rows3 = $q3->result();
+                        foreach ($rows3 as $row3):
+                            $query5 = "SELECT id, journal_no, span_journal_no FROM parapet_detail where  span_journal_no='$row3->journal_no'";
+                            $q5 = $this->db->query($query5);
+                            $cour=$q5->result();
+                            $countspan=$q5->num_rows();
+                            if($countspan==0){
+                                array_push($span["span_cpmplete"], array(
+                                    "journal_no" => $row3->journal_no,
+                                    "journal_name" => $row3->journal_name
+                                ));
+                            }
+                        endforeach;
+                    }
+                    array_push($temp, $row2->data_entry_no);
+                }
+            endforeach;
+        endforeach;
+        return $span;
+    }
 }
 ?>

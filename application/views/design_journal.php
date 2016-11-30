@@ -297,7 +297,7 @@ function populateSortable(id, selected) {
 
 // Draw modal's attribute table. Have to have "1"+attributename for edit modal and attributename for add modal
 /*Modified by jane, to follow the input type of each attributes*/
-function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, uom, order, dependency,left,right, type) {
+function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, uom, order, dependency,left,right,span, type) {
 	var isAdd = ((typeof type != "undefined") && (type == "add")) ? true : false;
 	var idname = (!isAdd ? "1" : "") + 'dataattbid' + dataattbcount;
 	var checkname = (!isAdd ? "1" : "") + 'dataattb' + dataattbcount;
@@ -306,7 +306,7 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
 	var weekname = (!isAdd ? "1" : "") + 'week' + dataattbcount;
 	var ordername = (!isAdd ? "1" : "") + 'order' + dataattbcount;
 	var dependencyname = (!isAdd ? "1" : "") + 'dependency' + dataattbcount;
-	var content = '<tr><td><input type="hidden" name="' + idname + '" id="' + idname + '" value="' + id + '"/><input type="hidden" name="leftpiers" id="leftpiers" value="' + left + '"/><input type="hidden" name="rightpiers" id="rightpiers" value="' + right + '"/>';
+	var content = '<tr><td><input type="hidden" name="' + idname + '" id="' + idname + '" value="' + id + '"/><input type="hidden" name="leftpiers" id="leftpiers" value="' + left + '"/><input type="hidden" name="rightpiers" id="rightpiers" value="' + right + '"/><input type="hidden" name="spancomplete" id="spancomplete" value="' + span + '"/>';
 	content += '<input type="checkbox" id="' + checkname + '" name="' + checkname + '" checked="true"/></td>';
 	content += '<td>' + label + '</td>';
 	content += '<td>' + desc + '</td>';
@@ -447,7 +447,6 @@ $(document).ready(function()
 		$('#MyModal2').modal('show');
 	});
 
-
 	$("#attbgroup").change(function()
 	{
 		$('#errorp').text("");
@@ -463,6 +462,7 @@ $(document).ready(function()
 		var dataattbcount=1;
 		if(textval=='normal span' || textval=='special span' ){
 			$( ".hidemee" ).show();
+            $( ".parapet" ).hide();
 			if(datakeyid.length!=0)
 			{
 				for(i=0;i<datakeyid.length;i++)
@@ -480,7 +480,27 @@ $(document).ready(function()
 				}
 
 			}
-		}else{
+		}else if(textval=='parapet'){
+            $( ".parapet" ).show();
+            $( ".hidemee" ).hide();
+            if(datakeyid.length!=0)
+            {
+                for(i=0;i<datakeyid.length;i++)
+                {
+                    if(selectvalue==datagrp[i])
+                    {
+                        var content="<tr><td>";
+                        content += '<input type="hidden" name="datagrpid'+dataattbcount+'" id="datagrpid'+dataattbcount+'" value="'+datakeyid[i]+'"/>';
+                        content += '<input type="checkbox" class="select_all2" id="datagrp'+dataattbcount+'" name="datagrp'+dataattbcount+'" /></td><td>';
+                        content += '<input type="hidden" name="datagrplabel'+dataattbcount+'" id="datagrplabel'+dataattbcount+'" value="'+datalabel[i]+'"/>'+datalabel[i]+'</td><td> ';
+                        content += '<input type="hidden" name="datagrpdesc'+dataattbcount+'" id="datagrpdesc'+dataattbcount+'" value="'+datadesc[i]+'"/><input type="hidden" name="datagrpuom'+dataattbcount+'" id="datagrpuom'+dataattbcount+'" value="'+datauom[i]+'"/>'+datadesc[i]+'</td></tr>';
+                        $("#dataattb").append(content);
+                        dataattbcount++;
+                    }
+                }
+
+            }
+        } else{
 			$( ".hidemee" ).hide();
 			if(datakeyid.length!=0)
 			{
@@ -502,6 +522,26 @@ $(document).ready(function()
 
 		$("#dataattbgrpcount").val(dataattbcount-1);
 	});
+    $("#leftpiers").change(function()
+    {
+        var textval=$(this).find(":selected").val();
+        $("#rightpiers").find('option').each(function() { //filter option elements having value as selected option
+            $(this).prop('disabled', false);
+        });
+        $("#rightpiers").not(this).find('option').filter(function() { //filter option elements having value as selected option
+            return this.value === textval;
+        }).prop('disabled', true);
+    });
+    $("#rightpiers").change(function()
+    {
+        var textval=$(this).find(":selected").val();
+        $("#leftpiers").find('option').each(function() { //filter option elements having value as selected option
+            $(this).prop('disabled', false);
+        });
+        $("#leftpiers").not(this).find('option').filter(function() { //filter option elements having value as selected option
+            return this.value === textval;
+        }).prop('disabled', true);
+    });
 	$('#dataattbadd').click(function()
 	{
 		var textvalue=$("#attbgroup").find(":selected").text().toLowerCase().trim();
@@ -519,6 +559,18 @@ $(document).ready(function()
 			var hashes = $("#leftpiers").find(":selected").text().trim();
 			$('#journalname').val(hashes+"-"+"SPAN");
 		}
+        if(textvalue=='parapet' ){
+            $('#journalname').val('');
+            $('#journalname').attr('readonly', true);
+            var val = $("#spanid").val();
+        if(val == -1 ){
+            $('#errorp').text("Please Select the span to continue !!");
+            return false;
+        }
+        var hashes = $("#spanid").find(":selected").text().trim();
+            var arr = hashes.split('-');
+        $('#journalname').val(arr[0]+"-"+"PARAPET");
+        }
 		for(i=1;i<=dataattbgrpcount;i++)
 		{
 			if($("#datagrp"+i).is(':checked'))
@@ -548,12 +600,18 @@ $(document).ready(function()
 							var label = $('#datagrplabel'+i).val();
 							var left=$("#leftpiers").val();
 							var right=$("#rightpiers").val();
+                            var span=-1;
 
-						}
-						else{
+						}else if(textvalue=='parapet'){
+                            var label = $('#datagrplabel'+i).val();
+                            var span=$("#spanid").val();
+                            var left=-1;
+                            var right=-1;
+                        }else{
 							var label = $('#datagrplabel'+i).val();
 							var left=-1;
 							var right=-1;
+                            var span=-1;
 						}
 						var desc = $('#datagrpdesc'+i).val();
 						var start = "";
@@ -562,7 +620,7 @@ $(document).ready(function()
 						var uom = $('#datagrpuom'+i).val();
 						var order = dataattbcount;
 						var dependency = "";
-						var content = drawAttributeTable(dataattbcount,id,label,desc,start,end,weekly,uom,order,dependency,left,right,"add");
+						var content = drawAttributeTable(dataattbcount,id,label,desc,start,end,weekly,uom,order,dependency,left,right,span,"add");
 						$("#dataattbtab").append(content);
 							/*var content ='<tr><td><input type="hidden" name="dataattbid'+dataattbcount+'" id="dataattbid'+dataattbcount+'" value="'+$('#datagrpid'+i).val()+'"/>';
 							content += '<input type="checkbox" id="dataattb'+dataattbcount+'" name="dataattb'+dataattbcount+'" checked="true"/></td>';
@@ -581,7 +639,6 @@ $(document).ready(function()
 				$('#dataattbcount').val(dataattbcount);		
 				$('#MyModal2').modal('hide');
 				$('#MyModal').modal('show');
-				
 				populateDependencySelect(true);
 			}
 			else
@@ -1369,7 +1426,7 @@ var checkStartValue = function(n) {
 											<tr>
 												<td colspan="2" align="left">
 													<select class="dropdown-toggle" id="leftpiers" name="leftpiers">
-														<option value="-1">SELECT LEFT PIER</option>
+														<option value="-1">Select Left pier</option>
 														<?php
 														foreach ($leftpiers as $lpiers):
 															?>
@@ -1381,7 +1438,7 @@ var checkStartValue = function(n) {
 												</td>
 												<td colspan="2" >
 													<select class="dropdown-toggle" id="rightpiers" name="rightpiers">
-														<option value="-1">SELECT RIGHT PIER</option>
+														<option value="-1">Select Right Pier</option>
 														<?php
 														foreach ($rightpiers as $rpiers):
 															?>
@@ -1394,10 +1451,21 @@ var checkStartValue = function(n) {
 											</tr>
 										</table>
 									</div>
+                                <div class="form-group parapet" hidden="hidden">
+                                    <label for="select" class="col-lg-5 control-label">Span Dependent<red>*</red></label>
+                                    <select class="dropdown-toggle" id="spanid" name="spanid">
+                                        <option value="-1">Select Span</option>
+                                        <?php
+                                        foreach ($span as $spancmpleted):
+                                        ?>
+                                        <option value="<?php echo $spancmpleted['journal_no'] ; ?>"><?php echo $spancmpleted['journal_name']; ?></option>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                    </select>
+                                </div>
 								</div>
-
 							</div>
-
 							<div class="modal-footer" style="text-align:center;border:0;">
 								<button type="button" class="btn btn-default btn-sm" id="dataattbcancel" name="dataattbcancel">Cancel</button>
 								<input type="submit" class="btn btn-primary btn-sm" id="dataattbadd" name="dataattbadd" value="Add" />

@@ -137,7 +137,7 @@ $labelname=explode(",",$labelnames);
                             <div class="form-group">
                                 <label for="uom" class="col-sm-3 control-label"><?php echo $labelname[1]; ?><red>*</red></label>
                                 <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="pieruid"  id="pieruid" placeholder="PIER UID" maxlength="40">
+                                    <input type="text" class="form-control" name="pieruid"  style='text-transform:uppercase' id="pieruid" placeholder="PIER UID" maxlength="40">
                                 </div>
                             </div>
                         </div>
@@ -159,23 +159,23 @@ $labelname=explode(",",$labelnames);
                             </div>
                         </div>-->
                         <br>
-                        <div class="row">
+                        <!--<div class="row">
                             <div class="form-group">
-                                <label for="uom" class="col-sm-3 control-label"><?php echo $labelname[3]; ?><red>*</red></label>
+                                <label for="uom" class="col-sm-3 control-label"><?php /*echo $labelname[3]; */?><red>*</red></label>
                                 <div class="col-sm-6">
                                     <select class="form-control" id="pierposition" name="pierposition">
                                         <?php
-                                        foreach ($pierposition as $pierpos):
-                                            ?>
-                                            <option value="<?php echo $pierpos->id; ?>"><?php echo $pierpos->pier_position; ?></option>
+/*                                        foreach ($pierposition as $pierpos):
+                                            */?>
+                                            <option value="<?php /*echo $pierpos->id; */?>"><?php /*echo $pierpos->pier_position; */?></option>
                                         <?php
-                                        endforeach;
-                                        ?>
+/*                                        endforeach;
+                                        */?>
                                     </select>
                                 </div>
                             </div>
                         </div>
-                        <br>
+                        <br>-->
 
                     </div>
                     <div class="modal-footer">
@@ -224,23 +224,23 @@ $labelname=explode(",",$labelnames);
                                 </div>
                             </div>
                         </div>
-                        <br>
+                        <!--<br>
                         <div class="row">
                             <div class="form-group">
-                                <label for="description" class="col-sm-3 control-label"><?php echo $labelname[3]; ?><red>*</red></label>
+                                <label for="description" class="col-sm-3 control-label"><?php /*echo $labelname[3]; */?><red>*</red></label>
                                 <div class="col-sm-8">
                                     <select class="form-control" id="pier_position1" name="pier_position1">
                                         <?php
-                                        foreach ($pierposition as $pierpos):
-                                            ?>
-                                            <option value="<?php echo $pierpos->id; ?>"><?php echo $pierpos->pier_position; ?></option>
+/*                                        foreach ($pierposition as $pierpos):
+                                            */?>
+                                            <option value="<?php /*echo $pierpos->id; */?>"><?php /*echo $pierpos->pier_position; */?></option>
                                         <?php
-                                        endforeach;
-                                        ?>
+/*                                        endforeach;
+                                        */?>
                                     </select>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
@@ -277,7 +277,8 @@ $labelname=explode(",",$labelnames);
                         if($editperm==1)
                         {
                             ?>
-                            <a href="#" data-toggle="modal" class="modaledit" data-target="#myModalEdit" data-pier_uid="<?php echo $pier->p_uid; ?>" data-pier_position="<?php echo $pier->pier_position_id; ?>" data-pierid="<?php echo $pier->id; ?>"><span class="glyphicon glyphicon-edit">&nbsp;</span></a>
+                           <!-- data-pier_position="--><?php /*echo $pier->pier_position_id; */?>
+                            <a href="#" data-toggle="modal" class="modaledit" data-target="#myModalEdit" data-pier_uid="<?php echo $pier->p_uid; ?>"  data-pierid="<?php echo $pier->id; ?>"><span class="glyphicon glyphicon-edit">&nbsp;</span></a>
                         <?php
                         }
                         else
