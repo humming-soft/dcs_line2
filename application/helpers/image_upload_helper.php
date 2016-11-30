@@ -55,7 +55,7 @@ $file = $_FILES['file'];
 $filename = $file['name'];
 $filesize = $file['size'];
 $filtered_name = str_replace(".", "_", $filename);
-
+$filtered_name = str_replace(" ", "_", $filtered_name);
 
 if ($is_mobile) {
     $descname = 'description';
@@ -79,6 +79,7 @@ endforeach;*/
 //var_dump($ci->uploadhandler);
 $file_path = $ci->uploadhandler->get_upload_path();
 $actual_file_pathname = $ci->uploadhandler->get_path_and_name();
+//echo json_encode(array("files" =>$actual_file_pathname));
 $exploded_path = explode('/', $actual_file_pathname);
 $actual_filename = $exploded_path[sizeOf($exploded_path) - 1];
 $is_error = isset($ci->uploadhandler->response['file'][0]->error);
@@ -103,10 +104,10 @@ if ($is_mobile) {
 //die();
 //var_dump($actual_filename);
 //die();
-
+//echo json_encode(array(
+//    "Desc" => $descname));
 $ci->load->library('form_validation');
 $ci->form_validation->set_rules($descname, 'Image Description', 'trim|required|xss_clean|max_length[500]');
-
 // File was probably not a recognized as image by gd, should err.
 if ($actual_file_pathname == "") {
     echo json_encode(array(
