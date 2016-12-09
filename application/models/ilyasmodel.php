@@ -949,6 +949,7 @@ Class IlyasModel extends CI_Model
 		$query = "SELECT config_no,col_header from ilyas_config WHERE journal_no = '$jid' ORDER BY col_order";
 		$q = $this->db->query($query);
 		return $q->result();
+		
 	}
 	function get_column_values_for_journal($jid, $config_no) {
 		$jid = str_replace("'", "", $jid);
