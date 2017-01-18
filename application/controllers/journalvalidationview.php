@@ -236,7 +236,7 @@ class Journalvalidationview extends CI_Controller
 					$dataentryemail=$rows->dataentryemail;
 					$dataentryid=$rows->dataentryid;
 					$validatorname=$rows->validatorname;
-				endforeach;/*
+			endforeach;/*
 				$this->email->from('test@hummingsoft.com.my', 'MPXD');
 				$this->email->to($dataentryemail);
 			    $message="Dear ".$dataentryname.", <br>".$journalname." data entry rejected by ".$validatorname.".";

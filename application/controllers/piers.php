@@ -11,9 +11,9 @@ class Piers extends CI_Controller
 		$this->load->model('securitys','',TRUE);
 		$this->load->model('alertreminder','',TRUE);
 	}
-
 	function index($offset=0)
     {
+
         // Load Form
         $this->load->helper(array('form','url'));
 

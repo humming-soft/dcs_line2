@@ -108,8 +108,8 @@ class Journaldataentry extends CI_Controller
 			$data['message_type']=$type;
 
  			// echo '<pre>';
- 			// print_r($data['records']);
  			// echo '</pre>';
+
 
 			//Load data entry owner for each journal
 			$data['pjdefreq'] = array ();
@@ -194,7 +194,6 @@ class Journaldataentry extends CI_Controller
 			}
 			
 			$data['pjdefreq'] = $combined_pjdefreq;
-			
 			$this->load->view('header', $data1);
 			$this->load->view('assess_journalentries', $data);
 			$this->load->view('footer');

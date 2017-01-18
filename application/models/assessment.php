@@ -43,7 +43,6 @@ Class Assessment extends CI_Model
             $query .= "Order By journal_no asc";
         }
         //$query .= " OFFSET " . $offset . "LIMIT " . $perPage;
-        //print_r($query);
         $q = $this->db->query($query);
         return $q->result();
     }
@@ -1239,6 +1238,80 @@ Class Assessment extends CI_Model
         $q = $this->db->query($query);
         return $q->result();
     }
+    //Added by ANCY MATHEW
+    //for to get the journal id
+    //10-01-2017
+    function get_journal_id($dataentryno) {
+        $dataentryno = str_replace("'","",$dataentryno);
+        $query = "SELECT journal_no FROM journal_data_entry_master where data_entry_no='$dataentryno';";
+        $result = $this->db->query($query)->result();
+        if (sizeOf($result) > 0) {
+            return $result[0]->journal_no;
+        }
+        return false;
+    }
+    //Added BY ANCY MATHEW
+    //for to get the journal category ID
+    //10-01-2017
+    function get_cat_id($journalno) {
+        $journalno = str_replace("'","",$journalno);
+        $query = "SELECT journal_category_id FROM progrssive_journal_category where journal_no='$journalno'";
+        $result = $this->db->query($query)->result();
+        if (sizeOf($result) > 0) {
+            return $result[0]->journal_category_id;
+        }
+        return false;
+    }
+    //Added by Ancy Mathew
+    //for to fetch the journal type
+    //10-01-2017
+    function get_journal_type($catid) {
+        $catid = str_replace("'","",$catid);
+        $query = "SELECT journal_category_name FROM journal_category where journal_category_id='$catid'";
+        $result = $this->db->query($query)->result();
+        if (sizeOf($result) > 0) {
+            return $result[0]->journal_category_name;
+        }
+        return false;
+    }
+    //Added by Ancy Mathew
+    //update the pier and span details
+    //10-01-2017
+    function update_pier_span_col($journal_no,$value,$field)
+    {
+                    if($value==1){
+                        $this->db->set('pier_pile_1', $value);
+                    }if($value==2){
+                        $this->db->set('pier_pile_1', $value);
+                    }if($value==3){
+                        $this->db->set('pier_pile_2', $value);
+                    }if($value==4){
+                        $this->db->set('pier_pilecap_1', $value);
+                    }if($value==5){
+                        $this->db->set('pier_pilecap_1', $value);
+                    }if($value==6){
+                        $this->db->set('pier_pilecap_2', $value);
+                    }if($value==7){
+                        $this->db->set('pier_pier_1', $value);
+                    }if($value==8){
+                        $this->db->set('pier_pier_1', $value);
+                    }if($value==9){
+                        $this->db->set('pier_pier_2', $value);
+                    }if($value==10){
+                        $this->db->set('pier_pieread_1', $value);
+                    }if($value==11){
+                        $this->db->set('pier_pieread_1', $value);
+                    }if($value==12){
+                        $this->db->set('pier_pieread_2', $value);
+                    }if($value==13){
+                        $this->db->set('pier_pieread_3', $value);
+                    }
+        $this->db->set('pier_pile_1', $value);
+        $this->db->where('journal_no', $journal_no);
+        $this->db->update('pier_span_col');
+    }
+
+
     //--------------------------------
 }
 

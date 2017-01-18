@@ -341,6 +341,73 @@ class Journaldataentryadd extends CI_Controller
                 $this->assessment->update_journal_data_entry_detail($dataid, $this->input->post($dataattbid), $this->input->post($dataattb), $userid);
                 //}
             }
+            for ($i = 1; $i <= $dataattbcount; $i++) {
+                $dataattb = 'dataattb' . $i;
+                $dataattbid = 'dataattbid' . $i;
+                /*$datadisable='datadisable'.$i;
+                if($this->input->post($datadisable)=="0")
+                {*/
+                $this->assessment->update_journal_data_entry_detail($dataid, $this->input->post($dataattbid), $this->input->post($dataattb), $userid);
+                //}
+            }
+            //Coded By ANCY MATHEW 10-01-2017
+            //for add the data entry details to the table pier_span_col
+            $dataid_one = $this->input->post('dataentryno');
+            $journal_no =$this->assessment->get_journal_id($dataid_one);
+            if($journal_no != null){
+                $cat_no =$this->assessment->get_cat_id($journal_no);
+
+                if($cat_no !=null){
+                    $journalType = $this->assessment->get_journal_type($cat_no);
+                }
+                if(strtolower($journalType)=='pier'){
+                    for ($i = 1; $i <= $dataattbcount; $i++) {
+                        $dataattb = 'dataattb' . $i;
+                        $dataattbid = 'dataattbid' . $i;
+                        if($this->input->post($dataattbid)==1){
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),1);
+                        }
+                        if($this->input->post($dataattbid)==2){
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),2);
+                        }
+                        if($this->input->post($dataattbid)==3){
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),3);
+                        }
+                        if($this->input->post($dataattbid)==4){
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),4);
+                        }
+                        if($this->input->post($dataattbid)==5){
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),5);
+                        }
+                        if($this->input->post($dataattbid)==6){
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),6);
+                        }
+                        if($this->input->post($dataattbid)==7){
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),7);
+                        }
+                        if($this->input->post($dataattbid)==8){
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),8);
+                        }
+                        if($this->input->post($dataattbid)==9){
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),9);
+                        }
+                        if($this->input->post($dataattbid)==10){
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),10);
+                        }
+                        if($this->input->post($dataattbid)==11){
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),11);
+                        }
+                        if($this->input->post($dataattbid)==12){
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),12);
+                        }
+                        if($this->input->post($dataattbid)==13){
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),13);
+                        }
+
+                    }
+                }
+            }
+            //END
             $sess_array = array('message' => "Project Journal Data Entry Updated Successfully", "type" => 1); //1 success , 0 error
             $this->session->set_userdata('message', $sess_array);
             echo json_encode(array('st' => 1, 'msg' => 'Success'));

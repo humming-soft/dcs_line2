@@ -835,5 +835,37 @@ Class Design extends CI_Model
         $query=$this->db->query("select da.data_set_id, ldd.lk_data,ldd.lk_value from data_attribute da, lookup_data_detail ldd where da.data_set_id = ldd.data_set_id and da.data_attb_id='$id'");
         return $query->result();
     }
+    //Added By ANCY MATHEW
+    //!0-01-2017
+    //for to get the journaltype
+    function get_journal_type($catid) {
+        $catid = str_replace("'","",$catid);
+        $query = "SELECT  journal_category_name FROM journal_category where journal_category_id='$catid'";
+        $result = $this->db->query($query)->result();
+        if (sizeOf($result) > 0) {
+            return $result[0]->journal_category_name;
+        }
+        return false;
+    }
+    //Addded By ANCY MATHEW
+    //10-01-2017
+    //for to add the Journadate to pier entry
+    function add_pirer_entry($data)
+    {
+        // Inserting in Table Journal Data User
+        $this->db->insert('pier_span_col', $data);
+    }
+    //Added By ANCY MATHEW
+    //for to get the project Name
+    //10-01-2017
+    function get_project_name($projectno) {
+        $projectno = str_replace("'","",$projectno);
+        $query = "SELECT project_name FROM project_template where  project_no='$projectno'";
+        $result = $this->db->query($query)->result();
+        if (sizeOf($result) > 0) {
+            return $result[0]->project_name;
+        }
+        return false;
+    }
 }
 ?>

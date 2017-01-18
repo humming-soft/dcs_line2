@@ -28,6 +28,9 @@
 					return;
 				}
 			}
+           /* $.post($('#addRecord').attr('action'), $('#addRecord').serialize(), function( data ) {
+                location.href="<?php echo base_url(); ?>journalvalidation";
+            });*/
 			$.post($('#addRecord').attr('action'), $('#addRecord').serialize(), function( data )
 			{
 				if(data.st == 0)
@@ -625,8 +628,6 @@
 			
 			<script type="text/javascript">
                 function enbRjct(){
-
-
                     var options = document.getElementsByName('optradio');
                     for(i = 0; i < options.length; i++)
                     {
@@ -634,10 +635,6 @@
                        if(opt.value=="Reject")
                            opt.checked="checked";
                     }
-
-
-
-
                 }
 				function verifySave() {
 					
@@ -651,10 +648,10 @@
 						var msg = "Confirm Approve & Stop Monitoring?";
 					}
 					
-					var a = confirm(msg);
+					var as = confirm(msg);
 					var thisform = $("form#addRecord");
-					if (a) {
-						showloader(20000);
+					if (as) {
+						//showloader(20000);
 						thisform.submit();
 						return true;
 					} else {

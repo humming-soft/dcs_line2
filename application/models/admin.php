@@ -921,7 +921,8 @@ Class Admin extends CI_Model
     function show_piers_completed(){
     $pier=array(
         "right"=>array(),
-        "left"=>array()
+        "left"=>array(),
+        "specialspan"=>array()
         );
         $query = "select a.project_name,b.journal_name,b.journal_no,f.frequency_detail_name,e.user_full_name,c.publish_date,d.data_validate_no,d.validate_level_no,g.journal_no,c.data_entry_no from project_template a, journal_master b,journal_data_entry_master c,journal_data_validate_master d,sec_user e,frequency_detail f,progrssive_journal_category g where a.project_no=b.project_no and c.journal_no=g.journal_no and c.journal_no=b.journal_no and c.data_entry_no=d.data_entry_no and d.validate_status=4 and c.publish_user_id=e.user_id and f.frequency_detail_no=c.frequency_detail_no and g.journal_category_id=2";
         $q = $this->db->query($query);
@@ -940,7 +941,7 @@ Class Admin extends CI_Model
                         $q3 = $this->db->query($query3);
                         $rows3 = $q3->result();
                         foreach ($rows3 as $row3):
-                            $query4 = "SELECT id from  span_detail where  left_pier_id ='$row3->id'";
+                            $query4 = "SELECT id from  span_detail where  pier_id_one ='$row3->id' and span_type=1";
                             $q4 = $this->db->query($query4);
                             $cou=$q4->result();
                             $countleft=$q4->num_rows();
@@ -948,10 +949,9 @@ Class Admin extends CI_Model
                                 array_push($pier["left"], array(
                                     "id" => $row3->id,
                                     "p_uid" => $row3->p_uid
-
                                 ));
                             }
-                            $query5 = "SELECT id from  span_detail where  right_pier_id ='$row3->id'";
+                            $query5 = "SELECT id from  span_detail where pier_id_two ='$row3->id' and span_type=1";
                             $q5 = $this->db->query($query5);
                             $cour=$q5->result();
                             $countright=$q5->num_rows();
@@ -959,7 +959,16 @@ Class Admin extends CI_Model
                                 array_push($pier["right"], array(
                                     "id" => $row3->id,
                                     "p_uid" => $row3->p_uid
-
+                                ));
+                            }
+                            $query5 = "SELECT id from  span_detail where pier_id_one ='$row3->id' and  span_type=2";
+                            $q5 = $this->db->query($query5);
+                            $cour=$q5->result();
+                            $countright=$q5->num_rows();
+                            if ($countright == 0) {
+                                array_push($pier["specialspan"], array(
+                                    "id" => $row3->id,
+                                    "p_uid" => $row3->p_uid
                                 ));
                             }
                         endforeach;

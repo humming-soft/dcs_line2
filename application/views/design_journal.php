@@ -297,7 +297,7 @@ function populateSortable(id, selected) {
 
 // Draw modal's attribute table. Have to have "1"+attributename for edit modal and attributename for add modal
 /*Modified by jane, to follow the input type of each attributes*/
-function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, uom, order, dependency,left,right,span, type) {
+function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, uom, order, dependency,left,right,span,spantype,sspan,type) {
 	var isAdd = ((typeof type != "undefined") && (type == "add")) ? true : false;
 	var idname = (!isAdd ? "1" : "") + 'dataattbid' + dataattbcount;
 	var checkname = (!isAdd ? "1" : "") + 'dataattb' + dataattbcount;
@@ -306,8 +306,8 @@ function drawAttributeTable(dataattbcount, id, label, desc, start, end, weekly, 
 	var weekname = (!isAdd ? "1" : "") + 'week' + dataattbcount;
 	var ordername = (!isAdd ? "1" : "") + 'order' + dataattbcount;
 	var dependencyname = (!isAdd ? "1" : "") + 'dependency' + dataattbcount;
-	var content = '<tr><td><input type="hidden" name="' + idname + '" id="' + idname + '" value="' + id + '"/><input type="hidden" name="leftpiers" id="leftpiers" value="' + left + '"/><input type="hidden" name="rightpiers" id="rightpiers" value="' + right + '"/><input type="hidden" name="spancomplete" id="spancomplete" value="' + span + '"/>';
-	content += '<input type="checkbox" id="' + checkname + '" name="' + checkname + '" checked="true"/></td>';
+	var content = '<tr><td><input type="hidden" name="' + idname + '" id="' + idname + '" value="' + id + '"/><input type="hidden" name="leftpiers" id="leftpiers" value="' + left + '"/><input type="hidden" name="rightpiers" id="rightpiers" value="' + right + '"/><input type="hidden" name="spancomplete" id="spancomplete" value="' + span + '"/><input type="hidden" name="spantype" id="spantype" value="' + spantype + '"/><input type="hidden" name="spacialspanpier" id="spacialspanpier" value="' + sspan + '"/>';
+	content += '<input type="checkbox" class="dataattributes" value=1 id="' + checkname + '" name="' + checkname + '" checked="true"/></td>';
 	content += '<td>' + label + '</td>';
 	content += '<td>' + desc + '</td>';
 	if (desc == "Text Box" || desc == "Increment Text Box") {
@@ -426,11 +426,11 @@ $(document).ready(function()
 			$( ".pier" ).show();
 			$('#journalname').val('');
 			$('#journalname').attr('readonly', true);
-		}else if(textval=='span'){
-			$( ".pier" ).hide();
-			$('#journalname').val('');
-			$('#journalname').attr('readonly', true);
-		}
+		}/*else if(textval=='span'){
+            $( ".pier" ).hide();
+            $('#journalname').val('');
+            $('#journalname').attr('readonly', true);
+        }*/
 		else{
 			$( ".pier" ).hide();
 			$('#journalname').attr('readonly', false);
@@ -447,6 +447,7 @@ $(document).ready(function()
 		$('#MyModal2').modal('show');
 	});
 
+
 	$("#attbgroup").change(function()
 	{
 		$('#errorp').text("");
@@ -460,28 +461,52 @@ $(document).ready(function()
 		var datauom=<?php echo '[' . $datauom . ']'; ?>;
 
 		var dataattbcount=1;
-		if(textval=='normal span' || textval=='special span' ){
-			$( ".hidemee" ).show();
+		if(textval=='normal span'){
+            $( ".hidemee" ).show();
+            $( ".specialspan" ).hide();
             $( ".parapet" ).hide();
-			if(datakeyid.length!=0)
-			{
-				for(i=0;i<datakeyid.length;i++)
-				{
-					if(selectvalue==datagrp[i])
-					{
-						var content="<tr><td>";
-						content += '<input type="hidden" name="datagrpid'+dataattbcount+'" id="datagrpid'+dataattbcount+'" value="'+datakeyid[i]+'"/>';
-						content += '<input type="checkbox" class="select_all2" id="datagrp'+dataattbcount+'" name="datagrp'+dataattbcount+'" /></td><td>';
-						content += '<input type="hidden" name="datagrplabel'+dataattbcount+'" id="datagrplabel'+dataattbcount+'" value="'+datalabel[i]+'"/>'+datalabel[i]+'</td><td> ';
-						content += '<input type="hidden" name="datagrpdesc'+dataattbcount+'" id="datagrpdesc'+dataattbcount+'" value="'+datadesc[i]+'"/><input type="hidden" name="datagrpuom'+dataattbcount+'" id="datagrpuom'+dataattbcount+'" value="'+datauom[i]+'"/>'+datadesc[i]+'</td></tr>';
-						$("#dataattb").append(content);
-						dataattbcount++;
-					}
-				}
+        if(datakeyid.length!=0)
+        {
+            for(i=0;i<datakeyid.length;i++)
+            {
+                if(selectvalue==datagrp[i])
+                {
+                    var content="<tr><td>";
+                    content += '<input type="hidden" name="datagrpid'+dataattbcount+'" id="datagrpid'+dataattbcount+'" value="'+datakeyid[i]+'"/>';
+                    content += '<input type="checkbox" class="select_all2" id="datagrp'+dataattbcount+'" name="datagrp'+dataattbcount+'" /></td><td>';
+                    content += '<input type="hidden" name="datagrplabel'+dataattbcount+'" id="datagrplabel'+dataattbcount+'" value="'+datalabel[i]+'"/>'+datalabel[i]+'</td><td> ';
+                    content += '<input type="hidden" name="datagrpdesc'+dataattbcount+'" id="datagrpdesc'+dataattbcount+'" value="'+datadesc[i]+'"/><input type="hidden" name="datagrpuom'+dataattbcount+'" id="datagrpuom'+dataattbcount+'" value="'+datauom[i]+'"/>'+datadesc[i]+'</td></tr>';
+                    $("#dataattb").append(content);
+                    dataattbcount++;
+                }
+            }
 
-			}
-		}else if(textval=='parapet'){
+        }
+    }else if(textval=='special span' ){
+        $( ".specialspan" ).show();
+        $(".hidemee" ).hide();
+        $( ".parapet" ).hide();
+        if(datakeyid.length!=0)
+        {
+            for(i=0;i<datakeyid.length;i++)
+            {
+                if(selectvalue==datagrp[i])
+                {
+                    var content="<tr><td>";
+                    content += '<input type="hidden" name="datagrpid'+dataattbcount+'" id="datagrpid'+dataattbcount+'" value="'+datakeyid[i]+'"/>';
+                    content += '<input type="checkbox" class="select_all2" id="datagrp'+dataattbcount+'" name="datagrp'+dataattbcount+'" /></td><td>';
+                    content += '<input type="hidden" name="datagrplabel'+dataattbcount+'" id="datagrplabel'+dataattbcount+'" value="'+datalabel[i]+'"/>'+datalabel[i]+'</td><td> ';
+                    content += '<input type="hidden" name="datagrpdesc'+dataattbcount+'" id="datagrpdesc'+dataattbcount+'" value="'+datadesc[i]+'"/><input type="hidden" name="datagrpuom'+dataattbcount+'" id="datagrpuom'+dataattbcount+'" value="'+datauom[i]+'"/>'+datadesc[i]+'</td></tr>';
+                    $("#dataattb").append(content);
+                    dataattbcount++;
+                }
+            }
+
+        }
+    }
+    else if(textval=='parapet'){
             $( ".parapet" ).show();
+            $( ".specialspan" ).hide();
             $( ".hidemee" ).hide();
             if(datakeyid.length!=0)
             {
@@ -501,7 +526,9 @@ $(document).ready(function()
 
             }
         } else{
-			$( ".hidemee" ).hide();
+        $( ".parapet" ).hide();
+        $( ".specialspan" ).hide();
+        $( ".hidemee" ).hide();
 			if(datakeyid.length!=0)
 			{
 				for(i=0;i<datakeyid.length;i++)
@@ -544,12 +571,32 @@ $(document).ready(function()
     });
 	$('#dataattbadd').click(function()
 	{
+        $('#journalname').val('');
+        $('#journalname').attr('readonly', true);
 		var textvalue=$("#attbgroup").find(":selected").text().toLowerCase().trim();
 		var textvalue2=$("#journalcat").find(":selected").text().toLowerCase().trim();
 		var dataattbgrpcount=$('#dataattbgrpcount').val();
 		var dataattbcount=$('#dataattbcount').val();
+        var leftsp=0;
+        var rightsp=0;
+        for(i=1;i<=dataattbgrpcount;i++) {
+            if ($("#datagrp" + i).is(':checked')) {
+                var exist = 0;
+                for (j = 0; j < dataattbcount; j++) {
+                    if(textvalue=='special span'){
+                        var label1 = $('#datagrplabel'+i).val().toLowerCase();
+                        if(label1=='left span'){
+                            leftsp=1;
+                        }
+                        if(label1=='right span'){
+                            rightsp=1;
+                        }
+                    }
+                }
+            }
+        }
 		var selected=0;
-		if(textvalue2=='span' || textvalue=='special span' || textvalue=='normal span' ){
+		if(textvalue=='normal span' ){
 			var left = $("#leftpiers").val();
 			var right = $("#rightpiers").val();
 			if(left == -1 || right == -1){
@@ -559,6 +606,13 @@ $(document).ready(function()
 			var hashes = $("#leftpiers").find(":selected").text().trim();
 			$('#journalname').val(hashes+"-"+"SPAN");
 		}
+        if(textvalue=='special span'){
+            var left = $("#pierid").val();
+            if(left == -1 ){
+                $('#errorp').text("Please Select Dependent Piers to continue !!");
+                return false;
+            }
+        }
         if(textvalue=='parapet' ){
             $('#journalname').val('');
             $('#journalname').attr('readonly', true);
@@ -594,25 +648,43 @@ $(document).ready(function()
 					}
 					if(exist==0)
 					{
-
 						var id = $('#datagrpid'+i).val();
-						if(textvalue=='normal span' || textvalue=='special span'){
+						if(textvalue=='normal span' ){
 							var label = $('#datagrplabel'+i).val();
+                            $("#journalcat").find(":selected").text("Span");
 							var left=$("#leftpiers").val();
 							var right=$("#rightpiers").val();
+                            var sspan=-1;
                             var span=-1;
+                            var spantype=1;//Type one is normal span
 
-						}else if(textvalue=='parapet'){
+						}else if(textvalue=='special span'){
+                            var label = $('#datagrplabel'+i).val();
+                            $("#journalcat").find(":selected").text("Span");
+                            $( ".pier" ).hide();
+                            var left=-1;
+                            var right=-1;
+                            var sspan=$('#pierid').val();
+                            var span=-1;
+                            var spantype=2;//Type one is spaecial span
+                        }
+                        else if(textvalue=='parapet'){
                             var label = $('#datagrplabel'+i).val();
                             var span=$("#spanid").val();
                             var left=-1;
                             var right=-1;
+                            var sspan=-1;
+                            var spantype=0;//No type
                         }else{
 							var label = $('#datagrplabel'+i).val();
 							var left=-1;
 							var right=-1;
                             var span=-1;
+                            var sspan=-1;
+                            var spantype=0;//No type
 						}
+
+
 						var desc = $('#datagrpdesc'+i).val();
 						var start = "";
 						var end = "";
@@ -620,7 +692,7 @@ $(document).ready(function()
 						var uom = $('#datagrpuom'+i).val();
 						var order = dataattbcount;
 						var dependency = "";
-						var content = drawAttributeTable(dataattbcount,id,label,desc,start,end,weekly,uom,order,dependency,left,right,span,"add");
+						var content = drawAttributeTable(dataattbcount,id,label,desc,start,end,weekly,uom,order,dependency,left,right,span,spantype,sspan,"add");
 						$("#dataattbtab").append(content);
 							/*var content ='<tr><td><input type="hidden" name="dataattbid'+dataattbcount+'" id="dataattbid'+dataattbcount+'" value="'+$('#datagrpid'+i).val()+'"/>';
 							content += '<input type="checkbox" id="dataattb'+dataattbcount+'" name="dataattb'+dataattbcount+'" checked="true"/></td>';
@@ -634,18 +706,73 @@ $(document).ready(function()
 							$("#dataattbtab").append(content);*/
 							dataattbcount++;
 						}
+
 					}
 				}
 				$('#dataattbcount').val(dataattbcount);		
 				$('#MyModal2').modal('hide');
 				$('#MyModal').modal('show');
 				populateDependencySelect(true);
+
 			}
 			else
 			{
 				alert('Please select atleast 1 item');
 			}
+        //addedd by ANCY MATHEW for special span naming
+        if( textvalue=='special span' && leftsp==1 && rightsp==1){
+            var hashes = $("#pierid").find(":selected").text().trim();
+            $('#journalname').val(hashes+"-"+"SPAN");
+        } if(textvalue=='special span' && leftsp==1 && rightsp==0){
+            var hashes = $("#pierid").find(":selected").text().trim();
+            $('#journalname').val(hashes+"-"+"L");
+        }if(textvalue=='special span' && leftsp==0 && rightsp==1){
+            var hashes = $("#pierid").find(":selected").text().trim();
+            $('#journalname').val(hashes+"-"+"R");
+        }
 		});
+    //addedd by ANCY MATHEW for data attributes select and uselect functionalities
+    $( document ).on( 'change', '.dataattributes', function() {
+      if(($('.dataattributes:checked').length)==0){
+          alert("Atleast one data attribute is required!!!");
+          $(this).attr('checked', true);
+      }else {
+          if (this.checked) {
+              $(this).val(1);
+              $(this).attr('checked', true);
+          } else {
+              $(this).val(0);
+              $(this).attr('checked', false);
+          }
+          var leftsp = 0;
+          var rightsp = 0;
+          var type = $("#spantype").val();
+          var v = $('#journalname').val();
+          var arr = v.split('-');
+          if (type == 2) {
+              $(".dataattributes").each(function () {
+                  if (this.checked) {
+                      if ($(this).parent().next('td').text().toLowerCase() == 'left span') {
+                          leftsp = 1;
+                      }
+                      if ($(this).parent().next('td').text().toLowerCase() == 'right span') {
+                          rightsp = 1;
+                      }
+                  }
+
+              });
+              if (leftsp == 1 && rightsp == 1) {
+                  $('#journalname').val(arr[0] + "-SPAN");
+              }
+              if (leftsp == 0 && rightsp == 1) {
+                  $('#journalname').val(arr[0] + "-R");
+              }
+              if (leftsp == 1 && rightsp == 0) {
+                  $('#journalname').val(arr[0] + "-L");
+              }
+          }
+      }
+    });
 
 	$('#dataattbcancel').click(function()
 	{
@@ -1451,6 +1578,19 @@ var checkStartValue = function(n) {
 											</tr>
 										</table>
 									</div>
+                            <div class="form-group specialspan" hidden="hidden">
+                                <label for="select" class="col-lg-5 control-label">Pier Dependent<red>*</red></label>
+                                <select class="dropdown-toggle" id="pierid" name="pierid">
+                                    <option value="-1">Select Pier</option>
+                                    <?php
+                                    foreach ($spspan as $specialspan):
+                                    ?>
+                                    <option value="<?php echo $specialspan['id'] ; ?>"><?php echo $specialspan['p_uid']; ?></option>
+                                    <?php
+                                    endforeach;
+                                    ?>
+                                </select>
+                            </div>
                                 <div class="form-group parapet" hidden="hidden">
                                     <label for="select" class="col-lg-5 control-label">Span Dependent<red>*</red></label>
                                     <select class="dropdown-toggle" id="spanid" name="spanid">
