@@ -1,3 +1,4 @@
+
 <script>
 	$(document).ready(function()
 	{
@@ -85,7 +86,7 @@
 		<input type="button" class="btn btn-primary btn-sm" id="recordsearch" name="recordsearch" value="Search" />
 		<a href="<?php /*echo base_url(); */?><?php /*echo $cpagename; */?>" class="btn btn-danger btn-sm">Clear</a>
 	</div>-->
-<div class="row text-center text-success"><?php echo $message; ?> </div>
+    <div class="row text-center text-success" ><?php echo $message; ?> </div>
     <table class="table table-striped table-hover" id="prog_val_table">
         <thead>
         <tr>
@@ -197,19 +198,3 @@
         $('div.dataTables_filter input').attr('placeholder', 'Enter the text here');
     });
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

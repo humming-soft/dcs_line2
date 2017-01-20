@@ -270,6 +270,13 @@ class Journalvalidationview extends CI_Controller
 			// $sess_array = array('message' => "Journal Validation Updated Successfully");
 			$this->session->set_userdata('message', $sess_array);
 			echo json_encode(array('st'=>1, 'msg' => 'Success'));
+
+
+
+          /*  $sess_array = array('message' => "Added Successfully","m_type" => 1);
+            $this->session->set_userdata('message', $sess_array);
+            echo json_encode(array('st'=>1));*/
+
 		}
 	}
 	
