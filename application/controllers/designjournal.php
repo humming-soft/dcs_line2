@@ -207,7 +207,6 @@ class Designjournal extends CI_Controller
         $journal_type = $this->input->post('j_type');
 
         // Commented by Agaile on 26/11/2015
-
         // if($journal_type == 2) {$is_image = 1;} else {$is_image = 0;} //Check journal type. Return 1 if image type;
 
         // AGAILE : START
@@ -300,15 +299,12 @@ class Designjournal extends CI_Controller
                 $enderror='End date should be less than the Project End Date ('.$projectend.')';
             }
         }
-
-
         if($this->form_validation->run() == FALSE || $dataattberror!='' || $dataerror=='' || $enderror!='')
         {
             echo json_encode(array('st'=>0, 'msg' => form_error('projectname'),'msg1'=>form_error('journalname'),'msg2'=>form_error('user'),'msg3'=>form_error('frequency'),'msg4'=>form_error('startdate'),'msg5'=>'','msg6'=>$dataattberror,'msg7'=>$datamsg,'msg8'=>$enderror,'msg9'=>form_error('journalproperty')));
         }
         else
         {
-
             $name=$this->input->post('journalname');
             $property=$this->input->post('journalproperty');
             $projectno=$this->input->post('projectname');
@@ -475,7 +471,7 @@ class Designjournal extends CI_Controller
                     }*/
                     $pjtName =$this->design->get_project_name($projectno);
                     $viaductName=explode(' ',$pjtName);
-                    $insert=array('journal_no'=>$journalid,'project_no'=>$projectno,'pier_v'=>$viaductName[0], 'pier_id'=>$name, 'pier_north_id'=>$north, 'pier_south_id'=>$south, 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0, 'sbg'=>"sbg", 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0, 'status'=>0, 'create_date'=>date('y-m-d'));
+                    $insert=array('journal_no'=>$journalid,'project_no'=>$projectno,'pier_v'=>$viaductName[0], 'pier_id'=>$name, 'pier_north_id'=>$north, 'pier_south_id'=>$south, 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0, 'sbg'=>"sbg", 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0, 'status'=>0, 'create_date'=>date('Y-m-d'));
                     $this->design->add_pirer_entry($insert);
                 }
                 //END
@@ -714,7 +710,7 @@ class Designjournal extends CI_Controller
                 //Coded by ANCY MATHEW
                 //For add the journal details to table pier_span_col
                 //10-01-2017
-                $journalType = $this->design->get_journal_type( $this->input->post('journalcat'));
+                $journalType = $this->design->get_journal_type( $this->input->post('journalcat1'));
                 if(strtolower($journalType)=='pier'){
                     $north=0;
                     $south=0;
@@ -800,7 +796,6 @@ class Designjournal extends CI_Controller
                         }
                     }
                 }
-
                 $sess_array = array('message' => $this->securitys->get_label_object(7) . " Updated Successfully", "type" => 1);
                 $this->session->set_userdata('message', $sess_array);
                 echo json_encode(array('st' => 1, 'msg' => 'Success', 'msg1' => '', 'msg2' => '', 'msg3' => '', 'msg4' => ''));
@@ -809,7 +804,6 @@ class Designjournal extends CI_Controller
             }
         }
     }
-
     /*private function to compare are find difference between two arrays. done by jane.*/
     private function array_recursive_diff($current_validator_ids, $previous_validator_ids)
     {
@@ -865,7 +859,6 @@ class Designjournal extends CI_Controller
     {
         $this->index();
     }
-
     function searchrecord()
     {
         $sess_array = array(
@@ -874,12 +867,10 @@ class Designjournal extends CI_Controller
         $this->session->set_userdata('searchrecord', $sess_array);
         echo json_encode(array('st'=>1, 'msg' => 'Success'));
     }
-
     function search()
     {
         $this->index();
     }
-
     // added by agaile to enable edit and non edit start date 23/11/2015
     function fetch_dataentry_no()
     {
@@ -918,7 +909,8 @@ class Designjournal extends CI_Controller
 
 
     /*function to update reminders*/
-    function update_reminder(){
+    function update_reminder()
+    {
         $this->reminder->update_reminder();
     }
 }

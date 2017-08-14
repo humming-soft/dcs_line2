@@ -355,53 +355,53 @@ class Journaldataentryadd extends CI_Controller
             $dataid_one = $this->input->post('dataentryno');
             $journal_no =$this->assessment->get_journal_id($dataid_one);
             if($journal_no != null){
-                $cat_no =$this->assessment->get_cat_id($journal_no);
+                $cat_no =$this->assessment->get_cat_id($journal_no);//category of journal eg:1 span,2 pier, 4 others
 
                 if($cat_no !=null){
-                    $journalType = $this->assessment->get_journal_type($cat_no);
+                    $journalType = $this->assessment->get_journal_type($cat_no);// take category name
                 }
                 if(strtolower($journalType)=='pier'){
                     for ($i = 1; $i <= $dataattbcount; $i++) {
                         $dataattb = 'dataattb' . $i;
                         $dataattbid = 'dataattbid' . $i;
                         if($this->input->post($dataattbid)==1){
-                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),1);
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattb),1);
                         }
                         if($this->input->post($dataattbid)==2){
-                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),2);
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattb),2);
                         }
                         if($this->input->post($dataattbid)==3){
-                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),3);
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattb),3);
                         }
                         if($this->input->post($dataattbid)==4){
-                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),4);
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattb),4);
                         }
                         if($this->input->post($dataattbid)==5){
-                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),5);
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattb),5);
                         }
                         if($this->input->post($dataattbid)==6){
-                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),6);
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattb),6);
                         }
                         if($this->input->post($dataattbid)==7){
-                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),7);
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattb),7);
                         }
                         if($this->input->post($dataattbid)==8){
-                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),8);
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattb),8);
                         }
                         if($this->input->post($dataattbid)==9){
-                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),9);
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattb),9);
                         }
                         if($this->input->post($dataattbid)==10){
-                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),10);
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattb),10);
                         }
                         if($this->input->post($dataattbid)==11){
-                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),11);
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattb),11);
                         }
                         if($this->input->post($dataattbid)==12){
-                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),12);
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattb),12);
                         }
                         if($this->input->post($dataattbid)==13){
-                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattbid),13);
+                            $this->assessment->update_pier_span_col($journal_no,$this->input->post($dataattb),13);
                         }
 
                     }

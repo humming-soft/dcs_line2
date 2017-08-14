@@ -1279,34 +1279,33 @@ Class Assessment extends CI_Model
     //10-01-2017
     function update_pier_span_col($journal_no,$value,$field)
     {
-                    if($value==1){
+                    if($field==1){
                         $this->db->set('pier_pile_1', $value);
-                    }if($value==2){
+                    }if($field==2){
                         $this->db->set('pier_pile_1', $value);
-                    }if($value==3){
+                    }if($field==3){
                         $this->db->set('pier_pile_2', $value);
-                    }if($value==4){
+                    }if($field==4){
                         $this->db->set('pier_pilecap_1', $value);
-                    }if($value==5){
+                    }if($field==5){
                         $this->db->set('pier_pilecap_1', $value);
-                    }if($value==6){
+                    }if($field==6){
                         $this->db->set('pier_pilecap_2', $value);
-                    }if($value==7){
+                    }if($field==7){
                         $this->db->set('pier_pier_1', $value);
-                    }if($value==8){
+                    }if($field==8){
                         $this->db->set('pier_pier_1', $value);
-                    }if($value==9){
+                    }if($field==9){
                         $this->db->set('pier_pier_2', $value);
-                    }if($value==10){
+                    }if($field==10){
                         $this->db->set('pier_pieread_1', $value);
-                    }if($value==11){
+                    }if($field==11){
                         $this->db->set('pier_pieread_1', $value);
                     }if($value==12){
                         $this->db->set('pier_pieread_2', $value);
                     }if($value==13){
                         $this->db->set('pier_pieread_3', $value);
                     }
-        $this->db->set('pier_pile_1', $value);
         $this->db->where('journal_no', $journal_no);
         $this->db->update('pier_span_col');
     }

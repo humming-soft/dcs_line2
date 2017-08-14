@@ -436,6 +436,27 @@ $(document).ready(function()
 			$('#journalname').attr('readonly', false);
 		}
 	});
+
+   /* $('#journalcat1').change(function() {
+      var textval1=$(this).find().text().toLowerCase().trim();
+    });*/
+    $('#journalcat1').change(function()
+    {
+        var textval=$(this).find(":selected").text().toLowerCase().trim();
+        if(textval=='pier'){
+            $( ".pier1" ).show();
+            $('#journalname1').val('');
+            $('#journalname1').attr('readonly', true);
+        }/*else if(textval=='span'){
+         $( ".pier" ).hide();
+         $('#journalname').val('');
+         $('#journalname').attr('readonly', true);
+         }*/
+        else{
+            $( ".pier1" ).hide();
+            $('#journalname1').attr('readonly', false);
+        }
+    });
 	$('#pierjornal').change(function()
 	{
 		var textval=$(this).find(":selected").text().trim();
@@ -447,7 +468,11 @@ $(document).ready(function()
 		$('#MyModal2').modal('show');
 	});
 
-
+    $('#pierjornal1').change(function()
+    {
+        var textval=$(this).find(":selected").text().trim();
+        $('#journalname1').val(textval);
+    });
 	$("#attbgroup").change(function()
 	{
 		$('#errorp').text("");
@@ -759,7 +784,6 @@ $(document).ready(function()
                           rightsp = 1;
                       }
                   }
-
               });
               if (leftsp == 1 && rightsp == 1) {
                   $('#journalname').val(arr[0] + "-SPAN");
@@ -821,6 +845,7 @@ $(document).ready(function()
 	{	
 		var selectvalue = $(this).val();
 		$("#dataattb1").find("tr:gt(1)").remove();
+        var textval=$(this).find(":selected").text().toLowerCase().trim();
 		var datakeyid=<?php echo '[' . $datakeyid . ']'; ?>;
 		var datalabel=<?php echo '[' . $datalabel . ']'; ?>;
 		var datadesc=<?php echo '[' . $datadesc . ']'; ?>;
@@ -828,29 +853,162 @@ $(document).ready(function()
 		var datauom=<?php echo '[' . $datauom . ']'; ?>;
 
 		var dataattbcount=1;
-		if(datakeyid.length!=0)
-		{
-			for(i=0;i<datakeyid.length;i++)
-			{
-				if(selectvalue==datagrp[i])
-				{
-					var content="<tr><td>";
-					content += '<input type="hidden" name="1datagrpid'+dataattbcount+'" id="1datagrpid'+dataattbcount+'" value="'+datakeyid[i]+'"/>';
-					content += '<input type="checkbox" id="1datagrp'+dataattbcount+'" name="1datagrp'+dataattbcount+'" /></td><td>';
-					content += '<input type="hidden" name="1datagrplabel'+dataattbcount+'" id="1datagrplabel'+dataattbcount+'" value="'+datalabel[i]+'"/>'+datalabel[i]+'</td><td> ';
-					content += '<input type="hidden" name="1datagrpdesc'+dataattbcount+'" id="1datagrpdesc'+dataattbcount+'" value="'+datadesc[i]+'"/><input type="hidden" name="1datagrpuom'+dataattbcount+'" id="1datagrpuom'+dataattbcount+'" value="'+datauom[i]+'"/>'+datadesc[i]+'</td></tr>';
-					$("#dataattb1").append(content);
-					dataattbcount++;
-				}
-			}
-		}
+	/*	if(datakeyid.length!=0)
+        {
+            for(i=0;i<datakeyid.length;i++)
+            {
+                if(selectvalue==datagrp[i])
+                {
+                    var content="<tr><td>";
+                    content += '<input type="hidden" name="1datagrpid'+dataattbcount+'" id="1datagrpid'+dataattbcount+'" value="'+datakeyid[i]+'"/>';
+                    content += '<input type="checkbox" id="1datagrp'+dataattbcount+'" name="1datagrp'+dataattbcount+'" /></td><td>';
+                    content += '<input type="hidden" name="1datagrplabel'+dataattbcount+'" id="1datagrplabel'+dataattbcount+'" value="'+datalabel[i]+'"/>'+datalabel[i]+'</td><td> ';
+                    content += '<input type="hidden" name="1datagrpdesc'+dataattbcount+'" id="1datagrpdesc'+dataattbcount+'" value="'+datadesc[i]+'"/><input type="hidden" name="1datagrpuom'+dataattbcount+'" id="1datagrpuom'+dataattbcount+'" value="'+datauom[i]+'"/>'+datadesc[i]+'</td></tr>';
+                    $("#dataattb1").append(content);
+                    dataattbcount++;
+                }
+            }
+		}*/
+        if(textval=='normal span'){
+            $( ".hidemee1" ).show();
+            $( ".specialspan1" ).hide();
+            $( ".parapet1" ).hide();
+            if(datakeyid.length!=0)
+            {
+                for(i=0;i<datakeyid.length;i++)
+                {
+                    if(selectvalue==datagrp[i])
+                    {
+                        var content="<tr><td>";
+                        content += '<input type="hidden" name="1datagrpid'+dataattbcount+'" id="1datagrpid'+dataattbcount+'" value="'+datakeyid[i]+'"/>';
+                        content += '<input type="checkbox" id="1datagrp'+dataattbcount+'" name="1datagrp'+dataattbcount+'" /></td><td>';
+                        content += '<input type="hidden" name="1datagrplabel'+dataattbcount+'" id="1datagrplabel'+dataattbcount+'" value="'+datalabel[i]+'"/>'+datalabel[i]+'</td><td> ';
+                        content += '<input type="hidden" name="1datagrpdesc'+dataattbcount+'" id="1datagrpdesc'+dataattbcount+'" value="'+datadesc[i]+'"/><input type="hidden" name="1datagrpuom'+dataattbcount+'" id="1datagrpuom'+dataattbcount+'" value="'+datauom[i]+'"/>'+datadesc[i]+'</td></tr>';
+                        $("#dataattb1").append(content);
+                        dataattbcount++;
+                    }
+                }
+            }
+        }else if(textval=='special span' ){
+            $( ".specialspan1" ).show();
+            $(".hidemee1" ).hide();
+            $( ".parapet1" ).hide();
+            if(datakeyid.length!=0)
+            {
+                for(i=0;i<datakeyid.length;i++)
+                {
+                    if(selectvalue==datagrp[i])
+                    {
+                        var content="<tr><td>";
+                        content += '<input type="hidden" name="1datagrpid'+dataattbcount+'" id="1datagrpid'+dataattbcount+'" value="'+datakeyid[i]+'"/>';
+                        content += '<input type="checkbox" id="1datagrp'+dataattbcount+'" name="1datagrp'+dataattbcount+'" /></td><td>';
+                        content += '<input type="hidden" name="1datagrplabel'+dataattbcount+'" id="1datagrplabel'+dataattbcount+'" value="'+datalabel[i]+'"/>'+datalabel[i]+'</td><td> ';
+                        content += '<input type="hidden" name="1datagrpdesc'+dataattbcount+'" id="1datagrpdesc'+dataattbcount+'" value="'+datadesc[i]+'"/><input type="hidden" name="1datagrpuom'+dataattbcount+'" id="1datagrpuom'+dataattbcount+'" value="'+datauom[i]+'"/>'+datadesc[i]+'</td></tr>';
+                        $("#dataattb1").append(content);
+                        dataattbcount++;
+                    }
+                }
+            }
+        }
+        else if(textval=='parapet'){
+            $( ".parapet1" ).show();
+            $( ".specialspan1" ).hide();
+            $( ".hidemee1" ).hide();
+            if(datakeyid.length!=0)
+            {
+                for(i=0;i<datakeyid.length;i++)
+                {
+                    if(selectvalue==datagrp[i])
+                    {
+                        var content="<tr><td>";
+                        content += '<input type="hidden" name="1datagrpid'+dataattbcount+'" id="1datagrpid'+dataattbcount+'" value="'+datakeyid[i]+'"/>';
+                        content += '<input type="checkbox" id="1datagrp'+dataattbcount+'" name="1datagrp'+dataattbcount+'" /></td><td>';
+                        content += '<input type="hidden" name="1datagrplabel'+dataattbcount+'" id="1datagrplabel'+dataattbcount+'" value="'+datalabel[i]+'"/>'+datalabel[i]+'</td><td> ';
+                        content += '<input type="hidden" name="1datagrpdesc'+dataattbcount+'" id="1datagrpdesc'+dataattbcount+'" value="'+datadesc[i]+'"/><input type="hidden" name="1datagrpuom'+dataattbcount+'" id="1datagrpuom'+dataattbcount+'" value="'+datauom[i]+'"/>'+datadesc[i]+'</td></tr>';
+                        $("#dataattb1").append(content);
+                        dataattbcount++;
+                    }
+                }
+            }
+        } else{
+            $( ".parapet1" ).hide();
+            $( ".specialspan1" ).hide();
+            $( ".hidemee1" ).hide();
+            if(datakeyid.length!=0)
+            {
+                for(i=0;i<datakeyid.length;i++)
+                {
+                    if(selectvalue==datagrp[i])
+                    {
+                        var content="<tr><td>";
+                        content += '<input type="hidden" name="1datagrpid'+dataattbcount+'" id="1datagrpid'+dataattbcount+'" value="'+datakeyid[i]+'"/>';
+                        content += '<input type="checkbox" id="1datagrp'+dataattbcount+'" name="1datagrp'+dataattbcount+'" /></td><td>';
+                        content += '<input type="hidden" name="1datagrplabel'+dataattbcount+'" id="1datagrplabel'+dataattbcount+'" value="'+datalabel[i]+'"/>'+datalabel[i]+'</td><td> ';
+                        content += '<input type="hidden" name="1datagrpdesc'+dataattbcount+'" id="1datagrpdesc'+dataattbcount+'" value="'+datadesc[i]+'"/><input type="hidden" name="1datagrpuom'+dataattbcount+'" id="1datagrpuom'+dataattbcount+'" value="'+datauom[i]+'"/>'+datadesc[i]+'</td></tr>';
+                        $("#dataattb1").append(content);
+                        dataattbcount++;
+                    }
+                }
+            }
+        }
 		$("#dataattbgrpcount1").val(dataattbcount-1);
 	});
 
 	$('#dataattbadd1').click(function()
-	{
+    {
+        $('#journalname1').val('');
+        $('#journalname1').attr('readonly', true);
+        var textvalue=$("#attbgroup1").find(":selected").text().toLowerCase().trim();
+        var textvalue2=$("#journalcat1").find(":selected").text().toLowerCase().trim();
 		var dataattbgrpcount=$('#dataattbgrpcount1').val();
 		var dataattbcount=$('#dataattbcount1').val();
+        var leftsp1=0;
+        var rightsp1=0;
+        for(i=1;i<=dataattbgrpcount;i++) {
+            if($("#1datagrp"+i).is(':checked')) {
+                var exist = 0;
+                for (j = 0; j < dataattbcount; j++) {
+                    if(textvalue=='special span'){
+                        var label1 = $('#1datagrplabel'+i).val().toLowerCase();
+                        if(label1=='left span'){
+                            leftsp1=1;
+                        }
+                        if(label1=='right span'){
+                            rightsp1=1;
+                        }
+                    }
+                }
+            }
+        }
+        if(textvalue=='normal span' ){
+            var left = $("#leftpiers1").val();
+            var right = $("#rightpiers1").val();
+            if(left == -1 || right == -1){
+                $('#errorp').text("Please Select Left and Right Piers to continue !!");
+                return false;
+            }
+            var hashes = $("#leftpiers").find(":selected").text().trim();
+            $('#journalname1').val(hashes+"-"+"SPAN");
+        }
+        if(textvalue=='special span'){
+            var left = $("#pierid1").val();
+            if(left == -1 ){
+                $('#errorp').text("Please Select Dependent Piers to continue !!");
+                return false;
+            }
+        }
+        if(textvalue=='parapet' ){
+            $('#journalname1').val('');
+            $('#journalname1').attr('readonly', true);
+            var val = $("#spanid1").val();
+            if(val == -1 ){
+                $('#errorp').text("Please Select the span to continue !!");
+                return false;
+            }
+            var hashes = $("#spanid1").find(":selected").text().trim();
+            var arr = hashes.split('-');
+            $('#journalname1').val(arr[0]+"-"+"PARAPET");
+        }
 		for(i=1;i<=dataattbgrpcount;i++)
 		{
 			if($("#1datagrp"+i).is(':checked'))
@@ -864,7 +1022,6 @@ $(document).ready(function()
 				var uom = $('#1datagrpuom'+i).val();
 				var order = dataattbcount;
 				var dependency = "";
-
 				var content = drawAttributeTable(dataattbcount,id,label,desc,start,end,weekly,uom,order,dependency);
 					/*
 					var content ='<tr><td><input type="hidden" name="1dataattbid'+dataattbcount+'" id="1dataattbid'+dataattbcount+'" value="'+id+'"/>';
@@ -896,7 +1053,6 @@ $(document).ready(function()
 
 	$(document).on("click", ".modaledit", function ()
 	{
-
 		var empty="";
 
 		$(".modal-body #errorprojname1").html( empty );
@@ -921,6 +1077,7 @@ $(document).ready(function()
 		var editid = $(this).data('editid');
 		var isimage = $(this).data('isimage');
 		var projno = $(this).data('projno');
+        var jounalcat=$(this).data('catno');
 		var journalname = $(this).data('journalname');
 		var journalproperty = $(this).data('journalproperty');
 		var albumname = $(this).data('albumname');
@@ -949,6 +1106,7 @@ $(document).ready(function()
 
 			$('.modal-body #editjournalno').val(editid);
 			$('.modal-body #projectname1').val(projno);
+            $('.modal-body #journalcat1').val(jounalcat);
 			$('.modal-body #journalname1').val(journalname);
 			$('.modal-body #journalproperty1').val(journalproperty);
 			$('.modal-body #albumname1').val(albumname);
@@ -963,7 +1121,11 @@ $(document).ready(function()
 
 			var userskey=<?php echo '[' . $userkey . ']'; ?>;
 			var usersvalue=<?php echo '[' . $uservalue . ']'; ?>;
-
+            if(jounalcat==2){
+                $( ".pier1" ).show();
+                $('#pierjornal1').append($("<option></option>").attr("value",-1).text(journalname) .attr('selected', true));
+                $('#journalname1').attr('readonly', true);
+            }
 
 			for (var j = 0; j < validatorval1.length; j++)
 			{
@@ -1986,6 +2148,67 @@ var checkStartValue = function(n) {
 													?>
 													<input type="hidden" name="dataattbgrpcount1" id="dataattbgrpcount1" value="<?php echo $dataattbcount-1; ?>" />
 												</table>
+                                        <div class="form-group hidemee1" hidden="hidden">
+                                            <table class="table table-striped table-hover">
+
+                                                <tr>
+                                                    <th colspan="2" align="left">Left Pier</th>
+                                                    <th colspan="2" >Right Pier</th>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" align="left">
+                                                        <select class="dropdown-toggle" id="leftpiers1" name="leftpiers1">
+                                                            <option value="-1">Select Left pier</option>
+                                                            <?php
+                                                            foreach ($leftpiers as $lpiers):
+                                                            ?>
+                                                            <option value="<?php echo $lpiers['id'] ; ?>"><?php echo $lpiers['p_uid']; ?></option>
+                                                            <?php
+                                                            endforeach;
+                                                            ?>
+                                                        </select>
+                                                    </td>
+                                                    <td colspan="2" >
+                                                        <select class="dropdown-toggle" id="rightpiers1" name="rightpiers1">
+                                                            <option value="-1">Select Right Pier</option>
+                                                            <?php
+                                                            foreach ($rightpiers as $rpiers):
+                                                            ?>
+                                                            <option value="<?php echo $rpiers['id'] ; ?>"><?php echo$rpiers['p_uid']; ?></option>
+                                                            <?php
+                                                            endforeach;
+                                                            ?>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="form-group specialspan1" hidden="hidden">
+                                            <label for="select" class="col-lg-5 control-label">Pier Dependent<red>*</red></label>
+                                            <select class="dropdown-toggle" id="pierid1" name="pierid1">
+                                                <option value="-1">Select Pier</option>
+                                                <?php
+                                                foreach ($spspan as $specialspan):
+                                                ?>
+                                                <option value="<?php echo $specialspan['id'] ; ?>"><?php echo $specialspan['p_uid']; ?></option>
+                                                <?php
+                                                endforeach;
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group parapet1" hidden="hidden">
+                                            <label for="select" class="col-lg-5 control-label">Span Dependent<red>*</red></label>
+                                            <select class="dropdown-toggle" id="spanid1" name="spanid1">
+                                                <option value="-1">Select Span</option>
+                                                <?php
+                                                foreach ($span as $spancmpleted):
+                                                ?>
+                                                <option value="<?php echo $spancmpleted['journal_no'] ; ?>"><?php echo $spancmpleted['journal_name']; ?></option>
+                                                <?php
+                                                endforeach;
+                                                ?>
+                                            </select>
+                                        </div>
 											</div>
 										</div>
 										<div class="modal-footer" style="text-align:center;border:0;">
@@ -2053,7 +2276,37 @@ var checkStartValue = function(n) {
 														</select>
 													</div>
 												</div>
-
+                                                <div class="form-group">
+                                                    <label for="select" class="col-lg-2 control-label"></label>
+                                                    <div class="col-lg-10">
+                                                        <label id="errorjournalcategory1" class="text-danger"></label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="select" class="col-lg-2 control-label">Journal Category<red>*</red></label>
+                                                    <div class="col-lg-10">
+                                                        <select class="dropdown-toggle" id="journalcat1" name="journalcat1">
+                                                            <option value="0">Select Category</option>
+                                                            <?php
+                                                            foreach ($journalcategory as $journalcat):
+                                                            ?>
+                                                            <option value="<?php echo $journalcat->journal_category_id; ?>"><?php echo $journalcat->journal_category_name; ?></option>
+                                                            <?php
+                                                            endforeach;
+                                                            ?>
+                                                        </select>
+                                                        <select class="dropdown-toggle pier1" id="pierjornal1" name="pierjornal1" hidden="hidden">
+                                                            <option value="0">Select Pier</option>
+                                                            <?php
+                                                            foreach ($piers as $allpiers):
+                                                            ?>
+                                                            <option value="<?php echo $allpiers['id']; ?>"><?php echo $allpiers['p_uid']; ?></option>
+                                                            <?php
+                                                            endforeach;
+                                                            ?>
+                                                        </select>
+                                                    </div>
+                                                </div>
 												<div class="form-group">
 													<label for="select" class="col-lg-2 control-label"></label>
 													<div class="col-lg-10">
@@ -2297,7 +2550,7 @@ var checkStartValue = function(n) {
 										{
 
 											?>
-											<a href="#" id="editing" data-toggle="modal" data-target="#MyModal1" class="modaledit" data-editid="<?php echo $record->journal_no; ?>" data-projno="<?php echo $record->project_no; ?>" data-journalname="<?php echo $record->journal_name; ?>" data-user="<?php echo $record->user_id; ?>" data-startdate="<?php echo $record->start_date; ?>" data-enddate="<?php echo $record->end_date; ?>" data-frequency="<?php echo $record->frequency_no; ?>"
+											<a href="#" id="editing" data-toggle="modal" data-target="#MyModal1" class="modaledit" data-editid="<?php echo $record->journal_no; ?>" data-projno="<?php echo $record->project_no; ?>" data-catno="<?php echo $record->journal_category_id; ?>"  data-journalname="<?php echo $record->journal_name; ?>" data-user="<?php echo $record->user_id; ?>" data-startdate="<?php echo $record->start_date; ?>" data-enddate="<?php echo $record->end_date; ?>" data-frequency="<?php echo $record->frequency_no; ?>"
 												data-validatorvalue="<?php echo $validatorvalues; ?>" data-dataentryvalue="<?php echo $dataentryvalues; ?>" data-dataattbvalue="<?php echo $dataattbvalues; ?>" data-journalproperty="<?php echo $record->journal_property; ?>" data-albumname="<?php echo $record->album_name; ?>" data-dependency='<?php echo $dependency;?>' data-isimage='<?php echo $is_image;?>'> <span class="glyphicon glyphicon-edit">&nbsp;</span></a>
 												<?php
 											}
