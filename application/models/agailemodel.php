@@ -53,6 +53,16 @@ Class AgaileModel extends CI_Model
         return $q->num_rows();
 
     }
+    function fetch_journal_type($journal_no)
+    {
+        $query = "SELECT is_image FROM journal_master where journal_no=$journal_no";
+        $result = $this->db->query($query)->result();
+        if (sizeOf($result) > 0) {
+            return $result[0]->journal_category_id;
+        }
+        return false;
+
+    }
 }
 
 ?>
