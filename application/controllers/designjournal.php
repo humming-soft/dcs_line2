@@ -250,7 +250,7 @@ class Designjournal extends CI_Controller
                 $attbselect = 1;
             }
         }
-        if($attbselect==0){
+        if($attbselect==0 && $is_image==0){
             $dataattberror = "Atleast one Data Attribute is requiredd.";
         }
         for($i=1;$i<=$attbcount-1;$i++)
@@ -549,40 +549,47 @@ class Designjournal extends CI_Controller
                 $datamsg = '';
             }
         }
-        for ($i = 1; $i <= $attbcount - 1; $i++) {
-            $chk = '1dataattb' . $i;
-            if($this->input->post($chk)==1){
-                $attbselect = 1;
+        $journalid = $this->input->post('editjournalno');
+        if ($journalid != "") {
+            $isimg = $this->agailemodel->fetch_journal_type($journalid);
+        }
+        if($isimg == 0){
+            for ($i = 1; $i <= $attbcount - 1; $i++) {
+                $chk = '1dataattb' . $i;
+                if($this->input->post($chk)==1){
+                    $attbselect = 1;
+                }
             }
         }
-        if($attbselect==0){
+        if($attbselect==0 && $isimg==0){
             $dataattberror = "Atleast one Data Attribute is requiredd.";
         }
-        for ($i = 1; $i <= $attbcount - 1; $i++) {
-            $chk = '1dataattb' . $i;
-            $start = '1start' . $i;
-            $end = '1end' . $i;
-            $week = '1week' . $i;
-            $order = '1order' . $i;
-            //$attbid='1dataattbid'.$i;
-            $val=$this->input->post($chk);
-            if($val==1)
-            {
+        if($isimg == 0) {
+            for ($i = 1; $i <= $attbcount - 1; $i++) {
+                $chk = '1dataattb' . $i;
+                $start = '1start' . $i;
+                $end = '1end' . $i;
+                $week = '1week' . $i;
+                $order = '1order' . $i;
+                //$attbid='1dataattbid'.$i;
+                $val = $this->input->post($chk);
+                if ($val == 1) {
 
-            if ($this->input->post($start) == '' /*|| !ctype_digit($this->input->post($start))*/) {
-                $dataattberror = "Start value is required.";
-            }
-            if ($this->input->post($end) == '' /*|| !ctype_digit($this->input->post($end))*/) {
-                $dataattberror = "End value is required.";
-            }
-            if ($this->input->post($week) == '' /*|| !ctype_digit($this->input->post($week))*/) {
-                $dataattberror = "Weekly Max value is required.";
-            }
-            if ($this->input->post($order) == '' || !ctype_digit($this->input->post($order))) {
-                //$dataattberror="Enter Data Attribute Details or Invalid Input 4 asd ".$attbcount.' dsa';
-                $dataattberror = "Attribute Order is required.";
-            }
-            //$attbselect=1;
+                    if ($this->input->post($start) == '' /*|| !ctype_digit($this->input->post($start))*/) {
+                        $dataattberror = "Start value is required.";
+                    }
+                    if ($this->input->post($end) == '' /*|| !ctype_digit($this->input->post($end))*/) {
+                        $dataattberror = "End value is required.";
+                    }
+                    if ($this->input->post($week) == '' /*|| !ctype_digit($this->input->post($week))*/) {
+                        $dataattberror = "Weekly Max value is required.";
+                    }
+                    if ($this->input->post($order) == '' || !ctype_digit($this->input->post($order))) {
+                        //$dataattberror="Enter Data Attribute Details or Invalid Input 4 asd ".$attbcount.' dsa';
+                        $dataattberror = "Attribute Order is required.";
+                    }
+                    //$attbselect=1;
+                }
             }
         }
         /*if($attbselect==0)
