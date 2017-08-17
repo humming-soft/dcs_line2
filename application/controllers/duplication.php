@@ -8,6 +8,8 @@ class duplication extends CI_Controller
     {
         parent::__construct();
         $this->load->model('duplicationmodel', '', TRUE);
+        $this->load->model('design','',TRUE);
+
     }
     //Author:ANCY MATHEW
     //Code for journal duplication
@@ -4001,11 +4003,11 @@ class duplication extends CI_Controller
         $V209 = array();
         $V210 = array();
         $projectName = $this->input->get('project');
-        $start_d=$this->input->get('date');
-        echo $start_d;
-        echo $projectName;
+        //$start_d=$this->input->get('date');
+        //echo $start_d;
+       // echo $projectName;
         $project_id = $this->duplicationmodel->get_project_id($projectName); //get  project id using project name
-        echo $project_id;
+        //echo $project_id;
         $i_count = 0;//How much journal inserted
         $s_count = 0;//How much Journal skipped
         $dependency = "";
@@ -4016,33 +4018,43 @@ class duplication extends CI_Controller
         if ($project_id != 0) {//check the project in the data base
             if($projectName == 'V201 Construction Progress'){
                 $viaduct=$V201;
+                $via="v201";
             }
             if($projectName == 'V202 Construction Progress'){
                 $viaduct=$V202;
+                $via="v202";
             }
             if($projectName == 'V203 Construction Progress'){
                 $viaduct=$V203;
+                $via="v203";
             }
             if($projectName == 'V204 Construction Progress'){
                 $viaduct=$V204;
+                $via="v204";
             }
             if($projectName == 'V205 Construction Progress'){
                 $viaduct=$V205;
+                $via="v205";
             }
             if($projectName == 'V206 Construction Progress'){
                 $viaduct=$V206;
+                $via="v206";
             }
             if($projectName == 'V207 Construction Progress'){
                 $viaduct=$V207;
+                $via="v207";
             }
             if($projectName == 'V208 Construction Progress'){
                 $viaduct=$V208;
+                $via="v208";
             }
             if($projectName == 'V209 Construction Progress'){
                 $viaduct=$V209;
+                $via="v209";
             }
             if($projectName == 'V210 Construction Progress'){
                 $viaduct=$V210;
+                $via="v210";
             }
             foreach ($viaduct as $name => $prop) {
                 if ($name != null) {
@@ -4050,6 +4062,7 @@ class duplication extends CI_Controller
                         $data = array('p_uid' => $name, 'pier_type_id' => 1);
                         $this->duplicationmodel->add_piers($data);
                     }
+                    $viaductName=$via;
                     //1:Normal pier or standard pier
                     //2:R shaped or cantilever pier
                     //3:Portal
@@ -4129,6 +4142,7 @@ class duplication extends CI_Controller
                                 $pile_cap = explode(',', $prop['Pile_Cap']);
                                 $Pier_Column = explode(',', $prop['Pier_Column']);
                                 $Pier_Head = explode(',', $prop['Pier_Head']);
+                                $pierType="NORMAL";
                                 while ($x < 5) {
                                     if ($x = 1) {
                                         $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => $piling[1], 'end_value' => $piling[2], 'frequency_max_value' => $piling[3], 'display_seq_no' => $x);
@@ -4145,6 +4159,8 @@ class duplication extends CI_Controller
                                     }
                                     $x++;
                                 }
+                                $insert=array('journal_no'=>$journalid,'project_no'=>$project_id,'pier_v'=>$viaductName, 'pier_id'=>$name, 'pier_north_id'=>"", 'pier_south_id'=>"", 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0, 'sbg'=>"sbg", 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0, 'status'=>0, 'create_date'=>date('y-m-d'));
+                                $this->design->add_pirer_entry($insert);
                                 break;
                             case 2 :
                                 $x = 1;
@@ -4152,6 +4168,7 @@ class duplication extends CI_Controller
                                 $pile_cap = explode(',', $prop['Pile_Cap']);
                                 $Pier_Column = explode(',', $prop['Pier_Column']);
                                 $Pier_Head = explode(',', $prop['Pier_Head']);
+                                $pierType="NORMAL";
                                 while ($x < 5) {
                                     if ($x = 1) {
                                         $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => $piling[1], 'end_value' => $piling[2], 'frequency_max_value' => $piling[3], 'display_seq_no' => $x);
@@ -4168,6 +4185,8 @@ class duplication extends CI_Controller
                                     }
                                     $x++;
                                 }
+                                $insert=array('journal_no'=>$journalid,'project_no'=>$project_id,'pier_v'=>$viaductName, 'pier_id'=>$name, 'pier_north_id'=>"", 'pier_south_id'=>"", 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0, 'sbg'=>"sbg", 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0, 'status'=>0, 'create_date'=>date('y-m-d'));
+                                $this->design->add_pirer_entry($insert);
                                 break;
                             case 3 : $x=1;
                                 $Left_Piling = explode(',', $prop['Left_Piling']);
@@ -4177,6 +4196,10 @@ class duplication extends CI_Controller
                                 $Left_Pier_Column = explode(',', $prop['Left_Pier_Column']);
                                 $Right_Pier_Column = explode(',', $prop['Right_Pier_Column']);
                                 $Cross_Beam = explode(',', $prop['Cross_Beam']);
+                                $pierType="PORTAL";
+                                $arr = explode('-', $name);
+                                     $north=$arr[0];
+                                     $south=$arr[1];
                                     while($x < 8){
                                         if ($x = 1) {
                                             $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Piling[0], 'start_value' => $Left_Piling[1], 'end_value' => $Left_Piling[2], 'frequency_max_value' => $Left_Piling[3], 'display_seq_no' => $x);
@@ -4202,6 +4225,8 @@ class duplication extends CI_Controller
                                         }
                                        $x++;
                                     }
+                                $insert=array('journal_no'=>$journalid,'project_no'=>$project_id,'pier_v'=>$viaductName, 'pier_id'=>$name, 'pier_north_id'=>$north, 'pier_south_id'=>$south, 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0, 'sbg'=>"sbg", 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0, 'status'=>0, 'create_date'=>date('y-m-d'));
+                                $this->design->add_pirer_entry($insert);
                                 break;
                             case 4 :$x=1;
                                 $Left_Piling = explode(',', $prop['Left_Piling']);
@@ -4213,6 +4238,10 @@ class duplication extends CI_Controller
                                 $Cross_Beam = explode(',', $prop['Cross_Beam']);
                                 $Left_Pier_Head = explode(',', $prop['Left_Pier_Head']);
                                 $Right_Pier_Head = explode(',', $prop['Right_Pier_Head']);
+                                $pierType="PORTAL-HEAD";
+                                $arr = explode('-', $name);
+                                $north=$arr[0];
+                                $south=$arr[1];
                                 while($x < 9) {
                                     if ($x = 1) {
                                         $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Piling[0], 'start_value' => $Left_Piling[1], 'end_value' => $Left_Piling[2], 'frequency_max_value' => $Left_Piling[3], 'display_seq_no' => $x);
@@ -4250,6 +4279,10 @@ class duplication extends CI_Controller
                                     }
                                     $x++;
                                 }
+
+
+                                $insert=array('journal_no'=>$journalid,'project_no'=>$project_id,'pier_v'=>$viaductName, 'pier_id'=>$name, 'pier_north_id'=>$north, 'pier_south_id'=>$south, 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0, 'sbg'=>"sbg", 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0, 'status'=>0, 'create_date'=>date('y-m-d'));
+                                $this->design->add_pirer_entry($insert);
                                 break;
                             case 5 :$x=1;
                                 $Left_Piling = explode(',', $prop['Left_Piling']);
@@ -4260,6 +4293,10 @@ class duplication extends CI_Controller
                                 $Right_Pier_Column = explode(',', $prop['Right_Pier_Column']);
                                 $Left_Pier_Head = explode(',', $prop['Left_Pier_Head']);
                                 $Right_Pier_Head = explode(',', $prop['Right_Pier_Head']);
+                                $pierType="DOUBLE";
+                                $arr = explode('-', $name);
+                                $north=$arr[0];
+                                $south=$arr[1];
                                 while($x < 9) {
                                     if ($x = 1) {
                                         $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Piling[0], 'start_value' => $Left_Piling[1], 'end_value' => $Left_Piling[2], 'frequency_max_value' => $Left_Piling[3], 'display_seq_no' => $x);
@@ -4293,12 +4330,16 @@ class duplication extends CI_Controller
                                     }
                                     $x++;
                                 }
+                                $insert=array('journal_no'=>$journalid,'project_no'=>$project_id,'pier_v'=>$viaductName, 'pier_id'=>$name, 'pier_north_id'=>$north, 'pier_south_id'=>$south, 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0, 'sbg'=>"sbg", 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0, 'status'=>0, 'create_date'=>date('y-m-d'));
+                                $this->design->add_pirer_entry($insert);
                                 break;
                             case 6 :$x = 1;
                                     $piling = explode(',', $prop['Piling']);
                                     $pile_cap = explode(',', $prop['Pile_Cap']);
                                     $Pier_Column = explode(',', $prop['Pier_Column']);
                                     $Cross_Beam = explode(',', $prop['Cross_Beam']);
+                                    $pierType="PIER-CROSSBEAM";
+
                                     while ($x < 5) {
                                         if ($x = 1) {
                                             $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => $piling[1], 'end_value' => $piling[2], 'frequency_max_value' => $piling[3], 'display_seq_no' => $x);
@@ -4315,6 +4356,8 @@ class duplication extends CI_Controller
                                         }
                                         $x++;
                                     }
+                                    $insert=array('journal_no'=>$journalid,'project_no'=>$project_id,'pier_v'=>$viaductName, 'pier_id'=>$name, 'pier_north_id'=>"", 'pier_south_id'=>"", 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0, 'sbg'=>"sbg", 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0, 'status'=>0, 'create_date'=>date('y-m-d'));
+                                    $this->design->add_pirer_entry($insert);
                                     break;
                             case 7 :$x = 1;
                                     $piling = explode(',', $prop['Piling']);
@@ -4323,6 +4366,7 @@ class duplication extends CI_Controller
                                     $Cross_Beam = explode(',', $prop['Cross_Beam']);
                                     $Left_Pier_Head = explode(',', $prop['Left_Pier_Head']);
                                     $Right_Pier_Head = explode(',', $prop['Right_Pier_Head']);
+                                    $pierType="PIER-CROSSBEAM-HEAD";
                                     while ($x < 7) {
                                         if ($x = 1) {
                                             $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => $piling[1], 'end_value' => $piling[2], 'frequency_max_value' => $piling[3], 'display_seq_no' => $x);
@@ -4345,7 +4389,10 @@ class duplication extends CI_Controller
                                         }
                                         $x++;
                                     }
+                                $insert=array('journal_no'=>$journalid,'project_no'=>$project_id,'pier_v'=>$viaductName, 'pier_id'=>$name, 'pier_north_id'=>"", 'pier_south_id'=>"", 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0, 'sbg'=>"sbg", 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0, 'status'=>0, 'create_date'=>date('y-m-d'));
+                                $this->design->add_pirer_entry($insert);
                                     break;
+
                             default :
                                 break;
                         }

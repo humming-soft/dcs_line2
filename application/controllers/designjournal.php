@@ -768,14 +768,25 @@ class Designjournal extends CI_Controller
                     if($piling==1 &&  $pile_cap==1 && $pier_column==1 && $Pier_head==1 ){
                         $pierType="NORMAL";
                     }
+                    if( $left_piling==1 && $right_Piling==1 && $left_pile_cap==1 && $right_pile_cap==1 && $left_pier_column==1 && $right_pier_column==1){
+                        $pierType="DOUBLE";
+                        $north=$name."-N";
+                        $south=$name."-S";
+                    }
                     if( $left_piling==1 && $right_Piling==1 && $left_pile_cap==1 && $right_pile_cap==1 && $left_pier_column==1 && $right_pier_column==1 && $cross_beam==1){
                         $pierType="PORTAL";
                         $north=$name."-N";
                         $south=$name."-S";
                     } if($left_piling==1 && $right_Piling==1 && $left_pile_cap==1 && $right_pile_cap==1 && $left_pier_column==1 && $right_pier_column==1 && $cross_beam==1 && $left_pier_head==1 && $right_pier_head==1){
-                        $pierType="PORTAL_HEAD";
+                        $pierType="PORTAL-HEAD";
                         $north=$name."-N";
                         $south=$name."-S";
+                    }
+                    if($piling==1 &&  $pile_cap==1 && $pier_column==1 && $cross_beam==1 ){
+                        $pierType="PIER-CROSSBEAM";
+                    }
+                    if($piling==1 &&  $pile_cap==1 && $pier_column==1 && $cross_beam==1 && $left_pier_head==1 && $right_pier_head==1){
+                        $pierType="PIER-CROSSBEAM-HEAD";
                     }
                     $pjtName =$this->design->get_project_name($projectno);
                     $viaductName=explode(' ',$pjtName);
