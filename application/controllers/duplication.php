@@ -4001,7 +4001,11 @@ class duplication extends CI_Controller
         $V209 = array();
         $V210 = array();
         $projectName = $this->input->get('project');
+        $start_d=$this->input->get('date');
+        echo $start_d;
+        echo $projectName;
         $project_id = $this->duplicationmodel->get_project_id($projectName); //get  project id using project name
+        echo $project_id;
         $i_count = 0;//How much journal inserted
         $s_count = 0;//How much Journal skipped
         $dependency = "";
@@ -4010,34 +4014,34 @@ class duplication extends CI_Controller
             "Not_Inserted"=>array()
         );
         if ($project_id != 0) {//check the project in the data base
-            if($projectName == 'V201 Project Progress'){
+            if($projectName == 'V201 Construction Progress'){
                 $viaduct=$V201;
             }
-            if($projectName == 'V202 Project Progress'){
+            if($projectName == 'V202 Construction Progress'){
                 $viaduct=$V202;
             }
-            if($projectName == 'V203 Project Progress'){
+            if($projectName == 'V203 Construction Progress'){
                 $viaduct=$V203;
             }
-            if($projectName == 'V204 Project Progress'){
+            if($projectName == 'V204 Construction Progress'){
                 $viaduct=$V204;
             }
-            if($projectName == 'V205 Project Progress'){
+            if($projectName == 'V205 Construction Progress'){
                 $viaduct=$V205;
             }
-            if($projectName == 'V206 Project Progress'){
+            if($projectName == 'V206 Construction Progress'){
                 $viaduct=$V206;
             }
-            if($projectName == 'V207 Project Progress'){
+            if($projectName == 'V207 Construction Progress'){
                 $viaduct=$V207;
             }
-            if($projectName == 'V208 Project Progress'){
+            if($projectName == 'V208 Construction Progress'){
                 $viaduct=$V208;
             }
-            if($projectName == 'V209 Project Progress'){
+            if($projectName == 'V209 Construction Progress'){
                 $viaduct=$V209;
             }
-            if($projectName == 'V210 Project Progress'){
+            if($projectName == 'V210 Construction Progress'){
                 $viaduct=$V210;
             }
             foreach ($viaduct as $name => $prop) {

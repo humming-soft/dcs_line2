@@ -61,7 +61,6 @@ Class AgaileModel extends CI_Model
             return $result[0]->is_image;
         }
         return false;
-
     }
 }
 

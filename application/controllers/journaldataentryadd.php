@@ -406,6 +406,8 @@ class Journaldataentryadd extends CI_Controller
 
                     }
                 }
+
+
             }
             //END
             $sess_array = array('message' => "Project Journal Data Entry Updated Successfully", "type" => 1); //1 success , 0 error
