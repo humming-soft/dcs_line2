@@ -459,8 +459,12 @@ $(document).ready(function()
     });
 	$('#pierjornal').change(function()
 	{
-		var textval=$(this).find(":selected").text().trim();
-		$('#journalname').val(textval);
+		if($(this).find(":selected").val() != 0) {
+			var textval = $(this).find(":selected").text().trim();
+			$('#journalname').val(textval);
+		}else{
+			$('#journalname').val('');
+		}
 	});
 	$(".addDataAttb").click(function()
 	{
@@ -596,7 +600,7 @@ $(document).ready(function()
     });
 	$('#dataattbadd').click(function()
 	{
-        $('#journalname').val('');
+        //$('#journalname').val('');
         $('#journalname').attr('readonly', true);
 		var textvalue=$("#attbgroup").find(":selected").text().toLowerCase().trim();
 		var textvalue2=$("#journalcat").find(":selected").text().toLowerCase().trim();
