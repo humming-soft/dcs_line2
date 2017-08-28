@@ -867,5 +867,25 @@ Class Design extends CI_Model
         }
         return false;
     }
+    function update_check_journal_in($name,$journalno)
+    {
+        $query=$this->db->query("SELECT * FROM pier_span_col where pier_id='$name' and journal_no=$journalno");
+        return $query->num_rows();
+    }
+
+    function update_pirer_entry($journalid,$projectno,$viaductName,$name,$north, $south,$pierType,$date)
+    {
+        $this->db->query("UPDATE pier_span_col SET project_no=$projectno, pier_v='$viaductName', pier_id='$name', pier_north_id='$north', pier_south_id='$south',pier_type='$pierType', modified_date=now()  WHERE journal_no=$journalid");
+
+    }
+    function get_pierid($name) {
+        $name = str_replace("'","",$name);
+        $query = "SELECT id FROM pier where p_uid='$name'";
+        $result = $this->db->query($query)->result();
+        if (sizeOf($result) > 0) {
+            return $result[0]->id;
+        }
+        return false;
+    }
 }
 ?>

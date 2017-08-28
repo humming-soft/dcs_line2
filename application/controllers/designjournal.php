@@ -290,15 +290,87 @@ class Designjournal extends CI_Controller
             $dataattberror="Enter atleast one Data Attribute";
         }*/
         $enderror='';
-        if($this->input->post('enddate')!='')
-        {
-            $projectend=date("Y-m-d", strtotime($this->design->show_proj_field('end_date',$this->input->post('projectname'))));
-            $enddate=date("Y-m-d", strtotime($this->input->post('enddate')));
-            if($projectend<$enddate)
-            {
-                $enderror='End date should be less than the Project End Date ('.$projectend.')';
+        if($this->input->post('enddate')!='') {
+            $projectend = date("Y-m-d", strtotime($this->design->show_proj_field('end_date', $this->input->post('projectname'))));
+            $enddate = date("Y-m-d", strtotime($this->input->post('enddate')));
+            if ($projectend < $enddate) {
+                $enderror = 'End date should be less than the Project End Date (' . $projectend . ')';
             }
         }
+        $chk_type=0;
+        $journalType = $this->design->get_journal_type( $this->input->post('journalcat'));
+        if(strtolower($journalType)=='pier'){
+            $piling=0;
+            $left_piling=0;
+            $right_Piling=0;
+            $pile_cap=0;
+            $left_pile_cap=0;
+            $right_pile_cap=0;
+            $pier_column=0;
+            $left_pier_column=0;
+            $right_pier_column=0;
+            $cross_beam=0;
+            $Pier_head=0;
+            $left_pier_head=0;
+            $right_pier_head=0;
+            for($j=1;$j<=$attbcount;$j++)
+            {
+                $attbid='dataattbid'.$j;
+                $dataAtbId=$this->input->post($attbid);
+                if($dataAtbId==1){
+                    $piling=1;
+                }if($dataAtbId==2){
+                $left_piling=1;
+            }if($dataAtbId==3){
+                $right_Piling=1;
+            }if($dataAtbId==4){
+                $pile_cap=1;
+            }if($dataAtbId==5){
+                $left_pile_cap=1;
+            }if($dataAtbId==6){
+                $right_pile_cap=1;
+            }if($dataAtbId==7){
+                $pier_column=1;
+            }if($dataAtbId==8){
+                $left_pier_column=1;
+            }if($dataAtbId==9){
+                $right_pier_column=1;
+            }if($dataAtbId==10){
+                $cross_beam=1;
+            }if($dataAtbId==11){
+                $Pier_head=1;
+            }if($dataAtbId==12){
+                $left_pier_head=1;
+            }if($dataAtbId==13){
+                $right_pier_head=1;
+            }
+            }
+            if($piling==1 &&  $pile_cap==1 && $pier_column==1 && $Pier_head==1 ){
+                $chk_type=0;
+            }
+            else if( $left_piling==1 && $right_Piling==1 && $left_pile_cap==1 && $right_pile_cap==1 && $left_pier_column==1 && $right_pier_column==1){
+                $chk_type=0;
+            }
+            else if( $left_piling==1 && $right_Piling==1 && $left_pile_cap==1 && $right_pile_cap==1 && $left_pier_column==1 && $right_pier_column==1 && $cross_beam==1){
+                $chk_type=0;
+            }
+            else if($left_piling==1 && $right_Piling==1 && $left_pile_cap==1 && $right_pile_cap==1 && $left_pier_column==1 && $right_pier_column==1 && $cross_beam==1 && $left_pier_head==1 && $right_pier_head==1){
+                $chk_type=0;
+            }
+            else if($piling==1 &&  $pile_cap==1 && $pier_column==1 && $cross_beam==1 ){
+                $chk_type=0;
+            }
+            else if($piling==1 &&  $pile_cap==1 && $pier_column==1 && $cross_beam==1 && $left_pier_head==1 && $right_pier_head==1){
+                $chk_type=0;
+            }
+            else{
+                $chk_type=1;
+            }
+            if($chk_type==1){
+                $dataattberror="Attribute mismatches.";
+            }
+        }
+
         if($this->form_validation->run() == FALSE || $dataattberror!='' || $dataerror=='' || $enderror!='')
         {
             echo json_encode(array('st'=>0, 'msg' => form_error('projectname'),'msg1'=>form_error('journalname'),'msg2'=>form_error('user'),'msg3'=>form_error('frequency'),'msg4'=>form_error('startdate'),'msg5'=>'','msg6'=>$dataattberror,'msg7'=>$datamsg,'msg8'=>$enderror,'msg9'=>form_error('journalproperty')));
@@ -364,22 +436,25 @@ class Designjournal extends CI_Controller
                 $dataattbcount=$this->input->post('dataattbcount');
                /* $groupid=$this->input->post('attbgroup');
                 $groupname = $this->design->groupname($groupid);*/
-                $rightpier=$this->input->post('rightpiers');
-                $leftpier=$this->input->post('leftpiers');
-                $spantype=$this->input->post('spantype');
-                $sspan= $this->input->post('spacialspanpier');
-                if($spantype==1){
-                    if($rightpier >= 0 && $leftpier >= 0 ){
-                        $spandata=array('journal_id'=>$journalid,'pier_id_one'=>$leftpier,'pier_id_two'=>$rightpier,'span_type'=>$this->input->post('spantype'));
-                        $this->design->add_span_detail($spandata);
+                $journalType = $this->design->get_journal_type( $this->input->post('journalcat'));
+                if(strtolower($journalType)=='span'){
+                    $rightpier=$this->input->post('rightpiers');
+                    $leftpier=$this->input->post('leftpiers');
+                    $spantype=$this->input->post('spantype');
+                    $sspan= $this->input->post('spacialspanpier');
+                    if($spantype==1){
+                        if($rightpier >= 0 && $leftpier >= 0 ){
+                            $spandata=array('journal_id'=>$journalid,'pier_id_one'=>$leftpier,'pier_id_two'=>$rightpier,'span_type'=>$this->input->post('spantype'));
+                            $this->design->add_span_detail($spandata);
+                        }
+                    }
+                    if($spantype==2){
+                        if( $sspan >= 0 ){
+                            $spandata=array('journal_id'=>$journalid,'pier_id_one'=>$sspan,'pier_id_two'=>null,'span_type'=>$this->input->post('spantype'));
+                            $this->design->add_span_detail($spandata);
+                        }
                     }
                 }
-               if($spantype==2){
-                   if( $sspan >= 0 ){
-                       $spandata=array('journal_id'=>$journalid,'pier_id_one'=>$sspan,'pier_id_two'=>null,'span_type'=>$this->input->post('spantype'));
-                       $this->design->add_span_detail($spandata);
-                   }
-               }
                 $spanvalue=$this->input->post('spancomplete');
                 if($spanvalue >= 0){
                     $parapetdata=array('journal_no'=>$journalid,'span_journal_no'=>$spanvalue);
@@ -456,19 +531,46 @@ class Designjournal extends CI_Controller
                     }
                     if($piling==1 &&  $pile_cap==1 && $pier_column==1 && $Pier_head==1 ){
                         $pierType="NORMAL";
+                        $north="";
+                        $south="";
+                    }
+                    if( $left_piling==1 && $right_Piling==1 && $left_pile_cap==1 && $right_pile_cap==1 && $left_pier_column==1 && $right_pier_column==1){
+                        $pierType="DOUBLE";
+                        $rest = substr($name, 0, -2);  // returns "SBE"
+                        $rest2 = substr($name, -2);
+                        $north=$rest . "N".$rest2;
+                        $south=$rest . "S".$rest2;
                     }
                     if( $left_piling==1 && $right_Piling==1 && $left_pile_cap==1 && $right_pile_cap==1 && $left_pier_column==1 && $right_pier_column==1 && $cross_beam==1){
                         $pierType="PORTAL";
-                        $north=$name."-N";
-                        $south=$name."-S";
+                        $rest = substr($name, 0, -2);  // returns "SBE"
+                        $rest2 = substr($name, -2);
+                        $north=$rest . "N".$rest2;
+                        $south=$rest . "S".$rest2;
                     } if($left_piling==1 && $right_Piling==1 && $left_pile_cap==1 && $right_pile_cap==1 && $left_pier_column==1 && $right_pier_column==1 && $cross_beam==1 && $left_pier_head==1 && $right_pier_head==1){
-                        $pierType="PORTAL_HEAD";
-                        $north=$name."-N";
-                        $south=$name."-S";
+                        $pierType="PORTAL-HEAD";
+                        $rest = substr($name, 0, -2);  // returns "SBE"
+                        $rest2 = substr($name, -2);
+                        $north=$rest . "N".$rest2;
+                        $south=$rest . "S".$rest2;
+                    }
+                    if($piling==1 &&  $pile_cap==1 && $pier_column==1 && $cross_beam==1 ){
+                        $pierType="PIER-CROSSBEAM";
+                        $north="";
+                        $south="";
+                    }
+                    if($piling==1 &&  $pile_cap==1 && $pier_column==1 && $cross_beam==1 && $left_pier_head==1 && $right_pier_head==1){
+                        $pierType="PIER-CROSSBEAM-HEAD";
+                        $north="";
+                        $south="";
                     }
                     /*if($piling==1 && $left_piling==1 && $right_Piling==1 && $pile_cap==1 && $left_pile_cap==1 && $right_pile_cap==1 && $pier_column==1 &&
                         $left_pier_column==1 && $right_pier_column==1 && $cross_beam==1 && $Pier_head==1 && $left_pier_head==1 && $right_pier_head==1 ){
                     }*/
+                    $pid=$this->design->get_pierid($name);
+                    if($pid!=NULL && $pid>0){
+                        $result = $this->admin->update_pier($pid,$name,$north,$south,$pierType);
+                    }
                     $pjtName =$this->design->get_project_name($projectno);
                     $viaductName=explode(' ',$pjtName);
                     $insert=array('journal_no'=>$journalid,'project_no'=>$projectno,'pier_v'=>$viaductName[0], 'pier_id'=>$name, 'pier_north_id'=>$north, 'pier_south_id'=>$south, 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0, 'sbg'=>"sbg", 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0, 'status'=>0, 'create_date'=>date('Y-m-d'));
@@ -588,9 +690,84 @@ class Designjournal extends CI_Controller
                         //$dataattberror="Enter Data Attribute Details or Invalid Input 4 asd ".$attbcount.' dsa';
                         $dataattberror = "Attribute Order is required.";
                     }
-                    //$attbselect=1;
                 }
             }
+        }
+        $dataattbcount = $this->input->post('dataattbcount1');
+        $journalType1 = $this->design->get_journal_type( $this->input->post('journalcat1'));
+        $chk_type1=0;
+        if(strtolower($journalType1)=='pier'){
+
+            $piling=0;
+            $left_piling=0;
+            $right_Piling=0;
+            $pile_cap=0;
+            $left_pile_cap=0;
+            $right_pile_cap=0;
+            $pier_column=0;
+            $left_pier_column=0;
+            $right_pier_column=0;
+            $cross_beam=0;
+            $Pier_head=0;
+            $left_pier_head=0;
+            $right_pier_head=0;
+            for($j=1;$j<=$dataattbcount;$j++)
+            {
+                $attbid = '1dataattbid' . $j;
+                $dataAtbId=$this->input->post($attbid);
+                if($dataAtbId==1){
+                    $piling=1;
+                }if($dataAtbId==2){
+                $left_piling=1;
+            }if($dataAtbId==3){
+                $right_Piling=1;
+            }if($dataAtbId==4){
+                $pile_cap=1;
+            }if($dataAtbId==5){
+                $left_pile_cap=1;
+            }if($dataAtbId==6){
+                $right_pile_cap=1;
+            }if($dataAtbId==7){
+                $pier_column=1;
+            }if($dataAtbId==8){
+                $left_pier_column=1;
+            }if($dataAtbId==9){
+                $right_pier_column=1;
+            }if($dataAtbId==10){
+                $cross_beam=1;
+            }if($dataAtbId==11){
+                $Pier_head=1;
+            }if($dataAtbId==12){
+                $left_pier_head=1;
+            }if($dataAtbId==13){
+                $right_pier_head=1;
+            }
+            }
+            if($piling==1 &&  $pile_cap==1 && $pier_column==1 && $Pier_head==1 ){
+                $chk_type1=0;
+            }
+            else if( $left_piling==1 && $right_Piling==1 && $left_pile_cap==1 && $right_pile_cap==1 && $left_pier_column==1 && $right_pier_column==1){
+                $chk_type1=0;
+            }
+            else if( $left_piling==1 && $right_Piling==1 && $left_pile_cap==1 && $right_pile_cap==1 && $left_pier_column==1 && $right_pier_column==1 && $cross_beam==1){
+                $chk_type1=0;
+            }
+            else if($left_piling==1 && $right_Piling==1 && $left_pile_cap==1 && $right_pile_cap==1 && $left_pier_column==1 && $right_pier_column==1 && $cross_beam==1 && $left_pier_head==1 && $right_pier_head==1){
+                $chk_type1=0;
+            }
+            else if($piling==1 &&  $pile_cap==1 && $pier_column==1 && $cross_beam==1 ){
+                $chk_type1=0;
+            }
+            else if($piling==1 &&  $pile_cap==1 && $pier_column==1 && $cross_beam==1 && $left_pier_head==1 && $right_pier_head==1){
+                $chk_type1=0;
+            }
+            else{
+                $chk_type1=1;
+            }
+
+        }
+        if($chk_type1==1){
+            $dataattberror="Attribute mismatches.";
         }
         /*if($attbselect==0)
         {
@@ -599,6 +776,7 @@ class Designjournal extends CI_Controller
         if ($this->form_validation->run() == FALSE || $dataattberror != '' || $dataerror == '') {
             echo json_encode(array('st' => 0, 'msg' => form_error('projectname1'), 'msg1' => form_error('journalname1'), 'msg2' => form_error('user1'), 'msg3' => form_error('frequency1'), 'msg4' => $dataattberror, 'msg5' => $datamsg, 'msg6' => form_error('journalproperty1')));
         } else {
+            $journalType = $this->design->get_journal_type( $this->input->post('journalcat1'));
             $name = $this->input->post('journalname1');
             $property = $this->input->post('journalproperty1');
             $projectno = $this->input->post('projectname1');
@@ -689,6 +867,31 @@ class Designjournal extends CI_Controller
                 $this->design->delete_journal_detail($journalid);
                 //Data Attribute
                 $dataattbcount = $this->input->post('dataattbcount1');
+
+                if(strtolower($journalType)=='span'){
+                    $rightpier=$this->input->post('rightpiers');
+                    $leftpier=$this->input->post('leftpiers');
+                    $spantype=$this->input->post('spantype');
+                    $sspan= $this->input->post('spacialspanpier');
+                    if($spantype==1){
+                        if($rightpier >= 0 && $leftpier >= 0 ){
+                            $spandata=array('journal_id'=>$journalid,'pier_id_one'=>$leftpier,'pier_id_two'=>$rightpier,'span_type'=>$this->input->post('spantype'));
+                            $this->design->add_span_detail($spandata);
+                        }
+                    }
+                    if($spantype==2){
+                        if( $sspan >= 0 ){
+                            $spandata=array('journal_id'=>$journalid,'pier_id_one'=>$sspan,'pier_id_two'=>null,'span_type'=>$this->input->post('spantype'));
+                            $this->design->add_span_detail($spandata);
+                        }
+                    }
+                }
+//                /*$spanvalue=$this->input->post('spancomplete');
+//                if($spanvalue >= 0){
+//                    $parapetdata=array('journal_no'=>$journalid,'span_journal_no'=>$spanvalue);
+//                    $this->design->add_parapet_detail($parapetdata);
+//                }*/
+
                 for ($j = 1; $j <= $dataattbcount; $j++) {
                     $chk = '1dataattb' . $j;
                     $start = '1start' . $j;
@@ -719,6 +922,7 @@ class Designjournal extends CI_Controller
                 //10-01-2017
                 $journalType = $this->design->get_journal_type( $this->input->post('journalcat1'));
                 if(strtolower($journalType)=='pier'){
+                    $pierType='';
                     $north=0;
                     $south=0;
                     $piling=0;
@@ -767,31 +971,52 @@ class Designjournal extends CI_Controller
                     }}
                     if($piling==1 &&  $pile_cap==1 && $pier_column==1 && $Pier_head==1 ){
                         $pierType="NORMAL";
+                        $north="";
+                        $south="";
                     }
                     if( $left_piling==1 && $right_Piling==1 && $left_pile_cap==1 && $right_pile_cap==1 && $left_pier_column==1 && $right_pier_column==1){
                         $pierType="DOUBLE";
-                        $north=$name."-N";
-                        $south=$name."-S";
+                        $rest = substr($name, 0, -2);  // returns "SBE"
+                        $rest2 = substr($name, -2);
+                        $north=$rest . "N".$rest2;
+                        $south=$rest . "S".$rest2;
                     }
                     if( $left_piling==1 && $right_Piling==1 && $left_pile_cap==1 && $right_pile_cap==1 && $left_pier_column==1 && $right_pier_column==1 && $cross_beam==1){
                         $pierType="PORTAL";
-                        $north=$name."-N";
-                        $south=$name."-S";
+                        $rest = substr($name, 0, -2);  // returns "SBE"
+                        $rest2 = substr($name, -2);
+                        $north=$rest . "N".$rest2;
+                        $south=$rest . "S".$rest2;
                     } if($left_piling==1 && $right_Piling==1 && $left_pile_cap==1 && $right_pile_cap==1 && $left_pier_column==1 && $right_pier_column==1 && $cross_beam==1 && $left_pier_head==1 && $right_pier_head==1){
                         $pierType="PORTAL-HEAD";
-                        $north=$name."-N";
-                        $south=$name."-S";
+                        $rest = substr($name, 0, -2);  // returns "SBE"
+                        $rest2 = substr($name, -2);
+                        $north=$rest . "N".$rest2;
+                        $south=$rest . "S".$rest2;
                     }
                     if($piling==1 &&  $pile_cap==1 && $pier_column==1 && $cross_beam==1 ){
                         $pierType="PIER-CROSSBEAM";
+                        $north="";
+                        $south="";
                     }
                     if($piling==1 &&  $pile_cap==1 && $pier_column==1 && $cross_beam==1 && $left_pier_head==1 && $right_pier_head==1){
                         $pierType="PIER-CROSSBEAM-HEAD";
+                        $north="";
+                        $south="";
+                    }
+                    $pid=$this->design->get_pierid($name);
+                    if($pid!=NULL && $pid>0){
+                        $result = $this->admin->update_pier($pid,$name,$north,$south,$pierType);
                     }
                     $pjtName =$this->design->get_project_name($projectno);
                     $viaductName=explode(' ',$pjtName);
-                    $insert=array('journal_no'=>$journalid,'project_no'=>$projectno,'pier_v'=>$viaductName[0], 'pier_id'=>$name, 'pier_north_id'=>$north, 'pier_south_id'=>$south, 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0, 'sbg'=>"sbg", 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0, 'status'=>0, 'create_date'=>date('y-m-d'));
-                    $this->design->add_pirer_entry($insert);
+                    if ($this->design->update_check_journal_in($name,$journalid) == 0) {
+                        $insert=array('journal_no'=>$journalid,'project_no'=>$projectno,'pier_v'=>$viaductName[0], 'pier_id'=>$name, 'pier_north_id'=>$north, 'pier_south_id'=>$south, 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0, 'sbg'=>"sbg", 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0, 'status'=>0, 'create_date'=>date('y-m-d'));
+                        $this->design->add_pirer_entry($insert);
+                    }else{
+                     $this->design->update_pirer_entry($journalid,$projectno,$viaductName[0],$name,$north, $south,$pierType,date('y-m-d'));
+                    }
+
                 }
                 //END
                 if(!empty($checked)){

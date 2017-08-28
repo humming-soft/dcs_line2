@@ -137,7 +137,7 @@ class Piers extends CI_Controller
             if($this->admin->add_check_pier($pieruid)==0)
             {
                // ,'pier_position_id'=>$this->input->post('pierposition')
-                $data = array('p_uid' =>$pieruid,'pier_type_id' => 1);
+                $data = array('p_uid' =>$pieruid,'pier_type_id' => 1,'piernorth'=>"",'piersouth'=>"");
 
                 //query the database
                 $result = $this->admin->add_piers($data);
@@ -188,7 +188,10 @@ class Piers extends CI_Controller
             if($this->admin->update_check_pier($pier_id,$pieruid)==0)
             {
                 //query the database
-                $result = $this->admin->update_pier($pier_id, $pieruid);
+                $north="";
+                $south="";
+                $type="";
+                $result = $this->admin->update_pier($pier_id, $pieruid,$north,$south,$type);
                 $sess_array = array('message' => $this->securitys->get_label_object(28)." Updated Successfully","type" => 1);
                 $this->session->set_userdata('message', $sess_array);
                 echo json_encode(array('st'=>1, 'msg' => 'Success','msg1'=>''));

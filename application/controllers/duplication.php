@@ -28,6 +28,8 @@ class duplication extends CI_Controller
         $V201 = array(
             "SB01" => array("type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2017-01-05",
                 "end_date" => null,
@@ -42,6 +44,8 @@ class duplication extends CI_Controller
             ),"SB02" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" =>  "2017-01-05",
                 "end_date" => null,
@@ -56,6 +60,8 @@ class duplication extends CI_Controller
             ),"SB03" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" =>  "2017-01-05",
                 "end_date" => null,
@@ -70,6 +76,8 @@ class duplication extends CI_Controller
             ),"SB04" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" =>  "2017-01-05",
                 "end_date" => null,
@@ -84,6 +92,8 @@ class duplication extends CI_Controller
             ),"SB05" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" =>  "2017-01-05",
                 "end_date" => null,
@@ -98,6 +108,8 @@ class duplication extends CI_Controller
             ),"SB06" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2017-01-05",
                 "end_date" => null,
@@ -112,6 +124,8 @@ class duplication extends CI_Controller
             ),"SB07" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" =>  "2017-01-05",
                 "end_date" => null,
@@ -126,6 +140,8 @@ class duplication extends CI_Controller
             ),"SB08" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" =>  "2017-01-05",
                 "end_date" => null,
@@ -140,6 +156,8 @@ class duplication extends CI_Controller
             ),"SB09" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2017-01-05",
                 "end_date" => null,
@@ -154,6 +172,8 @@ class duplication extends CI_Controller
             ),"SB10" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" =>  "2017-01-05",
                 "end_date" => null,
@@ -168,6 +188,8 @@ class duplication extends CI_Controller
             ),"SB11" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" =>  "2017-01-05",
                 "end_date" => null,
@@ -182,6 +204,8 @@ class duplication extends CI_Controller
             ),"SB12" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" =>  "2017-01-05",
                 "end_date" => null,
@@ -196,6 +220,8 @@ class duplication extends CI_Controller
             ),"SB13" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" =>  "2017-01-05",
                 "end_date" => null,
@@ -207,9 +233,11 @@ class duplication extends CI_Controller
                 "Pile_Cap" => "4,0,1,1",
                 "Pier_Column" => "7,0,1,1",
                 "Pier_Head" => "11,0,1,1"
-            ),"SBS14-SBN14" => array(
+            ),"SB14" => array(
                 "type" => 5,
                 "journal_defnition" => "",
+                "north"=>"SBN14",
+                "south"=>"SBS14",
                 "user_id" => 1,
                 "start_date" => "2017-01-05",
                 "end_date" => null,
@@ -225,9 +253,11 @@ class duplication extends CI_Controller
                 "Right_Pier_Column" => "9,0,1,1",
                 "Left_Pier_Head" => "12,0,1,1",
                 "Right_Pier_Head" => "13,0,1,1"
-            ),"SBS15-SBN15" => array(
+            ),"SB15" => array(
                 "type" => 5,
                 "journal_defnition" => "",
+                "north"=>"SBN15",
+                "south"=>"SBS15",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -243,9 +273,11 @@ class duplication extends CI_Controller
                 "Right_Pier_Column" => "9,0,1,1",
                 "Left_Pier_Head" => "12,0,1,1",
                 "Right_Pier_Head" => "13,0,1,1"
-            ),"SBS16-SBN16" => array(
+            ),"SB16" => array(
                 "type" => 5,
                 "journal_defnition" => "",
+                "north"=>"SBN16",
+                "south"=>"SBS16",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -261,9 +293,11 @@ class duplication extends CI_Controller
                 "Right_Pier_Column" => "9,0,1,1",
                 "Left_Pier_Head" => "12,0,1,1",
                 "Right_Pier_Head" => "13,0,1,1"
-            ), "DDS01-DDN01" => array(
+            ), "DD01" => array(
                 "type" => 4,
                 "journal_defnition" => "",
+                "north"=>"DDN01",
+                "south"=>"DDS01",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -280,26 +314,11 @@ class duplication extends CI_Controller
                 "Cross_Beam" => "10,0,1,1",
                 "Left_Pier_Head" => "12,0,1,1",
                 "Right_Pier_Head" => "13,0,1,1"
-            ), "DDS2A-DDN2G" => array(
-                "type" => 3,
-                "journal_defnition" => "",
-                "user_id" => 1,
-                "start_date" => "2016-11-01",
-                "end_date" => null,
-                "frequency_no" => 1,
-                "journal_property" => "",
-                "is_image" => 0,
-                "album_name" => "",
-                "Left_Piling" => "2,0,4,4",
-                "Right_Piling" => "3,0,4,4",
-                "left_Pile_Cap" => "5,0,1,1",
-                "Right_Pile_Cap" => "6,0,1,1",
-                "Left_Pier_Column" => "8,0,1,1",
-                "Right_Pier_Column" => "9,0,1,1",
-                "Cross_Beam" => "10,0,1,1"
-            ), "DDS02-DDN02" => array(
+            ),  "DD02" => array(
                 "type" => 4,
                 "journal_defnition" => "",
+                "north"=>"DDN02",
+                "south"=>"DDS02",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -316,26 +335,11 @@ class duplication extends CI_Controller
                 "Cross_Beam" => "10,0,1,1",
                 "Left_Pier_Head" => "12,0,1,1",
                 "Right_Pier_Head" => "13,0,1,1"
-            ), "DDS4A-DDN4G" => array(
-                "type" => 3,
-                "journal_defnition" => "",
-                "user_id" => 1,
-                "start_date" => "2016-11-01",
-                "end_date" => null,
-                "frequency_no" => 1,
-                "journal_property" => "",
-                "is_image" => 0,
-                "album_name" => "",
-                "Left_Piling" => "2,0,4,4",
-                "Right_Piling" => "3,0,4,4",
-                "left_Pile_Cap" => "5,0,1,1",
-                "Right_Pile_Cap" => "6,0,1,1",
-                "Left_Pier_Column" => "8,0,1,1",
-                "Right_Pier_Column" => "9,0,1,1",
-                "Cross_Beam" => "10,0,1,1"
-            ),"DDS03-DDN03" => array(
+            ),"DD03" => array(
                 "type" => 4,
                 "journal_defnition" => "",
+                "north"=>"DDN03",
+                "south"=>"DDS03",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -352,26 +356,11 @@ class duplication extends CI_Controller
                 "Cross_Beam" => "10,0,1,1",
                 "Left_Pier_Head" => "12,0,1,1",
                 "Right_Pier_Head" => "13,0,1,1"
-            ),"DDS6A-DDN6G" => array(
-                "type" => 3,
-                "journal_defnition" => "",
-                "user_id" => 1,
-                "start_date" => "2016-11-01",
-                "end_date" => null,
-                "frequency_no" => 1,
-                "journal_property" => "",
-                "is_image" => 0,
-                "album_name" => "",
-                "Left_Piling" => "2,0,4,4",
-                "Right_Piling" => "3,0,4,4",
-                "left_Pile_Cap" => "5,0,1,1",
-                "Right_Pile_Cap" => "6,0,1,1",
-                "Left_Pier_Column" => "8,0,1,1",
-                "Right_Pier_Column" => "9,0,1,1",
-                "Cross_Beam" => "10,0,1,1"
-            ),"DDS04-DDN04" => array(
+            ),"DD04" => array(
                 "type" => 4,
                 "journal_defnition" => "",
+                "north"=>"DDN04",
+                "south"=>"DDS04",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -388,26 +377,11 @@ class duplication extends CI_Controller
                 "Cross_Beam" => "10,0,1,1",
                 "Left_Pier_Head" => "12,0,1,1",
                 "Right_Pier_Head" => "13,0,1,1"
-            ),"DDS8A-DDN8G" => array(
-                "type" => 3,
-                "journal_defnition" => "",
-                "user_id" => 1,
-                "start_date" => "2016-11-01",
-                "end_date" => null,
-                "frequency_no" => 1,
-                "journal_property" => "",
-                "is_image" => 0,
-                "album_name" => "",
-                "Left_Piling" => "2,0,4,4",
-                "Right_Piling" => "3,0,4,4",
-                "left_Pile_Cap" => "5,0,1,1",
-                "Right_Pile_Cap" => "6,0,1,1",
-                "Left_Pier_Column" => "8,0,1,1",
-                "Right_Pier_Column" => "9,0,1,1",
-                "Cross_Beam" => "10,0,1,1"
-            ),"DDS05-DDN05" => array(
+            ),"DD05" => array(
                 "type" => 4,
                 "journal_defnition" => "",
+                "north"=>"DDN05",
+                "south"=>"DDS05",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -424,9 +398,11 @@ class duplication extends CI_Controller
                 "Cross_Beam" => "10,0,1,1",
                 "Left_Pier_Head" => "12,0,1,1",
                 "Right_Pier_Head" => "13,0,1,1"
-            ),"DDS06-DDN06" => array(
+            ),"DD06" => array(
                 "type" => 4,
                 "journal_defnition" => "",
+                "north"=>"DDN06",
+                "south"=>"DDS06",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -446,6 +422,8 @@ class duplication extends CI_Controller
             ),"DD07" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -460,6 +438,8 @@ class duplication extends CI_Controller
             ),"DD08" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -474,6 +454,8 @@ class duplication extends CI_Controller
             ),"DD09" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -488,6 +470,8 @@ class duplication extends CI_Controller
             ),"DD10" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -502,6 +486,8 @@ class duplication extends CI_Controller
             ),"DD11" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -516,6 +502,8 @@ class duplication extends CI_Controller
             ),"DD12" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -530,6 +518,8 @@ class duplication extends CI_Controller
             ),"DD13" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -544,6 +534,8 @@ class duplication extends CI_Controller
             ),"DD14" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -558,6 +550,8 @@ class duplication extends CI_Controller
             ),"DD15" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -572,6 +566,8 @@ class duplication extends CI_Controller
             ),"DD16" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -586,6 +582,8 @@ class duplication extends CI_Controller
             ),"DD17" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -600,6 +598,8 @@ class duplication extends CI_Controller
             ),"DD18" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -614,6 +614,8 @@ class duplication extends CI_Controller
             ),"DD19" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -628,6 +630,8 @@ class duplication extends CI_Controller
             ),"DD20" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -642,6 +646,8 @@ class duplication extends CI_Controller
             ),"DD21" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -656,6 +662,8 @@ class duplication extends CI_Controller
             ),"DD22" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -670,6 +678,8 @@ class duplication extends CI_Controller
             ),"DD23" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -684,6 +694,8 @@ class duplication extends CI_Controller
             ),"DD24" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -698,6 +710,8 @@ class duplication extends CI_Controller
             ),"DD25" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -712,6 +726,8 @@ class duplication extends CI_Controller
             ),"DD26" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -726,6 +742,8 @@ class duplication extends CI_Controller
             ),"DD27" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -737,9 +755,11 @@ class duplication extends CI_Controller
                 "Pile_Cap" => "4,0,1,1",
                 "Pier_Column" => "7,0,1,1",
                 "Pier_Head" => "11,0,1,1"
-            ),"DDS28-DDN28" => array(
+            ),"DD28" => array(
                 "type" => 3,
                 "journal_defnition" => "",
+                "north"=>"DDN28",
+                "south"=>"DDS28",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -757,6 +777,8 @@ class duplication extends CI_Controller
             ),"DD29" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -771,6 +793,8 @@ class duplication extends CI_Controller
             ),"DD30" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -785,6 +809,8 @@ class duplication extends CI_Controller
             ),"DD31" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -799,6 +825,8 @@ class duplication extends CI_Controller
             ),"DD32" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -813,6 +841,8 @@ class duplication extends CI_Controller
             ),"DD33" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -827,6 +857,8 @@ class duplication extends CI_Controller
             ),"DD34" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -841,6 +873,8 @@ class duplication extends CI_Controller
             ),"DD35" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -855,6 +889,8 @@ class duplication extends CI_Controller
             ),"DD36" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -869,6 +905,8 @@ class duplication extends CI_Controller
             ),"DD37" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -883,6 +921,8 @@ class duplication extends CI_Controller
             ),"DD38" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -897,6 +937,8 @@ class duplication extends CI_Controller
             ),"DD39" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -911,6 +953,8 @@ class duplication extends CI_Controller
             ),"DD40" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -925,6 +969,8 @@ class duplication extends CI_Controller
             ),"DD41" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -939,6 +985,8 @@ class duplication extends CI_Controller
             ),"DD42" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -953,6 +1001,8 @@ class duplication extends CI_Controller
             ),"DD43" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -964,9 +1014,11 @@ class duplication extends CI_Controller
                 "Pile_Cap" => "4,0,1,1",
                 "Pier_Column" => "7,0,1,1",
                 "Pier_Head" => "11,0,1,1"
-            ),"DDS44-DDN44" => array(
+            ),"DD44" => array(
                 "type" => 3,
                 "journal_defnition" => "",
+                "north"=>"DDN44",
+                "south"=>"DDS44",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -981,9 +1033,11 @@ class duplication extends CI_Controller
                 "Left_Pier_Column" => "8,0,1,1",
                 "Right_Pier_Column" => "9,0,1,1",
                 "Cross_Beam" => "10,0,1,1"
-            ),"DDS45-DDN45" => array(
+            ),"DD45" => array(
                 "type" => 3,
                 "journal_defnition" => "",
+                "north"=>"DDN45",
+                "south"=>"DDS45",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1001,6 +1055,8 @@ class duplication extends CI_Controller
             ),"DD46" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1015,6 +1071,8 @@ class duplication extends CI_Controller
             ),"DD47" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1029,6 +1087,8 @@ class duplication extends CI_Controller
             ),"DD48" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1043,20 +1103,8 @@ class duplication extends CI_Controller
             ),"SDW01" => array(
                 "type" => 1,
                 "journal_defnition" => "",
-                "user_id" => 1,
-                "start_date" => "2016-11-01",
-                "end_date" => null,
-                "frequency_no" => 1,
-                "journal_property" => "",
-                "is_image" => 0,
-                "album_name" => "",
-                "Piling" => "1,0,4,4",
-                "Pile_Cap" => "4,0,1,1",
-                "Pier_Column" => "7,0,1,1",
-                "Pier_Head" => "11,0,1,1"
-            ),"SDW2C" => array(
-                "type" => 1,
-                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1071,20 +1119,8 @@ class duplication extends CI_Controller
             ),"SDW02" => array(
                 "type" => 1,
                 "journal_defnition" => "",
-                "user_id" => 1,
-                "start_date" => "2016-11-01",
-                "end_date" => null,
-                "frequency_no" => 1,
-                "journal_property" => "",
-                "is_image" => 0,
-                "album_name" => "",
-                "Piling" => "1,0,4,4",
-                "Pile_Cap" => "4,0,1,1",
-                "Pier_Column" => "7,0,1,1",
-                "Pier_Head" => "11,0,1,1"
-            ),"SDW4C" => array(
-                "type" => 1,
-                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1099,20 +1135,8 @@ class duplication extends CI_Controller
             ),"SDW03" => array(
                 "type" => 1,
                 "journal_defnition" => "",
-                "user_id" => 1,
-                "start_date" => "2016-11-01",
-                "end_date" => null,
-                "frequency_no" => 1,
-                "journal_property" => "",
-                "is_image" => 0,
-                "album_name" => "",
-                "Piling" => "1,0,4,4",
-                "Pile_Cap" => "4,0,1,1",
-                "Pier_Column" => "7,0,1,1",
-                "Pier_Head" => "11,0,1,1"
-            ),"SDW6C" => array(
-                "type" => 1,
-                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1127,20 +1151,8 @@ class duplication extends CI_Controller
             ),"SDW04" => array(
                 "type" => 1,
                 "journal_defnition" => "",
-                "user_id" => 1,
-                "start_date" => "2016-11-01",
-                "end_date" => null,
-                "frequency_no" => 1,
-                "journal_property" => "",
-                "is_image" => 0,
-                "album_name" => "",
-                "Piling" => "1,0,4,4",
-                "Pile_Cap" => "4,0,1,1",
-                "Pier_Column" => "7,0,1,1",
-                "Pier_Head" => "11,0,1,1"
-            ),"SDW8C" => array(
-                "type" => 1,
-                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1155,6 +1167,8 @@ class duplication extends CI_Controller
             ),"SDW05" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1169,6 +1183,8 @@ class duplication extends CI_Controller
             ),"SDW06" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1183,6 +1199,8 @@ class duplication extends CI_Controller
             ),"SDW07" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1197,6 +1215,8 @@ class duplication extends CI_Controller
             ),"SDW08" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1211,6 +1231,8 @@ class duplication extends CI_Controller
             ),"SDW09" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1225,6 +1247,8 @@ class duplication extends CI_Controller
             ),"SDW10" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1239,6 +1263,8 @@ class duplication extends CI_Controller
             ),"SDW11" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1253,6 +1279,8 @@ class duplication extends CI_Controller
             ),"SDW12" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1267,6 +1295,8 @@ class duplication extends CI_Controller
             ),"SDW13" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1281,6 +1311,8 @@ class duplication extends CI_Controller
             ),"SDW14" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1295,6 +1327,8 @@ class duplication extends CI_Controller
             ),"SDW15" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1309,6 +1343,8 @@ class duplication extends CI_Controller
             ),"SDW16" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1323,6 +1359,8 @@ class duplication extends CI_Controller
             ),"SDW17" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1337,6 +1375,8 @@ class duplication extends CI_Controller
             ),"SDW18" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1351,6 +1391,8 @@ class duplication extends CI_Controller
             ),"SDW19" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1365,6 +1407,8 @@ class duplication extends CI_Controller
             ),"SDW20" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1379,6 +1423,8 @@ class duplication extends CI_Controller
             ),"SDW21" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1393,6 +1439,8 @@ class duplication extends CI_Controller
             ),"SDW22" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1407,6 +1455,8 @@ class duplication extends CI_Controller
             ),"SDW23" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1421,6 +1471,8 @@ class duplication extends CI_Controller
             ),"SDW24" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1435,6 +1487,8 @@ class duplication extends CI_Controller
             ),"SDW25" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1449,6 +1503,8 @@ class duplication extends CI_Controller
             ),"SDW26" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1463,6 +1519,8 @@ class duplication extends CI_Controller
             ),"SDW27" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1477,6 +1535,8 @@ class duplication extends CI_Controller
             ),"SDW28" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1491,6 +1551,8 @@ class duplication extends CI_Controller
             ),"SDW29" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1505,6 +1567,8 @@ class duplication extends CI_Controller
             ),"SDW30" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1519,6 +1583,8 @@ class duplication extends CI_Controller
             ),"SDW31" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1533,6 +1599,8 @@ class duplication extends CI_Controller
             ),"SDW32" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1547,6 +1615,8 @@ class duplication extends CI_Controller
             ),"SDW33" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1561,6 +1631,8 @@ class duplication extends CI_Controller
             ),"SDW34" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1575,6 +1647,8 @@ class duplication extends CI_Controller
             ),"SDW35" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1589,6 +1663,8 @@ class duplication extends CI_Controller
             ),"SDW36" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1603,6 +1679,8 @@ class duplication extends CI_Controller
             ),"SDW37" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1617,6 +1695,8 @@ class duplication extends CI_Controller
             ),"SDW38" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1631,6 +1711,8 @@ class duplication extends CI_Controller
             ),"SDW39" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1645,6 +1727,8 @@ class duplication extends CI_Controller
             ),"SDW40" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1659,6 +1743,8 @@ class duplication extends CI_Controller
             ),"SDW41" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1673,6 +1759,8 @@ class duplication extends CI_Controller
             ),"SDE01" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1687,6 +1775,8 @@ class duplication extends CI_Controller
             ),"SDE02" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1701,6 +1791,8 @@ class duplication extends CI_Controller
             ),"SDE03" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1715,6 +1807,8 @@ class duplication extends CI_Controller
             ),"SDE04" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1729,6 +1823,8 @@ class duplication extends CI_Controller
             ),"SDE05" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1743,6 +1839,8 @@ class duplication extends CI_Controller
             ),"SDE06" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1757,6 +1855,8 @@ class duplication extends CI_Controller
             ),"SDE07" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1771,6 +1871,8 @@ class duplication extends CI_Controller
             ),"SDE08" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1785,6 +1887,8 @@ class duplication extends CI_Controller
             ),"SDE09" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1799,6 +1903,8 @@ class duplication extends CI_Controller
             ),"SDE10" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1813,6 +1919,8 @@ class duplication extends CI_Controller
             ),"SDE11" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1827,6 +1935,8 @@ class duplication extends CI_Controller
             ),"SDE12" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1841,6 +1951,8 @@ class duplication extends CI_Controller
             ),"SDE13" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1855,6 +1967,8 @@ class duplication extends CI_Controller
             ),"SDE14" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1869,6 +1983,8 @@ class duplication extends CI_Controller
             ),"SDE15" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1883,6 +1999,8 @@ class duplication extends CI_Controller
             ),"SDE16" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1897,6 +2015,8 @@ class duplication extends CI_Controller
             ),"SDE17" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1911,6 +2031,8 @@ class duplication extends CI_Controller
             ),"SDE18" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1925,6 +2047,8 @@ class duplication extends CI_Controller
             ),"SDE19" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1939,6 +2063,8 @@ class duplication extends CI_Controller
             ),"SDE20" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1953,6 +2079,8 @@ class duplication extends CI_Controller
             ),"SDE21" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1967,6 +2095,8 @@ class duplication extends CI_Controller
             ),"SDE22" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1981,6 +2111,8 @@ class duplication extends CI_Controller
             ),"SDE23" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -1995,6 +2127,8 @@ class duplication extends CI_Controller
             ),"SDE24" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -2009,6 +2143,8 @@ class duplication extends CI_Controller
             ),"SDE25" => array(
                 "type" => 1,
                 "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
                 "user_id" => 1,
                 "start_date" => "2016-11-01",
                 "end_date" => null,
@@ -4138,6 +4274,7 @@ class duplication extends CI_Controller
                         switch ($prop['type']) {
                             case 1  :
                                 $x = 1;
+
                                 $piling = explode(',', $prop['Piling']);
                                 $pile_cap = explode(',', $prop['Pile_Cap']);
                                 $Pier_Column = explode(',', $prop['Pier_Column']);
@@ -4196,10 +4333,9 @@ class duplication extends CI_Controller
                                 $Left_Pier_Column = explode(',', $prop['Left_Pier_Column']);
                                 $Right_Pier_Column = explode(',', $prop['Right_Pier_Column']);
                                 $Cross_Beam = explode(',', $prop['Cross_Beam']);
+                                     $north=$prop['north'];
+                                     $south=$prop['south'];
                                 $pierType="PORTAL";
-                                $arr = explode('-', $name);
-                                     $north=$arr[0];
-                                     $south=$arr[1];
                                     while($x < 8){
                                         if ($x = 1) {
                                             $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Piling[0], 'start_value' => $Left_Piling[1], 'end_value' => $Left_Piling[2], 'frequency_max_value' => $Left_Piling[3], 'display_seq_no' => $x);
@@ -4239,9 +4375,8 @@ class duplication extends CI_Controller
                                 $Left_Pier_Head = explode(',', $prop['Left_Pier_Head']);
                                 $Right_Pier_Head = explode(',', $prop['Right_Pier_Head']);
                                 $pierType="PORTAL-HEAD";
-                                $arr = explode('-', $name);
-                                $north=$arr[0];
-                                $south=$arr[1];
+                                $north=$prop['north'];
+                                $south=$prop['south'];
                                 while($x < 9) {
                                     if ($x = 1) {
                                         $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Piling[0], 'start_value' => $Left_Piling[1], 'end_value' => $Left_Piling[2], 'frequency_max_value' => $Left_Piling[3], 'display_seq_no' => $x);
@@ -4279,8 +4414,6 @@ class duplication extends CI_Controller
                                     }
                                     $x++;
                                 }
-
-
                                 $insert=array('journal_no'=>$journalid,'project_no'=>$project_id,'pier_v'=>$viaductName, 'pier_id'=>$name, 'pier_north_id'=>$north, 'pier_south_id'=>$south, 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0, 'sbg'=>"sbg", 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0, 'status'=>0, 'create_date'=>date('y-m-d'));
                                 $this->design->add_pirer_entry($insert);
                                 break;
@@ -4294,9 +4427,8 @@ class duplication extends CI_Controller
                                 $Left_Pier_Head = explode(',', $prop['Left_Pier_Head']);
                                 $Right_Pier_Head = explode(',', $prop['Right_Pier_Head']);
                                 $pierType="DOUBLE";
-                                $arr = explode('-', $name);
-                                $north=$arr[0];
-                                $south=$arr[1];
+                                $north=$prop['north'];
+                                $south=$prop['south'];
                                 while($x < 9) {
                                     if ($x = 1) {
                                         $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Piling[0], 'start_value' => $Left_Piling[1], 'end_value' => $Left_Piling[2], 'frequency_max_value' => $Left_Piling[3], 'display_seq_no' => $x);

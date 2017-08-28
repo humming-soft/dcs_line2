@@ -880,9 +880,9 @@ Class Admin extends CI_Model
         return $query->num_rows();
     }
     //done by jane for updating pier modified by ANCY MATHEW 28-11-2016
-    function update_pier($pier_id, $pieruid){
+    function update_pier($pier_id, $pieruid,$north,$south,$type){
       //  , pier_position_id='".$pier_position_id."'
-        $sql ="UPDATE pier SET p_uid='".$pieruid."' WHERE id= '".$pier_id."'";
+        $sql ="UPDATE pier SET p_uid='".$pieruid."',piernorth='".$north."', piersouth='".$south."',pier_type_id='".$type."',modified_on=now() WHERE id= '".$pier_id."'";
         $this->db->query($sql);
     }
     //done by ANCY MATHEW for show the journal category
