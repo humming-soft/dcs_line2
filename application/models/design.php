@@ -887,5 +887,25 @@ Class Design extends CI_Model
         }
         return false;
     }
+    function get_pier_name($id) {
+        $query = "SELECT p_uid FROM pier where id='$id'";
+        $result = $this->db->query($query)->result();
+        if (sizeOf($result) > 0) {
+            return $result[0]->p_uid;
+        }
+        return false;
+    }
+    function update_span_detail_span_col($journalid,$pierone)
+    {
+        $pierone = str_replace("'","",$pierone);
+        $this->db->query("UPDATE pier_span_col SET span_journal_no=$journalid WHERE pier_id='$pierone'");
+
+    }
+    function update_span_detail_parapet_col($journalid,$parapet_journal_no)
+    {
+        $parapet_journal_no = str_replace("'","",$parapet_journal_no);
+        $this->db->query("UPDATE pier_span_col SET parapet_journal_no=$journalid WHERE span_journal_no='$parapet_journal_no'");
+
+    }
 }
 ?>

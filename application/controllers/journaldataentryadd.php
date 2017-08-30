@@ -406,8 +406,43 @@ class Journaldataentryadd extends CI_Controller
 
                     }
                 }
+                if(strtolower($journalType)=='span') {
+                    for ($i = 1; $i <= $dataattbcount; $i++) {
+                        $dataattb = 'dataattb' . $i;
+                        $dataattbid = 'dataattbid' . $i;
+                        if($this->input->post($dataattbid)==18){
+                            $this->assessment->update_pier_span_col_span($journal_no,$this->input->post($dataattb),18);
+                        }
+                        if($this->input->post($dataattbid)==19){
+                            $this->assessment->update_pier_span_col_span($journal_no,$this->input->post($dataattb),19);
+                        }
+                        if($this->input->post($dataattbid)==20){
+                            $this->assessment->update_pier_span_col_span($journal_no,$this->input->post($dataattb),20);
+                        }
+                        if($this->input->post($dataattbid)==15){
+                            $this->assessment->update_pier_span_col_span($journal_no,$this->input->post($dataattb),15);
+                        }
+                        if($this->input->post($dataattbid)==16){
+                            $this->assessment->update_pier_span_col_span($journal_no,$this->input->post($dataattb),16);
+                        }
+                    }
+                }
+                if(strtolower($journalType)=='parapet') {
+                    for ($i = 1; $i <= $dataattbcount; $i++) {
+                        $dataattb = 'dataattb' . $i;
+                        $dataattbid = 'dataattbid' . $i;
+                        if($this->input->post($dataattbid)==21){
+                            $this->assessment->update_pier_span_col_parapet($journal_no,$this->input->post($dataattb),21);
+                        }
+                        if($this->input->post($dataattbid)==22){
+                            $this->assessment->update_pier_span_col_parapet($journal_no,$this->input->post($dataattb),22);
+                        }
+                        if($this->input->post($dataattbid)==23){
+                            $this->assessment->update_pier_span_col_parapet($journal_no,$this->input->post($dataattb),23);
+                        }
 
-
+                    }
+                }
             }
             //END
             $sess_array = array('message' => "Project Journal Data Entry Updated Successfully", "type" => 1); //1 success , 0 error

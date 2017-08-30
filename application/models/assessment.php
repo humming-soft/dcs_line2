@@ -1301,15 +1301,48 @@ Class Assessment extends CI_Model
                         $this->db->set('pier_pieread_1', $value);
                     }if($field==11){
                         $this->db->set('pier_pieread_1', $value);
-                    }if($value==12){
+                    }if($field==12){
                         $this->db->set('pier_pieread_2', $value);
-                    }if($value==13){
+                    }if($field==13){
                         $this->db->set('pier_pieread_3', $value);
                     }
         $this->db->where('journal_no', $journal_no);
         $this->db->update('pier_span_col');
     }
-
+    function update_pier_span_col_span($journal_no,$value,$field)
+    {
+        if ($field == 18) {
+            $this->db->set('span_1', $value);
+        }
+        if ($field == 19) {
+            $this->db->set('span_2', $value);
+        }
+        if ($field == 20) {
+            $this->db->set('span_3', $value);
+        }
+        if ($field == 15) {
+            $this->db->set('sbg_left', $value);
+        }
+        if ($field == 16) {
+            $this->db->set('sbg_right', $value);
+        }
+        $this->db->where('span_journal_no', $journal_no);
+        $this->db->update('pier_span_col');
+    }
+    function update_pier_span_col_parapet($journal_no,$value,$field)
+    {
+        if ($field == 21) {
+            $this->db->set('parapet_1', $value);
+        }
+        if ($field == 22) {
+            $this->db->set('parapet_2', $value);
+        }
+        if ($field == 23) {
+            $this->db->set('parapet_3', $value);
+        }
+        $this->db->where('parapet_journal_no', $journal_no);
+        $this->db->update('pier_span_col');
+    }
 
     //--------------------------------
 }
