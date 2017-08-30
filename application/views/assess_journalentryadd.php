@@ -1042,7 +1042,7 @@ endforeach;
 </div>
 
 <script id="template-upload" type="text/x-tmpl">
-{% for (var i=0; i < o.files.length; i++) { j++; var file=o.files[i]; var fileId = file.name.replace('.','_')+'_'+file.size; %}
+{% for (var i=0; i < o.files.length; i++) { j++; var file=o.files[i]; var fileId = file.name.replace('.','_').replace(' ','_').replace('(','').replace(')','')+'_'+file.size; %}
     <tr class="template-upload fade">
         <td style="width:10%">
             <span class="preview"></span>

@@ -54,8 +54,8 @@ var_dump($ci->uploadhandler);*/
 $file = $_FILES['file'];
 $filename = $file['name'];
 $filesize = $file['size'];
-$filtered_name = str_replace(".", "_", $filename);
-$filtered_name = str_replace(" ", "_", $filtered_name);
+$filtered_name = str_replace(" ", "_", str_replace(")", "", str_replace("(", "", str_replace(".", "_", $filename))));
+//$filtered_name = str_replace(" ", "_", $filtered_name);
 
 if ($is_mobile) {
     $descname = 'description';
