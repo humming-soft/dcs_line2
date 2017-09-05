@@ -1309,7 +1309,7 @@ Class Assessment extends CI_Model
         $this->db->where('journal_no', $journal_no);
         $this->db->update('pier_span_col');
     }
-    function update_pier_span_col_span($journal_no,$value,$field)
+    function update_pier_span_col_span($puid,$value,$field)
     {
         if ($field == 18) {
             $this->db->set('span_1', $value);
@@ -1326,10 +1326,10 @@ Class Assessment extends CI_Model
         if ($field == 16) {
             $this->db->set('sbg_right', $value);
         }
-        $this->db->where('span_journal_no', $journal_no);
+        $this->db->where('pier_id', $puid);
         $this->db->update('pier_span_col');
     }
-    function update_pier_span_col_parapet($journal_no,$value,$field)
+    function update_pier_span_col_parapet($puid,$value,$field)
     {
         if ($field == 21) {
             $this->db->set('parapet_1', $value);
@@ -1340,7 +1340,7 @@ Class Assessment extends CI_Model
         if ($field == 23) {
             $this->db->set('parapet_3', $value);
         }
-        $this->db->where('parapet_journal_no', $journal_no);
+        $this->db->where('pier_id', $puid);
         $this->db->update('pier_span_col');
     }
 

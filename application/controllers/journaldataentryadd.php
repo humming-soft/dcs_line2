@@ -8,6 +8,7 @@ class Journaldataentryadd extends CI_Controller
     {
         parent::__construct();
         $this->load->model('assessment', '', TRUE);
+        $this->load->model('design', '', TRUE);
         $this->load->model('securitys', '', TRUE);
         $this->load->library(array('email', 'swiftmailer'));
         $this->load->helper(array('form', 'url', 'general'));
@@ -407,38 +408,44 @@ class Journaldataentryadd extends CI_Controller
                     }
                 }
                 if(strtolower($journalType)=='span') {
+                    $pier_id=$this->design->get_span_pier_id($journal_no);
+                    $pier_uid=$this->design->get_pier_name($pier_id);
                     for ($i = 1; $i <= $dataattbcount; $i++) {
                         $dataattb = 'dataattb' . $i;
                         $dataattbid = 'dataattbid' . $i;
+
                         if($this->input->post($dataattbid)==18){
-                            $this->assessment->update_pier_span_col_span($journal_no,$this->input->post($dataattb),18);
+                            $this->assessment->update_pier_span_col_span($pier_uid,$this->input->post($dataattb),18);
                         }
                         if($this->input->post($dataattbid)==19){
-                            $this->assessment->update_pier_span_col_span($journal_no,$this->input->post($dataattb),19);
+                            $this->assessment->update_pier_span_col_span($pier_uid,$this->input->post($dataattb),19);
                         }
                         if($this->input->post($dataattbid)==20){
-                            $this->assessment->update_pier_span_col_span($journal_no,$this->input->post($dataattb),20);
+                            $this->assessment->update_pier_span_col_span($pier_uid,$this->input->post($dataattb),20);
                         }
                         if($this->input->post($dataattbid)==15){
-                            $this->assessment->update_pier_span_col_span($journal_no,$this->input->post($dataattb),15);
+                            $this->assessment->update_pier_span_col_span($pier_uid,$this->input->post($dataattb),15);
                         }
                         if($this->input->post($dataattbid)==16){
-                            $this->assessment->update_pier_span_col_span($journal_no,$this->input->post($dataattb),16);
+                            $this->assessment->update_pier_span_col_span($pier_uid,$this->input->post($dataattb),16);
                         }
                     }
                 }
                 if(strtolower($journalType)=='parapet') {
+                    $span_journal_no=$this->design->get_parapet_span_id($journal_no);
+                    $pier_id=$this->design->get_span_pier_id($span_journal_no);
+                    $pier_uid=$this->design->get_pier_name($pier_id);
                     for ($i = 1; $i <= $dataattbcount; $i++) {
                         $dataattb = 'dataattb' . $i;
                         $dataattbid = 'dataattbid' . $i;
                         if($this->input->post($dataattbid)==21){
-                            $this->assessment->update_pier_span_col_parapet($journal_no,$this->input->post($dataattb),21);
+                            $this->assessment->update_pier_span_col_parapet($pier_uid,$this->input->post($dataattb),21);
                         }
                         if($this->input->post($dataattbid)==22){
-                            $this->assessment->update_pier_span_col_parapet($journal_no,$this->input->post($dataattb),22);
+                            $this->assessment->update_pier_span_col_parapet($pier_uid,$this->input->post($dataattb),22);
                         }
                         if($this->input->post($dataattbid)==23){
-                            $this->assessment->update_pier_span_col_parapet($journal_no,$this->input->post($dataattb),23);
+                            $this->assessment->update_pier_span_col_parapet($pier_uid,$this->input->post($dataattb),23);
                         }
 
                     }

@@ -458,14 +458,14 @@ class Designjournal extends CI_Controller
                         if($rightpier >= 0 && $leftpier >= 0 ){
                             $spandata=array('journal_id'=>$journalid,'pier_id_one'=>$leftpier,'pier_id_two'=>$rightpier,'span_type'=>$this->input->post('spantype'),'span_count'=>$count_attb1);
                             $this->design->add_span_detail($spandata);
-                            $this->design->update_span_detail_span_col($journalid,$leftpier_uid);
+                           // $this->design->update_span_detail_span_col($journalid,$leftpier_uid);
                         }
                     }
                     if($spantype==2){
                         if( $sspan >= 0 ){
                             $spandata=array('journal_id'=>$journalid,'pier_id_one'=>$sspan,'pier_id_two'=>null,'span_type'=>$this->input->post('spantype'),'span_count'=>0);
                             $this->design->add_span_detail($spandata);
-                            $this->design->update_span_detail_span_col($journalid,$leftpier_uid1);
+                           // $this->design->update_span_detail_span_col($journalid,$leftpier_uid1);
                         }
                     }
                 }
