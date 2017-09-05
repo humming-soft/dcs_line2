@@ -903,6 +903,15 @@ Class Design extends CI_Model
         }
         return false;
     }
+
+    function get_span_journal($journal) {
+        $query = "SELECT journal_no FROM progrssive_journal_category where journal_name='$journal'";
+        $result = $this->db->query($query)->result();
+        if (sizeOf($result) > 0) {
+            return $result[0]->journal_no;
+        }
+        return false;
+    }
     function get_pier_name($id) {
         $query = "SELECT p_uid FROM pier where id='$id'";
         $result = $this->db->query($query)->result();

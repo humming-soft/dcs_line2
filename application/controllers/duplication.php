@@ -25,6 +25,7 @@ class duplication extends CI_Controller
     //pier with cross beam and head
     function index()
     {
+        $start_date="2017-01-05";
         $V201 = array(
             "SB01" => array("type" => 1,
                 "journal_defnition" => "",
@@ -4199,6 +4200,7 @@ class duplication extends CI_Controller
                         $this->duplicationmodel->add_piers($data);
                     }
                     $viaductName=$via;
+
                     //1:Normal pier or standard pier
                     //2:R shaped or cantilever pier
                     //3:Portal
@@ -4261,7 +4263,7 @@ class duplication extends CI_Controller
                     }
                     if ($this->duplicationmodel->add_check_journal($name, $project_id) == 0)//check the journal name is already exist or not
                     {
-                        $data = array('project_no' => $project_id, 'journal_name' => $name, 'journal_property' => $prop['journal_property'], 'user_id' => $prop['user_id'], 'start_date' => $prop['start_date'], 'end_date' => $prop['end_date'], 'frequency_no' => $prop['frequency_no'], 'dependency' => $dependency, 'is_image' => 0, 'album_name' => $prop['album_name']);
+                        $data = array('project_no' => $project_id, 'journal_name' => $name, 'journal_property' => $prop['journal_property'], 'user_id' => $prop['user_id'], 'start_date' => $start_date, 'end_date' => $prop['end_date'], 'frequency_no' => $prop['frequency_no'], 'dependency' => $dependency, 'is_image' => 0, 'album_name' => $prop['album_name']);
                         $journalid = $this->duplicationmodel->add_journal($data, $project_id, $name);
                         if ($journalid) {
                             $datacategory = array('journal_no' => $journalid, 'journal_category_id' => 2, 'journal_name' => $name);
@@ -4528,7 +4530,7 @@ class duplication extends CI_Controller
                             default :
                                 break;
                         }
-                        $frequencystart=$this->duplicationmodel->show_frequency_detail_no($prop['start_date']);
+                        $frequencystart=$this->duplicationmodel->show_frequency_detail_no($start_date);
                         $session_data = $this->session->userdata('logged_in');
                         $loginid = $session_data['id'];
 

@@ -652,7 +652,13 @@ $(document).ready(function()
         }
         var hashes = $("#spanid").find(":selected").text().trim();
             var arr = hashes.split('-');
-        $('#journalname').val(arr[0]+"-"+"PARAPET");
+            if(arr[1]=="SPAN"){
+                $('#journalname').val(arr[0]+"-"+"PARAPET");
+            }
+            else{
+                $('#journalname').val(hashes+"-PARAPET");
+            }
+        //$('#journalname').val(arr[0]+"-"+"PARAPET");
         }
 		for(i=1;i<=dataattbgrpcount;i++)
 		{
@@ -1011,7 +1017,12 @@ $(document).ready(function()
             }
             var hashes = $("#spanid1").find(":selected").text().trim();
             var arr = hashes.split('-');
-            $('#journalname1').val(arr[0]+"-"+"PARAPET");
+            if(arr[1]=="SPAN"){
+                $('#journalname1').val(arr[0]+"-"+"PARAPET");
+            }
+            else{
+                $('#journalname1').val(val+"-PARAPET");
+            }
         }
 		for(i=1;i<=dataattbgrpcount;i++)
 		{
