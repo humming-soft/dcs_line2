@@ -25,7 +25,7 @@ class duplication extends CI_Controller
     //pier with cross beam and head
     function index()
     {
-        $start_date="2017-01-05";
+        $start_date="2017-06-05";
         $V201 = array(
             "SB01" => array("type" => 1,
                 "journal_defnition" => "",

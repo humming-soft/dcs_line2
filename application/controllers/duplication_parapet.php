@@ -142,7 +142,7 @@ class duplication_parapet extends CI_Controller
                         $data = array('project_no' => $project_id, 'journal_name' => $name, 'journal_property' => $prop['journal_property'], 'user_id' => $prop['user_id'], 'start_date' => $prop['start_date'], 'end_date' => $prop['end_date'], 'frequency_no' => $prop['frequency_no'], 'dependency' => $dependency, 'is_image' => 0, 'album_name' => $prop['album_name']);
                         $journalid = $this->duplicationmodel->add_journal($data, $project_id, $name);
                         if ($journalid) {
-                            $datacategory = array('journal_no' => $journalid, 'journal_category_id' => 1, 'journal_name' => $name);
+                            $datacategory = array('journal_no' => $journalid, 'journal_category_id' => 4, 'journal_name' => $name);
                             $this->duplicationmodel->add_category_detail($datacategory);
                         }
                         $validatordata = array('journal_no' => $journalid, 'validate_user_id' => 14, 'validate_level_no' => 1);

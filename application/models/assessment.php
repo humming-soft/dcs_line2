@@ -27,23 +27,24 @@ Class Assessment extends CI_Model
         $data = strtolower($data);
         $data = str_replace("'", "''", $data);
          //$query = "select a.project_no,a.project_name,b.journal_name,b.journal_no from project_template a, journal_master b where a.project_no=b.project_no AND a.project_name = 'Power Supply And Distribution System'";
-        $query = "select a.project_no,a.project_name,b.journal_name,b.journal_no from project_template a, journal_master b where a.project_no=b.project_no ";
+        $query = "SELECT a.project_no,a.project_name,b.journal_name,b.journal_no,d.journal_category_name FROM project_template a, journal_master b, progrssive_journal_category c, journal_category d where a.project_no=b.project_no and b.journal_no=c.journal_no and c.journal_category_id =d.journal_category_id ";
         if ($userid != "1" && $roleid != "1") {
-            $query .= " and journal_no in (select journal_no from journal_data_user where data_user_id=$userid and default_owner_opt=1)";
+            $query .= " and b.journal_no in (select journal_no from journal_data_user where data_user_id=$userid and default_owner_opt=1)";
         }
-        if ($data != "" && $data != "project_name asc" && $data != "project_name desc" && $data != "journal_name asc" && $data != "journal_name desc") {
+        if ($data != "" && $data != "a.project_name asc" && $data != "a.project_name desc" && $data != "b.journal_name asc" && $data != "b.journal_name desc") {
             $query .= " and( lower(a.project_name) like '%" . $data . "%' ";
             $query .= " or lower(b.journal_name) like '%" . $data . "%' )";
 
         }
-        if ($data == "project_name asc" || $data == "project_name desc" || $data == "journal_name asc" || $data == "journal_name desc") {
+        if ($data == "a.project_name asc" || $data == "a.project_name desc" || $data == "b.journal_name asc" || $data == "b.journal_name desc") {
             $query .= "Order By " . $data;
         } else {
             //$query .= "Order By project_name asc,journal_name asc";
-            $query .= "Order By journal_no asc";
+            $query .= "Order By b.journal_no asc";
         }
         //$query .= " OFFSET " . $offset . "LIMIT " . $perPage;
         $q = $this->db->query($query);
+
         return $q->result();
     }
     // Function To Fetch All pending data entry owner Record

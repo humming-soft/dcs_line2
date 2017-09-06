@@ -114,18 +114,30 @@
             	<th><?php echo $labelname[9]?></th>
 	            <th><a href="javascript:void(0)"><?php echo $labelname[0]; ?></a></th>
 	            <th><a href="javascript:void(0)"><?php echo $labelname[1]; ?></a></th>
+                <th><a href="javascript:void(0)"><?php echo "Category"; ?></a></th>
 	            <th class="no-sort"><?php echo $labelname[2]; ?></th>
 	        </tr>
 	    </thead>
     	<tbody>
     		<?php
 				$sno=0;
+                $cate="";
 				foreach ($records as $k => $pjde):
+//print_r($records) ;
+//exit;
 			?>
         			<tr>
 			        	<td><?php echo $k+1; ?></td>
 			            <td><?php echo $pjde->project_name; ?></td>
 			            <td><?php echo $pjde->journal_name; ?></td>
+                        <?php
+                        if(!isset($pjde->journal_category_name)){
+                          $cate="Non Progressive";
+                        }else{
+                        $cate="Progressive- ".''.$pjde->journal_category_name;
+                        }
+                        ?>
+                        <td><?php echo $cate; ?></td>
 			            <?php  $pjdefdat=$pjdefreq[$pjde->journal_no]; ?>
 			            <td><?php echo $pjdefdat; ?></td>
 			        </tr>
