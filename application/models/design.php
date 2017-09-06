@@ -895,6 +895,14 @@ Class Design extends CI_Model
         }
         return false;
     }
+    function get_span_pier_id_two($journal_id) {
+        $query = "SELECT pier_id_two FROM span_detail where journal_id='$journal_id'";
+        $result = $this->db->query($query)->result();
+        if (sizeOf($result) > 0) {
+            return $result[0]->pier_id_two;
+        }
+        return false;
+    }
     function get_parapet_span_id($journal_id) {
         $query = "SELECT span_journal_no FROM parapet_detail where journal_no='$journal_id'";
         $result = $this->db->query($query)->result();
@@ -931,6 +939,40 @@ Class Design extends CI_Model
         $parapet_journal_no = str_replace("'","",$parapet_journal_no);
         $this->db->query("UPDATE pier_span_col SET parapet_journal_no=$journalid WHERE span_journal_no='$parapet_journal_no'");
 
+    }
+    function get_left_pier_uid_status($jname) {
+        $catid = str_replace("'","",$jname);
+        $query = "    select a.project_name,b.journal_name,b.journal_no,f.frequency_detail_name,e.user_full_name,c.publish_date,
+         d.data_validate_no,d.validate_level_no,g.journal_no,c.data_entry_no from project_template a, journal_master b,journal_data_entry_master c,
+         journal_data_validate_master d,sec_user e,frequency_detail f,progrssive_journal_category g where a.project_no=b.project_no
+         and c.journal_no=g.journal_no and c.journal_no=b.journal_no and c.data_entry_no=d.data_entry_no and d.validate_status=4
+         and c.publish_user_id=e.user_id and f.frequency_detail_no=c.frequency_detail_no and g.journal_category_id=2 and b.journal_name='$catid'";
+        $result = $this->db->query($query)->result();
+        if (sizeOf($result) > 0) {
+            return 1;
+        }
+        return 0;
+    }
+    function get_span_journal_status($jid) {
+        $catid = str_replace("'","",$jid);
+        $query = "    select a.project_name,b.journal_name,b.journal_no,f.frequency_detail_name,e.user_full_name,c.publish_date,
+         d.data_validate_no,d.validate_level_no,g.journal_no,c.data_entry_no from project_template a, journal_master b,journal_data_entry_master c,
+         journal_data_validate_master d,sec_user e,frequency_detail f,progrssive_journal_category g where a.project_no=b.project_no
+         and c.journal_no=g.journal_no and c.journal_no=b.journal_no and c.data_entry_no=d.data_entry_no and d.validate_status=4
+         and c.publish_user_id=e.user_id and f.frequency_detail_no=c.frequency_detail_no and g.journal_category_id=1 and b.journal_no='$catid'";
+        $result = $this->db->query($query)->result();
+        if (sizeOf($result) > 0) {
+            return 1;
+        }
+        return 0;
+    }
+    function get_span_journal_id($journal_id) {
+        $query = "SELECT span_journal_no FROM parapet_detail where journal_no='$journal_id'";
+        $result = $this->db->query($query)->result();
+        if (sizeOf($result) > 0) {
+            return $result[0]->span_journal_no;
+        }
+        return false;
     }
 }
 ?>
