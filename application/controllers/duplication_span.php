@@ -2940,6 +2940,21 @@ class duplication_span extends CI_Controller
                 "Span-2"=> "19,0,1,1",
                 "Span-3"=> "20,0,1,1"
 
+            ),"MP27-SPAN" => array("type" => 3,
+                "journal_defnition" => "",
+                "left_pier"=>"MP27",
+                "right_pier"=>"MP28",
+                "user_id" => 1,
+                "start_date" => $start_date,
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Span-1" => "18,0,1,1",
+                "Span-2"=> "19,0,1,1",
+                "Span-3"=> "20,0,1,1"
+
             ),
             "MP28-SPAN" => array("type" => 3,
                 "journal_defnition" => "",
