@@ -132,8 +132,8 @@
                 }else
                     $status=$status_span[$pjde->journal_no];
                 ?>
-            <?php if($status==0){?>
-        			<tr hidden="hidden">
+            <?php if($status!=0){?>
+        			<tr>
 			        	<td><?php echo $k+1; ?></td>
 			            <td><?php echo $pjde->project_name; ?></td>
 			            <td><?php echo $pjde->journal_name; ?></td>
@@ -148,22 +148,6 @@
                         <?php  $pjdefdat=$pjdefreq[$pjde->journal_no]; ?>
                         <td><?php echo $pjdefdat; ?></td>
 			        </tr>
-               <?php } else {?>
-                <tr>
-                    <td><?php echo $k+1; ?></td>
-                    <td><?php echo $pjde->project_name; ?></td>
-                    <td><?php echo $pjde->journal_name; ?></td>
-                    <?php
-                    if(!isset($pjde->journal_category_name)){
-                        $cate="Non Progressive";
-                    }else{
-                        $cate="Progressive- ".''.$pjde->journal_category_name;
-                    }
-                    ?>
-                    <td><?php echo $cate; ?></td>
-                    <?php  $pjdefdat=$pjdefreq[$pjde->journal_no]; ?>
-                    <td><?php echo $pjdefdat; ?></td>
-                </tr>
                <?php }?>
 			<?php endforeach; ?>
 
