@@ -503,8 +503,42 @@ Class Design extends CI_Model
 		$this->db->where('journal_no', $id);
 		$this->db->delete('journal_detail');
 
+
+        $query=$this->db->query("SELECT id, journal_id, pier_id_one, pier_id_two, span_type, span_count FROM span_detail where journal_id=$id");
+        $query_1=$this->db->query("SELECT id, journal_id, pier_id_one, pier_id_two, span_type, span_count FROM span_detail where journal_id=$id");
+        $query_2=$this->db->query("SELECT id, journal_no, span_journal_no FROM parapet_detail where journal_no=$id");
+        $query_3=$this->db->query("SELECT id, journal_no, span_journal_no FROM parapet_detail where span_journal_no=$id");
+        $query_4=$this->db->query("SELECT pier_span_no FROM pier_span_col where journal_no=$id");
+        $result=$query->result_array();
+        $result_1=$query_1->result_array();
+        $result_2=$query_2->result_array();
+        $result_3=$query_3->result_array();
+        $result_4=$query_4->result_array();
+        if(count($result)>0) {
+            $this->db->where('journal_id', $id);
+            $this->db->delete('progrssive_journal_category');
+        }
+        if(count($result_1)>0) {
+            $this->db->where('journal_id', $id);
+            $this->db->delete('span_detail');
+        }
+        if(count($result_2)>0) {
+            $this->db->where('journal_no', $id);
+            $this->db->delete('parapet_detail');
+        }
+        if(count($result_3)>0) {
+            $this->db->where('span_journal_no', $id);
+            $this->db->delete('parapet_detail');
+        }
+        if(count($result_4)>0) {
+            $this->db->where('journal_no', $id);
+            $this->db->delete('pier_span_col');
+
+        }
 		$this->db->where('journal_no', $id);
 		$this->db->delete('journal_master');
+
+
 	}
 
 	// Check journal end date greater than project end date
@@ -973,6 +1007,19 @@ Class Design extends CI_Model
             return $result[0]->span_journal_no;
         }
         return false;
+    }
+
+    function update_span_end($pier_uid,$end,$attbid)
+    {
+        $pier_uid = str_replace("'","",$pier_uid);
+        if ($attbid == 15) {
+            $this->db->set('sbg_left_count', $end);
+        }
+        if ($attbid == 16) {
+            $this->db->set('sbg_right_count', $end);
+        }
+        $this->db->where('pier_id', $pier_uid);
+        $this->db->update('pier_span_col');
     }
 }
 ?>

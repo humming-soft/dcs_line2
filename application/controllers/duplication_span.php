@@ -3606,41 +3606,42 @@ class duplication_span extends CI_Controller
                                 break;
                             case 4 :$x=1;
                                 $Right_Span = explode(',', $prop['Right_Span']);
-
+                                $left_pier_id=$this->design->get_pierid($prop['left_pier']);
                                     if ($x = 1) {
                                         $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Span[0], 'start_value' => $Right_Span[1], 'end_value' => $Right_Span[2], 'frequency_max_value' => $Right_Span[3], 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                        $this->design->update_span_end($prop['left_pier'],$Right_Span[2],16);
                                     }
-                                $left_pier_id=$this->design->get_pierid($prop['left_pier']);
                                 $spandata=array('journal_id'=>$journalid,'pier_id_one'=>$left_pier_id,'pier_id_two'=>0,'span_type'=>1,'span_count'=>0);
                                 $this->design->add_span_detail($spandata);
                                 break;
                             case 5 :$x=1;
                                 $Left_Span = explode(',', $prop['Left_Span']);
-
+                                $left_pier_id=$this->design->get_pierid($prop['left_pier']);
                                     if ($x = 1) {
                                         $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Span[0], 'start_value' => $Left_Span[1], 'end_value' => $Left_Span[2], 'frequency_max_value' => $Left_Span[3], 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                        $this->design->update_span_end($prop['left_pier'],$Left_Span[2],15);
                                     }
-                                $left_pier_id=$this->design->get_pierid($prop['left_pier']);
-
                                 $spandata=array('journal_id'=>$journalid,'pier_id_one'=>$left_pier_id,'pier_id_two'=>0,'span_type'=>1,'span_count'=>0);
                                 $this->design->add_span_detail($spandata);
                                 break;
                             case 6 :$x = 1;
                                 $Left_Span = explode(',', $prop['Left_Span']);
                                 $Right_Span = explode(',', $prop['Right_Span']);
+                                $left_pier_id=$this->design->get_pierid($prop['left_pier']);
                                     while ($x < 2) {
                                         if ($x = 1) {
                                             $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Span[0], 'start_value' => $Left_Span[1], 'end_value' => $Left_Span[2], 'frequency_max_value' => $Left_Span[3], 'display_seq_no' => $x);
                                             $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                            $this->design->update_span_end($prop['left_pier'],$Left_Span[2],15);
                                         }if($x = 2){
                                             $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Span[0], 'start_value' => $Right_Span[1], 'end_value' => $Right_Span[2], 'frequency_max_value' => $Right_Span[3], 'display_seq_no' => $x);
                                             $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                            $this->design->update_span_end($prop['left_pier'],$Right_Span[2],16);
                                         }
                                         $x++;
                                     }
-                                        $left_pier_id=$this->design->get_pierid($prop['left_pier']);
                                         $spandata=array('journal_id'=>$journalid,'pier_id_one'=>$left_pier_id,'pier_id_two'=>0,'span_type'=>1,'span_count'=>0);
                                         $this->design->add_span_detail($spandata);
                                     break;
