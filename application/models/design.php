@@ -504,7 +504,7 @@ Class Design extends CI_Model
 		$this->db->delete('journal_detail');
 
 
-        $query=$this->db->query("SELECT id, journal_id, pier_id_one, pier_id_two, span_type, span_count FROM span_detail where journal_id=$id");
+        $query=$this->db->query("SELECT progrssive_journal_category_id, journal_no FROM progrssive_journal_category where journal_no=$id");
         $query_1=$this->db->query("SELECT id, journal_id, pier_id_one, pier_id_two, span_type, span_count FROM span_detail where journal_id=$id");
         $query_2=$this->db->query("SELECT id, journal_no, span_journal_no FROM parapet_detail where journal_no=$id");
         $query_3=$this->db->query("SELECT id, journal_no, span_journal_no FROM parapet_detail where span_journal_no=$id");
@@ -515,7 +515,7 @@ Class Design extends CI_Model
         $result_3=$query_3->result_array();
         $result_4=$query_4->result_array();
         if(count($result)>0) {
-            $this->db->where('journal_id', $id);
+            $this->db->where('journal_no', $id);
             $this->db->delete('progrssive_journal_category');
         }
         if(count($result_1)>0) {
