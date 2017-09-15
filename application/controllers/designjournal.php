@@ -481,13 +481,15 @@ class Designjournal extends CI_Controller
                         }
                     }
                 }
-                $spanvalue=$this->input->post('spancomplete');
-                if($spanvalue >= 0){
-                    $this->design->update_span_detail_parapet_col($journalid,$spanvalue);
-                    $parapetdata=array('journal_no'=>$journalid,'span_journal_no'=>$spanvalue);
-                    $this->design->add_parapet_detail($parapetdata);
+                if(strtolower($journalType)=='parapet') {
+                    $spanvalue = $this->input->post('spancomplete');
+                    if ($spanvalue >= 0) {
+                        $this->design->update_span_detail_parapet_col($journalid, $spanvalue);
+                        $parapetdata = array('journal_no' => $journalid, 'span_journal_no' => $spanvalue);
+                        $this->design->add_parapet_detail($parapetdata);
 
 
+                    }
                 }
                 $count=0;
                 for($j=1;$j<=$dataattbcount;$j++)
