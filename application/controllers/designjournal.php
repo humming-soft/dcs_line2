@@ -449,6 +449,7 @@ class Designjournal extends CI_Controller
                     if($spantype==1){
                         for($j=1;$j<=$dataattbcount;$j++) {
                             $count_attb1=$count_attb1+1;
+                            $end='end'.$j;
                             $attbid='dataattbid'.$j;
                             $dataAtbId=$this->input->post($attbid);
                         }
@@ -463,6 +464,17 @@ class Designjournal extends CI_Controller
                     }
                     if($spantype==2){
                         if( $sspan >= 0 ){
+                            $pier_uid=$this->design->get_pier_name($sspan);
+                            for($j=1;$j<=$dataattbcount;$j++) {
+                                $chk='dataattb'.$j;
+                                $end = 'end' . $j;
+                                $attbid='dataattbid'.$j;
+                                $val=$this->input->post($chk);
+                                if($val==1)
+                                {
+                                    $this->design->update_span_end($pier_uid,$this->input->post($end),$this->input->post($attbid));
+                                }
+                            }
                             $spandata=array('journal_id'=>$journalid,'pier_id_one'=>$sspan,'pier_id_two'=>null,'span_type'=>$this->input->post('spantype'),'span_count'=>0);
                             $this->design->add_span_detail($spandata);
                            // $this->design->update_span_detail_span_col($journalid,$leftpier_uid1);
@@ -592,7 +604,7 @@ class Designjournal extends CI_Controller
                     }
                     $pjtName =$this->design->get_project_name($projectno);
                     $viaductName=explode(' ',$pjtName);
-                    $insert=array('journal_no'=>$journalid,'project_no'=>$projectno,'pier_v'=>$viaductName[0], 'pier_id'=>$name, 'pier_north_id'=>$north, 'pier_south_id'=>$south, 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0, 'sbg_left'=>0,'sbg_right'=>0, 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0,'span_journal_no'=>0, 'parapet_journal_no'=>0, 'status'=>0, 'create_date'=>date('Y-m-d'));
+                    $insert=array('journal_no'=>$journalid,'project_no'=>$projectno,'pier_v'=>$viaductName[0], 'pier_id'=>$name, 'pier_north_id'=>$north, 'pier_south_id'=>$south, 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0,'sbg_left_count'=>0,'sbg_right_count'=>0, 'sbg_left'=>0,'sbg_right'=>0, 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0,'span_journal_no'=>0, 'parapet_journal_no'=>0, 'status'=>0, 'create_date'=>date('Y-m-d'));
                     $this->design->add_pirer_entry($insert);
                 }
                 //END
@@ -908,6 +920,17 @@ class Designjournal extends CI_Controller
                     }
                     if($spantype==2){
                         if( $sspan >= 0 ){
+                            $pier_uid=$this->design->get_pier_name($sspan);
+                            for($j=1;$j<=$dataattbcount;$j++) {
+                                $chk='1dataattb'.$j;
+                                $end = '1end' . $j;
+                                $attbid='1dataattbid'.$j;
+                                $val=$this->input->post($chk);
+                                if($val==1)
+                                {
+                                    $this->design->update_span_end($pier_uid,$this->input->post($end),$this->input->post($attbid));
+                                }
+                            }
                             $spandata=array('journal_id'=>$journalid,'pier_id_one'=>$sspan,'pier_id_two'=>null,'span_type'=>$this->input->post('spantype'),'span_count'=>0);
                             $this->design->add_span_detail($spandata);
                         }

@@ -1280,6 +1280,7 @@ Class Assessment extends CI_Model
     //10-01-2017
     function update_pier_span_col($journal_no,$value,$field)
     {
+
                     if($field==1){
                         $this->db->set('pier_pile_1', $value);
                     }if($field==2){
@@ -1307,6 +1308,7 @@ Class Assessment extends CI_Model
                     }if($field==13){
                         $this->db->set('pier_pieread_3', $value);
                     }
+        $this->db->set('modified_date',date('Y-m-d'));
         $this->db->where('journal_no', $journal_no);
         $this->db->update('pier_span_col');
     }
@@ -1327,6 +1329,7 @@ Class Assessment extends CI_Model
         if ($field == 16) {
             $this->db->set('sbg_right', $value);
         }
+        $this->db->set('modified_date',date('Y-m-d'));
         $this->db->where('pier_id', $puid);
         $this->db->update('pier_span_col');
     }
@@ -1341,6 +1344,7 @@ Class Assessment extends CI_Model
         if ($field == 23) {
             $this->db->set('parapet_3', $value);
         }
+        $this->db->set('modified_date',date('Y-m-d'));
         $this->db->where('pier_id', $puid);
         $this->db->update('pier_span_col');
     }
