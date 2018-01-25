@@ -133,7 +133,7 @@
                     $status=$status_span[$pjde->journal_no];
                 ?>
             <?php if($status==0){?>
-        			<tr hidden="hidden">
+        			<tr>
 			        	<td><?php echo $k+1; ?></td>
 			            <td><?php echo $pjde->project_name; ?></td>
 			            <td><?php echo $pjde->journal_name; ?></td>
@@ -146,7 +146,7 @@
                         ?>
                         <td><?php echo $cate; ?></td>
                         <?php  $pjdefdat=$pjdefreq[$pjde->journal_no]; ?>
-                        <td><?php echo $pjdefdat; ?></td>
+                        <td>DEPEND JOURNAL</td>
 			        </tr>
                <?php } else {?>
                 <tr>
