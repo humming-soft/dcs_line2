@@ -43,6 +43,7 @@ Class Assessment extends CI_Model
             $query .= "Order By b.journal_no asc";
         }
         //$query .= " OFFSET " . $offset . "LIMIT " . $perPage;
+      
         $q = $this->db->query($query);
 
         return $q->result();

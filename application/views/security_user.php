@@ -598,7 +598,7 @@
 			        <th><?php echo $labelname[2]; ?></th>
 			        <th><?php echo $labelname[1]; ?></th>
 			        <th><?php echo $labelname[4]; ?></th>
-			        <th><?php echo $labelname[5]; ?></th>
+
 			        <th>Edit</th>
 			        <th>Delete</th>
     			</tr>
@@ -614,19 +614,7 @@
 				  			<td><?php echo $record->sec_role_name; ?></td>
 				  			<td><?php echo $record->email_id; ?></td>
 				  			<td><?php echo $record->user_name; ?></td>
-				  			<td>
-				  				<?php
-									if($editperm==1 && $ldap!=1) // added new condition $ldap ==1 by agaile on 03/06/2016 if the user is logged in via ldap disable the reset pass
-									{
-								?>
-				  						<a href="#" data-toggle="modal" data-target="#myModal2" class="modalreset" data-userid="<?php echo $record->user_id; ?>" >Reset</a>
-                                <?php
-									}
-                                else{
-                                    echo 'Reset';
-                                }
-								?>
-				  			</td>
+
 		          			<td>
 		          				<?php
 									if($editperm==1 )

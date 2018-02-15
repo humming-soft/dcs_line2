@@ -118,7 +118,8 @@ class Projectstatus extends CI_Controller
 			$data1['alabelobject']=$this->securitys->get_label_object(22);
 			$data1['rlabels']=$this->securitys->get_label(23);
 			$data1['rlabelobject']=$this->securitys->get_label_object(23);
-
+//print_r($data) ;
+			//exit;
 			$this->load->view('header', $data1);
 		    $this->load->view('timeline_projectstatus', $data);
 		    $this->load->view('footer');
