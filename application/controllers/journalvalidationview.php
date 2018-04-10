@@ -52,19 +52,16 @@ class Journalvalidationview extends CI_Controller
 			$id=$this->input->get('id');
             $user_id = $session_data['id'];
 
-			/* if ($this->input->get('id') != "") {
+			if ($this->input->get('id') != "") {
 			     $id_data = $this->assessment->show_validation_journal_data_entry_no($id);
 				 $jno = $this->assessment->get_journal_no($id_data);
-				 $dno = $this->assessment->get_data_entry_no($jno);
-				 echo "-DATA ENTRY NO -".$id_data."---";
-				 echo "-JOURNAL NUMBER NO -".$jno."---";
-				 echo "-VALIDATOR NUMBER-".$dno."---";
-				 if(($dno == $session_data['id']) ){
-					$this->alertreminder->update_reminder_hide_status($id,$session_data['id']);
+				 $validator_id=$this->assessment->validator_userid($id);
+				 if(($validator_id == $session_data['id']) ){
+					$this->alertreminder->update_reminder_hide_status($id_data,$session_data['id']);
 				}
-			 }*/
-			//echo "id->". $id;
-//echo "user id->".$user_id;
+			 }
+			 //echo "id->". $id;
+             //echo "user id->".$user_id;
 
             //function for updating user alert seen status
             if($this->input->get('alert_id')!="") {
@@ -81,7 +78,7 @@ class Journalvalidationview extends CI_Controller
                 $this->alertreminder->update_reminder_status($alert_id, $alert_user_id);
             }
             //end
-//exit;
+            //exit;
 
 			//Load all record data
 			$data['cpagename']='journalvalidationview';

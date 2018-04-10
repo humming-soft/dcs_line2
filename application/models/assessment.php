@@ -731,10 +731,12 @@ Class Assessment extends CI_Model
         $q = $this->db->query($query);
         return $q->result();
     }
+    //ADDED BY ANCY MATHEW
     function show_validation_journal_data_entry_no($id)
     {
         $query = "select frequency_period,fd.start_date,fd.end_date,journal_name,project_name,user_full_name,frequency_detail_name,publish_date,(select user_full_name from sec_user where sec_user.user_id=jdem.publish_user_id) as publishname,validate_level_no,jdvm.data_entry_no,jm.is_image from journal_data_entry_master jdem,journal_master jm,project_template pt,sec_user su,frequency_detail fd,journal_data_validate_master jdvm where data_validate_no=$id and jdem.data_entry_no=jdvm.data_entry_no and jdem.journal_no=jm.journal_no and jm.project_no=pt.project_no and jm.user_id=su.user_id and fd.frequency_detail_no=jdem.frequency_detail_no";
         $res = $this->db->query($query);
+
         $rows = $res->result();
         foreach ($rows as $row):
             $datano = $row->data_entry_no;
@@ -742,6 +744,18 @@ Class Assessment extends CI_Model
         return $datano;
 
     }
+    function validator_userid($id)
+    {
+        $query = "select frequency_period,fd.start_date,fd.end_date,journal_name,project_name,user_full_name,frequency_detail_name,publish_date,validate_user_id,(select user_full_name from sec_user where sec_user.user_id=jdem.publish_user_id) as publishname,validate_level_no,jdvm.data_entry_no,jm.is_image from journal_data_entry_master jdem,journal_master jm,project_template pt,sec_user su,frequency_detail fd,journal_data_validate_master jdvm where data_validate_no=$id and jdem.data_entry_no=jdvm.data_entry_no and jdem.journal_no=jm.journal_no and jm.project_no=pt.project_no and jm.user_id=su.user_id and fd.frequency_detail_no=jdem.frequency_detail_no";
+        $res = $this->db->query($query);
+        $rows = $res->result();
+        foreach ($rows as $row):
+            $userid = $row->validate_user_id;
+        endforeach;
+        return $userid;
+
+    }
+    //END ANCY MATHEW
     function show_validation_status($id)
     {
         $query = "select validate_status from journal_data_validate_master jdvm where data_validate_no=$id";
