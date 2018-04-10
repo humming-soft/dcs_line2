@@ -33,30 +33,32 @@
 			}
 		});
 
-		$("#chkstat input:radio").click(function()
-		{
+		$("#chkstat input:radio").click(function() {
+
 			var rval="";
+			var search = "";
 			var search = $("#chkstat input:radio:checked").val();
-			if (search=="Completed") 
+			if (search=="Completed")
 			{
 				$.post( "<?php echo base_url(); ?><?php echo $cpagename; ?>/searchrecord",{search:search}, function( data ) {
-				location.href="<?php echo base_url(); ?><?php echo $cpagename; ?>/search";
+					location.href="<?php echo base_url(); ?><?php echo $cpagename; ?>/search";
 				});
-			} 
-			else if (search=="Pending") 
+			}
+			else if (search=="Pending")
 			{
 				$.post( "<?php echo base_url(); ?><?php echo $cpagename; ?>/searchrecord",{search:search}, function( data ) {
-				location.href="<?php echo base_url(); ?><?php echo $cpagename; ?>/search";
+					location.href="<?php echo base_url(); ?><?php echo $cpagename; ?>/search";
 				});
-			} 
-			else 
+			}
+			else
 			{
 				var search = "";
 				$.post( "<?php echo base_url(); ?><?php echo $cpagename; ?>/searchrecord",{search:search}, function( data ) {
-										location.href="<?php echo base_url(); ?><?php echo $cpagename; ?>/search";
-					});
+					location.href="<?php echo base_url(); ?><?php echo $cpagename; ?>/search";
+				});
 			}
-	    });
+
+		});
 
 	});
 </script>
@@ -102,8 +104,6 @@
 -->
 <div class="row">
 <div class="col-md-12" id="chkstat" name="chkstat" style="text-align:center;">
-
-
       <b>Status</b> : &nbsp;<label class="radio-inline">
        <?php if($searchrecord=="Completed") { ?>
 	           <input type="radio" name="jstat" id="jstat" value="Completed" checked>  Completed
@@ -118,8 +118,6 @@
 	           <input type="radio" name="jstat" id="jstat" value="Pending"> Pending
         <?php } ?>
       </label>
-
-
 </div>
 </div>
 <p>
@@ -162,46 +160,16 @@
 								<?php
 																$sno=$sno+1;
 																endforeach;
-																if($totalrows==0)
+																/*if($totalrows==0)
 																{
 																	echo '<tr><td class="row text-center text-danger" colspan="6"> No Record Found</td></tr></tbody></table>';
 																}
 																else
-																{
+																{*/
 											?>
 
     </tbody>
 </table>
-<!--<div class="row">
-
-        <div class="col-md-12">
-            <div class="col-md-4">
-                <ul class="pagination">
-                    <?php /*echo $this->pagination->create_links(); */?>
-                </ul>
-            </div>
-            <div class="col-md-4 col-md-offset-1" >
-                <div class="form-group">
-                    <label for="search" class="col-sm-2 control-label" style="padding-top: 22px;">Show</label>
-                    <div class="col-sm-3" style="padding-top: 14px;">
-                        <select class="form-control" id="recordselect" name="recordselect">
-                            <option <?php /*if($selectrecord=="10") echo "selected=selected";*/ ?>>10</option>
-                            <option <?php /*if($selectrecord=="20") echo "selected=selected";*/ ?>>20</option>
-                            <option <?php /*if($selectrecord=="40") echo "selected=selected";*/ ?>>40</option>
-                        </select>
-                    </div>
-
-                </div>
-            </div>
-            <?php
-            // Display the number of records in a page
-            /*$end=$mpage+$page-1;*/
-            /*if($totalrows<$end) $end=$totalrows;*/
-            ?>
-            <div class="col-md-3" style="padding-top: 22px;"> Showing <?php /*echo $page;*/ ?> to <?php /*echo $end;*/ ?> of <?php /*echo $totalrows;*/ ?> rows</div>
-        </div>
-        <?php }?>
-</div>-->
 
 </div>
 

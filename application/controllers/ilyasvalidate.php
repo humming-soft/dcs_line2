@@ -17,16 +17,23 @@ class Ilyasvalidate extends CI_Controller
 	}
 	
 	function index()
-	{	
+	{
    		if($this->session->userdata('logged_in'))
    		{
+
      		$session_data = $this->session->userdata('logged_in');
 			$data['username'] = $session_data['username'];
 			$roleid=$session_data['roleid'];
             /*for validator shouldn't be able to open non-progressive journal not assigned to them*/
             $user_id = $session_data['id'];
             $id=$this->input->get('jid');
-            $validator = $this->ilyasmodel->get_validator_nonp($id);
+           /* $validator = $this->ilyasmodel->get_validator_nonp($id);
+			echo "journal Id--  ".$id;
+			echo "user Id--   ".$user_id;
+			echo "alert Id--  ".$this->input->get('alert_id')."----[";*/
+			$validator = $this->ilyasmodel->get_validator_nonp($id);/*
+			print_r($validator);
+echo "]--ROLE ID----".$roleid."----";*/
             //echo $validator['validate_user_id'];
             if((!empty($validator['validate_user_id']) && $validator['validate_user_id']==$user_id) || $roleid == 1) {
 				//check whether journal is in validation status
@@ -56,15 +63,24 @@ class Ilyasvalidate extends CI_Controller
 				}
 
 				//function for updating user alert seen status. done by jane
+				//modified By ANCY(Its Not Updated)
+
 				if($this->input->get('alert_id')!="") {
+
 					$alert_id = $this->input->get('alert_id');
+					//echo "user Id--".$user_id;
+					//echo "alert Id--".$alert_id;
 				}
 				if($this->input->get('alert_user_id')!="") {
 					$alert_user_id = $this->input->get('alert_user_id');
+					//echo "alert_user_id--".$alert_user_id;
 				}
 				if(!empty($alert_id) && (!empty($alert_user_id))&& ($user_id==$alert_user_id)){
 					$this->alertreminder->update_reminder_status($alert_id, $alert_user_id);
 				}
+
+				//exit;
+				//end
 				//end
 				$data1['username'] = $session_data['username'];
 				$data1['alerts']=$this->alertreminder->show_alert($session_data['id']);
@@ -174,7 +190,8 @@ class Ilyasvalidate extends CI_Controller
 					 $data_name = $emails->data_name;
 					 $data_email = $emails->data_email;
 					$journalname = $jdetails[0]->journal_name;
-
+					//$this->alertreminder->update_reminder_status_validation($jid, $userid);
+					
 					$data = array('alert_date' => date("Y-m-d"),'alert_user_id' => $data_id,'data_entry_no' => null,'alert_message' => $journalname.' Data Entry Accepted','alert_hide' => '0','email_send_option' => '1', 'nonp_journal_id' => $jid);
                     $this->assessment->add_user_alert($data);
 					$this->assessment->update_alert_on_save_nonp($jid,$userid);
@@ -251,6 +268,7 @@ class Ilyasvalidate extends CI_Controller
 					$data_name = $emails->data_name;
 					$data_email = $emails->data_email;
 					$journalname = $jdetails[0]->journal_name;
+					//$this->alertreminder->update_reminder_status_validation($jid, $userid);
 
 					$data = array('alert_date' => date("Y-m-d"),'alert_user_id' => $data_id,'data_entry_no' => null,'alert_message' => $journalname.' Data Entry Rejected','alert_hide' => '0','email_send_option' => '1', 'nonp_journal_id' => $jid);
 					$this->assessment->add_user_alert($data);

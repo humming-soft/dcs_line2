@@ -3532,10 +3532,6 @@ class duplication_span extends CI_Controller
             }
             foreach ($viaduct as $name => $prop) {
                 if ($name != null) {
-                    if($this->duplicationmodel->add_check_pier($name)==0) {
-                        $data = array('p_uid' => $name, 'pier_type_id' => 1);
-                        $this->duplicationmodel->add_piers($data);
-                    }
                     $viaductName=$via;
                     if ($this->duplicationmodel->add_check_journal($name, $project_id) == 0)//check the journal name is already exist or not
                     {

@@ -892,7 +892,7 @@ Class Admin extends CI_Model
         $q = $this->db->query($query);
         return $q->result();
     }
-    //done by ANCY MATHEW for show all the piers modified by 23-11-2016
+    //done by ANCY MATHEW for show all the piers modified by 23-11-2016update_pier
     function show_piers()
     {
         $allpier=array(
@@ -902,6 +902,7 @@ Class Admin extends CI_Model
         $q = $this->db->query($query);
         $rows1=$q->result();
         foreach ($rows1 as $row1):
+                $countuid=0;
                 $journalname=$row1->p_uid;
                 $query3 = "SELECT progrssive_journal_category_id FROM progrssive_journal_category where journal_category_id=2 and journal_name='$journalname'";
                 $q3 = $this->db->query($query3);

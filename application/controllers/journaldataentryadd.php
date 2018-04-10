@@ -55,7 +55,16 @@ class Journaldataentryadd extends CI_Controller
                 $type = '';
             }
             if ($this->input->get('jid') != "") {
+
                 $id = $this->input->get('jid');
+                //ADDED BY ANCY MATHEW
+                $jno = $this->assessment->get_journal_no($id);
+                $dno = $this->assessment->get_data_entry_no($jno);
+                if(($dno == $session_data['id']) ){
+                    $this->alertreminder->update_reminder_hide_status($id,$session_data['id']);
+                }
+                //END BY ANCY MATHEW
+
             } else {
                 $id = "";
             }

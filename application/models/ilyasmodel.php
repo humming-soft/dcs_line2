@@ -1091,7 +1091,6 @@ Class IlyasModel extends CI_Model
 		if (is_null($revision)) return [];
 		
 		$query = "SELECT b.log FROM journal_nonprogressive_data_entry_audit_log b WHERE b.journal_no = '$jid' AND b.revision='$revision' ORDER BY revision desc";
-        //echo $query;
 		$q = $this->db->query($query);
 		$result = json_decode($q->result()[0]->log, true);
 		$result['data'] = $this->transpose($result['data']);
@@ -1150,7 +1149,7 @@ Class IlyasModel extends CI_Model
 		}
     }
 
-	/* The following function is from http://stackoverflow.com/questions/797251/transposing-multidimensional-arrays-in-php */
+	/*The following function is from http://stackoverflow.com/questions/797251/transposing-multidimensional-arrays-in-php */
 	function transpose($arr) {
 		$out = array();
 		foreach ($arr as $key => $subarr) {

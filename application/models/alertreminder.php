@@ -35,7 +35,7 @@ Class Alertreminder extends CI_Model
         $user_role_query = $this->db->query($user_role_query)->row();
         if($user_role_query->sec_role_id==1){
             /*$query = "select jdvm.data_validate_no,jdvm.validate_status,jdem.data_entry_status_id,ua.data_entry_no,ua.alert_no,ua.alert_date,ua.alert_seen_status,ua.alert_user_id,jm.journal_name,ua.alert_message,fd.frequency_period from user_alert ua,journal_data_entry_master jdem,frequency_detail fd,journal_master jm, journal_data_validate_master jdvm where ua.data_entry_no=jdem.data_entry_no and jdem.frequency_detail_no=fd.frequency_detail_no and jdem.journal_no=jm.journal_no and jdem.data_entry_no=jdvm.data_entry_no and alert_hide=0 and jdvm.validate_status!=4 and jdem.data_entry_status_id!=4 order by alert_no desc";*/
-            $query = "select jdvm.data_validate_no,jdvm.validate_status,jdem.data_entry_status_id,ua.data_entry_no,ua.alert_no,ua.alert_date,ua.alert_seen_status,ua.alert_user_id,jm.journal_name,ua.alert_message,fd.frequency_period from user_alert ua,journal_data_entry_master jdem,frequency_detail fd,journal_master jm, journal_data_validate_master jdvm where ua.data_entry_no=jdem.data_entry_no and jdem.frequency_detail_no=fd.frequency_detail_no and jdem.journal_no=jm.journal_no and jdem.data_entry_no=jdvm.data_entry_no and alert_hide=0 order by alert_no desc";
+            $query = "select jdvm.data_validate_no,jdvm.validate_status,jdem.data_entry_status_id,ua.data_entry_no,ua.alert_no,ua.alert_date,ua.alert_seen_status,ua.alert_user_id,jm.journal_name,ua.alert_message,fd.frequency_period from user_alert ua,journal_data_entry_master jdem,frequency_detail fd,journal_master jm, journal_data_validate_master jdvm where ua.data_entry_no=jdem.data_entry_no and jdem.frequency_detail_no=fd.frequency_detail_no and jdem.journal_no=jm.journal_no and jdem.data_entry_no=jdvm.data_entry_no and alert_hide=0  and alert_seen_status=0 order by alert_no desc";
             $query = $this->db->query($query);
             $query_result = $query->result();
             if (!empty($query_result)) {
@@ -58,7 +58,7 @@ Class Alertreminder extends CI_Model
                 }
             }
         } else {
-            $query = "select jdvm.data_validate_no,jdvm.validate_status,jdem.data_entry_status_id,ua.data_entry_no,ua.alert_no,ua.alert_date,ua.alert_seen_status,ua.alert_user_id,jm.journal_name,ua.alert_message,fd.frequency_period from user_alert ua,journal_data_entry_master jdem,frequency_detail fd,journal_master jm, journal_data_validate_master jdvm where ua.data_entry_no=jdem.data_entry_no and jdem.frequency_detail_no=fd.frequency_detail_no and jdem.journal_no=jm.journal_no and ua.alert_user_id=$id and jdem.data_entry_no=jdvm.data_entry_no and alert_hide=0 order by alert_no desc";
+            $query = "select jdvm.data_validate_no,jdvm.validate_status,jdem.data_entry_status_id,ua.data_entry_no,ua.alert_no,ua.alert_date,ua.alert_seen_status,ua.alert_user_id,jm.journal_name,ua.alert_message,fd.frequency_period from user_alert ua,journal_data_entry_master jdem,frequency_detail fd,journal_master jm, journal_data_validate_master jdvm where ua.data_entry_no=jdem.data_entry_no and jdem.frequency_detail_no=fd.frequency_detail_no and jdem.journal_no=jm.journal_no and ua.alert_user_id=$id and jdem.data_entry_no=jdvm.data_entry_no and alert_hide=0 and alert_seen_status=0 order by alert_no desc";
             $query = $this->db->query($query);
             $query_result = $query->result();
         }
@@ -77,7 +77,7 @@ Class Alertreminder extends CI_Model
 
         //Modified by Jane. For getting all notifications to admin user - non progressive
         if($user_role_query->sec_role_id==1) {
-            $query = "select ua.data_entry_no,ua.alert_no,ua.alert_date,ua.alert_message,ua.alert_seen_status,ua.alert_user_id,ua.nonp_journal_id,jmn.journal_name from user_alert ua, journal_master_nonprogressive jmn where ua.alert_hide=0 AND ua.data_entry_no IS NULL AND jmn.journal_no=ua.nonp_journal_id order by alert_no desc";
+            $query = "select ua.data_entry_no,ua.alert_no,ua.alert_date,ua.alert_message,ua.alert_seen_status,ua.alert_user_id,ua.nonp_journal_id,jmn.journal_name from user_alert ua, journal_master_nonprogressive jmn where ua.alert_hide=0  AND ua.data_entry_no IS NULL AND jmn.journal_no=ua.nonp_journal_id order by alert_no desc";
             $query = $this->db->query($query);
             $query_result2 = $query->result();
             if (!empty($query_result2)) {
@@ -88,7 +88,7 @@ Class Alertreminder extends CI_Model
                 }
             }
         } else {
-            $query = "select ua.data_entry_no,ua.alert_no,ua.alert_date,ua.alert_message,ua.alert_seen_status,ua.alert_user_id,ua.nonp_journal_id,jmn.journal_name from user_alert ua, journal_master_nonprogressive jmn where ua.alert_hide=0 AND ua.data_entry_no IS NULL AND jmn.journal_no=ua.nonp_journal_id AND ua.alert_user_id=$id order by alert_no desc";
+            $query = "select ua.data_entry_no,ua.alert_no,ua.alert_date,ua.alert_message,ua.alert_seen_status,ua.alert_user_id,ua.nonp_journal_id,jmn.journal_name from user_alert ua, journal_master_nonprogressive jmn where ua.alert_hide=0 and alert_seen_status=0 AND ua.data_entry_no IS NULL AND jmn.journal_no=ua.nonp_journal_id AND ua.alert_user_id=$id order by alert_no desc";
             $query = $this->db->query($query);
             $query_result2 = $query->result();
         }
@@ -273,10 +273,10 @@ Class Alertreminder extends CI_Model
             $query = $this->db->query($query);
             $query_result = $query->result();
         } else {
-            $query = "select ur.reminder_status_id, ur.data_entry_no,ur.reminder_no,ur.reminder_date::timestamp(0),jm.journal_name,ur.reminder_message,fd.frequency_period, sc.user_full_name, sc.sec_role_id,sr.sec_role_name,case sc.sec_role_id when '2' then (select data_validate_no from journal_data_validate_master jdvm where ur.data_entry_no=jdvm.data_entry_no and jdvm.validate_user_id = $id) end as data_validate_no
+            $query = "select ur.reminder_status_id, ur.data_entry_no,ur.reminder_no,ur.reminder_date::timestamp(0),jm.journal_name,jm.journal_no , ur.reminder_message,fd.frequency_period, sc.user_full_name, sc.sec_role_id,sr.sec_role_name,case sc.sec_role_id when '2' then (select data_validate_no from journal_data_validate_master jdvm where ur.data_entry_no=jdvm.data_entry_no and jdvm.validate_user_id = $id) end as data_validate_no
                          from user_reminder ur,journal_data_entry_master jdem,frequency_detail fd,journal_master jm,sec_user sc,sec_role sr where ur.data_entry_no=jdem.data_entry_no and jdem.frequency_detail_no=fd.frequency_detail_no
                          and jdem.journal_no=jm.journal_no and ur.reminder_user_id = sc.user_id and sc.sec_role_id = sr.sec_role_id and ur.reminder_user_id=$id and reminder_hide=0
-                         group by sc.user_full_name,ur.data_entry_no, ur.reminder_status_id,ur.reminder_no,jm.journal_name,fd.frequency_period,sc.sec_role_id,sr.sec_role_name order by reminder_no desc";
+                         group by sc.user_full_name,ur.data_entry_no, ur.reminder_status_id,ur.reminder_no,jm.journal_name,fd.frequency_period,sc.sec_role_id,sr.sec_role_name,jm.journal_no order by reminder_no desc";
 
             $query = $this->db->query($query);
             $query_result = $query->result();
@@ -332,9 +332,17 @@ Class Alertreminder extends CI_Model
     function update_reminder_status($alert_id,$alert_user_id){
         $this->db->query("update user_alert set alert_seen_status=1 where alert_no=$alert_id AND alert_user_id=$alert_user_id");
     }
+    //ADDED BY ANCY MATHEW
+    function update_reminder_hide_status($data_id,$user_id){
+        $this->db->query("update user_reminder set reminder_hide=1 where data_entry_no=$data_id AND reminder_user_id=$user_id");
+    }
+    //END BY ANCY MATHEW
+    function update_reminder_status_validation($jid,$alert_user_id){
+        $this->db->query("update user_alert set alert_seen_status=1 where nonp_jounal_id=$jid AND alert_user_id=$alert_user_id");
+    }
 
- /* Usage : Function to get the Role of the user in active(Session)
-    Author : Sebin */
+    /* Usage : Function to get the Role of the user in active(Session)
+       Author : Sebin */
     function fn_chk_user_role($alert_user_id){
         $query=$this->db->query("SELECT sec_role_id FROM sec_user WHERE user_id=$alert_user_id");
         return $query->result();
