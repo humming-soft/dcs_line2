@@ -1285,9 +1285,22 @@ transpose = function(a) {
 
   return t;
 };*/
-
+function transpose(m){
+	return zeroFill(m.reduce(function(m,r)
+	{
+		//return Math.max(m,r.length);
+		return Math.max(m,typeof(r.length)== 'undefined' ? 0 : r.length)
+	},0)).map(function(r,i)
+	{
+		return zeroFill(m.length).map(function(c,j)
+		{
+			return m[j][i]
+		})
+	})
+}
 // From http://stackoverflow.com/a/28634810/4216956
-function transpose(m){return zeroFill(m.reduce(function(m,r){return Math.max(m,r.length)},0)).map(function(r,i){return zeroFill(m.length).map(function(c,j){return m[j][i]})})}function zeroFill(n){return new Array(n+1).join("0").split("").map(Number)}
+//function transpose(m){return zeroFill(m.reduce(function(m,r){return Math.max(m,r.length)},0)).map(function(r,i){return zeroFill(m.length).map(function(c,j){return m[j][i]})})}
+function zeroFill(n){return new Array(n+1).join("0").split("").map(Number)}
 
 // http://stackoverflow.com/questions/122102/what-is-the-most-efficient-way-to-clone-an-object/5344074#5344074
 function clone(obj) {
