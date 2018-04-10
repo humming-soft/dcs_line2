@@ -332,7 +332,11 @@ Class Alertreminder extends CI_Model
     function update_reminder_status($alert_id,$alert_user_id){
         $this->db->query("update user_alert set alert_seen_status=1 where alert_no=$alert_id AND alert_user_id=$alert_user_id");
     }
-
+    //ADDED BY ANCY MATHEW
+    function update_reminder_hide_status($data_id,$user_id){
+        $this->db->query("update user_reminder set reminder_hide=1 where data_entry_no=$data_id AND reminder_user_id=$user_id");
+    }
+    //END BY ANCY MATHEW
     function update_reminder_status_validation($jid,$alert_user_id){
         $this->db->query("update user_alert set alert_seen_status=1 where nonp_jounal_id=$jid AND alert_user_id=$alert_user_id");
     }

@@ -95,11 +95,17 @@ class IlyasAudit extends CI_Controller
 			/*echo json_encode($audit_data);
 			echo json_encode($this->ilyasmodel->get_config($id));
 			die();*/
-			$data['hot_config'] = $audit_data['headers'];//$this->ilyasmodel->get_config($id);
+			if($audit_data){
+				$data['hot_config'] = $audit_data['headers'];
+				$data['hot_data'] = $audit_data['data'];
+			}
+			/*print_r ($audit_data) ;
+			exit;*/
+		   //$this->ilyasmodel->get_config($id);
 			//echo json_encode($data['hot_config']);die();
 			$data['hot_revisions'] = $this->ilyasmodel->get_audit_revisions($id);
 			//var_dump($data['hot_revisions']);die();
-			$data['hot_data'] = $audit_data['data'];
+
 			//var_dump($data['hot_data']);die();
 			$data['hot_lock'] = $this->ilyasmodel->get_validationlock($id);
 			$data['hot_read_only_rows'] = $this->ilyasmodel->get_read_only_rows($id);

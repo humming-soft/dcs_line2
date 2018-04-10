@@ -94,7 +94,38 @@ Class Assessment extends CI_Model
         $q = $this->db->query($query);
         return $q->row();
     }
-
+    //ADDED BY ANCY MATHEW
+    function get_data_entry_no($id)
+    {
+        $query = "SELECT journal_data_user_no, journal_no, data_user_id, default_owner_opt FROM journal_data_user where journal_no =$id";
+        $res = $this->db->query($query);
+        $rows = $res->result();
+        foreach ($rows as $row):
+            $userno = $row->data_user_id;
+        endforeach;
+        return $userno;
+    }
+    function get_journal_no($id)
+    {
+        $query = "select journal_no from journal_data_entry_master where data_entry_no=$id";
+        $res = $this->db->query($query);
+        $rows = $res->result();
+        foreach ($rows as $row):
+            $journalno = $row->journal_no;
+        endforeach;
+        return $journalno;
+    }
+    function validator_no($id)
+    {
+        $query = "SELECT journal_data_user_no, journal_no, data_user_id, default_owner_opt FROM journal_data_user where journal_no =$id";
+        $res = $this->db->query($query);
+        $rows = $res->result();
+        foreach ($rows as $row):
+            $userno = $row->data_user_id;
+        endforeach;
+        return $userno;
+    }
+    //END BY ANCY MATHEW
     function add_journal_data_entry_detail($id, $loginid)
     {
         $query = "select data_entry_no from journal_data_entry_detail where data_entry_no=$id";
@@ -321,7 +352,8 @@ Class Assessment extends CI_Model
     {
         //$query="select jded.*,da.data_attb_label,da.data_attb_type_id,da.data_set_id,da.data_attb_data_type_id,da.data_attb_digits,(select uom_name from unit_measure where unit_measure.uom_id=da.uom_id) as uom_name from  journal_data_entry_detail jded,data_attribute da where jded.data_attb_id=da.data_attb_id and jded.data_entry_no=$id order by display_seq_no asc";
         $query = "select jded.*,da.data_attb_label,da.data_attb_type_id,da.data_set_id,da.data_attb_data_type_id,da.field_lock,da.data_attb_digits,da.uom_id,(select uom_name from unit_measure where unit_measure.uom_id=da.uom_id) as uom_name,(SELECT validate_comment FROM journal_data_validate_detail jdvd where jdvd.data_attb_id = jded.data_attb_id AND jdvd.data_entry_no = jded.data_entry_no limit 1) as comments,start_value,prev_actual_value,end_value from  journal_data_entry_detail jded,data_attribute da where jded.data_attb_id=da.data_attb_id and jded.data_entry_no=$id order by display_seq_no asc";
-        //print_r($query);
+    
+
         $q = $this->db->query($query);
         return $q->result();
     }
@@ -699,7 +731,17 @@ Class Assessment extends CI_Model
         $q = $this->db->query($query);
         return $q->result();
     }
+    function show_validation_journal_data_entry_no($id)
+    {
+        $query = "select frequency_period,fd.start_date,fd.end_date,journal_name,project_name,user_full_name,frequency_detail_name,publish_date,(select user_full_name from sec_user where sec_user.user_id=jdem.publish_user_id) as publishname,validate_level_no,jdvm.data_entry_no,jm.is_image from journal_data_entry_master jdem,journal_master jm,project_template pt,sec_user su,frequency_detail fd,journal_data_validate_master jdvm where data_validate_no=$id and jdem.data_entry_no=jdvm.data_entry_no and jdem.journal_no=jm.journal_no and jm.project_no=pt.project_no and jm.user_id=su.user_id and fd.frequency_detail_no=jdem.frequency_detail_no";
+        $res = $this->db->query($query);
+        $rows = $res->result();
+        foreach ($rows as $row):
+            $datano = $row->data_entry_no;
+        endforeach;
+        return $datano;
 
+    }
     function show_validation_status($id)
     {
         $query = "select validate_status from journal_data_validate_master jdvm where data_validate_no=$id";

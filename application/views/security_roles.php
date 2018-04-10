@@ -625,11 +625,11 @@
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<div class="col-md-4">
+			<!--<div class="col-md-4">
 				<ul class="pagination">
-                	<?php echo $this->pagination->create_links(); ?>
+                	<?php /*echo $this->pagination->create_links(); */?>
 				</ul>
-			</div>
+			</div>-->
 <!--			<div class="col-md-4 col-md-offset-1">-->
 <!--				<div class="form-group">-->
 <!--					<label for="search" class="col-sm-2 control-label" style="padding-top: 22px;">Show</label>-->

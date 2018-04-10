@@ -3311,9 +3311,12 @@
 					var aData = _fnAjaxDataSrc( settings, json );
 	
 					// Got the data - add it to the table
-					for ( i=0 ; i<aData.length ; i++ ) {
-						_fnAddData( settings, aData[i] );
+					if(aData != undefined){
+						for ( i=0 ; i<aData.length ; i++ ) {
+							_fnAddData( settings, aData[i] );
+						}
 					}
+
 	
 					// Reset the init display for cookie saving. We've already done
 					// a filter, and therefore cleared it before. So we need to make
@@ -7411,9 +7414,12 @@
 				_fnClearTable( settings );
 	
 				var data = _fnAjaxDataSrc( settings, json );
-				for ( var i=0, ien=data.length ; i<ien ; i++ ) {
-					_fnAddData( settings, data[i] );
+				if(data != undefined){
+					for ( var i=0, ien=data.length ; i<ien ; i++ ) {
+						_fnAddData( settings, data[i] );
+					}
 				}
+
 	
 				_fnReDraw( settings, holdPosition );
 				_fnProcessingDisplay( settings, false );

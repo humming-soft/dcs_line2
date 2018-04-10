@@ -114,7 +114,6 @@
             	<th><?php echo $labelname[9]?></th>
 	            <th><a href="javascript:void(0)"><?php echo $labelname[0]; ?></a></th>
 	            <th><a href="javascript:void(0)"><?php echo $labelname[1]; ?></a></th>
-                <th><a href="javascript:void(0)"><?php echo "Category"; ?></a></th>
 	            <th class="no-sort"><?php echo $labelname[2]; ?></th>
 	        </tr>
 	    </thead>
@@ -161,7 +160,7 @@
 						$cate="Progressive- ".''.$pjde->journal_category_name;
 					}
 					?>
-					<td><?php echo $cate; ?></td>
+
 					<?php  $pjdefdat=$pjdefreq[$pjde->journal_no]; ?>
 					<td><?php echo $pjdefdat; ?></td>
 				</tr>
