@@ -266,11 +266,14 @@ function PrintElem(elem,fname,pname,jname,lname,title)
 	var divToPrint = document.getElementById(elem);
 	var htmlToPrint = '' +
 		'<style type="text/css">' +
-		'table th,table {' +
+		'table th,td,table {' +
 		'border:1px solid #000;' +
-		'padding;0.5em;' +
-			'text-align: center;' +
+		'border-collapse:collapse;'+
+		'text-align: center;' +
 		'}' +
+		'th, td {'+
+	    'padding: 15px;'+
+	    '}'	+
 		'</style>';
 	htmlToPrint += divToPrint.outerHTML;
 	mywindow.document.write(htmlToPrint);
