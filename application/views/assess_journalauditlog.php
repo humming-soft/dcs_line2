@@ -170,23 +170,25 @@
 
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel"><?php echo $labelobject; ?></h4>
+        <h4 class="modal-title printTitle" id="myModalLabel"><?php echo $labelobject; ?></h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" id="printDom">
 
-      <div class="row" style="width: 70%; margin: auto;">
-		  <div class="col-xs-4" style="text-align: right; margin-bottom: 8px;"><b><?php echo $labelname[5]; ?></b></div>
-		  <div class="col-xs-8" id="fname" name="fname" style="color: blue; margin-bottom: 8px;"></div>
-		  <div class="col-xs-4"  style="text-align: right; margin-bottom: 8px;"><b><?php echo $labelname[6]; ?></b></div>
-		  <div class="col-xs-8"  id="pname" name="pname" style="color: blue; margin-bottom: 8px;"></div>
-		  </br>
-		  <div class="col-xs-4" style="text-align: right; margin-bottom: 8px;"><b><?php echo $labelname[7]; ?></b></div>
-		  <div class="col-xs-8" id="jname" name="jname" style="color: blue; margin-bottom: 8px;"></div>
-		  </br>
-		  <div class="col-xs-4" style="text-align: right; margin-bottom: 8px;"><b><?php echo $labelname[3]; ?></b></div>
-		  <div class="col-xs-8" id="lname" name="lname" style="color: blue; margin-bottom: 8px;"></div>
-		  </br>
-		  <a href="javascript:window.print()")><img src="<?php echo base_url(); ?>img/print.png" class="img-responsive" alt="Responsive image" style="width: 50px; height: 50px; float: left;"></a>
+      <div class="row" style="width: 100%; margin: auto;">
+		  <div id="printHead">
+			  <div class="col-xs-4" style="text-align: right; margin-bottom: 8px;"><b><?php echo $labelname[5]; ?></b></div>
+			  <div class="col-xs-8" id="fname" name="fname" style="color: blue; margin-bottom: 8px;"></div>
+			  <div class="col-xs-4"  style="text-align: right; margin-bottom: 8px;"><b><?php echo $labelname[6]; ?></b></div>
+			  <div class="col-xs-8"  id="pname" name="pname" style="color: blue; margin-bottom: 8px;"></div>
+			  </br>
+			  <div class="col-xs-4" style="text-align: right; margin-bottom: 8px;"><b><?php echo $labelname[7]; ?></b></div>
+			  <div class="col-xs-8" id="jname" name="jname" style="color: blue; margin-bottom: 8px;"></div>
+			  </br>
+			  <div class="col-xs-4" style="text-align: right; margin-bottom: 8px;"><b><?php echo $labelname[3]; ?></b></div>
+			  <div class="col-xs-8" id="lname" name="lname" style="color: blue; margin-bottom: 8px;"></div>
+			  </br>
+		  </div>
+		  <a id="printArea" href="javascript:;")><img src="<?php echo base_url(); ?>img/print.png" class="img-responsive" alt="Responsive image" style="width: 50px; height: 50px; float: left;"></a>
 
 		  <a><img src="<?php echo base_url(); ?>img/excel.ico" id="exporttoexcel" name="exporttoexcel" class="img-responsive"  alt="Responsive image" style="width: 40px; height: 40px; float: right;"></a>
 
@@ -233,13 +235,53 @@ $(document).ready(function() {
 		  "orderable": false
 		}]
 	});
-	
+
+
 	$('div.dataTables_filter input').attr('placeholder', 'Enter the text here');
 	<?php if ($search != "") { ?> 
 		var search = <?php echo json_encode($search); ?>;
 		oTable.fnFilter(search); 
 		$('td:contains('+search+')').parents('tr').addClass('highlight');
 	<?php } ?>
+
+
+	$("#printArea").click(function(){
+		PrintElem("myTable","fname","pname","jname","lname","printTitle");
+	});
+
 });
+
+function PrintElem(elem,fname,pname,jname,lname,title)
+{
+	var mywindow = window.open('', 'PRINT');
+
+	mywindow.document.write('<html><head><title>' + document.title  + '</title>');
+	mywindow.document.write('</head><body >');
+	mywindow.document.write('<h3>Data Capture System - Audit Data Change Log</h3>');
+	mywindow.document.write('<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data For Week&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b> -  ' + document.getElementById(fname).innerHTML + '<br>');
+	mywindow.document.write('<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Project&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b> -  ' + document.getElementById(pname).innerHTML + '<br>');
+	mywindow.document.write('<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Journal Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b> -  ' + document.getElementById(jname).innerHTML + '<br>');
+	mywindow.document.write('<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Level of Data entry&nbsp;&nbsp; </b> -  ' + document.getElementById(lname).innerHTML + '<br>');
+	mywindow.document.write('<br><hr>');
+	var divToPrint = document.getElementById(elem);
+	var htmlToPrint = '' +
+		'<style type="text/css">' +
+		'table th,table {' +
+		'border:1px solid #000;' +
+		'padding;0.5em;' +
+			'text-align: center;' +
+		'}' +
+		'</style>';
+	htmlToPrint += divToPrint.outerHTML;
+	mywindow.document.write(htmlToPrint);
+	//mywindow.document.write(document.getElementById(elem).outerHTML);
+	mywindow.document.write('</body></html>');
+	mywindow.document.close(); // necessary for IE >= 10
+	mywindow.focus(); // necessary for IE >= 10*/
+	mywindow.print();
+	mywindow.close();
+
+	return true;
+}
 
 </script>

@@ -482,6 +482,8 @@ class Designjournal extends CI_Controller
                     }
                 }
                 if(strtolower($journalType)=='parapet') {
+                    echo $journalType;
+                    exit;
                     $spanvalue = $this->input->post('spancomplete');
                     if ($spanvalue >= 0) {
                         $this->design->update_span_detail_parapet_col($journalid, $spanvalue);

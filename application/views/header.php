@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>/bootstrap/bootswatch.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/bootstrap/font.css" media="screen">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/customcss/custom.css">
+    <!--<link type="text/css"  rel="stylesheet" href="<?php /*echo base_url(); */?>customcss/print.css" media="print">-->
     <link rel="stylesheet" href="<?php echo base_url(); ?>/ilyas/css/bootstrap-multiselect.css">
     <script src="<?php echo base_url(); ?>/bootstrap/jquery-1.10.2.min.js"></script>
     <script src="<?php echo base_url(); ?>/ilyas/jquery-migrate-1.2.1.min.js"></script>
