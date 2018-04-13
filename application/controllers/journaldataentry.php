@@ -164,6 +164,31 @@ class Journaldataentry extends CI_Controller
                 // echo '<pre>';
                 // print_r($data['freq1']);
                 // echo '</pre>';
+                /*foreach ( $data['freq1'] as $pjdefre )
+                {
+
+                 if($pjdefre->data_entry_status_id==1 && $pjdefre->frequency_period<=$cweek)
+                    {
+                        echo "<br>";
+                         echo "1====DATA ENTRY NO---".$pjdefre->data_entry_no;
+                         echo "1===FREQENCY DETAIL NAME---".$pjdefre->frequency_detail_name;
+                        echo "<br>";
+                    }
+                    else if ($pjdefre->data_entry_status_id==3 || ($pjdefre->data_entry_status_id==1 && $pjdefre->frequency_period>$cweek) )
+                    {
+                        echo "<br>";
+                        echo "2====DATA ENTRY NO---".$pjdefre->data_entry_no;
+                        echo "2====FREQENCY DETAIL NAME---".$pjdefre->frequency_detail_name;
+                        echo "<br>";
+                    }
+                    else if ($pjdefre->data_entry_status_id==0 && $pjdefre->frequency_period<=$cweek) {
+                        echo "<br>";
+                        echo "3===DATA ENTRY NO---".$pjdefre->data_entry_no;
+                        echo "3====FREQENCY DETAIL NAME--".$pjdefre->frequency_detail_name;
+                        echo "<br>";
+                    }
+                }
+                exit;*/
                 foreach ( $data['freq1'] as $pjdefre )
                 {
                     $count=$this->assessment->get_journal_data_entry_detail($pjdefre->data_entry_no);
@@ -179,7 +204,7 @@ class Journaldataentry extends CI_Controller
                     {
                         $pjde.="<a href='javascript:void(0)'  style='color: grey;'>".$pjdefre->frequency_detail_name."</a> ,";
                     }
-                    else if ($pjdefre->data_entry_status_id==0 && $pjdefre->frequency_period<=$cweek) {
+                    else if ($pjdefre->data_entry_status_id==0 && $pjdefre->frequency_period <=$cweek) {
                         $pjde.="<a href='javascript:void(0)'  style='color: grey;'>".$pjdefre->frequency_detail_name."</a> ,";
                     }
                 }
