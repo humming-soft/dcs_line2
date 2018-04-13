@@ -77,7 +77,7 @@ Class Assessment extends CI_Model
     function show_pjde_id($data)
     {
         $query = "select c.data_entry_status_id,d.frequency_detail_name,d.frequency_period,c.data_entry_no from journal_data_entry_master c, frequency_detail d where c.frequency_detail_no=d.frequency_detail_no and c.journal_no= $data order by c.data_entry_no ";
-        $q = $this->db->query($query);
+		$q = $this->db->query($query);
         return $q->result();
     }
 
