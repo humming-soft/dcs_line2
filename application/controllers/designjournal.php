@@ -1057,10 +1057,10 @@ class Designjournal extends CI_Controller
                         $north="";
                         $south="";
                     }
-                    $pid=$this->design->get_pierid($name);
+                  /*  $pid=$this->design->get_pierid($name);
                     if($pid!=NULL && $pid>0){
                         $result = $this->admin->update_pier($pid,$name,$north,$south,$pierType);
-                    }
+                    }*/
                     $pjtName =$this->design->get_project_name($projectno);
                     $viaductName=explode(' ',$pjtName);
                     if ($this->design->update_check_journal_in($name,$journalid) == 0) {
