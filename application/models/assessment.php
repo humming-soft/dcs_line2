@@ -362,8 +362,6 @@ Class Assessment extends CI_Model
 
     function add_journal_data_entry_audit_log($data)
     {
-
-
         $this->db->insert("journal_data_entry_audit_log", $data);
     }
 
@@ -372,9 +370,28 @@ Class Assessment extends CI_Model
         $no=$this->db->query("update journal_data_entry_audit_log set cur_value=$value,cur_user_id = $userid,cur_date='$curdate', prv_value=$prevvalue ,prv_user_id=$prevuser , prv_date='$prevdate' where data_entry_no=$dataentryno and data_attb_id=$attid");
 
     }
-    function update_journal_data_entry_detail($dataentryno, $attid, $value, $userid)
+    function update_journal_data_entry_detail($dataentryno, $attid, $value, $userid,$journal_no)
     {
         $no=$this->db->query("update journal_data_entry_detail set actual_value='$value' where data_entry_no=$dataentryno and data_attb_id=$attid");
+        $result= $this->db->query("SELECT a.data_entry_no FROM journal_data_entry_master a join journal_data_entry_audit_log b on a.data_entry_no=b.data_entry_no where a.journal_no=$journal_no and b.data_entry_no != $dataentryno;");
+
+        if ($result->num_rows() == 0) {
+            $data = array('data_entry_no' => $dataentryno, 'data_attb_id' => $attid, 'cur_value' => $value, 'cur_user_id' => $userid, 'cur_date' => date('Y-m-d'));
+            $this->add_journal_data_entry_audit_log($data);
+        }else{
+            $result1 = $this->db->query("select cur_value,cur_user_id,cur_date from journal_data_entry_audit_log where data_entry_no=$dataentryno and data_attb_id=$attid order by audit_log_no desc limit 1");
+            $rows = $result1->result();
+                foreach ($rows as $row):
+                    $prevvalue = $row->cur_value;
+                    $prevuser = $row->cur_user_id;
+                    $prevdate = $row->cur_date;
+                endforeach;
+            $data = array('data_entry_no' => $dataentryno, 'data_attb_id' => $attid, 'cur_value' => $value, 'cur_user_id' => $userid, 'cur_date' => date('Y-m-d'), 'prv_value' => $prevvalue, 'prv_user_id' => $prevuser, 'prv_date' => $prevdate);
+            $this->update_journal_data_entry_audit_log($dataentryno,$value,$userid,date('Y-m-d'),$attid,$prevvalue,$prevuser,$prevdate);
+        }
+        /*$no=$this->db->query("update journal_data_entry_detail set actual_value='$value' where data_entry_no=$dataentryno and data_attb_id=$attid");
+        $newres= $this->db->query("SELECT a.data_entry_no FROM journal_data_entry_master a join journal_data_entry_audit_log b on a.data_entry_no=b.data_entry_no where a.journal_no=$journal_no and b.data_entry_no != $dataentryno;");
+
         $result = $this->db->query("select cur_value,cur_user_id,cur_date from journal_data_entry_audit_log where data_entry_no=$dataentryno and data_attb_id=$attid order by audit_log_no desc limit 1");
         if ($result->num_rows() == 0) {
             $data = array('data_entry_no' => $dataentryno, 'data_attb_id' => $attid, 'cur_value' => $value, 'cur_user_id' => $userid, 'cur_date' => date('Y-m-d'));
@@ -388,7 +405,7 @@ Class Assessment extends CI_Model
         endforeach;
         $data = array('data_entry_no' => $dataentryno, 'data_attb_id' => $attid, 'cur_value' => $value, 'cur_user_id' => $userid, 'cur_date' => date('Y-m-d'), 'prv_value' => $prevvalue, 'prv_user_id' => $prevuser, 'prv_date' => $prevdate);
         $this->update_journal_data_entry_audit_log($dataentryno,$value,$userid,date('Y-m-d'),$attid,$prevvalue,$prevuser,$prevdate);
-    }
+    }*/
     }
 
     function update_varient_journal_data_entry_detail($dataentryno, $dataattb, $value)
