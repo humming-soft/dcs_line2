@@ -337,6 +337,8 @@ class Journaldataentryadd extends CI_Controller
 
             }
         } else {
+            $dataid_one = $this->input->post('dataentryno');
+            $journal_no =$this->assessment->get_journal_id($dataid_one);
             $dataid = $this->input->post('dataentryno');
             $session_data = $this->session->userdata('logged_in');
             $userid = $session_data['id'];
@@ -346,12 +348,10 @@ class Journaldataentryadd extends CI_Controller
                 $dataattbid = 'dataattbid' . $i;
                 $dataattbtype = 'dataattbtype' . $i;
                 $previousvalue = 'previousvalue' . $i;
-                $this->assessment->update_journal_data_entry_detail($dataid, $this->input->post($dataattbid), $this->input->post($dataattb), $userid);
+                $this->assessment->update_journal_data_entry_detail($dataid, $this->input->post($dataattbid), $this->input->post($dataattb), $userid,$journal_no);
             }
             //Coded By ANCY MATHEW 10-01-2017
             //for add the data entry details to the table pier_span_col
-            $dataid_one = $this->input->post('dataentryno');
-            $journal_no =$this->assessment->get_journal_id($dataid_one);
             if($journal_no != null){
                 $cat_no =$this->assessment->get_cat_id($journal_no);//category of journal eg:1 span,2 pier, 4 others
 
