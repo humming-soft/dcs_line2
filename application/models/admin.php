@@ -732,9 +732,10 @@ Class Admin extends CI_Model
         $temp_query = "SELECT template_id FROM project_template_hierarchy";
         $res = $this->db->query($temp_query)->result_array();
         if(!empty($res)) {
-            $sql = "SELECT project_no, project_name FROM project_template WHERE project_no NOT IN (SELECT template_id FROM project_template_hierarchy WHERE template_id IS NOT NULL)";
+          
+            $sql = "SELECT project_no, project_name FROM project_template WHERE project_no NOT IN (SELECT template_id FROM project_template_hierarchy WHERE template_id IS NOT NULL) order by project_name";
         }else{
-            $sql = "SELECT project_no, project_name FROM project_template";
+            $sql = "SELECT project_no, project_name FROM project_template order by project_name";
         }
         $result = $this->db->query($sql)->result_array();
         return $result;
@@ -798,7 +799,7 @@ Class Admin extends CI_Model
 					}
 				return $res1;
 			}
-        
+
 		}
 
     function piertype()

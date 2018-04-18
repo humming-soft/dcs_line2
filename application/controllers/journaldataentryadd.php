@@ -263,7 +263,7 @@ class Journaldataentryadd extends CI_Controller
 
     function add()
     {
-//        alert('add');
+     //echo "inside";
 //        exit;
         $this->load->library('form_validation');
 
@@ -345,20 +345,8 @@ class Journaldataentryadd extends CI_Controller
                 $dataattb = 'dataattb' . $i;
                 $dataattbid = 'dataattbid' . $i;
                 $dataattbtype = 'dataattbtype' . $i;
-                /*$datadisable='datadisable'.$i;
-                if($this->input->post($datadisable)=="0")
-                {*/
+                $previousvalue = 'previousvalue' . $i;
                 $this->assessment->update_journal_data_entry_detail($dataid, $this->input->post($dataattbid), $this->input->post($dataattb), $userid);
-                //}
-            }
-            for ($i = 1; $i <= $dataattbcount; $i++) {
-                $dataattb = 'dataattb' . $i;
-                $dataattbid = 'dataattbid' . $i;
-                /*$datadisable='datadisable'.$i;
-                if($this->input->post($datadisable)=="0")
-                {*/
-                $this->assessment->update_journal_data_entry_detail($dataid, $this->input->post($dataattbid), $this->input->post($dataattb), $userid);
-                //}
             }
             //Coded By ANCY MATHEW 10-01-2017
             //for add the data entry details to the table pier_span_col

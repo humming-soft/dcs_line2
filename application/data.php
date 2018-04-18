@@ -324,6 +324,7 @@
 		$results=pg_query("select cur_value,cur_user_id,cur_date from journal_data_entry_audit_log where data_entry_no=$id and data_attb_id=$attbid order by audit_log_no desc limit 1");
 		if(pg_num_rows($results)==0)
 		{
+
 			pg_query("insert into journal_data_entry_audit_log(data_entry_no,data_attb_id,cur_value,cur_user_id,cur_date)values($id,$attbid,'$value',$userid,'".date('Y-m-d')."')");
 		}
 		else

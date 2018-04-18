@@ -367,6 +367,12 @@ class Journaldataentry extends CI_Controller
  			{
  				$pjde="";
  				$data['freq1'] = $this->assessment->show_pjdenonp_id($freq->journal_no);
+              //  $length= 0;
+              /*  foreach ( $data['freq1'] as $pjdefre )
+                {
+                    $length= $length + 1;
+                }
+echo $length;*/
  				foreach ( $data['freq1'] as $pjdefre )
  				{
  					$count=$this->assessment->get_journal_data_entry_detailnonp($pjdefre->data_entry_no);
@@ -381,7 +387,7 @@ class Journaldataentry extends CI_Controller
  				}
  				$data['pjdefreq'][$freq->journal_no]=$pjde;
  			}
-
+            exit;
  			$data1['username'] = $session_data['username'];
  			$data1['alerts']=$this->alertreminder->show_alert($session_data['id']);
  			/*$data1['alertcount']=$this->alertreminder->count_alert($session_data['id']);*/

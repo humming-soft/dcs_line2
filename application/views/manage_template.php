@@ -99,7 +99,7 @@
         jtree.on('create_node.jstree', function (e, data) {
             data.node.text = 'New Station';
             jtree.jstree("refresh");
-            $("#mydialogTemplate").dialog({modal: true, height: 300,width: 490});
+            $("#mydialogTemplate").dialog({modal: true, height: 300,width: 693});
             $("#template").change(function(){
                 var text=$("#template option:selected").text();
                 var temp_id=$("#template option:selected").val();

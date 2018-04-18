@@ -28,6 +28,7 @@
 
 	    $(document).on("click", ".modalentry", function ()
 		{
+			
 			var count=$(this).data('count');
 			var id = $(this).data('id');
 			if(count==0)

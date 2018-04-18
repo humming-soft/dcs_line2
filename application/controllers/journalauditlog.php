@@ -55,7 +55,7 @@ class Journalauditlog extends CI_Controller
 			$data['audlog'] = array ();
 			foreach ( $data['records'] as $aulog )
 			{
-				
+
 				$dataulog="";
 				$data['aulog1'] = $this->assessment->show_log_id($aulog->data_entry_no);
 
@@ -108,7 +108,7 @@ class Journalauditlog extends CI_Controller
 				endforeach;
 				$data['records'] = array_merge($data['records'], $nonp_records);
 			}
-			
+
 			$data1['username'] = $session_data['username'];
 			$data1['alerts']=$this->alertreminder->show_alert($session_data['id']);
             $data1['alertcount']=count($data1['alerts']);
