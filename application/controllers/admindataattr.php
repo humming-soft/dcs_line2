@@ -165,11 +165,6 @@ class Admindataattr extends CI_Controller
 			$dtype=$this->input->post('datatype');
 			$uom=$this->input->post('uom');
 			$atbgrp=$this->input->post('attbgroup');
-			echo $label;
-			echo $inputtype;
-			echo $dtype;
-			echo $uom;
-			echo $atbgrp;
 			if($this->admin->add_check_dataatt($label,$inputtype,$dtype,$uom,$atbgrp)==0)
 			{	
 				if($this->input->post('fieldlock')=="on")
@@ -246,7 +241,7 @@ class Admindataattr extends CI_Controller
 			$label=$this->input->post('label1');
 			$uom=$this->input->post('uom1');
 			$atbgrp=$this->input->post('attbgroup1');
-			if($this->admin->add_check_dataatt($label,$inputtype,$dtype,$uom)==0)
+			if($this->admin->add_check_dataatt($label,$inputtype,$dtype,$uom,$atbgrp)==0)
 			{
 				if($this->input->post('fieldlock1')=="on")
 				{
