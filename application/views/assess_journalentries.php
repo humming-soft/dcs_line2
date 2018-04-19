@@ -145,7 +145,6 @@
                         $cate="Progressive- ".''.$pjde->journal_category_name;
                         }
                         ?>
-                        <td><?php echo $cate; ?></td>
                         <?php  $pjdefdat=$pjdefreq[$pjde->journal_no]; ?>
                         <td>DEPEND JOURNAL</td>
 			        </tr>
