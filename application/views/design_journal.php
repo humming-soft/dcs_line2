@@ -421,18 +421,27 @@ $(document).ready(function()
 	});
 	$('#journalcat').change(function()
 	{
+		$("#dataattbtab").find("tr:gt(2)").remove();
 		var textval=$(this).find(":selected").text().toLowerCase().trim();
 		if(textval=='pier'){
 			$( ".pier" ).show();
 			$('#journalname').val('');
+			$('#journalname').attr("placeholder", "Pier name is Same as Journal Name");
 			$('#journalname').attr('readonly', true);
-		}/*else if(textval=='span'){
-            $( ".pier" ).hide();
-            $('#journalname').val('');
-            $('#journalname').attr('readonly', true);
-        }*/
+		} else if(textval=='span'){
+			$( ".pier" ).hide();
+			$('#journalname').val('');
+			$('#journalname').attr("placeholder", "Span Journal Name is Depend on Journal Attribute");
+			$('#journalname').attr('readonly', true);
+		}else if(textval=='parapet'){
+			$( ".pier" ).hide();
+			$('#journalname').val('');
+			$('#journalname').attr("placeholder", "Parapet Journal  Name is Depend on Journal Attribute");
+			$('#journalname').attr('readonly', true);
+		}
 		else{
 			$( ".pier" ).hide();
+			$('#journalname').attr("placeholder", "Enter Journal Name");
 			$('#journalname').attr('readonly', false);
 		}
 	});
@@ -442,20 +451,29 @@ $(document).ready(function()
     });*/
     $('#journalcat1').change(function()
     {
+		$("#dataattbtab1").find("tr:gt(2)").remove();
         var textval=$(this).find(":selected").text().toLowerCase().trim();
-        if(textval=='pier'){
-            $( ".pier1" ).show();
-            $('#journalname1').val('');
-            $('#journalname1').attr('readonly', true);
-        }/*else if(textval=='span'){
-         $( ".pier" ).hide();
-         $('#journalname').val('');
-         $('#journalname').attr('readonly', true);
-         }*/
-        else{
-            $( ".pier1" ).hide();
-            $('#journalname1').attr('readonly', false);
-        }
+		if(textval=='pier'){
+			$( ".pier1" ).show();
+			$('#journalname1').val('');
+			$('#journalname1').attr("placeholder", "Pier name is Same as Journal Name");
+			$('#journalname1').attr('readonly', true);
+		} else if(textval=='span'){
+			$( ".pier1" ).hide();
+			$('#journalname1').val('');
+			$('#journalname1').attr("placeholder", "Span Journal Name is Depend on Journal Attribute");
+			$('#journalname1').attr('readonly', true);
+		}else if(textval=='parapet'){
+			$( ".pier1" ).hide();
+			$('#journalname1').val('');
+			$('#journalname1').attr("placeholder", "Parapet Journal  Name is Depend on Journal Attribute");
+			$('#journalname1').attr('readonly', true);
+		}
+		else{
+			$( ".pier1" ).hide();
+			$('#journalname1').attr("placeholder", "Enter Journal Name");
+			$('#journalname1').attr('readonly', false);
+		}
     });
 	$('#pierjornal').change(function()
 	{
@@ -685,8 +703,9 @@ $(document).ready(function()
 					{
 						var id = $('#datagrpid'+i).val();
 						if(textvalue=='normal span' ){
+							$( ".pier" ).hide();
+							$('#journalcat').find(":selected").text("Span");
 							var label = $('#datagrplabel'+i).val();
-                            $("#journalcat").find(":selected").text("Span");
 							var left=$("#leftpiers").val();
 							var right=$("#rightpiers").val();
                             var sspan=-1;
@@ -694,9 +713,9 @@ $(document).ready(function()
                             var spantype=1;//Type one is normal span
 
 						}else if(textvalue=='special span'){
+							$( ".pier" ).hide();
+							$('#journalcat').find(":selected").text("Span");
                             var label = $('#datagrplabel'+i).val();
-                            $("#journalcat").find(":selected").text("Span");
-                            $( ".pier" ).hide();
                             var left=-1;
                             var right=-1;
                             var sspan=$('#pierid').val();
@@ -704,6 +723,8 @@ $(document).ready(function()
                             var spantype=2;//Type one is spaecial span
                         }
                         else if(textvalue=='parapet'){
+							$( ".pier" ).hide();
+							$("#journalcat").find(":selected").text("Parapet");
                             var label = $('#datagrplabel'+i).val();
                             var span=$("#spanid").val();
                             var left=-1;
@@ -1814,7 +1835,7 @@ var checkStartValue = function(n) {
 									<div class="form-group">
 										<label for="select" class="col-lg-2 control-label"><?php echo $labelname[0]; ?><red>*</red></label>
 										<div class="col-lg-10">
-											<select class="dropdown-toggle" id="projectname" name="projectname">
+											<select class="dropdown-toggle form-control" id="projectname" name="projectname">
 												<?php
 												foreach ($projects as $project):
 													?>
@@ -1833,27 +1854,31 @@ var checkStartValue = function(n) {
 									</div>
 									<div class="form-group">
 										<label for="select" class="col-lg-2 control-label">Journal Category<red>*</red></label>
-										<div class="col-lg-10">
-											<select class="dropdown-toggle" id="journalcat" name="journalcat">
-												<option value="0">Select Category</option>
-												<?php
-												foreach ($journalcategory as $journalcat):
+										<div class="row">
+											<div class="col-lg-5">
+												<select class="dropdown-toggle form-control" id="journalcat" name="journalcat" >
+													<option value="0">Select Journal Category</option>
+													<?php
+													foreach ($journalcategory as $journalcat):
+														?>
+													<option value="<?php echo $journalcat->journal_category_id; ?>"><?php echo $journalcat->journal_category_name; ?></option>
+													<?php
+													endforeach;
 													?>
-												<option value="<?php echo $journalcat->journal_category_id; ?>"><?php echo $journalcat->journal_category_name; ?></option>
-												<?php
-												endforeach;
-												?>
-											</select>
-											<select class="dropdown-toggle pier" id="pierjornal" name="pierjornal" hidden="hidden">
-												<option value="0">Select Pier</option>
-												<?php
-												foreach ($piers as $allpiers):
+												</select>
+											</div>
+											<div class="col-lg-4" >
+												<select class="dropdown-toggle pier form-control" id="pierjornal" name="pierjornal" style="display:none">
+													<option value="0">Select Pier</option>
+													<?php
+													foreach ($piers as $allpiers):
+														?>
+													<option value="<?php echo $allpiers['id']; ?>"><?php echo $allpiers['p_uid']; ?></option>
+													<?php
+													endforeach;
 													?>
-												<option value="<?php echo $allpiers['id']; ?>"><?php echo $allpiers['p_uid']; ?></option>
-												<?php
-												endforeach;
-												?>
-											</select>
+												</select>
+											</div>
 										</div>
 									</div>
 									<div class="form-group">
@@ -1907,7 +1932,7 @@ var checkStartValue = function(n) {
 									<div class="form-group">
 										<label for="select" class="col-lg-2 control-label"><?php echo $labelname[22]; ?> <red>*</red></label>
 										<div class="col-lg-10">
-											<select class="dropdown-toggle" id="j_type" name="j_type[]" multiple="multiple">
+											<select class="dropdown-toggle form-control" id="j_type" name="j_type[]" multiple="multiple" >
 												<option value="1" selected="selected">Data Entry</option>
 												<option value="2">Image</option>
 											</select>
@@ -1924,7 +1949,7 @@ var checkStartValue = function(n) {
 									<div class="form-group">
 										<label for="select" class="col-lg-2 control-label"><?php echo $labelname[3]; ?> <red>*</red></label>
 										<div class="col-lg-10">
-											<select class="dropdown-toggle" id="user" name="user">
+											<select class="dropdown-toggle form-control" id="user" name="user">
 												<?php
 												$session_data = $this->session->userdata('logged_in');
 												$userid = $session_data['id'];
@@ -1957,7 +1982,7 @@ var checkStartValue = function(n) {
 										<div class="form-group">
 											<label for="select" class="col-lg-2 control-label"><?php echo $labelname[4]; ?> <red>*</red></label>
 											<div class="col-lg-10">
-												<select class="dropdown-toggle" id="frequency" name="frequency">
+												<select class="dropdown-toggle form-control" id="frequency" name="frequency" >
 													<?php
 													foreach ($frequencys as $frequency):
 														?>
@@ -1979,7 +2004,7 @@ var checkStartValue = function(n) {
 										<div class="form-group">
 											<label for="select" class="col-lg-2 control-label"><?php echo $labelname[5]; ?> <red>*</red></label>
 											<div class="col-lg-10">
-												<input class="input-small" type="text" id="startdate" name="startdate" placeholder="12/06/2015" onpaste="return false">
+												<input class="input-small" type="text" id="startdate" name="startdate" placeholder="12/06/2016" onpaste="return false">
 											</div>
 										</div>
 
@@ -1993,7 +2018,7 @@ var checkStartValue = function(n) {
 										<div class="form-group">
 											<label for="select" class="col-lg-2 control-label"><?php echo $labelname[6]; ?></label>
 											<div class="col-lg-10">
-												<input class="input-small" type="text" id="enddate" name="enddate" placeholder="23/09/2015" onpaste="return false">
+												<input class="input-small"  type="text" id="enddate" name="enddate" placeholder="23/09/2016" onpaste="return false">
 											</div>
 										</div>
 										<div class="form-group">
@@ -2280,7 +2305,7 @@ var checkStartValue = function(n) {
 												<div class="form-group">
 													<label for="select" class="col-lg-2 control-label"><?php echo $labelname[0]; ?><red>*</red></label>
 													<div class="col-lg-10">
-														<select class="dropdown-toggle" id="projectname1" name="projectname1">
+														<select class="dropdown-toggle form-control" id="projectname1" name="projectname1">
 															<?php
 															foreach ($projects as $project):
 																?>
@@ -2297,31 +2322,36 @@ var checkStartValue = function(n) {
                                                         <label id="errorjournalcategory1" class="text-danger"></label>
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
-                                                    <label for="select" class="col-lg-2 control-label">Journal Category<red>*</red></label>
-                                                    <div class="col-lg-10">
-                                                        <select class="dropdown-toggle" id="journalcat1" name="journalcat1">
-                                                            <option value="0">Select Category</option>
-                                                            <?php
-                                                            foreach ($journalcategory as $journalcat):
-                                                            ?>
-                                                            <option value="<?php echo $journalcat->journal_category_id; ?>"><?php echo $journalcat->journal_category_name; ?></option>
-                                                            <?php
-                                                            endforeach;
-                                                            ?>
-                                                        </select>
-                                                        <select class="dropdown-toggle pier1" id="pierjornal1" name="pierjornal1" hidden="hidden">
-                                                            <option value="0">Select Pier</option>
-                                                            <?php
-                                                            foreach ($piers as $allpiers):
-                                                            ?>
-                                                            <option value="<?php echo $allpiers['id']; ?>"><?php echo $allpiers['p_uid']; ?></option>
-                                                            <?php
-                                                            endforeach;
-                                                            ?>
-                                                        </select>
-                                                    </div>
-                                                </div>
+													<div class="form-group">
+														<label for="select" class="col-lg-2 control-label">Journal Category<red>*</red></label>
+														<div class="row">
+														<div class="col-lg-5">
+															<select class="dropdown-toggle form-control" id="journalcat1" name="journalcat1">
+																<option value="0">Select Category</option>
+																<?php
+																foreach ($journalcategory as $journalcat):
+																?>
+																<option value="<?php echo $journalcat->journal_category_id; ?>"><?php echo $journalcat->journal_category_name; ?></option>
+																<?php
+																endforeach;
+																?>
+															</select>
+														</div >
+															<div class="col-lg-4">
+															<select class="dropdown-toggle pier1 form-control" id="pierjornal1" name="pierjornal1" style="display:none">
+																<option value="0">Select Pier</option>
+																<?php
+																foreach ($piers as $allpiers):
+																?>
+																<option value="<?php echo $allpiers['id']; ?>"><?php echo $allpiers['p_uid']; ?></option>
+																<?php
+																endforeach;
+																?>
+															</select>
+														</div>
+														</div>
+													</div>
+
 												<div class="form-group">
 													<label for="select" class="col-lg-2 control-label"></label>
 													<div class="col-lg-10">
@@ -2374,7 +2404,7 @@ var checkStartValue = function(n) {
 												<div class="form-group">
 													<label for="select" class="col-lg-2 control-label"><?php echo $labelname[3]; ?> <red>*</red></label>
 													<div class="col-lg-10">
-														<select class="dropdown-toggle" id="user1" name="user1">
+														<select class="dropdown-toggle form-control" id="user1" name="user1">
 															<?php
 															foreach ($users as $user):
 																?>
@@ -2396,7 +2426,7 @@ var checkStartValue = function(n) {
 												<div class="form-group">
 													<label for="select" class="col-lg-2 control-label"><?php echo $labelname[4]; ?> <red>*</red></label>
 													<div class="col-lg-10">
-														<select class="dropdown-toggle" id="frequency1" name="frequency1">
+														<select class="dropdown-toggle form-control" id="frequency1" name="frequency1">
 															<?php
 															foreach ($frequencys as $frequency):
 																?>
@@ -2418,7 +2448,7 @@ var checkStartValue = function(n) {
 												<div class="form-group">
 													<label for="select" class="col-lg-2 control-label"><?php echo $labelname[5]; ?> <red>*</red></label>
 													<div class="col-lg-10">
-														<input class="input-small" type="text" id="startdate1" name="startdate1" readonly="readonly">
+														<input class="input-small" type="text" id="startdate1" name="startdate1" disabled="true">
 													</div>
 												</div>
 

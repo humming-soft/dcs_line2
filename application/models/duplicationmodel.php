@@ -63,11 +63,13 @@ Class duplicationmodel extends CI_Model
     function show_frequency_detail_no($date)
     {
         $sql="select frequency_detail_no from frequency_detail where '$date' between start_date and end_date";
+
         $query = $this->db->query($sql);
         $query_result = $query->result();
         foreach ($query_result as $row):
             $frequencyno=$row->frequency_detail_no;
         endforeach;
+
         return $frequencyno;
     }
     function add_journal_data_entry_master($data)

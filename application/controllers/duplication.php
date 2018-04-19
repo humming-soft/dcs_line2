@@ -26,6 +26,10 @@ class duplication extends CI_Controller
     function index()
     {
         $start_date="2017-06-05";
+        $end_date="2021-05-31";
+        $userid="75";
+        $dataentry="77";
+        $gk="76";
         $V201 = array(
             "SB01" => array("type" => 1,
                 "journal_defnition" => "",
@@ -138,7 +142,7 @@ class duplication extends CI_Controller
                 "Pile_Cap" => "4,0,1,1",
                 "Pier_Column" => "7,0,1,1",
                 "Pier_Head" => "11,0,1,1"
-            ),"SB08" => array(
+            )/*,"SB08" => array(
                 "type" => 1,
                 "journal_defnition" => "",
                 "north"=>"",
@@ -4250,7 +4254,7 @@ class duplication extends CI_Controller
                 "Pile_Cap" => "4,0,1,1",
                 "Pier_Column" => "7,0,1,1",
                 "Pier_Head" => "11,0,1,1"
-            )
+            )*/
         );
         $V203 = array();
         $V204 = array();
@@ -4384,15 +4388,16 @@ class duplication extends CI_Controller
                     }
                     if ($this->duplicationmodel->add_check_journal($name, $project_id) == 0)//check the journal name is already exist or not
                     {
-                        $data = array('project_no' => $project_id, 'journal_name' => $name, 'journal_property' => $prop['journal_property'], 'user_id' => $prop['user_id'], 'start_date' => $start_date, 'end_date' => $prop['end_date'], 'frequency_no' => $prop['frequency_no'], 'dependency' => $dependency, 'is_image' => 0, 'album_name' => $prop['album_name']);
+
+                        $data = array('project_no' => $project_id, 'journal_name' => $name, 'journal_property' => $prop['journal_property'], 'user_id' => $userid, 'start_date' => $start_date, 'end_date' => $end_date, 'frequency_no' => $prop['frequency_no'], 'dependency' => $dependency, 'is_image' => 0, 'album_name' => $prop['album_name']);
                         $journalid = $this->duplicationmodel->add_journal($data, $project_id, $name);
                         if ($journalid) {
                             $datacategory = array('journal_no' => $journalid, 'journal_category_id' => 2, 'journal_name' => $name);
                             $this->duplicationmodel->add_category_detail($datacategory);
                         }
-                        $validatordata = array('journal_no' => $journalid, 'validate_user_id' => 14, 'validate_level_no' => 1);
+                        $validatordata = array('journal_no' => $journalid, 'validate_user_id' => $gk, 'validate_level_no' => 1);
                         $this->duplicationmodel->add_journal_validator($validatordata);
-                        $dataentrydata = array('journal_no' => $journalid, 'data_user_id' => 24, 'default_owner_opt' => '1');
+                        $dataentrydata = array('journal_no' => $journalid, 'data_user_id' => $dataentry, 'default_owner_opt' => '1');
                         $this->duplicationmodel->add_journal_data_entry($dataentrydata);
                         switch ($prop['type']) {
                             case 1  :
@@ -4655,26 +4660,26 @@ class duplication extends CI_Controller
                         $session_data = $this->session->userdata('logged_in');
                         $loginid = $session_data['id'];
 
-                        if($prop['end_date']!='')
+                        if($end_date!='')
                         {
-                            $frequencyend=$this->duplicationmodel->show_frequency_detail_no($prop['end_date']);
+                            $frequencyend=$this->duplicationmodel->show_frequency_detail_no($end_date);
                             for($j=$frequencystart;$j<=$frequencyend;$j++)
                             {
                                 if($j==$frequencystart)
                                     $status="1";
                                 else
                                     $status="0";
-                                $frequencydata=array('journal_no'=>$journalid,'frequency_detail_no'=>$j,'data_entry_status_id'=>$status,'created_user_id'=>$loginid,'created_date'=>date("Y-m-d"));
+                                $frequencydata=array('journal_no'=>$journalid,'frequency_detail_no'=>$j,'data_entry_status_id'=>$status,'created_user_id'=>$userid,'created_date'=>date("Y-m-d"));
                                 $this->duplicationmodel->add_journal_data_entry_master($frequencydata);
                             }
                         }
                         else
                         {
-                            $frequencydata=array('journal_no'=>$journalid,'frequency_detail_no'=>$frequencystart,'data_entry_status_id'=>'1','created_user_id'=>$loginid,'created_date'=>date("Y-m-d"));
+                            $frequencydata=array('journal_no'=>$journalid,'frequency_detail_no'=>$frequencystart,'data_entry_status_id'=>'1','created_user_id'=>$userid,'created_date'=>date("Y-m-d"));
                             $this->duplicationmodel->add_journal_data_entry_master($frequencydata);
                         }
                         array_push($pier["Inserted"], array(
-                            "PIER_NAME" => $name
+                            "PIER_NAME" => $name ."Pier Journal ".$journalid
                         ));
                         $i_count++;
                     } else {
@@ -4702,7 +4707,6 @@ class duplication extends CI_Controller
         else{
                 echo "First you crate the project";
         }
-
     }
 }
 ?>
