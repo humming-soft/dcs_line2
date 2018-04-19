@@ -1057,8 +1057,9 @@ class Designjournal extends CI_Controller
                         $north="";
                         $south="";
                     }
-                  /*  $pid=$this->design->get_pierid($name);
-                    if($pid!=NULL && $pid>0){
+
+                    $pid=$this->design->get_pierid($name);
+                   /* if($pid!=NULL && $pid>0){
                         $result = $this->admin->update_pier($pid,$name,$north,$south,$pierType);
                     }*/
                     $pjtName =$this->design->get_project_name($projectno);
