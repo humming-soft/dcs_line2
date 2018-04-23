@@ -2448,7 +2448,7 @@ var checkStartValue = function(n) {
 												<div class="form-group">
 													<label for="select" class="col-lg-2 control-label"><?php echo $labelname[5]; ?> <red>*</red></label>
 													<div class="col-lg-10">
-														<input class="input-small" type="text" id="startdate1" name="startdate1" disabled="true">
+														<input class="input-small" type="text" id="startdate1" name="startdate1" readonly="readonly">
 													</div>
 												</div>
 
@@ -2462,7 +2462,7 @@ var checkStartValue = function(n) {
 												<div class="form-group">
 													<label for="select" class="col-lg-2 control-label"><?php echo $labelname[6]; ?> <red>*</red></label>
 													<div class="col-lg-10">
-														<input class="input-small" type="text" id="enddate1" name="enddate1" disabled="true">
+														<input class="input-small" type="text" id="enddate1" name="enddate1" readonly="readonly">
 													</div>
 												</div>
 												<div class="form-group">

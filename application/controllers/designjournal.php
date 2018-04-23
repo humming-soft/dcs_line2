@@ -604,7 +604,7 @@ class Designjournal extends CI_Controller
                     }*/
                     $pjtName =$this->design->get_project_name($projectno);
                     $viaductName=explode(' ',$pjtName);
-                    $insert=array('journal_no'=>$journalid,'project_no'=>$projectno,'pier_v'=>$viaductName[0], 'pier_id'=>$name, 'pier_north_id'=>$north, 'pier_south_id'=>$south, 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0,'sbg_left_count'=>0,'sbg_right_count'=>0, 'sbg_left'=>0,'sbg_right'=>0, 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0,'span_journal_no'=>0, 'parapet_journal_no'=>0, 'status'=>0, 'create_date'=>date('Y-m-d'));
+                    $insert=array('journal_no'=>$journalid,'project_no'=>$projectno,'pier_v'=>strtolower($viaductName[0]), 'pier_id'=>$name, 'pier_north_id'=>$north, 'pier_south_id'=>$south, 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0,'sbg_left_count'=>0,'sbg_right_count'=>0, 'sbg_left'=>0,'sbg_right'=>0, 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0,'span_journal_no'=>0, 'parapet_journal_no'=>0, 'status'=>0, 'create_date'=>date('Y-m-d'));
                     $this->design->add_pirer_entry($insert);
                 }
                 //END
@@ -1063,10 +1063,10 @@ class Designjournal extends CI_Controller
                     $pjtName =$this->design->get_project_name($projectno);
                     $viaductName=explode(' ',$pjtName);
                     if ($this->design->update_check_journal_in($name,$journalid) == 0) {
-                        $insert=array('journal_no'=>$journalid,'project_no'=>$projectno,'pier_v'=>$viaductName[0], 'pier_id'=>$name, 'pier_north_id'=>$north, 'pier_south_id'=>$south, 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0,  'sbg_left'=>0,'sbg_right'=>0, 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0, 'status'=>0, 'create_date'=>date('y-m-d'));
+                        $insert=array('journal_no'=>$journalid,'project_no'=>$projectno,'pier_v'=>strtolower($viaductName[0]), 'pier_id'=>$name, 'pier_north_id'=>$north, 'pier_south_id'=>$south, 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0,  'sbg_left'=>0,'sbg_right'=>0, 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0, 'status'=>0, 'create_date'=>date('y-m-d'));
                         $this->design->add_pirer_entry($insert);
                     }else{
-                     $this->design->update_pirer_entry($journalid,$projectno,$viaductName[0],$name,$north, $south,$pierType,date('y-m-d'));
+                     $this->design->update_pirer_entry($journalid,$projectno,strtolower($viaductName[0]),$name,$north, $south,$pierType,date('y-m-d'));
                     }
 
                 }
