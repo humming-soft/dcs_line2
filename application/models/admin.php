@@ -163,7 +163,8 @@ Class Admin extends CI_Model
     // Add Check Query For Selected Data Attribute
     function add_check_dataatt($data, $inputtype, $datatype, $uom,$atbgrp)
     {
-         $data = str_replace("'", "''", $data);
+      /*  echo "LABEL--" . $data . "INPUT TYPE----" . $inputtype . "DATATYPE----" . $datatype . "UOM----" . $uom . "ATTBGROUP----" . $atbgrp;*/
+        $data = str_replace("'", "''", $data);
         if ($datatype && $uom && $atbgrp) {
             $query = $this->db->query("select data_attb_label from data_attribute where data_attb_label='$data' AND data_attb_type_id=$inputtype AND data_attb_data_type_id=$datatype AND uom_id=$uom AND data_attribute_group_id=$atbgrp");
         } elseif ($datatype && $uom) {
