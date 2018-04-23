@@ -1100,7 +1100,7 @@ endforeach;
         </td>
         <td>
 		<p>
-			{% if (file.url) { %}<span class="label label-success">Successfull</span> {% } %}
+			{% if (file.url) { %}<span class="label label-success">Success</span> {% } %}
             
 		</p>
         </td>

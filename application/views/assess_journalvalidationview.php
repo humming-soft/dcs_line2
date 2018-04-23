@@ -386,7 +386,7 @@ function checkEmpty() {
         </td>
         <td>
 		<p>
-			{% if (file.url) { %}<span class="label label-success">Successfull</span> {% } %}
+			{% if (file.url) { %}<span class="label label-success">Success</span> {% } %}
             
 		</p>
         </td>
@@ -555,13 +555,14 @@ endforeach;
 //        print_r($dataimages);
 //        echo'</pre>';
 //        ?>
-<?php
-if(count($dataimages)!=0)
-{
-    ?>
+
     <fieldset>
         <legend>Picture Attachment</legend>
         <p style="text-align: right;">Upload picture &nbsp &nbsp &nbsp <a href="javascript:void(0)" data-toggle="modal" data-target=".bs-example-modal-lg2"><button type="button" class="btn btn-success btn-sm pull-right" data-toggle="modal" data-target="#myModal" id="modaladd" name="modaladd">Upload</button></a></p>
+        <?php
+        if(count($dataimages)!=0)
+        {
+        ?>
         <table class="table table-striped table-hover" style="margin-top: 30px;">
             <table class="table table-striped table-hover" id="tableimage">
                 <thead>
