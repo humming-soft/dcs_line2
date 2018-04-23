@@ -555,12 +555,11 @@ endforeach;
 //        print_r($dataimages);
 //        echo'</pre>';
 //        ?>
-
+    <?php if($is_image == 1 ){ ?>
     <fieldset>
         <legend>Picture Attachment</legend>
         <p style="text-align: right;">Upload picture &nbsp &nbsp &nbsp <a href="javascript:void(0)" data-toggle="modal" data-target=".bs-example-modal-lg2"><button type="button" class="btn btn-success btn-sm pull-right" data-toggle="modal" data-target="#myModal" id="modaladd" name="modaladd">Upload</button></a></p>
-        <?php
-        if(count($dataimages)!=0)
+       <?php } if(count($dataimages)!=0)
         {
         ?>
         <table class="table table-striped table-hover" style="margin-top: 30px;">
@@ -867,11 +866,11 @@ endforeach;
                         <input type="hidden" id="dataentryno1" name="dataentryno1" value="<?php echo $dataentryno; ?>"/>
 
                         <div style="text-align:center">
-                            <button class="btn btn-success fileinput-button">
+                            <span class="btn btn-success fileinput-button">
                                 <i class="glyphicon glyphicon-plus"></i>
                                 <span>Add files...</span>
-                                <input type="file" id="imagefile" name="files[]" multiple>
-                            </button>
+                                <input type="file" id="imagefile" name="files[]" multiple="multiple">
+                            </span>
                             <button type="submit" class="btn btn-primary start">
                                 <i class="glyphicon glyphicon-upload"></i>
                                 <span>Start upload</span>
@@ -945,11 +944,11 @@ endforeach;
                         <input type="hidden" id="dataentryno1" name="dataentryno1" value="<?php echo $dataentryno; ?>"/>
                         <input type="hidden" id="seq_no" name="seq_no"/>
                         <div style="text-align:center">
-                            <button class="btn btn-success fileinput-button">
+                            <span class="btn btn-success fileinput-button">
                                 <i class="glyphicon glyphicon-plus"></i>
                                 <span>Add files...</span>
-                                <input type="file" id="imagefile" name="file[]" multiple>
-                            </button>
+                                <input type="file" id="imagefile" name="file[]" multiple="multiple">
+                            </span>
                             <button type="submit" class="btn btn-primary start" id="upld">
                                 <i class="glyphicon glyphicon-upload"></i>
                                 <span>Start upload</span>

@@ -142,7 +142,7 @@ class duplication extends CI_Controller
                 "Pile_Cap" => "4,0,1,1",
                 "Pier_Column" => "7,0,1,1",
                 "Pier_Head" => "11,0,1,1"
-            )/*,"SB08" => array(
+            ),"SB08" => array(
                 "type" => 1,
                 "journal_defnition" => "",
                 "north"=>"",
@@ -4254,7 +4254,7 @@ class duplication extends CI_Controller
                 "Pile_Cap" => "4,0,1,1",
                 "Pier_Column" => "7,0,1,1",
                 "Pier_Head" => "11,0,1,1"
-            )*/
+            )
         );
         $V203 = array();
         $V204 = array();
@@ -4409,7 +4409,7 @@ class duplication extends CI_Controller
                                 $Pier_Head = explode(',', $prop['Pier_Head']);
                                 $pierType="NORMAL";
                                 while ($x < 5) {
-                                    if ($x = 1) {
+                                   /* if ($x = 1) {
                                         $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => $piling[1], 'end_value' => $piling[2], 'frequency_max_value' => $piling[3], 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }if($x = 2){
@@ -4420,6 +4420,20 @@ class duplication extends CI_Controller
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }if($x = 4){
                                         $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Head[0], 'start_value' => $Pier_Head[1], 'end_value' => $Pier_Head[2], 'frequency_max_value' => $Pier_Head[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }
+                                    $x++;*/
+                                    if ($x = 1) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $piling[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if($x = 2){
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $pile_cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $pile_cap[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if($x = 3){
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Pier_Column[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if($x = 4){
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Head[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Pier_Head[3], 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
                                     $x++;
@@ -4435,7 +4449,7 @@ class duplication extends CI_Controller
                                 $Pier_Head = explode(',', $prop['Pier_Head']);
                                 $pierType="NORMAL";
                                 while ($x < 5) {
-                                    if ($x = 1) {
+                                  /*  if ($x = 1) {
                                         $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => $piling[1], 'end_value' => $piling[2], 'frequency_max_value' => $piling[3], 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }if($x = 2){
@@ -4446,6 +4460,20 @@ class duplication extends CI_Controller
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }if($x = 4){
                                         $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Head[0], 'start_value' => $Pier_Head[1], 'end_value' => $Pier_Head[2], 'frequency_max_value' => $Pier_Head[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }
+                                    $x++;*/
+                                    if ($x = 1) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $piling[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if($x = 2){
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $pile_cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $pile_cap[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if($x = 3){
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Pier_Column[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if($x = 4){
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Head[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Pier_Head[3], 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
                                     $x++;
@@ -4465,29 +4493,52 @@ class duplication extends CI_Controller
                                      $south=$prop['south'];
                                 $pierType="PORTAL";
                                     while($x < 8){
+//                                      /*  if ($x = 1) {
+//                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Piling[0], 'start_value' => $Left_Piling[1], 'end_value' => $Left_Piling[2], 'frequency_max_value' => $Left_Piling[3], 'display_seq_no' => $x);
+//                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
+//                                        }if($x = 2){
+//                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Piling[0], 'start_value' => $Right_Piling[1], 'end_value' => $Right_Piling[2], 'frequency_max_value' => $Right_Piling[3], 'display_seq_no' => $x);
+//                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
+//                                        }if($x = 3){
+//                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $left_Pile_Cap[0], 'start_value' => $left_Pile_Cap[1], 'end_value' => $left_Pile_Cap[2], 'frequency_max_value' => $left_Pile_Cap[3], 'display_seq_no' => $x);
+//                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
+//                                        }if($x = 4){
+//                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pile_Cap[0], 'start_value' => $Right_Pile_Cap[1], 'end_value' => $Right_Pile_Cap[2], 'frequency_max_value' => $Right_Pile_Cap[3], 'display_seq_no' => $x);
+//                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
+//                                        }if ($x = 5) {
+//                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Column[0], 'start_value' => $Left_Pier_Column[1], 'end_value' => $Left_Pier_Column[2], 'frequency_max_value' => $Left_Pier_Column[3], 'display_seq_no' => $x);
+//                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
+//                                        }if($x = 6){
+//                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Column[0], 'start_value' => $Right_Pier_Column[1], 'end_value' => $Right_Pier_Column[2], 'frequency_max_value' => $Right_Pier_Column[3], 'display_seq_no' => $x);
+//                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
+//                                        }if($x = 7){
+//                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Cross_Beam[0], 'start_value' => $Cross_Beam[1], 'end_value' => $Cross_Beam[2], 'frequency_max_value' => $Cross_Beam[3], 'display_seq_no' => $x);
+//                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
+//                                        }
+//                                       $x++;*/
                                         if ($x = 1) {
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Piling[0], 'start_value' => $Left_Piling[1], 'end_value' => $Left_Piling[2], 'frequency_max_value' => $Left_Piling[3], 'display_seq_no' => $x);
+                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Left_Piling[3], 'display_seq_no' => $x);
                                             $this->duplicationmodel->add_journal_detail($dataattbdata);
                                         }if($x = 2){
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Piling[0], 'start_value' => $Right_Piling[1], 'end_value' => $Right_Piling[2], 'frequency_max_value' => $Right_Piling[3], 'display_seq_no' => $x);
+                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Piling[0], 'start_value' => 0, 'end_value' =>100, 'frequency_max_value' => $Right_Piling[3], 'display_seq_no' => $x);
                                             $this->duplicationmodel->add_journal_detail($dataattbdata);
                                         }if($x = 3){
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $left_Pile_Cap[0], 'start_value' => $left_Pile_Cap[1], 'end_value' => $left_Pile_Cap[2], 'frequency_max_value' => $left_Pile_Cap[3], 'display_seq_no' => $x);
+                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $left_Pile_Cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $left_Pile_Cap[3], 'display_seq_no' => $x);
                                             $this->duplicationmodel->add_journal_detail($dataattbdata);
                                         }if($x = 4){
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pile_Cap[0], 'start_value' => $Right_Pile_Cap[1], 'end_value' => $Right_Pile_Cap[2], 'frequency_max_value' => $Right_Pile_Cap[3], 'display_seq_no' => $x);
+                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pile_Cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Right_Pile_Cap[3], 'display_seq_no' => $x);
                                             $this->duplicationmodel->add_journal_detail($dataattbdata);
                                         }if ($x = 5) {
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Column[0], 'start_value' => $Left_Pier_Column[1], 'end_value' => $Left_Pier_Column[2], 'frequency_max_value' => $Left_Pier_Column[3], 'display_seq_no' => $x);
+                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Column[0], 'start_value' =>0, 'end_value' => 100, 'frequency_max_value' => $Left_Pier_Column[3], 'display_seq_no' => $x);
                                             $this->duplicationmodel->add_journal_detail($dataattbdata);
                                         }if($x = 6){
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Column[0], 'start_value' => $Right_Pier_Column[1], 'end_value' => $Right_Pier_Column[2], 'frequency_max_value' => $Right_Pier_Column[3], 'display_seq_no' => $x);
+                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Right_Pier_Column[3], 'display_seq_no' => $x);
                                             $this->duplicationmodel->add_journal_detail($dataattbdata);
                                         }if($x = 7){
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Cross_Beam[0], 'start_value' => $Cross_Beam[1], 'end_value' => $Cross_Beam[2], 'frequency_max_value' => $Cross_Beam[3], 'display_seq_no' => $x);
+                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Cross_Beam[0], 'start_value' =>0, 'end_value' => $Cross_Beam[2], 'frequency_max_value' => $Cross_Beam[3], 'display_seq_no' => $x);
                                             $this->duplicationmodel->add_journal_detail($dataattbdata);
                                         }
-                                       $x++;
+                                        $x++;
                                     }
                                 $insert=array('journal_no'=>$journalid,'project_no'=>$project_id,'pier_v'=>$viaductName, 'pier_id'=>$name, 'pier_north_id'=>$north, 'pier_south_id'=>$south, 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0,'sbg_left_count'=>0,'sbg_right_count'=>0, 'sbg_left'=>0,'sbg_right'=>0, 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0, 'status'=>0, 'create_date'=>date('Y-m-d'));
                                 $this->design->add_pirer_entry($insert);
@@ -4506,7 +4557,7 @@ class duplication extends CI_Controller
                                 $north=$prop['north'];
                                 $south=$prop['south'];
                                 while($x < 9) {
-                                    if ($x = 1) {
+                                  /*  if ($x = 1) {
                                         $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Piling[0], 'start_value' => $Left_Piling[1], 'end_value' => $Left_Piling[2], 'frequency_max_value' => $Left_Piling[3], 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
@@ -4540,6 +4591,41 @@ class duplication extends CI_Controller
                                         $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Head[0], 'start_value' => $Right_Pier_Head[1], 'end_value' => $Right_Pier_Head[2], 'frequency_max_value' => $Right_Pier_Head[3], 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
+                                    $x++;*/
+                                    if ($x = 1) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Left_Piling[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }
+                                    if ($x = 2) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Right_Piling[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }
+                                    if ($x = 3) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $left_Pile_Cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $left_Pile_Cap[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }
+                                    if ($x = 4) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pile_Cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Right_Pile_Cap[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }
+                                    if ($x = 5) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Left_Pier_Column[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }
+                                    if ($x = 6) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Right_Pier_Column[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }
+                                    if ($x = 7) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Cross_Beam[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Cross_Beam[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if ($x = 8) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Head[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Left_Pier_Head[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if ($x = 9) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Head[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Right_Pier_Head[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }
                                     $x++;
                                 }
                                 $insert=array('journal_no'=>$journalid,'project_no'=>$project_id,'pier_v'=>$viaductName, 'pier_id'=>$name, 'pier_north_id'=>$north, 'pier_south_id'=>$south, 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0, 'sbg_left_count'=>0,'sbg_right_count'=>0, 'sbg_left'=>0,'sbg_right'=>0, 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0, 'status'=>0, 'create_date'=>date('Y-m-d'));
@@ -4558,7 +4644,7 @@ class duplication extends CI_Controller
                                 $north=$prop['north'];
                                 $south=$prop['south'];
                                 while($x < 9) {
-                                    if ($x = 1) {
+                                  /*  if ($x = 1) {
                                         $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Piling[0], 'start_value' => $Left_Piling[1], 'end_value' => $Left_Piling[2], 'frequency_max_value' => $Left_Piling[3], 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
@@ -4588,6 +4674,37 @@ class duplication extends CI_Controller
                                         $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Head[0], 'start_value' => $Right_Pier_Head[1], 'end_value' => $Right_Pier_Head[2], 'frequency_max_value' => $Right_Pier_Head[3], 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
+                                    $x++;*/
+                                    if ($x = 1) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Left_Piling[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }
+                                    if ($x = 2) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Right_Piling[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }
+                                    if ($x = 3) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $left_Pile_Cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $left_Pile_Cap[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }
+                                    if ($x = 4) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pile_Cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Right_Pile_Cap[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }
+                                    if ($x = 5) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Left_Pier_Column[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }
+                                    if ($x = 6) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Right_Pier_Column[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if ($x = 7) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Head[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Left_Pier_Head[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if ($x = 8) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Head[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Right_Pier_Head[3], 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }
                                     $x++;
                                 }
                                 $insert=array('journal_no'=>$journalid,'project_no'=>$project_id,'pier_v'=>$viaductName, 'pier_id'=>$name, 'pier_north_id'=>$north, 'pier_south_id'=>$south, 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0, 'sbg_left_count'=>0,'sbg_right_count'=>0, 'sbg_left'=>0,'sbg_right'=>0, 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0, 'status'=>0, 'create_date'=>date('Y-m-d'));
@@ -4601,7 +4718,7 @@ class duplication extends CI_Controller
                                     $pierType="PIER-CROSSBEAM";
 
                                     while ($x < 5) {
-                                        if ($x = 1) {
+                                       /* if ($x = 1) {
                                             $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => $piling[1], 'end_value' => $piling[2], 'frequency_max_value' => $piling[3], 'display_seq_no' => $x);
                                             $this->duplicationmodel->add_journal_detail($dataattbdata);
                                         }if($x = 2){
@@ -4612,6 +4729,20 @@ class duplication extends CI_Controller
                                             $this->duplicationmodel->add_journal_detail($dataattbdata);
                                         }if($x = 4){
                                             $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Cross_Beam[0], 'start_value' => $Cross_Beam[1], 'end_value' => $Cross_Beam[2], 'frequency_max_value' => $Cross_Beam[3], 'display_seq_no' => $x);
+                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                        }
+                                        $x++;*/
+                                        if ($x = 1) {
+                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $piling[3], 'display_seq_no' => $x);
+                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                        }if($x = 2){
+                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $pile_cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $pile_cap[3], 'display_seq_no' => $x);
+                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                        }if($x = 3){
+                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Pier_Column[3], 'display_seq_no' => $x);
+                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                        }if($x = 4){
+                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Cross_Beam[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Cross_Beam[3], 'display_seq_no' => $x);
                                             $this->duplicationmodel->add_journal_detail($dataattbdata);
                                         }
                                         $x++;
@@ -4628,7 +4759,7 @@ class duplication extends CI_Controller
                                     $Right_Pier_Head = explode(',', $prop['Right_Pier_Head']);
                                     $pierType="PIER-CROSSBEAM-HEAD";
                                     while ($x < 7) {
-                                        if ($x = 1) {
+                                      /*  if ($x = 1) {
                                             $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => $piling[1], 'end_value' => $piling[2], 'frequency_max_value' => $piling[3], 'display_seq_no' => $x);
                                             $this->duplicationmodel->add_journal_detail($dataattbdata);
                                         }if($x = 2){
@@ -4645,6 +4776,26 @@ class duplication extends CI_Controller
                                             $this->duplicationmodel->add_journal_detail($dataattbdata);
                                         }if ($x = 6) {
                                             $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Head[0], 'start_value' => $Right_Pier_Head[1], 'end_value' => $Right_Pier_Head[2], 'frequency_max_value' => $Right_Pier_Head[3], 'display_seq_no' => $x);
+                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                        }
+                                        $x++;*/
+                                        if ($x = 1) {
+                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $piling[3], 'display_seq_no' => $x);
+                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                        }if($x = 2){
+                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $pile_cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $pile_cap[3], 'display_seq_no' => $x);
+                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                        }if($x = 3){
+                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Pier_Column[3], 'display_seq_no' => $x);
+                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                        }if($x = 4){
+                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Cross_Beam[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Cross_Beam[3], 'display_seq_no' => $x);
+                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                        }if ($x = 5) {
+                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Head[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Left_Pier_Head[3], 'display_seq_no' => $x);
+                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                        }if ($x = 6) {
+                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Head[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Right_Pier_Head[3], 'display_seq_no' => $x);
                                             $this->duplicationmodel->add_journal_detail($dataattbdata);
                                         }
                                         $x++;
