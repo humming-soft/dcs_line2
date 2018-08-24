@@ -2,13 +2,18 @@
 
 class Swiftmailer {
 
-	var	$smtp_host		= "aspmx.l.google.com";		// SMTP Server.  Example: mail.earthlink.net
+	/*var	$smtp_host		= "aspmx.l.google.com";		// SMTP Server.  Example: mail.earthlink.net
 	var	$smtp_user		= "dcs@mymrt.com.my";		// SMTP Username
 	var	$smtp_pass		= "";		// SMTP Password
 	var	$smtp_port		= "25";		// SMTP Port
 	var $mpxd_logo 		= "img/logo_1.png";
+	var $sender_name 	= "MPXD DCS";*/
+	var	$smtp_host		= "mail.hummingsoft.com.my";		// SMTP Server.  Example: mail.earthlink.net
+	var	$smtp_user		= "mpxd_dcs@hummingsoft.com.my";		// SMTP Username
+	var	$smtp_pass		= "MPXD@2018";		// SMTP Password
+	var	$smtp_port		= "587";		// SMTP Port
+	var $mpxd_logo 		= "img/logo_1.png";
 	var $sender_name 	= "MPXD DCS";
-	
 	function __construct() {
 		require_once 'application/third_party/Swift-4.1.1/lib/swift_required.php';
 		require_once 'application/libraries/mailbodies.php';
