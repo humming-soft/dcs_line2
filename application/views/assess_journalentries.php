@@ -126,29 +126,7 @@
 //print_r($records) ;
 //exit;
 			?>
-                <?php
-                if(!isset($status_span[$pjde->journal_no])){
-                    $status=2;
-                }else
-                    $status=$status_span[$pjde->journal_no];
-                ?>
-
-            <?php if($status==0){?>
-        			<tr>
-			        	<td><?php echo $k+1; ?></td>
-			            <td><?php echo $pjde->project_name; ?></td>
-			            <td><?php echo $pjde->journal_name; ?></td>
-                        <?php
-                        if(!isset($pjde->journal_category_name)){
-                          $cate="Non Progressive";
-                        }else{
-                        $cate="Progressive- ".''.$pjde->journal_category_name;
-                        }
-                        ?>
-                        <?php  $pjdefdat=$pjdefreq[$pjde->journal_no]; ?>
-                        <td>DEPEND JOURNAL</td>
-			        </tr>
-               <?php } else {?>
+               <?php ?>
 				<tr>
 					<td><?php echo $k+1; ?></td>
 					<td><?php echo $pjde->project_name; ?></td>
@@ -164,7 +142,6 @@
 					<?php  $pjdefdat=$pjdefreq[$pjde->journal_no]; ?>
 					<td><?php echo $pjdefdat; ?></td>
 				</tr>
-			<?php }?>
 			<?php endforeach; ?>
 
 		</tbody>

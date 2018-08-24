@@ -406,14 +406,24 @@ class Designjournal extends CI_Controller
                 //Validator
                 $validatorid=$this->input->post('validatorid');
                 $validatorids=explode(',',$validatorid);
+
                 for($j=0;$j<count($validatorids);$j++)
                 {
                     $validatoruser='validateuser'.$validatorids[$j];
+
                     $validatorlevel='level'.$validatorids[$j];
+                    $user = $this->ilyasmodel->get_user_email($this->input->post($validatoruser));
+                    $email = $user[0]->email_id;
+                    $validator = $user[0]->user_full_name;
+                    $this->swiftmailer->validation_assigned($email, $validator, $name, $journalid);
                     $validatordata=array('journal_no'=>$journalid,'validate_user_id'=>$this->input->post($validatoruser),'validate_level_no'=>$this->input->post($validatorlevel));
                     $this->design->add_journal_validator($validatordata);
                 }
 
+              /*  for($j=0;$j<count($validatorids);$j++)
+                {
+
+                }*/
                 //Data Entry
                 $dataentryid=$this->input->post('dataentryid');
                 $dataentryids=explode(',',$dataentryid);
@@ -429,6 +439,11 @@ class Designjournal extends CI_Controller
                     {
                         $dataentrydata=array('journal_no'=>$journalid,'data_user_id'=>$this->input->post($dataentryuser),'default_owner_opt'=>'0');
                     }
+                    $user = $this->ilyasmodel->get_user_email($this->input->post($dataentryuser));
+
+                    $email = $user[0]->email_id;
+                    $dename = $user[0]->user_full_name;
+                    $this->swiftmailer->data_entry_assigned($email, $dename, $name, $journalid);
                     $this->design->add_journal_data_entry($dataentrydata);
                 }
 

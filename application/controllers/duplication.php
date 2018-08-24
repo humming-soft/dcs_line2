@@ -13,7 +13,7 @@ class duplication extends CI_Controller
     }
     //Author:ANCY MATHEW
     //Code for journal duplication
-    //call Via URL- pass the project name( http://localhost/dcs_line2/index.php/duplication?project=V201 Project Progress)
+    //call Via URL- pass the project name( http://localhost/dcs_line2/index.php/duplication?project=V202 Construction Progress)
     //pier type 1-normal pier, 2-R-shaped, 3-portal, 4-portal with head, 5-Double pier
     //data attribute data attribute id, start value, end value, frequency max value
     //piling,left piling, right piling must change based on the pier
@@ -25,8 +25,8 @@ class duplication extends CI_Controller
     //pier with cross beam and head
     function index()
     {
-        $start_date="2017-06-05";
-        $end_date="2021-05-31";
+        $start_date="2017-06-04";
+        $end_date="";
         $userid="75";
         $dataentry="77";
         $gk="76";
@@ -4256,9 +4256,4371 @@ class duplication extends CI_Controller
                 "Pier_Head" => "11,0,1,1"
             )
         );
-        $V203 = array();
-        $V204 = array();
-        $V205 = array();
+        $V203 = array(
+            "J13" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "J14" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "J15" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "J16" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "J17" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "J18" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "J19" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "J20" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "J21" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "J22" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "J23" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "J24" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "J25" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "J26" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "J27" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "J28" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"JN28",
+                "south"=>"JS28",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"J29" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"JN29",
+                "south"=>"JS29",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"J30" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"JN30",
+                "south"=>"JS30",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"J31" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"JN31",
+                "south"=>"JS31",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),
+            "SDL01" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"SDLN01",
+                "south"=>"SDLS01",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),
+            "SDL02" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"SDLN02",
+                "south"=>"SDLS02",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),
+            "SDL03" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"SDLN03",
+                "south"=>"SDLS03",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),
+            "SDL04" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"SDLN04",
+                "south"=>"SDLS04",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),
+            "SDL05" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"SDLN05",
+                "south"=>"SDLS05",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),
+            "SDL06" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"SDLN06",
+                "south"=>"SDLS06",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),
+            "SDL07" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),
+            "SDL08" => array(
+                "type" => 3,
+                "journal_defnition" => "",
+                "north"=>"SDLN08",
+                "south"=>"SDLN08",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,4,4",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ), "SDL09" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SDL10" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SDL11" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SDL12" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SDL13" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SDL14" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SDL15" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SDL16" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SDL17" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SDL18" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SDL19" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"SDL20" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"SDLN20",
+                "south"=>"SDLS20",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"SDL21" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"SDLN21",
+                "south"=>"SDLS21",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"SDL22" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"SDLN22",
+                "south"=>"SDLS22",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"SDL23" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"SDLN23",
+                "south"=>"SDLS23",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"SDL24" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"SDLN24",
+                "south"=>"SDLS24",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"SDL25" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"SDLN25",
+                "south"=>"SDLS25",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"SDL26" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"SDLN26",
+                "south"=>"SDLS26",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"B01" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"BN01",
+                "south"=>"BS01",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"B02" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"BN02",
+                "south"=>"BS02",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"B03" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"BN03",
+                "south"=>"BS03",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"B04" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"BN04",
+                "south"=>"BS04",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"B05" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"BN05",
+                "south"=>"BS05",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"B06" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"BN06",
+                "south"=>"BS06",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"B07" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"BN07",
+                "south"=>"BS07",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"B08" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"BN08",
+                "south"=>"BS08",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),  "B09" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B10" => array(
+                "type" => 3,
+                "journal_defnition" => "",
+                "north"=>"BN10",
+                "south"=>"BS10",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,4,4",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),"B11" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B12" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B13" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B14" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B15" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B16" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B17" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B18" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B19" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B20" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B21" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B22" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B23" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B24" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B25" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B26" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B27" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B28" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B29" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B30" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B31" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B32" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B33" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B34" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B35" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B35" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B37" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"B38" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"KT01" => array("type" => 6,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),"KT02" => array("type" => 6,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),"KT03" => array("type" => 6,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),"KT04" => array("type" => 6,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),"KT05" => array("type" => 6,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),"KT06" => array("type" => 6,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),"KT07" => array("type" => 6,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),"KT08" => array("type" => 6,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),"KT09" => array("type" => 6,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),"KT10" => array("type" => 6,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),"KT11" => array("type" => 6,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),"KT12" => array("type" => 6,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),"KT13" => array("type" => 6,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),"KT14" => array("type" => 6,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),"KT15" => array("type" => 6,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),"KT16" => array("type" => 6,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),"KT17" => array("type" => 6,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),"KT18" => array("type" => 6,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),"KT19" => array("type" => 6,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),"KT20" => array("type" => 6,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),"KT21" => array("type" => 6,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),"KT22" => array("type" => 6,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),"KT23" => array("type" => 6,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),
+        );
+        $V204 = array(
+            "P02" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "P03" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "P04" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "P05" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "P06" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "P07" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "P08" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "P09" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "P10" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "P11" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "P12" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "P13" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "P14" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "P15" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "P16" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "P17" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "P18" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "P19" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "P20" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "P21" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"P22" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"PN22",
+                "south"=>"PS22",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"P23" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"PN23",
+                "south"=>"PS23",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"P24" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"PN24",
+                "south"=>"PS24",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"P25" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"PN25",
+                "south"=>"PS25",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"P26" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"PN26",
+                "south"=>"PS26",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"P27" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"PN27",
+                "south"=>"PS27",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ), "KL01" => array(
+                "type" => 4,
+                "journal_defnition" => "",
+                "north"=>"KLN01",
+                "south"=>"KLS01",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Cross_Beam" => "10,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"KL02" => array(
+                "type" => 4,
+                "journal_defnition" => "",
+                "north"=>"KLN02",
+                "south"=>"KLS02",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Cross_Beam" => "10,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"KL03" => array(
+                "type" => 4,
+                "journal_defnition" => "",
+                "north"=>"KLN03",
+                "south"=>"KLS03",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Cross_Beam" => "10,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"KL04" => array(
+                "type" => 4,
+                "journal_defnition" => "",
+                "north"=>"KLN04",
+                "south"=>"KLS04",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Cross_Beam" => "10,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"KL05" => array(
+                "type" => 4,
+                "journal_defnition" => "",
+                "north"=>"KLN05",
+                "south"=>"KLS05",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Cross_Beam" => "10,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"KL06" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"KLN06",
+                "south"=>"KLS06",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"KL07" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"KLN07",
+                "south"=>"KLS07",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"KL08" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"KLN08",
+                "south"=>"KLS08",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"KL09" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"KLN09",
+                "south"=>"KLS09",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"KL10" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"KLN10",
+                "south"=>"KLS10",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ), "KL11" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "KL12" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"KL13" => array(
+                "type" => 3,
+                "journal_defnition" => "",
+                "north"=>"KLN13",
+                "south"=>"KLS13",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,4,4",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ), "KL14" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "KL15" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "KL16" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "KL17" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "KL18" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "KL19" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "KL20" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "KL21" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "KL22" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "KL23" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "KL24" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "KL25" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "KL26" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "KL27" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "KL28" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "KL29" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "KL30" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "KL31" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "KL32" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "KL33" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "KL34" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "TNE01" => array(
+                "type" => 4,
+                "journal_defnition" => "",
+                "north"=>"TNEN01",
+                "south"=>"TNES01",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Cross_Beam" => "10,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"TNE02" => array(
+                "type" => 4,
+                "journal_defnition" => "",
+                "north"=>"TNEN02",
+                "south"=>"TNES02",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Cross_Beam" => "10,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"TNE03" => array(
+                "type" => 4,
+                "journal_defnition" => "",
+                "north"=>"TNEN03",
+                "south"=>"TNES03",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Cross_Beam" => "10,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"TNE04" => array(
+                "type" => 4,
+                "journal_defnition" => "",
+                "north"=>"TNEN04",
+                "south"=>"TNES04",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Cross_Beam" => "10,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"TNE05" => array(
+                "type" => 4,
+                "journal_defnition" => "",
+                "north"=>"TNEN05",
+                "south"=>"TNES05",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Cross_Beam" => "10,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"TNE06" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"TNEN06",
+                "south"=>"TNES06",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"TNE07" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"TNEN07",
+                "south"=>"TNES07",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"TNE08" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"TNEN08",
+                "south"=>"TNES08",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"TNE09" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"TNEN09",
+                "south"=>"TNES09",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"TNE10" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"TNEN10",
+                "south"=>"TNES10",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"TNE11" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"TNEN11",
+                "south"=>"TNES11",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"TNE12" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"TNEN12",
+                "south"=>"TNES12",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"TNE13" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"TNEN13",
+                "south"=>"TNES13",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"TNE14" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"TNEN14",
+                "south"=>"TNES14",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"TNE15" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"TNEN15",
+                "south"=>"TNES15",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"TNE16" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"TNEN16",
+                "south"=>"TNES16",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"TNE17" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"TNE18" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"TNE19" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"TNE20" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"TNE21" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"TNE22" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"TNE23" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"TNE24" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"TNE25" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"TNE26" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"TNE27" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"TNE28" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"TNE29" => array("type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"TNE30" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"TNEN30",
+                "south"=>"TNES30",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"TNE31" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"TNEN31",
+                "south"=>"TNES31",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"TNE32" => array(
+                "type" => 5,
+                "journal_defnition" => "",
+                "north"=>"TNEN32",
+                "south"=>"TNES32",
+                "user_id" => 1,
+                "start_date" => "2017-01-05",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,2,2",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"TNE33" => array(
+                "type" => 3,
+                "journal_defnition" => "",
+                "north"=>"TNEN33",
+                "south"=>"TNES33",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,4,4",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            ),"TNE34" => array(
+                "type" => 3,
+                "journal_defnition" => "",
+                "north"=>"TNEN34",
+                "south"=>"TNES34",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Left_Piling" => "2,0,2,2",
+                "Right_Piling" => "3,0,4,4",
+                "left_Pile_Cap" => "5,0,1,1",
+                "Right_Pile_Cap" => "6,0,1,1",
+                "Left_Pier_Column" => "8,0,1,1",
+                "Right_Pier_Column" => "9,0,1,1",
+                "Cross_Beam" => "10,0,1,1"
+            )
+        );
+        $V205 = array(
+            "TNE35" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),
+            "TNE36" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "TNE37" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "TNE38" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "TNE39" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "TNE41" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB12" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB13" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB14" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB15" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB16" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB17" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB18" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB19" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB20" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB21" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB22" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB23" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB24" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB25" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB26" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB27" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB28" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB29" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB30" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB31" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB32" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB33" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB34" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB35" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB36" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB37" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ), "SGB38" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"TP01" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"TP02" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"TP16" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"TP17" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"TP25" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"TP26" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"TP27" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"SRN01" => array(
+                "type" => 7,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"SRN02" => array(
+                "type" => 7,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"SRN03" => array(
+                "type" => 7,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"SRN04" => array(
+                "type" => 7,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"SRN05" => array(
+                "type" => 7,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Cross_Beam" => "10,0,1,1",
+                "Left_Pier_Head" => "12,0,1,1",
+                "Right_Pier_Head" => "13,0,1,1"
+            ),"SRN06" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"SRN07" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"SRN08" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"SRN09" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"SRN10" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"SRN18" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"SRN19" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"SRN20" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"SRN21" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"SRN22" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"SRN23" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"SRN24" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"SRN25" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"SRN26" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"SRN27" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"SRN28" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            ),"SRN29" => array(
+                "type" => 1,
+                "journal_defnition" => "",
+                "north"=>"",
+                "south"=>"",
+                "user_id" => 1,
+                "start_date" => "2016-11-01",
+                "end_date" => null,
+                "frequency_no" => 1,
+                "journal_property" => "",
+                "is_image" => 0,
+                "album_name" => "",
+                "Piling" => "1,0,2,2",
+                "Pile_Cap" => "4,0,1,1",
+                "Pier_Column" => "7,0,1,1",
+                "Pier_Head" => "11,0,1,1"
+            )
+        );
         $V206 = array();
         $V207 = array();
         $V208 = array();
@@ -4267,7 +8629,7 @@ class duplication extends CI_Controller
         $projectName = $this->input->get('project');
         //$start_d=$this->input->get('date');
         //echo $start_d;
-       // echo $projectName;
+        // echo $projectName;
         $project_id = $this->duplicationmodel->get_project_id($projectName); //get  project id using project name
         //echo $project_id;
         $i_count = 0;//How much journal inserted
@@ -4335,61 +8697,65 @@ class duplication extends CI_Controller
                     //7:normal pier with beam and left and right pier head
                     switch ($prop['type']) {
                         case 1 :if ((!empty($prop['Piling'])) && (!empty($prop['Pile_Cap'])) && (!empty($prop['Pier_Column'])) && (!empty($prop['Pier_Head']))) {
-                                    $dependency = "{\"4\":\"1\",\"7\":\"4|1\",\"11\":\"7|4|1\"}";
-                                 } else {
-                                     echo "sorry  " . $name . "  is miss the data attributes";
-                                    exit;
-                                }
-                                break;
+                            $dependency = "{\"4\":\"1\",\"7\":\"4|1\",\"11\":\"7|4|1\",\"33\":\"1|4|11|7\"}";
+                        } else {
+                            echo "sorry  " . $name . "  is miss the data attributes";
+                            exit;
+                        }
+                            break;
                         case 2 :if ((!empty($prop['Piling'])) && (!empty($prop['Pile_Cap'])) && (!empty($prop['Pier_Column'])) && (!empty($prop['Pier_Head']))) {
-                                    $dependency = "{\"4\":\"1\",\"7\":\"4|1\",\"11\":\"7|4|1\"}";
-                                } else {
-                                    echo "sorry  " . $name . "  is miss the data attributes";
-                                    exit;
-                                }
-                                break;
+                            $dependency = "{\"4\":\"1\",\"7\":\"4|1\",\"11\":\"7|4|1\",\"33\":\"1|4|11|7\"}";
+                        } else {
+                            echo "sorry  " . $name . "  is miss the data attributes";
+                            exit;
+                        }
+                            break;
                         case 3 :if ((!empty($prop['Left_Piling'])) && (!empty($prop['Right_Piling'])) && (!empty($prop['left_Pile_Cap'])) && (!empty($prop['Right_Pile_Cap'])) && (!empty($prop['Left_Pier_Column'])) && (!empty($prop['Right_Pier_Column'])) && (!empty($prop['Cross_Beam']))) {
-                                $dependency = "{\"5\":\"2\",\"6\":\"3\",\"8\":\"2|5\",\"9\":\"3|6\",\"10\":\"8|5|2|9|6|3\"}";
-                                } else {
-                                echo "sorry  " . $name . "  is miss the data attributes";
-                                exit;
-                                }
-                                break;
+                            $dependency = "{\"5\":\"2\",\"6\":\"3\",\"8\":\"2|5\",\"9\":\"3|6\",\"10\":\"8|5|2|9|6|3\"}";
+                        } else {
+                            echo "sorry  " . $name . "  is miss the data attributes";
+                            exit;
+                        }
+                            break;
                         case 4 :if ((!empty($prop['Left_Piling'])) && (!empty($prop['Right_Piling'])) && (!empty($prop['left_Pile_Cap'])) && (!empty($prop['Right_Pile_Cap'])) && (!empty($prop['Left_Pier_Column'])) && (!empty($prop['Right_Pier_Column'])) &&  (!empty($prop['Cross_Beam'])) && (!empty($prop['Left_Pier_Head'])) && (!empty($prop['Right_Pier_Head'])) ) {
-                                $dependency = "{\"5\":\"2\",\"6\":\"3\",\"8\":\"2|5\",\"9\":\"3|6\",\"10\":\"3|6|9|2|5|8\",\"12\":\"10|8|5|2|9|6|3\",\"13\":\"10|8|5|2|9|6|3\"}";
-                                } else {
-                                echo "sorry  " . $name . "  is miss the data attributes";
-                                exit;
-                                }
-                                break;
+                            $dependency = "{\"5\":\"2\",\"6\":\"3\",\"8\":\"2|5\",\"9\":\"3|6\",\"10\":\"3|6|9|2|5|8\",\"12\":\"3|6|9|2|5|8|10\",\"13\":\"10|8|5|2|3|6|9\",\"150\":\"2|5|12|8|10\",\"151\":\"3|6|13|9|10\"}";
+
+                        } else {
+                            echo "sorry  " . $name . "  is miss the data attributes";
+                            exit;
+                        }
+                            break;
                         case 5 :if ((!empty($prop['Left_Piling'])) && (!empty($prop['Right_Piling'])) && (!empty($prop['left_Pile_Cap'])) && (!empty($prop['Right_Pile_Cap'])) && (!empty($prop['Left_Pier_Column'])) && (!empty($prop['Right_Pier_Column'])) &&  (!empty($prop['Left_Pier_Head'])) && (!empty($prop['Right_Pier_Head'])) ) {
-                                $dependency = "{\"5\":\"2\",\"6\":\"3\",\"8\":\"2|5\",\"9\":\"3|6\",\"12\":\"2|5|8\",\"13\":\"3|6|9\"}";
-                                } else {
-                                echo "sorry  " . $name . "  is miss the data attributes";
-                                exit;
-                                }
-                                break;
+                            $dependency = "{\"5\":\"2\",\"6\":\"3\",\"8\":\"2|5\",\"9\":\"3|6\",\"12\":\"2|5|8\",\"13\":\"3|6|9\",\"150\":\"2|5|12|8\",\"151\":\"3|6|13|9\"}";
+                        } else {
+                            echo "sorry  " . $name . "  is miss the data attributes";
+                            exit;
+                        }
+                            break;
                         case 6 :if ((!empty($prop['Piling'])) && (!empty($prop['Pile_Cap'])) && (!empty($prop['Pier_Column'])) &&  (!empty($prop['Cross_Beam']))) {
-                                $dependency = "{\"4\":\"1\",\"7\":\"1|4\",\"10\":\"1|4|7\"}";
-                                } else {
-                                echo "sorry  " . $name . "  is miss the data attributes";
-                                exit;
-                                }
-                                break;
+                            $dependency = "{\"4\":\"1\",\"7\":\"1|4\",\"10\":\"1|4|7\"}";
+                        } else {
+                            echo "sorry  " . $name . "  is miss the data attributes";
+                            exit;
+                        }
+                            break;
                         case 7 :if ((!empty($prop['Piling'])) && (!empty($prop['Pile_Cap'])) && (!empty($prop['Pier_Column'])) &&  (!empty($prop['Cross_Beam'])) && (!empty($prop['Left_Pier_Head'])) && (!empty($prop['Right_Pier_Head'])) ) {
-                                $dependency = "{\"4\":\"1\",\"7\":\"1|4\",\"10\":\"1|4|7\",\"12\":\"1|4|7|10\",\"13\":\"1|4|7|10\"}";
-                                } else {
-                                echo "sorry  " . $name . "  is miss the data attributes";
-                                exit;
-                                }
-                                break;
+                            $dependency = "{\"4\":\"1\",\"7\":\"4|1\",\"10\":\"1|4|7\",\"12\":\"1|4|7|10\",\"13\":\"1|4|7|10\",\"150\":\"1|4|7|12|10\",\"151\":\"1|4|7|13|10\"}";
+
+                        } else {
+                            echo "sorry  " . $name . "  is miss the data attributes";
+                            exit;
+                        }
+                            break;
+
+                            break;
                         default :
-                                break;
+                            break;
                     }
                     if ($this->duplicationmodel->add_check_journal($name, $project_id) == 0)//check the journal name is already exist or not
                     {
 
-                        $data = array('project_no' => $project_id, 'journal_name' => $name, 'journal_property' => $prop['journal_property'], 'user_id' => $userid, 'start_date' => $start_date, 'end_date' => $end_date, 'frequency_no' => $prop['frequency_no'], 'dependency' => $dependency, 'is_image' => 0, 'album_name' => $prop['album_name']);
+                        $data = array('project_no' => $project_id, 'journal_name' => $name, 'journal_property' => $prop['journal_property'], 'user_id' => $userid, 'start_date' => $start_date,  'frequency_no' => $prop['frequency_no'], 'dependency' => $dependency, 'is_image' => 0, 'album_name' => $prop['album_name']);
                         $journalid = $this->duplicationmodel->add_journal($data, $project_id, $name);
                         if ($journalid) {
                             $datacategory = array('journal_no' => $journalid, 'journal_category_id' => 2, 'journal_name' => $name);
@@ -4408,32 +8774,36 @@ class duplication extends CI_Controller
                                 $Pier_Column = explode(',', $prop['Pier_Column']);
                                 $Pier_Head = explode(',', $prop['Pier_Head']);
                                 $pierType="NORMAL";
-                                while ($x < 5) {
-                                   /* if ($x = 1) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => $piling[1], 'end_value' => $piling[2], 'frequency_max_value' => $piling[3], 'display_seq_no' => $x);
+                                while ($x < 6) {
+                                    /* if ($x = 1) {
+                                         $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => $piling[1], 'end_value' => $piling[2], 'frequency_max_value' => $piling[3], 'display_seq_no' => $x);
+                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                     }if($x = 2){
+                                         $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $pile_cap[0], 'start_value' => $pile_cap[1], 'end_value' => $pile_cap[2], 'frequency_max_value' => $pile_cap[3], 'display_seq_no' => $x);
+                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                     }if($x = 3){
+                                         $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Column[0], 'start_value' => $Pier_Column[1], 'end_value' => $Pier_Column[2], 'frequency_max_value' => $Pier_Column[3], 'display_seq_no' => $x);
+                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                     }if($x = 4){
+                                         $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Head[0], 'start_value' => $Pier_Head[1], 'end_value' => $Pier_Head[2], 'frequency_max_value' => $Pier_Head[3], 'display_seq_no' => $x);
+                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                     }
+                                     $x++;*/
+                                    if ($x = 1) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }if($x = 2){
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $pile_cap[0], 'start_value' => $pile_cap[1], 'end_value' => $pile_cap[2], 'frequency_max_value' => $pile_cap[3], 'display_seq_no' => $x);
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $pile_cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }if($x = 3){
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Column[0], 'start_value' => $Pier_Column[1], 'end_value' => $Pier_Column[2], 'frequency_max_value' => $Pier_Column[3], 'display_seq_no' => $x);
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }if($x = 4){
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Head[0], 'start_value' => $Pier_Head[1], 'end_value' => $Pier_Head[2], 'frequency_max_value' => $Pier_Head[3], 'display_seq_no' => $x);
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Head[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
-                                    $x++;*/
-                                    if ($x = 1) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $piling[3], 'display_seq_no' => $x);
-                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                    }if($x = 2){
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $pile_cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $pile_cap[3], 'display_seq_no' => $x);
-                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                    }if($x = 3){
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Pier_Column[3], 'display_seq_no' => $x);
-                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                    }if($x = 4){
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Head[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Pier_Head[3], 'display_seq_no' => $x);
+                                    if($x = 5){
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => 33, 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
                                     $x++;
@@ -4448,32 +8818,36 @@ class duplication extends CI_Controller
                                 $Pier_Column = explode(',', $prop['Pier_Column']);
                                 $Pier_Head = explode(',', $prop['Pier_Head']);
                                 $pierType="NORMAL";
-                                while ($x < 5) {
-                                  /*  if ($x = 1) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => $piling[1], 'end_value' => $piling[2], 'frequency_max_value' => $piling[3], 'display_seq_no' => $x);
+                                while ($x < 6) {
+                                    /*  if ($x = 1) {
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => $piling[1], 'end_value' => $piling[2], 'frequency_max_value' => $piling[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }if($x = 2){
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $pile_cap[0], 'start_value' => $pile_cap[1], 'end_value' => $pile_cap[2], 'frequency_max_value' => $pile_cap[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }if($x = 3){
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Column[0], 'start_value' => $Pier_Column[1], 'end_value' => $Pier_Column[2], 'frequency_max_value' => $Pier_Column[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }if($x = 4){
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Head[0], 'start_value' => $Pier_Head[1], 'end_value' => $Pier_Head[2], 'frequency_max_value' => $Pier_Head[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }
+                                      $x++;*/
+                                    if ($x = 1) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }if($x = 2){
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $pile_cap[0], 'start_value' => $pile_cap[1], 'end_value' => $pile_cap[2], 'frequency_max_value' => $pile_cap[3], 'display_seq_no' => $x);
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $pile_cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }if($x = 3){
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Column[0], 'start_value' => $Pier_Column[1], 'end_value' => $Pier_Column[2], 'frequency_max_value' => $Pier_Column[3], 'display_seq_no' => $x);
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }if($x = 4){
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Head[0], 'start_value' => $Pier_Head[1], 'end_value' => $Pier_Head[2], 'frequency_max_value' => $Pier_Head[3], 'display_seq_no' => $x);
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Head[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
-                                    $x++;*/
-                                    if ($x = 1) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $piling[3], 'display_seq_no' => $x);
-                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                    }if($x = 2){
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $pile_cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $pile_cap[3], 'display_seq_no' => $x);
-                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                    }if($x = 3){
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Pier_Column[3], 'display_seq_no' => $x);
-                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                    }if($x = 4){
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Head[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Pier_Head[3], 'display_seq_no' => $x);
+                                    if($x = 5){
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => 33, 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
                                     $x++;
@@ -4489,10 +8863,10 @@ class duplication extends CI_Controller
                                 $Left_Pier_Column = explode(',', $prop['Left_Pier_Column']);
                                 $Right_Pier_Column = explode(',', $prop['Right_Pier_Column']);
                                 $Cross_Beam = explode(',', $prop['Cross_Beam']);
-                                     $north=$prop['north'];
-                                     $south=$prop['south'];
+                                $north=$prop['north'];
+                                $south=$prop['south'];
                                 $pierType="PORTAL";
-                                    while($x < 8){
+                                while($x < 8){
 //                                      /*  if ($x = 1) {
 //                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Piling[0], 'start_value' => $Left_Piling[1], 'end_value' => $Left_Piling[2], 'frequency_max_value' => $Left_Piling[3], 'display_seq_no' => $x);
 //                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
@@ -4516,30 +8890,30 @@ class duplication extends CI_Controller
 //                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
 //                                        }
 //                                       $x++;*/
-                                        if ($x = 1) {
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Left_Piling[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }if($x = 2){
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Piling[0], 'start_value' => 0, 'end_value' =>100, 'frequency_max_value' => $Right_Piling[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }if($x = 3){
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $left_Pile_Cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $left_Pile_Cap[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }if($x = 4){
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pile_Cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Right_Pile_Cap[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }if ($x = 5) {
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Column[0], 'start_value' =>0, 'end_value' => 100, 'frequency_max_value' => $Left_Pier_Column[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }if($x = 6){
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Right_Pier_Column[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }if($x = 7){
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Cross_Beam[0], 'start_value' =>0, 'end_value' => $Cross_Beam[2], 'frequency_max_value' => $Cross_Beam[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }
-                                        $x++;
+                                    if ($x = 1) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if($x = 2){
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Piling[0], 'start_value' => 0, 'end_value' =>100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if($x = 3){
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $left_Pile_Cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if($x = 4){
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pile_Cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if ($x = 5) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Column[0], 'start_value' =>0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if($x = 6){
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if($x = 7){
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Cross_Beam[0], 'start_value' =>0, 'end_value' => $Cross_Beam[2], 'frequency_max_value' => 100, 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
+                                    $x++;
+                                }
                                 $insert=array('journal_no'=>$journalid,'project_no'=>$project_id,'pier_v'=>$viaductName, 'pier_id'=>$name, 'pier_north_id'=>$north, 'pier_south_id'=>$south, 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0,'sbg_left_count'=>0,'sbg_right_count'=>0, 'sbg_left'=>0,'sbg_right'=>0, 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0, 'status'=>0, 'create_date'=>date('Y-m-d'));
                                 $this->design->add_pirer_entry($insert);
                                 break;
@@ -4556,74 +8930,82 @@ class duplication extends CI_Controller
                                 $pierType="PORTAL-HEAD";
                                 $north=$prop['north'];
                                 $south=$prop['south'];
-                                while($x < 9) {
-                                  /*  if ($x = 1) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Piling[0], 'start_value' => $Left_Piling[1], 'end_value' => $Left_Piling[2], 'frequency_max_value' => $Left_Piling[3], 'display_seq_no' => $x);
-                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                    }
-                                    if ($x = 2) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Piling[0], 'start_value' => $Right_Piling[1], 'end_value' => $Right_Piling[2], 'frequency_max_value' => $Right_Piling[3], 'display_seq_no' => $x);
-                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                    }
-                                    if ($x = 3) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $left_Pile_Cap[0], 'start_value' => $left_Pile_Cap[1], 'end_value' => $left_Pile_Cap[2], 'frequency_max_value' => $left_Pile_Cap[3], 'display_seq_no' => $x);
-                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                    }
-                                    if ($x = 4) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pile_Cap[0], 'start_value' => $Right_Pile_Cap[1], 'end_value' => $Right_Pile_Cap[2], 'frequency_max_value' => $Right_Pile_Cap[3], 'display_seq_no' => $x);
-                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                    }
-                                    if ($x = 5) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Column[0], 'start_value' => $Left_Pier_Column[1], 'end_value' => $Left_Pier_Column[2], 'frequency_max_value' => $Left_Pier_Column[3], 'display_seq_no' => $x);
-                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                    }
-                                    if ($x = 6) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Column[0], 'start_value' => $Right_Pier_Column[1], 'end_value' => $Right_Pier_Column[2], 'frequency_max_value' => $Right_Pier_Column[3], 'display_seq_no' => $x);
-                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                    }
-                                    if ($x = 7) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Cross_Beam[0], 'start_value' => $Cross_Beam[1], 'end_value' => $Cross_Beam[2], 'frequency_max_value' => $Cross_Beam[3], 'display_seq_no' => $x);
-                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                    }if ($x = 8) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Head[0], 'start_value' => $Left_Pier_Head[1], 'end_value' => $Left_Pier_Head[2], 'frequency_max_value' => $Left_Pier_Head[3], 'display_seq_no' => $x);
-                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                    }if ($x = 9) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Head[0], 'start_value' => $Right_Pier_Head[1], 'end_value' => $Right_Pier_Head[2], 'frequency_max_value' => $Right_Pier_Head[3], 'display_seq_no' => $x);
-                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                    }
-                                    $x++;*/
+                                while($x < 12) {
+                                    /*  if ($x = 1) {
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Piling[0], 'start_value' => $Left_Piling[1], 'end_value' => $Left_Piling[2], 'frequency_max_value' => $Left_Piling[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }
+                                      if ($x = 2) {
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Piling[0], 'start_value' => $Right_Piling[1], 'end_value' => $Right_Piling[2], 'frequency_max_value' => $Right_Piling[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }
+                                      if ($x = 3) {
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $left_Pile_Cap[0], 'start_value' => $left_Pile_Cap[1], 'end_value' => $left_Pile_Cap[2], 'frequency_max_value' => $left_Pile_Cap[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }
+                                      if ($x = 4) {
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pile_Cap[0], 'start_value' => $Right_Pile_Cap[1], 'end_value' => $Right_Pile_Cap[2], 'frequency_max_value' => $Right_Pile_Cap[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }
+                                      if ($x = 5) {
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Column[0], 'start_value' => $Left_Pier_Column[1], 'end_value' => $Left_Pier_Column[2], 'frequency_max_value' => $Left_Pier_Column[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }
+                                      if ($x = 6) {
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Column[0], 'start_value' => $Right_Pier_Column[1], 'end_value' => $Right_Pier_Column[2], 'frequency_max_value' => $Right_Pier_Column[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }
+                                      if ($x = 7) {
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Cross_Beam[0], 'start_value' => $Cross_Beam[1], 'end_value' => $Cross_Beam[2], 'frequency_max_value' => $Cross_Beam[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }if ($x = 8) {
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Head[0], 'start_value' => $Left_Pier_Head[1], 'end_value' => $Left_Pier_Head[2], 'frequency_max_value' => $Left_Pier_Head[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }if ($x = 9) {
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Head[0], 'start_value' => $Right_Pier_Head[1], 'end_value' => $Right_Pier_Head[2], 'frequency_max_value' => $Right_Pier_Head[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }
+                                      $x++;*/
                                     if ($x = 1) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Left_Piling[3], 'display_seq_no' => $x);
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
                                     if ($x = 2) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Right_Piling[3], 'display_seq_no' => $x);
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
                                     if ($x = 3) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $left_Pile_Cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $left_Pile_Cap[3], 'display_seq_no' => $x);
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $left_Pile_Cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
                                     if ($x = 4) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pile_Cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Right_Pile_Cap[3], 'display_seq_no' => $x);
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pile_Cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
                                     if ($x = 5) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Left_Pier_Column[3], 'display_seq_no' => $x);
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
                                     if ($x = 6) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Right_Pier_Column[3], 'display_seq_no' => $x);
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
                                     if ($x = 7) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Cross_Beam[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Cross_Beam[3], 'display_seq_no' => $x);
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Cross_Beam[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }if ($x = 8) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Head[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Left_Pier_Head[3], 'display_seq_no' => $x);
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Head[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }if ($x = 9) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Head[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Right_Pier_Head[3], 'display_seq_no' => $x);
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Head[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }
+                                    if ($x = 10) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => 150, 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }
+                                    if ($x = 11) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => 151, 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
                                     $x++;
@@ -4643,66 +9025,74 @@ class duplication extends CI_Controller
                                 $pierType="DOUBLE";
                                 $north=$prop['north'];
                                 $south=$prop['south'];
-                                while($x < 9) {
-                                  /*  if ($x = 1) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Piling[0], 'start_value' => $Left_Piling[1], 'end_value' => $Left_Piling[2], 'frequency_max_value' => $Left_Piling[3], 'display_seq_no' => $x);
-                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                    }
-                                    if ($x = 2) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Piling[0], 'start_value' => $Right_Piling[1], 'end_value' => $Right_Piling[2], 'frequency_max_value' => $Right_Piling[3], 'display_seq_no' => $x);
-                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                    }
-                                    if ($x = 3) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $left_Pile_Cap[0], 'start_value' => $left_Pile_Cap[1], 'end_value' => $left_Pile_Cap[2], 'frequency_max_value' => $left_Pile_Cap[3], 'display_seq_no' => $x);
-                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                    }
-                                    if ($x = 4) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pile_Cap[0], 'start_value' => $Right_Pile_Cap[1], 'end_value' => $Right_Pile_Cap[2], 'frequency_max_value' => $Right_Pile_Cap[3], 'display_seq_no' => $x);
-                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                    }
-                                    if ($x = 5) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Column[0], 'start_value' => $Left_Pier_Column[1], 'end_value' => $Left_Pier_Column[2], 'frequency_max_value' => $Left_Pier_Column[3], 'display_seq_no' => $x);
-                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                    }
-                                    if ($x = 6) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Column[0], 'start_value' => $Right_Pier_Column[1], 'end_value' => $Right_Pier_Column[2], 'frequency_max_value' => $Right_Pier_Column[3], 'display_seq_no' => $x);
-                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                    }if ($x = 7) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Head[0], 'start_value' => $Left_Pier_Head[1], 'end_value' => $Left_Pier_Head[2], 'frequency_max_value' => $Left_Pier_Head[3], 'display_seq_no' => $x);
-                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                    }if ($x = 8) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Head[0], 'start_value' => $Right_Pier_Head[1], 'end_value' => $Right_Pier_Head[2], 'frequency_max_value' => $Right_Pier_Head[3], 'display_seq_no' => $x);
-                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                    }
-                                    $x++;*/
+                                while($x < 11) {
+                                    /*  if ($x = 1) {
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Piling[0], 'start_value' => $Left_Piling[1], 'end_value' => $Left_Piling[2], 'frequency_max_value' => $Left_Piling[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }
+                                      if ($x = 2) {
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Piling[0], 'start_value' => $Right_Piling[1], 'end_value' => $Right_Piling[2], 'frequency_max_value' => $Right_Piling[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }
+                                      if ($x = 3) {
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $left_Pile_Cap[0], 'start_value' => $left_Pile_Cap[1], 'end_value' => $left_Pile_Cap[2], 'frequency_max_value' => $left_Pile_Cap[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }
+                                      if ($x = 4) {
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pile_Cap[0], 'start_value' => $Right_Pile_Cap[1], 'end_value' => $Right_Pile_Cap[2], 'frequency_max_value' => $Right_Pile_Cap[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }
+                                      if ($x = 5) {
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Column[0], 'start_value' => $Left_Pier_Column[1], 'end_value' => $Left_Pier_Column[2], 'frequency_max_value' => $Left_Pier_Column[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }
+                                      if ($x = 6) {
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Column[0], 'start_value' => $Right_Pier_Column[1], 'end_value' => $Right_Pier_Column[2], 'frequency_max_value' => $Right_Pier_Column[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }if ($x = 7) {
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Head[0], 'start_value' => $Left_Pier_Head[1], 'end_value' => $Left_Pier_Head[2], 'frequency_max_value' => $Left_Pier_Head[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }if ($x = 8) {
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Head[0], 'start_value' => $Right_Pier_Head[1], 'end_value' => $Right_Pier_Head[2], 'frequency_max_value' => $Right_Pier_Head[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }
+                                      $x++;*/
                                     if ($x = 1) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Left_Piling[3], 'display_seq_no' => $x);
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
                                     if ($x = 2) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Right_Piling[3], 'display_seq_no' => $x);
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
                                     if ($x = 3) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $left_Pile_Cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $left_Pile_Cap[3], 'display_seq_no' => $x);
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $left_Pile_Cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
                                     if ($x = 4) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pile_Cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Right_Pile_Cap[3], 'display_seq_no' => $x);
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pile_Cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
                                     if ($x = 5) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Left_Pier_Column[3], 'display_seq_no' => $x);
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
                                     if ($x = 6) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Right_Pier_Column[3], 'display_seq_no' => $x);
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }if ($x = 7) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Head[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Left_Pier_Head[3], 'display_seq_no' => $x);
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Head[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }if ($x = 8) {
-                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Head[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Right_Pier_Head[3], 'display_seq_no' => $x);
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Head[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }
+                                    if ($x = 9) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => 150, 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }
+                                    if ($x = 10) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => 151, 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
                                     $x++;
@@ -4711,98 +9101,104 @@ class duplication extends CI_Controller
                                 $this->design->add_pirer_entry($insert);
                                 break;
                             case 6 :$x = 1;
-                                    $piling = explode(',', $prop['Piling']);
-                                    $pile_cap = explode(',', $prop['Pile_Cap']);
-                                    $Pier_Column = explode(',', $prop['Pier_Column']);
-                                    $Cross_Beam = explode(',', $prop['Cross_Beam']);
-                                    $pierType="PIER-CROSSBEAM";
+                                $piling = explode(',', $prop['Piling']);
+                                $pile_cap = explode(',', $prop['Pile_Cap']);
+                                $Pier_Column = explode(',', $prop['Pier_Column']);
+                                $Cross_Beam = explode(',', $prop['Cross_Beam']);
+                                $pierType="PIER-CROSSBEAM";
 
-                                    while ($x < 5) {
-                                       /* if ($x = 1) {
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => $piling[1], 'end_value' => $piling[2], 'frequency_max_value' => $piling[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }if($x = 2){
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $pile_cap[0], 'start_value' => $pile_cap[1], 'end_value' => $pile_cap[2], 'frequency_max_value' => $pile_cap[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }if($x = 3){
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Column[0], 'start_value' => $Pier_Column[1], 'end_value' => $Pier_Column[2], 'frequency_max_value' => $Pier_Column[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }if($x = 4){
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Cross_Beam[0], 'start_value' => $Cross_Beam[1], 'end_value' => $Cross_Beam[2], 'frequency_max_value' => $Cross_Beam[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }
-                                        $x++;*/
-                                        if ($x = 1) {
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $piling[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }if($x = 2){
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $pile_cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $pile_cap[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }if($x = 3){
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Pier_Column[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }if($x = 4){
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Cross_Beam[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Cross_Beam[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }
-                                        $x++;
+                                while ($x < 5) {
+                                    /* if ($x = 1) {
+                                         $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => $piling[1], 'end_value' => $piling[2], 'frequency_max_value' => $piling[3], 'display_seq_no' => $x);
+                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                     }if($x = 2){
+                                         $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $pile_cap[0], 'start_value' => $pile_cap[1], 'end_value' => $pile_cap[2], 'frequency_max_value' => $pile_cap[3], 'display_seq_no' => $x);
+                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                     }if($x = 3){
+                                         $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Column[0], 'start_value' => $Pier_Column[1], 'end_value' => $Pier_Column[2], 'frequency_max_value' => $Pier_Column[3], 'display_seq_no' => $x);
+                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                     }if($x = 4){
+                                         $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Cross_Beam[0], 'start_value' => $Cross_Beam[1], 'end_value' => $Cross_Beam[2], 'frequency_max_value' => $Cross_Beam[3], 'display_seq_no' => $x);
+                                         $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                     }
+                                     $x++;*/
+                                    if ($x = 1) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if($x = 2){
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $pile_cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if($x = 3){
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if($x = 4){
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Cross_Beam[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
-                                    $insert=array('journal_no'=>$journalid,'project_no'=>$project_id,'pier_v'=>$viaductName, 'pier_id'=>$name, 'pier_north_id'=>"", 'pier_south_id'=>"", 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0, 'sbg_left_count'=>0,'sbg_right_count'=>0, 'sbg_left'=>0,'sbg_right'=>0, 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0, 'status'=>0, 'create_date'=>date('Y-m-d'));
-                                    $this->design->add_pirer_entry($insert);
-                                    break;
+                                    $x++;
+                                }
+                                $insert=array('journal_no'=>$journalid,'project_no'=>$project_id,'pier_v'=>$viaductName, 'pier_id'=>$name, 'pier_north_id'=>"", 'pier_south_id'=>"", 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0, 'sbg_left_count'=>0,'sbg_right_count'=>0, 'sbg_left'=>0,'sbg_right'=>0, 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0, 'status'=>0, 'create_date'=>date('Y-m-d'));
+                                $this->design->add_pirer_entry($insert);
+                                break;
                             case 7 :$x = 1;
-                                    $piling = explode(',', $prop['Piling']);
-                                    $pile_cap = explode(',', $prop['Pile_Cap']);
-                                    $Pier_Column = explode(',', $prop['Pier_Column']);
-                                    $Cross_Beam = explode(',', $prop['Cross_Beam']);
-                                    $Left_Pier_Head = explode(',', $prop['Left_Pier_Head']);
-                                    $Right_Pier_Head = explode(',', $prop['Right_Pier_Head']);
-                                    $pierType="PIER-CROSSBEAM-HEAD";
-                                    while ($x < 7) {
-                                      /*  if ($x = 1) {
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => $piling[1], 'end_value' => $piling[2], 'frequency_max_value' => $piling[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }if($x = 2){
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $pile_cap[0], 'start_value' => $pile_cap[1], 'end_value' => $pile_cap[2], 'frequency_max_value' => $pile_cap[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }if($x = 3){
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Column[0], 'start_value' => $Pier_Column[1], 'end_value' => $Pier_Column[2], 'frequency_max_value' => $Pier_Column[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }if($x = 4){
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Cross_Beam[0], 'start_value' => $Cross_Beam[1], 'end_value' => $Cross_Beam[2], 'frequency_max_value' => $Cross_Beam[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }if ($x = 5) {
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Head[0], 'start_value' => $Left_Pier_Head[1], 'end_value' => $Left_Pier_Head[2], 'frequency_max_value' => $Left_Pier_Head[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }if ($x = 6) {
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Head[0], 'start_value' => $Right_Pier_Head[1], 'end_value' => $Right_Pier_Head[2], 'frequency_max_value' => $Right_Pier_Head[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }
-                                        $x++;*/
-                                        if ($x = 1) {
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $piling[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }if($x = 2){
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $pile_cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $pile_cap[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }if($x = 3){
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Pier_Column[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }if($x = 4){
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Cross_Beam[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Cross_Beam[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }if ($x = 5) {
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Head[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Left_Pier_Head[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }if ($x = 6) {
-                                            $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Head[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => $Right_Pier_Head[3], 'display_seq_no' => $x);
-                                            $this->duplicationmodel->add_journal_detail($dataattbdata);
-                                        }
-                                        $x++;
+                                $piling = explode(',', $prop['Piling']);
+                                $pile_cap = explode(',', $prop['Pile_Cap']);
+                                $Pier_Column = explode(',', $prop['Pier_Column']);
+                                $Cross_Beam = explode(',', $prop['Cross_Beam']);
+                                $Left_Pier_Head = explode(',', $prop['Left_Pier_Head']);
+                                $Right_Pier_Head = explode(',', $prop['Right_Pier_Head']);
+                                $pierType="PIER-CROSSBEAM-HEAD";
+                                while ($x < 9) {
+                                    /*  if ($x = 1) {
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => $piling[1], 'end_value' => $piling[2], 'frequency_max_value' => $piling[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }if($x = 2){
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $pile_cap[0], 'start_value' => $pile_cap[1], 'end_value' => $pile_cap[2], 'frequency_max_value' => $pile_cap[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }if($x = 3){
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Column[0], 'start_value' => $Pier_Column[1], 'end_value' => $Pier_Column[2], 'frequency_max_value' => $Pier_Column[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }if($x = 4){
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Cross_Beam[0], 'start_value' => $Cross_Beam[1], 'end_value' => $Cross_Beam[2], 'frequency_max_value' => $Cross_Beam[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }if ($x = 5) {
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Head[0], 'start_value' => $Left_Pier_Head[1], 'end_value' => $Left_Pier_Head[2], 'frequency_max_value' => $Left_Pier_Head[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }if ($x = 6) {
+                                          $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Head[0], 'start_value' => $Right_Pier_Head[1], 'end_value' => $Right_Pier_Head[2], 'frequency_max_value' => $Right_Pier_Head[3], 'display_seq_no' => $x);
+                                          $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                      }
+                                      $x++;*/
+                                    if ($x = 1) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $piling[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if($x = 2){
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $pile_cap[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if($x = 3){
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Pier_Column[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if($x = 4){
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Cross_Beam[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if ($x = 5) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Left_Pier_Head[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if ($x = 6) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => $Right_Pier_Head[0], 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if ($x = 7) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => 150, 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
+                                    }if ($x = 8) {
+                                        $dataattbdata = array('journal_no' => $journalid, 'data_attb_id' => 151, 'start_value' => 0, 'end_value' => 100, 'frequency_max_value' => 100, 'display_seq_no' => $x);
+                                        $this->duplicationmodel->add_journal_detail($dataattbdata);
                                     }
+                                    $x++;
+                                }
                                 $insert=array('journal_no'=>$journalid,'project_no'=>$project_id,'pier_v'=>$viaductName, 'pier_id'=>$name, 'pier_north_id'=>"", 'pier_south_id'=>"", 'pier_marker_a'=>0,'pier_marker_b'=>0, 'pier_layout'=>1, 'pier_type'=>$pierType, 'span_type'=>"s2", 'pier_pile_1'=>0, 'pier_pile_2'=>0, 'pier_pilecap_1'=>0, 'pier_pilecap_2'=>0, 'pier_pier_1'=>0, 'pier_pier_2'=>0, 'pier_pieread_1'=>0, 'pier_pieread_2'=>0, 'pier_pieread_3'=>0,'sbg_left_count'=>0,'sbg_right_count'=>0, 'sbg_left'=>0,'sbg_right'=>0, 'span_1'=>0, 'span_2'=>0, 'span_3'=>0, 'span_4'=>0, 'parapet_1'=>0, 'parapet_2'=>0, 'parapet_3'=>0, 'pier_journal_status'=>0, 'span_journal_status'=>0, 'parapet_journal_status'=>0,'span_journal_no'=>0, 'parapet_journal_no'=>0, 'status'=>0, 'create_date'=>date('Y-m-d'));
                                 $this->design->add_pirer_entry($insert);
-                                    break;
+                                break;
 
                             default :
                                 break;
@@ -4856,7 +9252,7 @@ class duplication extends CI_Controller
             }
         }
         else{
-                echo "First you crate the project";
+            echo "First you crate the project";
         }
     }
 }
