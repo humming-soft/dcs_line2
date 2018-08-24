@@ -13,6 +13,7 @@ class Journalvalidationview extends CI_Controller
 	   $this->load->helper(array('form','url','general'));
 	   $this->load->model('alertreminder','',TRUE);
        $this->load->model('reminder','',TRUE);
+		$this->load->model('mailermodel','',TRUE);
 	}
 
 	function index($offset=0)
@@ -195,7 +196,7 @@ class Journalvalidationview extends CI_Controller
 					
 					$nextvalidator = $this->assessment->next_validator($validateno);
 					if($nextvalidator){ //If there is a next level validator, send email notification.
-						$this->load->model('mailermodel');
+
 						$this->mailermodel->insert_queue_published($nextvalidator->validate_user_id, 'progressive', $dataentryno);
 					}
 					

@@ -137,7 +137,6 @@ class Designchangedeo extends CI_Controller
 		$jid=$this->input->post('jid');
 		$userid=$this->input->post('selowner');
 		$type=$this->input->post('type1');
-
 		//query the database
 		$result = $this->design->update_chdeo($jid,$userid,$type);
 		$sess_array = array('message' => $label." changed");

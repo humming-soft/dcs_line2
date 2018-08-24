@@ -381,6 +381,7 @@ Class Assessment extends CI_Model
         }else{
             $result1 = $this->db->query("select cur_value,cur_user_id,cur_date from journal_data_entry_audit_log where data_entry_no=$dataentryno and data_attb_id=$attid order by audit_log_no desc limit 1");
             $rows = $result1->result();
+
                 foreach ($rows as $row):
                     $prevvalue = $row->cur_value;
                     $prevuser = $row->cur_user_id;
@@ -1153,6 +1154,7 @@ Class Assessment extends CI_Model
                 }
             }
         }
+       
         return $final;
     }
 
@@ -1382,6 +1384,7 @@ Class Assessment extends CI_Model
                         $this->db->set('pier_pieread_1', $value);
                     }if($field==12){
                         $this->db->set('pier_pieread_2', $value);
+                        $this->db->set('pier_pieread_1', $value);
                     }if($field==13){
                         $this->db->set('pier_pieread_3', $value);
                     }

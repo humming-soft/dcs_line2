@@ -31,7 +31,7 @@ class Mailer extends CI_Controller
 		$this->mailermodel->finish_mailer_instance();
 		echo "Successfully sent $sent_count emails.";
 	}
-	
+
 	
 	private function send($userid) {
 		$this->load->library('swiftmailer');

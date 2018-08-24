@@ -11,7 +11,7 @@
 			var jname = $(this).data('jname');
 			var uname = $(this).data('uname');
 			var jid = $(this).data('jid');
-			var type1 = $(this).data('type1');
+			var type1 = $(this).data('type');
 			var empty ="";
 			$(".modal-body #pname").html( pname );
 			$(".modal-body #jname").html( jname );

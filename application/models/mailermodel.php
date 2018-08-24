@@ -34,14 +34,14 @@ Class MailerModel extends CI_Model
 		return $this->db->query($query)->result();
 	}
 
-    /*function to get journal_name based on data_entry_no for pending journals progressive. done by jane*/
+    /*function to get journal_name based on data_entry_no for pending journals progressive*/
     function get_progressive_pending_journals($dataentryno) {
         $dataentryno = str_replace("'","",$dataentryno);
         $query = "SELECT journal_name FROM journal_data_entry_master a, journal_master b WHERE a.journal_no = b.journal_no AND a.data_entry_no = '$dataentryno'";
         return $this->db->query($query)->result();
     }
 
-    /*function to get journal_name based on data_entry_no for pending journals non-progressive. done by jane*/
+    /*function to get journal_name based on data_entry_no for pending journals non-progressive*/
     function get_nonprogressive_pending_journals($jid) {
         $jid = str_replace("'","",$jid);
         $query = "SELECT journal_name FROM journal_master_nonprogressive WHERE journal_no = '$jid'";
@@ -67,7 +67,7 @@ Class MailerModel extends CI_Model
 		return $this->insert_queue($user_id, 'rejected', 'progressive', $jid);
 	}
 
-    /*function to insert pending data entry to the table email_queue. done by jane*/
+    /*function to insert pending data entry to the table email_queue. */
 	function insert_queue_pending($user_id, $journal_status, $journal_type, $journal_no) {
 		return $this->insert_queue($user_id, $journal_status, $journal_type, $journal_no);
 	}
@@ -104,13 +104,13 @@ Class MailerModel extends CI_Model
 		$this->db->query($query);
 	}
 
-    // Get all queues, unique by user ids, sorted by timestamp from the earliest to the latest. done by jane
+    // Get all queues, unique by user ids, sorted by timestamp from the earliest to the latest.
     function get_all_reminder_userid_queues() {
         $query = "SELECT DISTINCT reminder_user_id, reminder_date FROM user_reminder ORDER BY reminder_date desc";
         return $this->db->query($query)->result();
     }
 
-    /*function to get all reminders. done by jane*/
+    /*function to get all reminders.*/
     function get_all_reminders_for_userid($userid) {
         $userid = str_replace("'","",$userid);
         $query = "SELECT a.data_entry_no, a.nonp_journal_id, a.reminder_message, b.user_id, b.user_full_name, b.email_id, b.sec_role_id, c.reminder_status_desc FROM user_reminder a, sec_user b, reminder_status c WHERE a.reminder_user_id=b.user_id AND a.reminder_status_id=c.reminder_status_id AND a.reminder_user_id='$userid'";
@@ -118,28 +118,28 @@ Class MailerModel extends CI_Model
         return $result;
     }
 
-    /*function to get journal_name based on data_entry_no for incomplete data entry progressive journals. done by jane*/
+    /*function to get journal_name based on data_entry_no for incomplete data entry progressive journals. */
     function get_progressive_incomplete_journals($dataentryno) {
         $dataentryno = str_replace("'","",$dataentryno);
         $query = "SELECT journal_name FROM journal_data_entry_master a, journal_master b WHERE a.journal_no = b.journal_no AND a.data_entry_no = '$dataentryno'";
         return $this->db->query($query)->result();
     }
 
-    /*function to get journal_name based on data_entry_no for incomplete data entry non-progressive. done by jane*/
+    /*function to get journal_name based on data_entry_no for incomplete data entry non-progressive. */
     function get_nonprogressive_incomplete_journals($jid) {
         $jid = str_replace("'","",$jid);
         $query = "SELECT journal_name FROM journal_master_nonprogressive WHERE journal_no = '$jid'";
         return $this->db->query($query)->result();
     }
 
-    /*function to get journal_name, data_validate_no based on data_entry_no for waiting validation progressive. done by jane*/
+    /*function to get journal_name, data_validate_no based on data_entry_no for waiting validation progressive. */
     function get_progressive_waiting_journals($dataentryno) {
         $dataentryno = str_replace("'","",$dataentryno);
         $query = "SELECT journal_name, data_validate_no FROM journal_data_entry_master a, journal_master b, journal_data_validate_master c WHERE a.journal_no = b.journal_no AND a.data_entry_no = c.data_entry_no AND c.data_entry_no = '$dataentryno'";
         return $this->db->query($query)->result();
     }
 
-    /*function to get journal_name based on journal_no for waiting validation non-progressive. done by jane*/
+    /*function to get journal_name based on journal_no for waiting validation non-progressive*/
     function get_nonprogressive_waiting_journals($jid) {
         $jid = str_replace("'","",$jid);
         $query = "SELECT journal_name FROM journal_master_nonprogressive WHERE journal_no = '$jid'";
